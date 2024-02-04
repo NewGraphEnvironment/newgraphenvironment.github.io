@@ -111,11 +111,11 @@ enableEmoji = true
     title = "Projects"
     url = "/project/"
     weight = 2
-  #[[menu.header]]
-    #name = "Blog"
-    #title = "Blog"
-   #url = "/blog/"
-    #weight = 3
+  [[menu.header]]
+    name = "Blog"
+    title = "Blog"
+    url = "/blog/"
+    weight = 3
   [[menu.header]]
     name = "Contact"
     title = "Contact"
