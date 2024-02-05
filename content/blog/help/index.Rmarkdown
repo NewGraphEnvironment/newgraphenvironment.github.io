@@ -1,6 +1,6 @@
 ---
-title: "Helping the help."
-subtitle: "And helping myself in the process"
+title: "What's in a name?"
+subtitle: "Reprexes, invisble functions and .Primitives"
 excerpt: ""
 date: 2024-02-03
 author: "Allan Irvine"
@@ -11,12 +11,10 @@ tags:
 categories:
 layout: single
 ---
-
-
-
-
-Recieved a question about what this function was doing? Made me realize getting help is a skill so started this reprex
-to try to demonstrate some techniques for self-directed help. Ended up _teaching_ myself a whole bunch.
+Received a question about what this function was doing? Made me realize getting help is a skill so started this `reprex`
+to try to improve my `reprex` skills (only done a few before), try a `.Rmd` reprex for the first time ever and
+demonstrate some techniques for digging into details.Ended up getting introduced to some interesting things I wasn't
+aware of before.
 
 
 <br>
@@ -29,16 +27,38 @@ Below is the function in question:
     ), 'packages.bib')
 
 
-As the comment from the bookdown template indicates - this chunk does indeed automatically "create" a bib database for 
-R packages. To understand how - you can review the help and (output for .packages()) for the functions it calls like so:
+As the comment (from the rstudio/bookdown-demo https://github.com/rstudio/bookdown-demo) indicates - this chunk
+automatically "creates" a bib database for R packages. If one is already is there in the repo it is overwritten with
+`git` picking up the `diff`s.  To understand the mechanisms it uses to download - you can review the help and (output
+for .packages()) for the functions it calls like so:
 
-    ?.packages
+    
     ?knitr::write_bib
+    ?.packages
     
     
-Results of functions do not always print to the console so to see the results of `.packages()` you either need use the 
-function `print()` or assign it to an object. You can see why this is happening with this function by seeing the actual 
-code used to write the function by typeing `.packages` into the console. 
+Apparently - results of functions do not always print to the console so to see the results of `.packages()` the following
+call to the console does not show us anything.  
+
+```{r}
+.packages()
+```
+
+
+Turns out you either need use the function `print()` or assign it to an object. 
+
+```{r}
+print(.packages())
+```
+
+```{r}
+l <- .packages()
+l
+```
+
+
+Intersesting.... You can see why this is happening in this function by seeing the actual code used to write the function 
+by typeing `.packages` into the console. 
 
 ```{r}
 .packages
@@ -66,7 +86,7 @@ Check out the help!
 .Primitive
 ```
 
-Name. Good grief!
+name. Good grief!
 
     ?name
     
@@ -75,14 +95,18 @@ Name. Good grief!
 #name
 ```
 
-Wow.  A lot to unpack here and lots I don't understand but I think that it is just this sort of tracking down of clues
-that will lead to conceptual break throughs that will elevate my game.  
+`.Primitive` and `name` have roots that run deep. Wow.  A lot to unpack here and lots I don't understand but I think 
+that it is just this sort of tracking down of clues that will lead to conceptual break throughs so was a good exercise 
+to go through. 
 
 <br>
   
-To see how to create a reprex Rmarkdown document like this type the following (or something similiar) into google 
+`reprexes` are cool. To see how to create a reprex Rmarkdown document like this type the following (or something 
+similiar) into google 
 
     "how do you do a reprex for an rmarkdown doc?"
+    
+Good background about `reprexes` here too https://www.tidyverse.org/help/
 
 
-brings up this link: https://reprex.tidyverse.org/articles/reprex.html
+
