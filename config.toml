@@ -33,7 +33,7 @@ enableEmoji = true
   description = "Biology and ecosystem restoration"
   #favicon = "/img/nge-full_black.png"
   logo = "/img/nge-icon_white.png"
-  mainSections = ["services", "project", "about"]
+  mainSections = ["services", "project", "about", "blog"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -115,6 +115,11 @@ enableEmoji = true
     name = "Contact"
     title = "Contact"
     url = "/contact/"
+    weight = 3
+  [[menu.header]]
+    name = "Blog"
+    title = "Blog"
+    url = "https://newgraphenvironment.github.io/new_graphiti/"
     weight = 3
 
   
