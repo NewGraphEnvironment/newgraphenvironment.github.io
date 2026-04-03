@@ -1,0 +1,213 @@
+{{ define "main" }}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap');
+
+  .nge-contact {
+    padding: 4rem 2rem 5rem;
+    background: #1a2e1f;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nge-contact-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/img/snowshoe.JPG');
+    background-size: cover;
+    background-position: center 40%;
+    filter: brightness(0.4) saturate(0.7);
+  }
+
+  .nge-contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      170deg,
+      rgba(26, 46, 31, 0.85) 0%,
+      rgba(26, 46, 31, 0.5) 40%,
+      rgba(58, 107, 140, 0.3) 100%
+    );
+  }
+
+  .nge-contact-inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nge-contact-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nge-contact-form {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nge-contact-rule {
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    border: none;
+    margin: 0 0 2rem;
+  }
+
+  .nge-contact-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: #faf7f2;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+
+  .nge-contact-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.05rem;
+    color: #c8dde8;
+    line-height: 1.8;
+    margin: 0 0 2.5rem;
+  }
+
+  .nge-contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nge-contact-details li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #7a7568;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e5ddd0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nge-contact-details li:last-child {
+    border-bottom: none;
+  }
+
+  .nge-contact-details a {
+    color: #3a6b8c;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nge-contact-details a:hover {
+    color: #1a2e1f;
+  }
+
+  .nge-contact-details svg {
+    width: 18px;
+    height: 18px;
+    stroke: #b0a99a;
+    fill: none;
+    flex-shrink: 0;
+  }
+
+  /* Form styling */
+  .nge-contact-form form {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .nge-contact-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nge-contact-form legend {
+    display: none;
+  }
+
+  .nge-contact-form label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #c8dde8;
+    margin: 0 0 0.4rem;
+    font-weight: 500;
+  }
+
+  .nge-contact-form input[type="text"],
+  .nge-contact-form input[type="email"],
+  .nge-contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #1a2e1f;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.4);
+    margin: 0 0 1.25rem;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .nge-contact-form input[type="text"]:focus,
+  .nge-contact-form input[type="email"]:focus,
+  .nge-contact-form textarea:focus {
+    outline: none;
+    border-color: #3a6b8c;
+  }
+
+  .nge-contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .nge-contact-form input[type="submit"] {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: #1a2e1f;
+    background: #faf7f2;
+    border: none;
+    padding: 0.85rem 2.2rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .nge-contact-form input[type="submit"]:hover {
+    background: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .nge-contact-inner {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .nge-contact { padding: 3rem 1.5rem 4rem; }
+  }
+</style>
+
+<main class="page-main" role="main">
+  <section class="nge-contact">
+    <div class="nge-contact-bg"></div>
+    <div class="nge-contact-overlay"></div>
+    <div class="nge-contact-inner">
+      <div class="nge-contact-info">
+        <hr class="nge-contact-rule">
+        <h1 class="nge-contact-title">{{ .Title }}</h1>
+        <p class="nge-contact-desc">{{ .Description | markdownify }}</p>
+      </div>
+      <div class="nge-contact-form">
+        {{ partial "shared/contact-form.html" . }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

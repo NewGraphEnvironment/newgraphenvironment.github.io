@@ -1,7 +1,7 @@
 ---
-title: Holla
-name: Contact Us Form
-description: "Let us know how we can we work together."
+title: Get in Touch
+name: Contact
+description: "We partner on multi-year watershed programs — building open-source tools and technical capacity alongside restoration and monitoring work. What we develop together becomes freely available to the broader community."
 date: 2019-02-25T13:38:41-06:00
 draft: false
 url: contact

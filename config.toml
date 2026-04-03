@@ -32,8 +32,8 @@ enableEmoji = true
   orgLocal = ""
   description = "Biology and ecosystem restoration"
   #favicon = "/img/nge-full_black.png"
-  logo = "/img/nge-icon_white.png"
-  mainSections = ["services", "project", "about", "blog"]
+  logo = "/img/nge-full_white.png"
+  mainSections = ["project"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -102,15 +102,10 @@ enableEmoji = true
 [menu]
   # Configure header 
   [[menu.header]]
-    name = "About"
-    title = "About"
-    url = "/about/"
-    weight = 1
-  [[menu.header]]
-    name = "Projects"
-    title = "Projects"
+    name = "Our Work"
+    title = "Our Work"
     url = "/project/"
-    weight = 2
+    weight = 1
   [[menu.header]]
     name = "Contact"
     title = "Contact"
@@ -120,7 +115,7 @@ enableEmoji = true
     name = "Blog"
     title = "Blog"
     url = "https://newgraphenvironment.github.io/new_graphiti/"
-    weight = 3
+    weight = 4
 
   
     
