@@ -95,21 +95,29 @@
   }
 
   .nge-hero-logo {
-    max-width: clamp(280px, 40vw, 480px);
+    max-width: clamp(240px, 32vw, 380px);
     height: auto;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2.5rem;
     display: block;
     filter: drop-shadow(0 2px 12px rgba(0,0,0,0.2));
   }
 
   .nge-hero-subtitle {
+    position: absolute;
+    bottom: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
     font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    font-size: clamp(0.95rem, 2vw, 1.15rem);
-    color: var(--river-pale);
-    letter-spacing: 0.15em;
+    font-weight: 500;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--cream);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin: 0 0 2.5em;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.3);
   }
 
   .nge-hero-cta {
@@ -435,8 +443,8 @@
     <div class="nge-hero-topo"></div>
     <div class="nge-hero-content">
       <img src="/img/nge-full_white.png" alt="New Graph Environment" class="nge-hero-logo">
-      <p class="nge-hero-subtitle">Open-Source Watershed Science</p>
     </div>
+    <p class="nge-hero-subtitle">Open-Source Watershed Science</p>
     <div class="nge-scroll-indicator">
       <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round">
         <path d="M12 5v14M5 12l7 7 7-7"/>
