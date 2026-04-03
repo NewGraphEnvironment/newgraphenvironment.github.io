@@ -1,20 +1,66 @@
 # newgraphenvironment.github.io
 
-New Graph Environment company website — landing page with links to the blog (hosted separately).
+New Graph Environment company website — landing page, work portfolio, and contact.
 
 ## Repository Context
 
 **Repository:** NewGraphEnvironment/newgraphenvironment.github.io
 **Domain:** www.newgraphenvironment.com
-**Framework:** Hugo with hugo-apero theme
+**Framework:** Hugo via blogdown, hugo-apero theme
 **Hosting:** GitHub Pages (via CNAME)
+**Build:** `blogdown::serve_site()` for local dev, `blogdown::build_site()` for production. Hugo v0.121.1.
 
-## Architecture
+## Site Structure
 
-- Hugo static site — `config.toml` drives nav, theme, social links
-- Content sections: about, project, services, contact
-- Blog link in header points externally to https://newgraphenvironment.github.io/new_graphiti/ — blog is not hosted in this repo
-- `static/` for images and assets, `themes/hugo-apero` for theme
+**Nav:** Our Work | Contact | Blog (external)
+
+**Landing page** (`layouts/index.html`) — custom layout, not the theme default. Sections:
+- Hero with full logo + "Open-Source Watershed Science" tagline
+- Who We Are — company description
+- Our Work — 3 cards linking to project tiles
+- Open Source — GitHub link band
+
+**Our Work** (`content/project/`) — 3 tiles:
+- `watershed_restoration_fish_passage/` — Neexdzii Kwah restoration + fish passage reports by region (Skeena, Peace, Fraser, Elk). Report lists use `<details>` for collapsible previous reports.
+- `aquatic_monitoring_assessment/` — NRP nutrient loading (private report, no link), Duncan kokanee, Sheep Creek benthic/NMDS, fish & habitat assessment.
+- `open_source_software/` — R packages (fresh, flooded, drift, breaks, cd, gq, fpr, ngr), STAC catalogs, digital field forms (dff-2022), diggs, fly. Links to pkgdown sites and GitHub repos.
+
+**Contact** (`content/form/contact.md`) — Formspree form with partnership-focused messaging. Custom layout override.
+
+**Blog** — external link to https://newgraphenvironment.github.io/new_graphiti/ — not hosted in this repo.
+
+**About** (`content/about/`) — content exists but not linked in nav. "Who We Are" section on landing page replaced the standalone about page.
+
+## Layout Overrides
+
+These override the hugo-apero theme defaults. Changes here affect the site without touching the theme:
+
+| File | Overrides | Purpose |
+|------|-----------|---------|
+| `layouts/index.html` | Theme homepage | Custom landing page with hero, sections, scroll-reveal JS |
+| `layouts/form/split-right.html` | Theme contact form | Dark photo backdrop, custom typography |
+| `layouts/partials/header.html` | Theme header | Larger logo in nav (`3.5rem`) |
+
+**CSS:** Landing page and contact page styles are inline in their respective layout files using CSS custom properties (`--forest-deep`, `--river-light`, `--cream`, etc.). The theme uses Tachyons CSS + SCSS in `assets/`.
+
+## Images
+
+Images live alongside `index.md` in page bundle directories (not in `static/`). Hugo-apero uses `featured*` filename pattern for grid thumbnails. Logos are in `static/img/`.
+
+## Archive
+
+- `_archive/` — old project pages (pre-restructuring). Kept for reference, not served by Hugo.
+- `_archive_tools/` — old standalone tools section. Content moved into `open_source_software/` project tile.
+
+## Key Decisions
+
+- **"Our Work" not "Projects"** — tiles represent types of work, not individual projects. Projects are examples inside each tile.
+- **Open Source Software as a work type** — positions tool development as a billable service, not just internal infrastructure.
+- **No standalone tools/about pages** — consolidated into landing page and Our Work tiles to reduce nav items.
+- **Report links use collapsible sections** — most recent report is always visible, previous years in `<details>` tags.
+- **2025 fish passage report links are placeholders** — Peace and Fraser 2025 will 404 until deployed. Skeena 2025 tracked in #43.
+- **NRP content has no report link** — report is private.
+- **Contact messaging is partnership-focused** — signals multi-year programs, open-source tool development funded through partnerships.
 
 <!-- BEGIN SOUL CONVENTIONS — DO NOT EDIT BELOW THIS LINE -->
 
