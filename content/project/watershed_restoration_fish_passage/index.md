@@ -1,11 +1,11 @@
 ---
-title: "Watershed Restoration & Fish Passage"
-excerpt: "From fish passage assessment to long-term watershed restoration planning across British Columbia. Floodplain analysis, land cover change detection, barrier prioritization, and collaborative GIS — grounded in First Nations partnerships."
+title: "Watershed Restoration & Conservation"
+excerpt: "Aquatic restoration planning, implementation, and monitoring across British Columbia — from floodplain analysis and land cover change detection to fish passage assessment and barrier prioritization. Grounded in First Nations partnerships and open science."
 layout: single
 weight: 1
 ---
 
-We plan and deliver aquatic restoration at scales ranging from individual stream crossings to entire watersheds. Fish passage assessment and barrier prioritization has been our foundation since 2019, and we are expanding into broader watershed restoration planning that integrates floodplain health, land cover change, riparian condition, and aquatic monitoring.
+We plan and deliver aquatic restoration at scales ranging from individual stream crossings to entire watersheds. Our work integrates floodplain analysis, land cover change detection, riparian assessment, aquatic monitoring, and fish passage barrier prioritization — connecting field observations to watershed-scale planning through open-source tools and collaborative GIS.
 
 <br>
 
