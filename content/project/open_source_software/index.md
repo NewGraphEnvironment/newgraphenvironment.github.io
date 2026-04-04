@@ -83,16 +83,17 @@ Provincial-scale imagery, elevation data, and stream temperature records — cat
 
 | Collection | Content | Scale |
 |-----------|---------|-------|
-| [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LidarBC digital elevation models | 50,000+ tiles, province-wide |
+| [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models | 50,000+ tiles, province-wide |
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photographs (1963–2019) | Growing, ~10,000 georeferenced thumbnails |
-| [**stac_orthophoto_bc**](https://github.com/NewGraphEnvironment/stac_orthophoto_bc) | BC orthophoto collection | Province-wide |
-| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | UAV imagery by watershed | Project-based, growing |
+| [**stac_orthophoto_bc**](https://github.com/NewGraphEnvironment/stac_orthophoto_bc) | Provincial orthophoto collection | Province-wide |
+| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Drone imagery by watershed | Project-based, growing |
+| [**water-temp-bc**](https://github.com/NewGraphEnvironment/water-temp-bc) | Stream temperature from federal hydrometric stations | Province-wide, cloud-hosted |
 
 <br>
 
 ### water-temp-bc — Stream Temperature Data
 
-Provincial stream temperature data scraped from Environment Canada, archived as parquet files on S3, and queryable via DuckDB. Feeds into spatial stream network temperature modelling conducted in partnership with [Poisson Consulting](https://www.poissonconsulting.ca/) — see [Skeena watershed temperatures 2025](https://www.poissonconsulting.ca/f/1130667589) and [Nechako watershed temperatures 2022](https://www.poissonconsulting.ca/f/1295467017).
+Stream temperature records from federal hydrometric stations across BC — scraped from Environment and Climate Change Canada's real-time web service and combined with historic data extracts. Served as cloud-hosted files queryable from R without a database. Feeds into spatial stream network temperature modelling conducted in partnership with [Poisson Consulting](https://www.poissonconsulting.ca/) — see [Skeena watershed temperatures 2025](https://www.poissonconsulting.ca/f/1130667589) and [Nechako watershed temperatures 2022](https://www.poissonconsulting.ca/f/1295467017).
 
 - [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
 
