@@ -5,17 +5,19 @@ layout: single
 weight: 3
 ---
 
-We develop and maintain open-source tools that power our work and are freely available to the broader watershed community. Everything is built in R, hosted on GitHub, and documented with pkgdown sites.
+We develop and maintain open-source tools that power our work and are freely available to the broader watershed community. Everything is built in R, hosted on GitHub, and documented with pkgdown sites. Our packages are designed to work together — network analysis feeds floodplain delineation, historic imagery feeds change detection, and field data flows through to published reports.
 
 <br>
 
-## Watershed Analysis
+## Network Analysis & Watershed Modelling
 
-Integrated planning from stream connectivity to floodplain health to land cover change. Our tools build on provincial stream network and fish passage models, extending them into broader watershed health assessment.
+Composable, SQL-native tools for modelling anything on BC's stream network — habitat classification, barrier prioritization, channel width, discharge, and custom attributes. Built on the Freshwater Atlas and designed to work alongside provincial connectivity models.
 
-### fresh — Spatial Hydrology
+### fresh — Spatial Hydrology & Network Modelling
 
-Stream network-aware spatial operations via direct SQL against provincial databases. Query habitat, delineate watersheds, and map connectivity for any stream in BC.
+A composable network modelling engine for BC's Freshwater Atlas. Query and extract stream networks, classify habitat by gradient and channel width, segment networks at barriers and break points, aggregate features upstream or downstream, and run multi-species habitat modelling with parallel workers. Supports custom model outputs and attribute joining — channel width, mean annual discharge, precipitation, or any scalar value. More flexible than fixed connectivity models because it can model anything on the network, not just fish passage.
+
+Developed in collaboration with [Poisson Consulting](https://www.poissonconsulting.ca/), who provide the channel width regression models and statistical methodology. See [Spatial Stream Network Analysis of Skeena Watershed Stream Temperatures 2025](https://www.poissonconsulting.ca/f/1130667589) and [channel width modelling](https://www.poissonconsulting.ca/temporary-hidden-link/859859031/channel-width-21b/) for examples of the science that feeds into these tools.
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
@@ -27,7 +29,7 @@ Stream network-aware spatial operations via direct SQL against provincial databa
 
 ### flooded — Floodplain Delineation
 
-Delineate functional floodplains from DEMs and stream networks using the Valley Confinement Algorithm. Identify where floodplains are intact, confined, or disconnected.
+Delineate functional floodplains from DEMs and stream networks using the Valley Confinement Algorithm. Identify where floodplains are intact, confined, or disconnected — the areas where rivers do geomorphic work including sediment storage, nutrient exchange, and riparian recruitment.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -39,7 +41,7 @@ Delineate functional floodplains from DEMs and stream networks using the Valley 
 
 ### drift — Land Cover Change Detection
 
-Fetch satellite-derived land cover data from STAC catalogs and track what's changing inside floodplains over time. Multi-year analysis from Esri IO LULC and ESA WorldCover.
+Fetch satellite-derived land cover data from STAC catalogs and track what's changing inside floodplains over time. Multi-year analysis from Esri IO LULC and ESA WorldCover. Integrates with flooded to focus change detection on the ecologically relevant floodplain extent.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
@@ -51,7 +53,7 @@ Fetch satellite-derived land cover data from STAC catalogs and track what's chan
 
 ### breaks — Interactive Watershed Delineation
 
-A Shiny app for placing break points on stream networks and delineating sub-basins. Click, snap to the Freshwater Atlas, compute upstream watersheds, and export.
+A Shiny app for placing break points on stream networks and delineating sub-basins. Click, snap to the Freshwater Atlas, compute upstream watersheds, and export. Used to define analysis units for restoration planning and sub-basin characterization.
 
 - [Documentation](https://www.newgraphenvironment.com/breaks/) | [Source](https://github.com/NewGraphEnvironment/breaks)
 
@@ -63,7 +65,7 @@ A Shiny app for placing break points on stream networks and delineating sub-basi
 
 ### cd — Climate Departure Analysis
 
-Climate departure analysis from ERA5-Land reanalysis data. Derive temperature, precipitation, vapour pressure deficit, and soil moisture trends for any watershed.
+Climate departure analysis from ERA5-Land reanalysis data. Derive temperature, precipitation, vapour pressure deficit, and soil moisture trends for any watershed. Served as COG STAC catalogs for integration with other pipelines.
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
@@ -75,7 +77,7 @@ Climate departure analysis from ERA5-Land reanalysis data. Derive temperature, p
 
 ## Spatial Data Infrastructure
 
-Provincial-scale imagery and elevation data, catalogued and queryable from R, QGIS 3.42+, and Python. Cloud-hosted tile serving for on-the-fly visualization of massive rasters.
+Provincial-scale imagery, elevation data, and stream temperature records — catalogued and queryable from R, QGIS 3.42+, and Python. Cloud-hosted tile serving for on-the-fly visualization of massive rasters.
 
 ### STAC Catalogs
 
@@ -88,9 +90,17 @@ Provincial-scale imagery and elevation data, catalogued and queryable from R, QG
 
 <br>
 
-### fly — Airphoto Footprint Estimation
+### water-temp-bc — Stream Temperature Data
 
-Estimate ground footprints from airphoto centroids and scale, compute coverage over an area of interest, and select minimum photo sets using greedy set-cover optimization.
+Provincial stream temperature data scraped from Environment Canada, archived as parquet files on S3, and queryable via DuckDB. Feeds into spatial stream network temperature modelling conducted in partnership with [Poisson Consulting](https://www.poissonconsulting.ca/) — see [Skeena watershed temperatures 2025](https://www.poissonconsulting.ca/f/1130667589) and [Nechako watershed temperatures 2022](https://www.poissonconsulting.ca/f/1295467017).
+
+- [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
+
+<br>
+
+### fly — Airphoto Retrieval & Footprint Analysis
+
+Download and georeference historic airphotos from the BC Data Catalogue, estimate ground footprints from centroids and film scale, compute coverage over areas of interest, and select minimum photo sets using greedy set-cover optimization. Outputs feed directly into stac_airphoto_bc for cataloging and diggs for interactive browsing.
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
@@ -98,7 +108,7 @@ Estimate ground footprints from airphoto centroids and scale, compute coverage o
 
 ### diggs — Historic Airphoto Explorer
 
-An interactive Shiny app that leverages fly's footprint estimation to let users browse and select historic BC aerial photography by location, year, scale, and media type.
+An interactive Shiny app that leverages fly's footprint estimation to let users browse and select historic BC aerial photography by location, year, scale, and media type. Preview footprints, filter by coverage, and export selections.
 
 - [Documentation](https://www.newgraphenvironment.com/diggs/) | [Source](https://github.com/NewGraphEnvironment/diggs)
 
@@ -143,5 +153,4 @@ Dynamic reporting tools including STAC integration, COG viewers, and document ge
 One style registry drives every map — print, web, and field. Extracts symbology from QGIS projects, stores it in canonical JSON, and translates to tmap, MapLibre GL, leaflet, and ggplot2.
 
 - [Documentation](https://www.newgraphenvironment.com/gq/) | [Source](https://github.com/NewGraphEnvironment/gq)
-
 
