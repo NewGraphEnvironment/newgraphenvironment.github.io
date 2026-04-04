@@ -1,8 +1,17 @@
 {{ $page := . }}
+<style>
+  .nge-nav-logo-full { display: none; }
+  .nge-nav-logo-icon { display: inline-block; height: 2.5rem; width: auto; }
+  @media (min-width: 60em) {
+    .nge-nav-logo-full { display: inline-block; height: 3.5rem; width: auto; }
+    .nge-nav-logo-icon { display: none; }
+  }
+</style>
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
     <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="{{ .Site.BaseURL }}" title="Home">
-      {{ if .Site.Params.logo }}<img src="{{ .Site.Params.logo | relURL }}" class="dib db-l w-auto" style="height: 3.5rem !important; max-height: none !important;" alt="{{ .Site.Title }}">{{ else }}<span class="f4 fw7">{{ .Site.Title }}</span>{{ end }}
+      <img src="/img/nge-full_white.png" class="nge-nav-logo-full" alt="{{ .Site.Title }}">
+      <img src="/img/nge-icon_white.png" class="nge-nav-logo-icon" alt="{{ .Site.Title }}">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l {{ if $.Site.Params.navallcaps }}ttu tracked{{ end }}">
       {{ range .Site.Menus.header }}

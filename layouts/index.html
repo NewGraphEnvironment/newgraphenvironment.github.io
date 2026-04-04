@@ -94,10 +94,10 @@
     max-width: 52rem;
   }
 
-  .nge-hero-logo {
-    max-width: clamp(240px, 32vw, 380px);
+  .nge-hero-icon {
+    width: clamp(70px, 10vw, 100px);
     height: auto;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 0;
     display: block;
     filter: drop-shadow(0 2px 12px rgba(0,0,0,0.2));
   }
@@ -110,13 +110,15 @@
     z-index: 2;
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-size: clamp(1rem, 3vw, 2.2rem);
     color: var(--cream);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    white-space: nowrap;
+    text-align: center;
+    width: 90%;
+    max-width: 52rem;
     margin: 0;
-    line-height: 1;
+    line-height: 1.3;
     text-shadow: 0 2px 16px rgba(0,0,0,0.3);
   }
 
@@ -442,7 +444,7 @@
     <div class="nge-hero-overlay"></div>
     <div class="nge-hero-topo"></div>
     <div class="nge-hero-content">
-      <img src="/img/nge-full_white.png" alt="New Graph Environment" class="nge-hero-logo">
+      <img src="/img/nge-icon_white.png" alt="New Graph Environment" class="nge-hero-icon">
     </div>
     <p class="nge-hero-subtitle">Open-Source Watershed Science</p>
     <div class="nge-scroll-indicator">
