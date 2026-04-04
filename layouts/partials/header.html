@@ -2,7 +2,9 @@
 <style>
   .nge-nav-logo-full { display: none; }
   .nge-nav-logo-icon { display: inline-block; height: 2rem; width: auto; }
+  .nge-social-hide-mobile { display: none; }
   @media (min-width: 60em) {
+    .nge-social-hide-mobile { display: inline-block; }
     .nge-nav-logo-full { display: inline-block; height: 3.5rem; width: auto; }
     .nge-nav-logo-icon { display: none; }
   }
@@ -21,7 +23,7 @@
       <a class="link f6 f5-l dib pv1 ph2 {{ if $active }}active{{ end }}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
       {{ end }}
       {{ if .Site.Params.socialInHeader }}
-      <div class="dib v-mid">
+      <div class="dib v-mid nge-social-hide-mobile">
         {{ partial "shared/social-links.html" . }}
       </div>
       {{ end }}
