@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NGE Pipeline DAG Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f2ede4;
+    color: #1a2e1f;
+    padding: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .dag-subtitle {
+    color: #7a7568;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 48rem;
+    line-height: 1.6;
+  }
+
+  .dag-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* SVG arrows layer */
+  .dag-arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .dag-arrows line, .dag-arrows path {
+    stroke: #b0a99a;
+    stroke-width: 1.5;
+    fill: none;
+    stroke-dasharray: 4, 4;
+    opacity: 0.5;
+  }
+
+  /* Stream labels */
+  .dag-stream {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .dag-stream-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #7a7568;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid #b0a99a;
+  }
+
+  /* Row of hexes */
+  .dag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+
+  /* Convergence indicator */
+  .dag-converge {
+    text-align: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    position: relative;
+  }
+
+  .dag-converge::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #3a6b8c, transparent);
+  }
+
+  .dag-converge-text {
+    background: #f2ede4;
+    padding: 0.3rem 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3a6b8c;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Hex node */
+  .dag-hex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    width: 120px;
+  }
+
+  .dag-hex:hover {
+    transform: translateY(-4px);
+  }
+
+  .dag-hex img {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+    transition: filter 0.2s ease;
+  }
+
+  .dag-hex:hover img {
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+  }
+
+  .dag-hex-label {
+    font-size: 0.72rem;
+    color: #7a7568;
+    text-align: center;
+    margin-top: 0.4rem;
+    line-height: 1.3;
+    max-width: 110px;
+  }
+
+  .dag-hex:hover .dag-hex-label {
+    color: #1a2e1f;
+  }
+
+  /* Two-column layout for streams */
+  .dag-streams {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .dag-streams {
+      grid-template-columns: 1fr;
+    }
+    .dag-hex { width: 100px; }
+    .dag-hex img { width: 65px; }
+    .dag-row { gap: 0.6rem; }
+  }
+
+  /* Arrow between rows */
+  .dag-arrow-down {
+    text-align: center;
+    color: #b0a99a;
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+    opacity: 0.5;
+  }
+
+  /* Section divider */
+  .dag-divider {
+    width: 60px;
+    height: 1px;
+    background: #b0a99a;
+    margin: 0 auto 2rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="dag-container">
+
+  <div class="dag-divider"></div>
+
+  <div class="dag-streams">
+
+    <!-- LEFT: Network Analysis -->
+    <div class="dag-stream">
+      <div class="dag-stream-label">Network Analysis & Watershed Modelling</div>
+
+      <div class="dag-row">
+        <a href="https://www.newgraphenvironment.com/fresh/" class="dag-hex" title="Composable network modelling engine for BC's Freshwater Atlas">
+          <img src="/img/hex/fresh.png" alt="fresh">
+          <span class="dag-hex-label">Network modelling</span>
+        </a>
+      </div>
+      <div class="dag-arrow-down">↓</div>
+      <div class="dag-row">
+        <a href="https://www.newgraphenvironment.com/breaks/" class="dag-hex" title="Interactive sub-basin delineation">
+          <img src="/img/hex/breaks.png" alt="breaks">
+          <span class="dag-hex-label">Sub-basins</span>
+        </a>
+      </div>
+      <div class="dag-arrow-down">↓</div>
+      <div class="dag-row">
+        <a href="https://www.newgraphenvironment.com/flooded/" class="dag-hex" title="Floodplain delineation via Valley Confinement Algorithm">
+          <img src="/img/hex/flooded.png" alt="flooded">
+          <span class="dag-hex-label">Floodplain delineation</span>
+        </a>
+      </div>
+      <div class="dag-arrow-down">↓</div>
+      <div class="dag-row">
+        <a href="https://www.newgraphenvironment.com/drift/" class="dag-hex" title="Land cover change detection within floodplains">
+          <img src="/img/hex/drift.png" alt="drift">
+          <span class="dag-hex-label">Land cover change</span>
+        </a>
+        <a href="https://www.newgraphenvironment.com/cd/" class="dag-hex" title="Climate departure analysis from ERA5-Land">
+          <img src="/img/hex/cd.png" alt="cd">
+          <span class="dag-hex-label">Climate trends</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Spatial Data Infrastructure -->
+    <div class="dag-stream">
+      <div class="dag-stream-label">Spatial Data Infrastructure</div>
+
+      <div class="dag-row">
+        <a href="https://github.com/NewGraphEnvironment/stac_dem_bc" class="dag-hex" title="50,000+ LiDAR elevation models">
+          <img src="/img/hex/stac_dem_bc.png" alt="stac_dem_bc">
+          <span class="dag-hex-label">LiDAR elevation</span>
+        </a>
+        <a href="https://github.com/NewGraphEnvironment/water-temp-bc" class="dag-hex" title="Stream temperature from federal hydrometric stations">
+          <img src="/img/hex/water-temp-bc.png" alt="water-temp-bc">
+          <span class="dag-hex-label">Stream temperature</span>
+        </a>
+      </div>
+      <div class="dag-arrow-down">↓</div>
+      <div class="dag-row">
+        <a href="https://www.newgraphenvironment.com/fly/" class="dag-hex" title="Download, georeference, and select historic airphotos">
+          <img src="/img/hex/fly.png" alt="fly">
+          <span class="dag-hex-label">Airphoto retrieval</span>
+        </a>
+      </div>
+      <div class="dag-arrow-down">↓</div>
+      <div class="dag-row">
+        <a href="https://github.com/NewGraphEnvironment/stac_airphoto_bc" class="dag-hex" title="Historic aerial photograph catalog">
+          <img src="/img/hex/stac_airphoto_bc.png" alt="stac_airphoto_bc">
+          <span class="dag-hex-label">Airphoto catalog</span>
+        </a>
+        <a href="https://github.com/NewGraphEnvironment/stac_orthophoto_bc" class="dag-hex" title="Provincial orthophoto collection">
+          <img src="/img/hex/stac_orthophoto_bc.png" alt="stac_orthophoto_bc">
+          <span class="dag-hex-label">Orthophotos</span>
+        </a>
+      </div>
+      <div class="dag-arrow-down">↓</div>
+      <div class="dag-row">
+        <a href="https://www.newgraphenvironment.com/diggs/" class="dag-hex" title="Interactive historic airphoto browser">
+          <img src="/img/hex/diggs.png" alt="diggs">
+          <span class="dag-hex-label">Airphoto explorer</span>
+        </a>
+        <a href="https://github.com/NewGraphEnvironment/stac_uav_bc" class="dag-hex" title="Drone imagery by watershed">
+          <img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc">
+          <span class="dag-hex-label">Drone imagery</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONVERGENCE -->
+  <div class="dag-converge">
+    <span class="dag-converge-text">Converge into field workflows & reporting</span>
+  </div>
+
+  <!-- BOTTOM: Field & Reporting -->
+  <div class="dag-stream">
+    <div class="dag-stream-label" style="text-align: center; border-left: none; padding-left: 0;">Field-to-Report Workflows</div>
+
+    <div class="dag-row" style="justify-content: center;">
+      <a href="https://www.newgraphenvironment.com/gq/" class="dag-hex" title="Cartographic style registry — one source, every output">
+        <img src="/img/hex/gq.png" alt="gq">
+        <span class="dag-hex-label">Map styling</span>
+      </a>
+      <a href="https://github.com/NewGraphEnvironment/dff-2022" class="dag-hex" title="GIS project assembly and digital field forms">
+        <img src="/img/hex/rfp.png" alt="dff-2022">
+        <span class="dag-hex-label">Field forms & GIS</span>
+      </a>
+      <a href="https://www.newgraphenvironment.com/fpr/" class="dag-hex" title="Fish passage reporting functions">
+        <img src="/img/hex/fpr.png" alt="fpr">
+        <span class="dag-hex-label">Reporting</span>
+      </a>
+      <a href="https://www.newgraphenvironment.com/ngr/" class="dag-hex" title="Dynamic reporting utilities">
+        <img src="/img/hex/ngr.png" alt="ngr">
+        <span class="dag-hex-label">Report utilities</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
