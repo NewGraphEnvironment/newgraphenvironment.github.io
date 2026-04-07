@@ -133,7 +133,19 @@ GIS project assembly and digital field form management. Pull provincial datasets
 
 Field forms for fish passage assessment and habitat confirmation write directly to provincial database formats. Photos are automatically renamed and organized into site directories. Multiple team members contribute within the same shared project, with changes syncing between field and office.
 
-- [Source](https://github.com/NewGraphEnvironment/rfp)
+- [Documentation](https://www.newgraphenvironment.com/rfp/) | [Source](https://github.com/NewGraphEnvironment/rfp)
 
 <div style="clear: both;"></div>
+
+<br>
+
+---
+
+<br>
+
+## Dynamic Reporting
+
+We pioneered interactive, version-controlled environmental reporting in British Columbia. One set of source files produces both an interactive online report and a print-ready PDF — complete with maps, figures, tables, cross-references, and citations. When new data arrives or methods are refined, the report rebuilds. Every analysis is reproducible, every change is tracked, and every report is publicly accessible.
+
+This approach has produced hundreds of deliverables across fish passage, restoration planning, nutrient loading, and aquatic assessment programs. See live examples in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.
 
