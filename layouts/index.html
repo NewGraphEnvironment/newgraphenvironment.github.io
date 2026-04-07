@@ -116,6 +116,8 @@
   }
   .nge-problem-text:last-child { margin-bottom: 0; }
 
+  .nge-approach { background: var(--cream); }
+
   /* ═══ PIPELINE ═══ */
   .nge-pipeline { background: var(--cream); }
 
@@ -204,21 +206,6 @@
   }
   .nge-evidence-card:hover .nge-card-arrow { transform: translateX(4px); }
 
-  /* ═══ MULTIPLIER ═══ */
-  .nge-multiplier {
-    background: var(--cream);
-    text-align: center;
-    padding: 4rem 2rem;
-  }
-  .nge-multiplier-text {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-    font-weight: 400; font-style: italic;
-    color: var(--forest-deep);
-    max-width: 40rem; margin: 0 auto;
-    line-height: 1.6;
-  }
-
   /* ═══ OPEN SOURCE ═══ */
   .nge-opensource {
     background: var(--forest-deep);
@@ -282,7 +269,18 @@
         <hr class="nge-rule">
         <h2 class="nge-section-title">The Challenge</h2>
         <p class="nge-problem-text">Governments, First Nations, non-profits, and stewardship organizations across British Columbia need reliable ways to understand their watersheds — whether they're planning restoration, assessing fish habitat, monitoring water quality, or responding to climate-driven changes. But the technical barriers are high. Critical information remains scattered across provincial databases, historic archives, and specialized models — difficult to assemble and overly dependent on outside specialists.</p>
-        <p class="nge-problem-text">Working alongside stewardship organizations, First Nations, and agencies across BC, we've built an integrated system that brings it all together — stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, field data collection, and dynamic reporting. Open source. Reproducible. Available to anyone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OUR APPROACH ═══ -->
+  <section class="nge-section nge-approach">
+    <div style="max-width: 48rem; margin: 0 auto;">
+      <div class="nge-reveal">
+        <hr class="nge-rule">
+        <h2 class="nge-section-title">Our Approach</h2>
+        <p class="nge-problem-text">We believe science should be a public good, not a commercial product. Working alongside stewardship organizations, First Nations, and agencies across BC, we've built an integrated open-source system that brings it all together — stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, field data collection, and dynamic reporting.</p>
+        <p class="nge-problem-text">What we develop together becomes freely available to the broader community — so every project strengthens the tools, and every partnership compounds across watersheds and years.</p>
       </div>
     </div>
   </section>
@@ -405,13 +403,7 @@
     </div>
   </section>
 
-  <!-- ═══ 5. THE MULTIPLIER ═══ -->
-  <section class="nge-multiplier nge-reveal">
-    <hr class="nge-rule" style="margin: 0 auto 2rem;">
-    <p class="nge-multiplier-text">Every project builds tools that benefit the next one. What we develop together becomes freely available to the broader community — so your investment compounds across watersheds, across partners, across years.</p>
-  </section>
-
-  <!-- ═══ 6. OPEN SOURCE ═══ -->
+  <!-- ═══ 5. OPEN SOURCE ═══ -->
   <section class="nge-opensource nge-reveal">
     <svg class="nge-opensource-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(242,237,228,0.5)" stroke-width="1.5" stroke-linecap="round">
       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
