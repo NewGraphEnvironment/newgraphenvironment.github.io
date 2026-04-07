@@ -28,6 +28,7 @@
     --ink: #1a1a18;
   }
 
+  /* ═══ HERO ═══ */
   .nge-hero {
     position: relative;
     min-height: 65vh;
@@ -37,10 +38,8 @@
     overflow: hidden;
     background: var(--forest-deep);
   }
-
   .nge-hero-bg {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background-image: url('/img/snowshoe.JPG');
     background-size: cover;
     background-position: center 40%;
@@ -48,399 +47,219 @@
     transform: scale(1.05);
     transition: transform 8s ease-out;
   }
-
-  .nge-hero:hover .nge-hero-bg {
-    transform: scale(1.0);
-  }
-
+  .nge-hero:hover .nge-hero-bg { transform: scale(1.0); }
   .nge-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      170deg,
-      rgba(26, 46, 31, 0.85) 0%,
-      rgba(26, 46, 31, 0.5) 40%,
-      rgba(58, 107, 140, 0.3) 100%
-    );
+    position: absolute; inset: 0;
+    background: linear-gradient(170deg, rgba(26,46,31,0.85) 0%, rgba(26,46,31,0.5) 40%, rgba(58,107,140,0.3) 100%);
   }
-
-  /* Subtle topographic contour lines */
   .nge-hero-topo {
-    position: absolute;
-    inset: 0;
-    opacity: 0.06;
+    position: absolute; inset: 0; opacity: 0.06;
     background-image:
-      repeating-radial-gradient(
-        ellipse at 30% 60%,
-        transparent 0px,
-        transparent 40px,
-        rgba(255,255,255,0.3) 41px,
-        transparent 42px
-      ),
-      repeating-radial-gradient(
-        ellipse at 70% 30%,
-        transparent 0px,
-        transparent 55px,
-        rgba(255,255,255,0.2) 56px,
-        transparent 57px
-      );
+      repeating-radial-gradient(ellipse at 30% 60%, transparent 0px, transparent 40px, rgba(255,255,255,0.3) 41px, transparent 42px),
+      repeating-radial-gradient(ellipse at 70% 30%, transparent 0px, transparent 55px, rgba(255,255,255,0.2) 56px, transparent 57px);
   }
-
   .nge-hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 2rem;
+    position: relative; z-index: 2;
+    text-align: center; padding: 2rem;
     max-width: 52rem;
   }
-
   .nge-hero-logo {
     max-width: clamp(300px, 60vw, 420px);
-    height: auto;
-    margin: 0 auto 0;
-    display: block;
+    height: auto; margin: 0 auto; display: block;
     filter: drop-shadow(0 2px 12px rgba(0,0,0,0.2));
   }
-
   .nge-hero-subtitle {
-    position: absolute;
-    bottom: 3.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
+    position: absolute; bottom: 3.5rem; left: 50%;
+    transform: translateX(-50%); z-index: 2;
+    font-family: 'DM Sans', sans-serif; font-weight: 500;
     font-size: clamp(1rem, 3vw, 2.2rem);
-    color: var(--cream);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-align: center;
-    width: 90%;
-    max-width: 52rem;
-    margin: 0;
-    line-height: 1.3;
+    color: var(--cream); letter-spacing: 0.18em;
+    text-transform: uppercase; text-align: center;
+    width: 90%; max-width: 52rem; margin: 0; line-height: 1.3;
     text-shadow: 0 2px 16px rgba(0,0,0,0.3);
   }
-
-  .nge-hero-cta {
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    color: var(--cream);
-    border: 1px solid rgba(255,255,255,0.35);
-    padding: 0.85em 2.2em;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    background: transparent;
-  }
-
-  .nge-hero-cta:hover {
-    background: rgba(255,255,255,0.12);
-    border-color: rgba(255,255,255,0.6);
-    color: #fff;
-  }
-
   .nge-scroll-indicator {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+    position: absolute; bottom: 1.5rem; left: 50%;
+    transform: translateX(-50%); z-index: 2;
     animation: nge-drift 2.5s ease-in-out infinite;
   }
-
-  .nge-scroll-indicator svg {
-    width: 24px;
-    height: 24px;
-    stroke: rgba(255,255,255,0.4);
-    fill: none;
-  }
-
+  .nge-scroll-indicator svg { width: 24px; height: 24px; stroke: rgba(255,255,255,0.4); fill: none; }
   @keyframes nge-drift {
     0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.4; }
     50% { transform: translateX(-50%) translateY(8px); opacity: 0.8; }
   }
 
-  /* Section base styles */
-  .nge-section {
-    padding: 5rem 2rem;
-  }
-
+  /* ═══ SECTIONS ═══ */
+  .nge-section { padding: 5rem 2rem; }
   .nge-section-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    color: var(--forest-deep);
-    margin: 0 0 0.3em;
-    line-height: 1.2;
+    font-weight: 600; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--forest-deep); margin: 0 0 0.3em; line-height: 1.2;
   }
-
   .nge-section-lead {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.05rem;
-    color: var(--stone);
-    max-width: 38rem;
-    line-height: 1.7;
-    margin: 0 0 3rem;
+    font-size: 1.05rem; color: var(--stone);
+    max-width: 42rem; line-height: 1.7; margin: 0 0 3rem;
+  }
+  .nge-rule {
+    width: 40px; height: 1px;
+    background: var(--stone-light); border: none; margin: 0 0 2rem;
   }
 
-  /* About */
-  .nge-about {
-    background: var(--parchment);
-  }
-
-  .nge-about-text {
+  /* ═══ PROBLEM ═══ */
+  .nge-problem { background: var(--parchment); }
+  .nge-problem-text {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.05rem;
-    color: var(--stone);
-    line-height: 1.8;
-    margin: 0 0 1.5rem;
+    font-size: 1.05rem; color: var(--stone);
+    line-height: 1.8; margin: 0 0 1.5rem;
+    max-width: 42rem;
+  }
+  .nge-problem-text:last-child { margin-bottom: 0; }
+
+  /* ═══ PIPELINE ═══ */
+  .nge-pipeline { background: var(--cream); }
+
+  .nge-pipeline-step {
+    display: flex; gap: 2rem; align-items: flex-start;
+    margin-bottom: 2.5rem; max-width: 48rem;
+  }
+  .nge-pipeline-hex {
+    flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center;
+    text-decoration: none; transition: transform 0.2s ease;
+  }
+  .nge-pipeline-hex:hover { transform: translateY(-3px); }
+  .nge-pipeline-hex img {
+    width: 100px; height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+    transition: filter 0.2s ease;
+  }
+  .nge-pipeline-hex:hover img {
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+  }
+  .nge-pipeline-body { flex: 1; min-width: 0; }
+  .nge-pipeline-body h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600; font-size: 1.2rem;
+    color: var(--forest-deep); margin: 0 0 0.4rem;
+  }
+  .nge-pipeline-body p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; color: var(--stone);
+    line-height: 1.6; margin: 0;
+  }
+  .nge-pipeline-arrow {
+    text-align: left; padding-left: 32px;
+    color: var(--stone-light); font-size: 1.2rem;
+    margin: -0.5rem 0 1rem; opacity: 0.5;
   }
 
-  .nge-about-text:last-child {
-    margin-bottom: 0;
+  /* Multi-hex row for parallel tools */
+  .nge-pipeline-row {
+    display: flex; gap: 1rem; margin-bottom: 2.5rem;
+    flex-wrap: wrap; max-width: 48rem;
   }
-
-  /* Tools cards */
-  .nge-tools {
-    background: var(--cream);
+  .nge-pipeline-row .nge-pipeline-step {
+    flex: 1; min-width: 200px; margin-bottom: 0;
   }
+  .nge-pipeline-row .nge-pipeline-hex img { width: 80px; }
 
-  .nge-cards {
+  /* ═══ EVIDENCE ═══ */
+  .nge-evidence { background: var(--parchment); }
+  .nge-evidence-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 64rem;
-    margin: 0 auto;
+    gap: 1.5rem; max-width: 64rem; margin: 0 auto;
   }
-
-  .nge-card {
-    background: #fff;
-    border: 1px solid var(--parchment-dark);
-    padding: 2.2rem 2rem;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    position: relative;
-    display: block;
+  .nge-evidence-card {
+    background: #fff; border: 1px solid var(--parchment-dark);
+    padding: 2rem; text-decoration: none; display: block;
+    transition: all 0.25s ease; position: relative;
   }
-
-  .nge-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--forest-light);
+  .nge-evidence-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 0; background: var(--forest-light);
     transition: height 0.3s ease;
   }
-
-  .nge-card:hover {
+  .nge-evidence-card:hover {
     border-color: var(--stone-light);
     box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     transform: translateY(-2px);
   }
-
-  .nge-card:hover::before {
-    height: 100%;
-  }
-
-  .nge-card-number {
+  .nge-evidence-card:hover::before { height: 100%; }
+  .nge-evidence-card h3 {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 0.85rem;
-    color: var(--stone-light);
-    letter-spacing: 0.05em;
-    margin: 0 0 1rem;
+    font-weight: 600; font-size: 1.25rem;
+    color: var(--forest-deep); margin: 0 0 0.6rem; line-height: 1.3;
   }
-
-  .nge-card-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.35rem;
-    color: var(--forest-deep);
-    margin: 0 0 0.8rem;
-    line-height: 1.3;
-  }
-
-  .nge-card-desc {
+  .nge-evidence-card p {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    color: var(--stone);
-    line-height: 1.65;
-    margin: 0;
+    font-size: 0.88rem; color: var(--stone);
+    line-height: 1.6; margin: 0 0 1rem;
   }
-
-  .nge-card-arrow {
-    display: inline-block;
-    margin-top: 1.2rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    color: var(--river);
-    letter-spacing: 0.05em;
-    transition: transform 0.2s ease;
+  .nge-evidence-card .nge-card-arrow {
+    display: inline-block; font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem; color: var(--river);
+    letter-spacing: 0.05em; transition: transform 0.2s ease;
   }
+  .nge-evidence-card:hover .nge-card-arrow { transform: translateX(4px); }
 
-  .nge-card:hover .nge-card-arrow {
-    transform: translateX(4px);
-  }
-
-  /* Featured work */
-  .nge-work {
-    background: var(--parchment);
-  }
-
-  .nge-projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    max-width: 64rem;
-    margin: 0 auto;
-  }
-
-  .nge-project {
-    text-decoration: none;
-    display: block;
-    transition: transform 0.25s ease;
-  }
-
-  .nge-project:hover {
-    transform: translateY(-3px);
-  }
-
-  .nge-project-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    filter: saturate(0.85);
-    transition: filter 0.3s ease;
-  }
-
-  .nge-project:hover .nge-project-img {
-    filter: saturate(1);
-  }
-
-  .nge-project-body {
-    padding: 1.5rem 0;
-  }
-
-  .nge-project-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--river);
-    margin: 0 0 0.5rem;
-  }
-
-  .nge-project-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: var(--forest-deep);
-    margin: 0 0 0.6rem;
-    line-height: 1.3;
-  }
-
-  .nge-project-desc {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    color: var(--stone);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* Open source band */
-  .nge-opensource {
-    background: var(--forest-deep);
-    text-align: center;
-    padding: 4.5rem 2rem;
-  }
-
-  .nge-opensource-icon {
-    width: 32px;
-    height: 32px;
-    margin: 0 auto 1.5rem;
-    opacity: 0.6;
-  }
-
-  .nge-opensource-text {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 400;
-    color: var(--cream);
-    max-width: 40rem;
-    margin: 0 auto 1.5rem;
-    line-height: 1.5;
-  }
-
-  .nge-opensource-link {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    color: var(--river-pale);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(200, 221, 232, 0.3);
-    padding-bottom: 2px;
-    transition: all 0.2s ease;
-  }
-
-  .nge-opensource-link:hover {
-    color: #fff;
-    border-color: rgba(255,255,255,0.6);
-  }
-
-  /* Partners */
-  .nge-partners {
+  /* ═══ MULTIPLIER ═══ */
+  .nge-multiplier {
     background: var(--cream);
     text-align: center;
-    padding: 3rem 2rem;
-    border-top: 1px solid var(--parchment-dark);
+    padding: 4rem 2rem;
+  }
+  .nge-multiplier-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 400; font-style: italic;
+    color: var(--forest-deep);
+    max-width: 40rem; margin: 0 auto;
+    line-height: 1.6;
   }
 
-  .nge-partners-text {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    color: var(--stone);
-    letter-spacing: 0.02em;
-    max-width: 48rem;
-    margin: 0 auto;
-    line-height: 1.7;
+  /* ═══ OPEN SOURCE ═══ */
+  .nge-opensource {
+    background: var(--forest-deep);
+    text-align: center; padding: 4.5rem 2rem;
   }
-
-  /* Horizontal rule accent */
-  .nge-rule {
-    width: 40px;
-    height: 1px;
-    background: var(--stone-light);
-    border: none;
-    margin: 0 0 2rem;
+  .nge-opensource-icon { width: 32px; height: 32px; margin: 0 auto 1.5rem; opacity: 0.6; }
+  .nge-opensource-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400;
+    color: var(--cream); max-width: 40rem; margin: 0 auto 1.5rem; line-height: 1.5;
   }
+  .nge-opensource-link {
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+    letter-spacing: 0.1em; color: var(--river-pale);
+    text-decoration: none; border-bottom: 1px solid rgba(200,221,232,0.3);
+    padding-bottom: 2px; transition: all 0.2s ease;
+  }
+  .nge-opensource-link:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
 
-  /* Fade-in on scroll */
+  /* ═══ FADE-IN ═══ */
   .nge-reveal {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0; transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
+  .nge-reveal.visible { opacity: 1; transform: translateY(0); }
 
-  .nge-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: 640px) {
     .nge-section { padding: 3rem 1.2rem; }
     .nge-hero { min-height: 85vh; }
-    .nge-about-text { font-size: 0.95rem; }
+    .nge-pipeline-step { flex-direction: column; gap: 0.8rem; }
+    .nge-pipeline-arrow { padding-left: 0; text-align: center; }
+    .nge-pipeline-row { flex-direction: column; }
+    .nge-pipeline-row .nge-pipeline-step { min-width: 0; }
+    .nge-problem-text, .nge-section-lead { font-size: 0.95rem; }
     .nge-section-title { font-size: 1.6rem; }
   }
 </style>
 
 <main role="main">
 
-  <!-- ═══ HERO ═══ -->
+  <!-- ═══ 1. HERO ═══ -->
   <section class="nge-hero">
     <div class="nge-hero-bg"></div>
     <div class="nge-hero-overlay"></div>
@@ -456,69 +275,159 @@
     </div>
   </section>
 
-  <!-- ═══ WHO WE ARE ═══ -->
-  <section class="nge-section nge-about">
+  <!-- ═══ 2. THE PROBLEM WE SOLVE ═══ -->
+  <section class="nge-section nge-problem">
     <div style="max-width: 48rem; margin: 0 auto;">
       <div class="nge-reveal">
         <hr class="nge-rule">
-        <h2 class="nge-section-title">Who We Are</h2>
-        <p class="nge-about-text">We are biologists and programmers working at the intersection of aquatic ecosystem restoration, spatial data science, and open-source tool development. We build productive relationships between First Nations, regulators, non-profits, proponents, scientists, and stewardship groups — with an emphasis on inclusive engagement and knowledge sharing.</p>
-        <p class="nge-about-text">Our work spans field assessment, watershed-scale analysis, and dynamic reporting. We develop and maintain an integrated framework connecting field data collection, spatial databases, habitat modelling, imagery pipelines, and reproducible reporting — all open source, all publicly available.</p>
+        <h2 class="nge-section-title">The Challenge</h2>
+        <p class="nge-problem-text">Governments, First Nations, non-profits, and stewardship organizations across British Columbia need reliable ways to understand their watersheds — whether they're planning restoration, assessing fish habitat, monitoring water quality, or responding to climate-driven changes. But the technical barriers are high. Critical information remains scattered across provincial databases, historic archives, and specialized models — difficult to assemble and overly dependent on outside specialists.</p>
+        <p class="nge-problem-text">Working alongside stewardship organizations, First Nations, and agencies across BC, we've built an integrated system that brings it all together — stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, field data collection, and dynamic reporting. Open source. Reproducible. Available to anyone.</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══ WHAT WE BUILD ═══ -->
-  <section class="nge-section nge-tools">
+  <!-- ═══ 3. THE PIPELINE ═══ -->
+  <section class="nge-section nge-pipeline">
+    <div style="max-width: 48rem; margin: 0 auto;">
+      <div class="nge-reveal">
+        <hr class="nge-rule">
+        <h2 class="nge-section-title">How It Works</h2>
+        <p class="nge-section-lead">An integrated, open-source framework that connects provincial data, spatial analysis, field collection, and reporting into a single system. Each tool feeds the next.</p>
+      </div>
+
+      <div class="nge-reveal">
+        <div class="nge-pipeline-step">
+          <a href="https://www.newgraphenvironment.com/fresh/" class="nge-pipeline-hex">
+            <img src="/img/hex/fresh.png" alt="fresh">
+          </a>
+          <div class="nge-pipeline-body">
+            <h3>Model any stream in BC</h3>
+            <p><strong>fresh</strong> (FWA-Referenced Spatial Hydrology) — Query the provincial stream network, classify habitat by gradient and channel width, delineate watersheds, and model connectivity for any species. One tool, any stream, any question.</p>
+          </div>
+        </div>
+        <div class="nge-pipeline-arrow">↓</div>
+
+        <div class="nge-pipeline-step">
+          <a href="https://www.newgraphenvironment.com/flooded/" class="nge-pipeline-hex">
+            <img src="/img/hex/flooded.png" alt="flooded">
+          </a>
+          <div class="nge-pipeline-body">
+            <h3>Map the floodplain</h3>
+            <p><strong>flooded</strong> (Floodplain Delineation) — Delineate where rivers do geomorphic work — sediment storage, nutrient exchange, riparian recruitment. Using elevation data from our provincial LiDAR catalog of over 50,000 tiles.</p>
+          </div>
+        </div>
+        <div class="nge-pipeline-arrow">↓</div>
+
+        <div class="nge-pipeline-step">
+          <a href="https://www.newgraphenvironment.com/drift/" class="nge-pipeline-hex">
+            <img src="/img/hex/drift.png" alt="drift">
+          </a>
+          <div class="nge-pipeline-body">
+            <h3>Detect what's changed</h3>
+            <p><strong>drift</strong> (Detecting Riparian and Inland Floodplain Transitions) — Track land cover change inside floodplains over time using satellite imagery. Quantify where tree cover has been lost, where agriculture is expanding, and where riparian areas are degrading.</p>
+          </div>
+        </div>
+        <div class="nge-pipeline-arrow">↓</div>
+
+        <div class="nge-pipeline-row">
+          <div class="nge-pipeline-step">
+            <a href="https://www.newgraphenvironment.com/fly/" class="nge-pipeline-hex">
+              <img src="/img/hex/fly.png" alt="fly">
+            </a>
+            <div class="nge-pipeline-body">
+              <h3>Find the historic photos</h3>
+              <p><strong>fly</strong> (Airphoto Retrieval and Coverage Selection) — Download, georeference, and select from decades of historic aerial photographs — ground-truth current conditions against documented prior state.</p>
+            </div>
+          </div>
+          <div class="nge-pipeline-step">
+            <a href="https://www.newgraphenvironment.com/cd/" class="nge-pipeline-hex">
+              <img src="/img/hex/cd.png" alt="cd">
+            </a>
+            <div class="nge-pipeline-body">
+              <h3>Assess climate trends</h3>
+              <p><strong>cd</strong> (Climate Departure) — Analyze temperature, precipitation, and soil moisture departures for any watershed using global reanalysis data.</p>
+            </div>
+          </div>
+        </div>
+        <div class="nge-pipeline-arrow">↓</div>
+
+        <div class="nge-pipeline-step">
+          <a href="https://github.com/NewGraphEnvironment/dff-2022" class="nge-pipeline-hex">
+            <img src="/img/hex/rfp.png" alt="dff-2022">
+          </a>
+          <div class="nge-pipeline-body">
+            <h3>Build the field project</h3>
+            <p><strong>rfp</strong> (Reproducible Field Projects) — Assemble a complete, field-ready GIS project for any watershed — provincial datasets, habitat models, historic imagery, and digital field forms that write directly to provincial database formats. Deploy to mobile devices for collaborative offline collection.</p>
+          </div>
+        </div>
+        <div class="nge-pipeline-arrow">↓</div>
+
+        <div class="nge-pipeline-step">
+          <div class="nge-pipeline-hex" style="width: 100px; display: flex; align-items: center; justify-content: center;">
+            <img src="/img/nge-icon_white.png" alt="reporting" style="width: 60px; height: auto; background: var(--forest-deep); border-radius: 8px; padding: 12px;">
+          </div>
+          <div class="nge-pipeline-body">
+            <h3>Publish interactive reports and print-ready PDFs</h3>
+            <p>One set of source files produces interactive online reports and print-ready PDFs — version-controlled, reproducible, and publicly accessible. When new data arrives, the report updates. Over 40 published reports and growing.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ 4. THE EVIDENCE ═══ -->
+  <section class="nge-section nge-evidence">
     <div style="max-width: 64rem; margin: 0 auto;">
       <div class="nge-reveal">
         <hr class="nge-rule">
-        <h2 class="nge-section-title">Our Work</h2>
-        <p class="nge-section-lead">Watershed restoration, aquatic science, and open-source tool development across British Columbia.</p>
+        <h2 class="nge-section-title">What This Looks Like in Practice</h2>
+        <p class="nge-section-lead">Long-term programs where the system is in production — delivering results, building capacity, and advancing the tools with every project.</p>
       </div>
-      <div class="nge-cards nge-reveal">
-        <a href="/project/watershed_restoration_fish_passage/" class="nge-card">
-          <div class="nge-card-number">01</div>
-          <h3 class="nge-card-title">Watershed Restoration &amp; Conservation</h3>
-          <p class="nge-card-desc">Aquatic restoration planning, implementation, and monitoring — from floodplain analysis to fish passage assessment across British Columbia.</p>
+      <div class="nge-evidence-cards nge-reveal">
+        <a href="/project/watershed_restoration_fish_passage/" class="nge-evidence-card">
+          <h3>Watershed Restoration &amp; Conservation</h3>
+          <p>Aquatic restoration planning across British Columbia — from the Neexdzii Kwah watershed restoration framework to fish passage assessment across Skeena, Peace, Fraser, and Elk River regions. 40+ published reports since 2020.</p>
           <span class="nge-card-arrow">Explore →</span>
         </a>
-        <a href="/project/aquatic_monitoring_assessment/" class="nge-card">
-          <div class="nge-card-number">02</div>
-          <h3 class="nge-card-title">Aquatic Monitoring &amp; Assessment</h3>
-          <p class="nge-card-desc">Nutrient dynamics, water quality, fish populations, and benthic community health. Reproducible workflows integrating decades of monitoring data.</p>
+        <a href="/project/aquatic_monitoring_assessment/" class="nge-evidence-card">
+          <h3>Aquatic Monitoring &amp; Assessment</h3>
+          <p>Nutrient loading analysis for Kootenay Lake and Arrow Lakes Reservoir. Benthic community health assessment. Kokanee stock assessment. Decades of monitoring data integrated into reproducible workflows.</p>
           <span class="nge-card-arrow">Explore →</span>
         </a>
-        <a href="/project/open_source_software/" class="nge-card">
-          <div class="nge-card-number">03</div>
-          <h3 class="nge-card-title">Open Source Software Development</h3>
-          <p class="nge-card-desc">R packages, STAC catalogs, and reproducible field workflows — built in the open for anyone working on watershed health.</p>
+        <a href="/project/open_source_software/" class="nge-evidence-card">
+          <h3>Open Source Software</h3>
+          <p>Every tool in the pipeline is publicly available. R packages with documentation, STAC catalogs with provincial coverage, field form templates anyone can use. Built in the open, improving with every project.</p>
           <span class="nge-card-arrow">Explore →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ OPEN SOURCE ═══ -->
+  <!-- ═══ 5. THE MULTIPLIER ═══ -->
+  <section class="nge-multiplier nge-reveal">
+    <hr class="nge-rule" style="margin: 0 auto 2rem;">
+    <p class="nge-multiplier-text">Every project builds tools that benefit the next one. What we develop together becomes freely available to the broader community — so your investment compounds across watersheds, across partners, across years.</p>
+  </section>
+
+  <!-- ═══ 6. OPEN SOURCE ═══ -->
   <section class="nge-opensource nge-reveal">
     <svg class="nge-opensource-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(242,237,228,0.5)" stroke-width="1.5" stroke-linecap="round">
       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
     </svg>
-    <p class="nge-opensource-text">Everything we build is open source. Our methods are transparent, reproducible, and available to anyone working on watershed health.</p>
+    <p class="nge-opensource-text">Our methods are open source. Transparent, reproducible, and built to share.</p>
     <a href="https://github.com/NewGraphEnvironment" class="nge-opensource-link">VIEW ON GITHUB</a>
   </section>
 
 </main>
 
 <script>
-  // Minimal scroll-reveal
   (function() {
     var els = document.querySelectorAll('.nge-reveal');
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
       });
     }, { threshold: 0.15 });
     els.forEach(function(el) { observer.observe(el); });
