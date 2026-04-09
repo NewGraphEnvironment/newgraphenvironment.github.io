@@ -1,11 +1,11 @@
 ---
 title: "Open Source Software Development"
-excerpt: "R packages, STAC catalogs, and reproducible field workflows — built in the open and available to anyone working on watershed health in British Columbia."
+excerpt: "R packages, STAC catalogs, and reproducible analytical tools — built in the open and available to anyone working on watershed health in British Columbia."
 layout: single
 weight: 3
 ---
 
-We develop and maintain open-source tools that power our work. Our core tools are built in R, Python, SQL, shell, OpenTofu, and GitHub Actions, and publicly available on GitHub. We work in the open because transparent methods produce better science. The packages highlighted here are designed to work together — network analysis feeds floodplain delineation, historic imagery feeds change detection, and field data flows through to published reports.
+Our data, analytical tools, and methods are publicly available on GitHub — built in R, Python, SQL, shell, OpenTofu, and GitHub Actions. We work in the open wherever transparency improves science. The packages highlighted here are designed to work together — network analysis feeds floodplain delineation, historic imagery feeds change detection, and field data flows through to published reports.
 
 <br>
 
@@ -143,19 +143,9 @@ This data feeds into collaborative science with [Poisson Consulting](https://www
 
 ## Field-to-Report Workflows
 
-Reproducible, field-ready GIS projects for any watershed in the province. Digital field forms, collaborative workspaces, and automated reporting — office to field and back.
+We assemble reproducible, field-ready GIS projects for any watershed in British Columbia. Provincial datasets from the BC Data Catalogue, Freshwater Atlas, and our cloud-hosted layers are pulled, clipped to project boundaries, and delivered as fully styled QGIS projects with digital field forms — ready to deploy to mobile devices for collaborative offline collection.
 
-<img src="/img/hex/rfp.png" alt="rfp" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
-
-### rfp — Reproducible Field Projects
-
-GIS project assembly and digital field form management. Pull provincial datasets from the BC Data Catalogue, Freshwater Atlas, and cloud-hosted layers, clip to any set of watershed groups, and assemble a fully styled QGIS project with digital field forms — ready to deploy to mobile devices for collaborative offline field collection.
-
-We build and maintain forms for fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling, and benthic invertebrate collection — with more added as programs evolve. Data collected in some forms is structured for direct submission to provincial database systems (FISS, PSCIS, CABIN), while other data lands within central database systems we maintain and share with partners. Photos are automatically renamed and organized into site directories. Multiple team members contribute within the same shared project, with changes syncing between field and office.
-
-- [Documentation](https://www.newgraphenvironment.com/rfp/) | [Source](https://github.com/NewGraphEnvironment/rfp)
-
-<div style="clear: both;"></div>
+We maintain forms for fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling, and benthic invertebrate collection, and add new ones as programs evolve. Where possible, collected data is structured for direct submission to provincial database systems (FISS, PSCIS, CABIN); other data lands in central database systems we maintain and share with partners. Photos are automatically renamed and organized into site directories. Multiple team members contribute within the same shared project, with changes syncing between field and office.
 
 <br>
 
