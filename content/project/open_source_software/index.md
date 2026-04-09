@@ -31,7 +31,7 @@ A composable stream network modelling engine. Query and extract stream networks,
 
 <img src="/img/hex/link.png" alt="link" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### link — Network Point Matching and Scoring
+### link — Watershed Point Interpretation
 
 Match, score, and interpret any point data on the stream network — crossing barriers, temperature monitoring stations, fish density sample sites, water quality stations, or traditional use locations. Column-agnostic and configurable: ship with BC fish passage defaults but work for any jurisdiction or data type. Produces break source specs that fresh consumes directly, and reads fresh output back for per-point upstream habitat rollup. Currently powering fish passage prioritization across the province, with the same architecture ready for any network-referenced analysis.
 
