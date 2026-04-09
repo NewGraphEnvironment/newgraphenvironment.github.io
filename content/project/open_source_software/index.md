@@ -9,23 +9,33 @@ We develop and maintain open-source tools that power our work. Our core tools ar
 
 <br>
 
-## Network Analysis & Watershed Modelling
+## Watershed Modelling
 
-Composable tools for modelling anything on BC's stream network — habitat classification, barrier prioritization, channel width, discharge, and custom attributes. Built on the Freshwater Atlas and designed to work alongside provincial connectivity models.
+Composable tools for understanding watersheds — habitat classification, barrier prioritization, floodplain delineation, land cover change, historic condition, and climate trends. Built on the Freshwater Atlas and designed to work alongside provincial connectivity models.
 
 <img src="/img/hex/fresh.png" alt="fresh" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### fresh — FWA-Referenced Spatial Hydrology
+### fresh — Freshwater Referenced Spatial Hydrology
 
-A composable network modelling engine for BC's Freshwater Atlas. Query and extract stream networks, classify habitat by gradient and channel width, segment networks at barriers and break points, aggregate features upstream or downstream, and run multi-species habitat modelling with parallel workers. Supports custom model outputs and attribute joining — channel width, mean annual discharge, precipitation, or any scalar value. More flexible than fixed connectivity models because it can model anything on the network, not just fish passage.
-
-Developed in collaboration with [Poisson Consulting](https://www.poissonconsulting.ca/), who provide the channel width regression models and statistical methodology. See [Spatial Stream Network Analysis of Skeena Watershed Stream Temperatures 2025](https://www.poissonconsulting.ca/f/1130667589) and [channel width modelling](https://www.poissonconsulting.ca/temporary-hidden-link/859859031/channel-width-21b/) for examples of the science that feeds into these tools.
+A composable stream network modelling engine. Query and extract stream networks, classify habitat by gradient and channel width, segment networks at barriers and break points, aggregate features upstream or downstream, and run multi-species habitat modelling with parallel workers. Supports custom model outputs and attribute joining — channel width, mean annual discharge, precipitation, or any scalar value. Currently running on BC's Freshwater Atlas, designed to model fish habitat, connectivity, water temperature, channel morphology, and custom attributes for any species or question on any stream network.
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
 <br>
 
 ![](fresh_subbasin.png)
+
+<div style="clear: both;"></div>
+
+<br>
+
+<img src="/img/hex/link.png" alt="link" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+
+### link — Network Point Matching and Scoring
+
+Match, score, and interpret any point data on the stream network — crossing barriers, temperature monitoring stations, fish density sample sites, water quality stations, or traditional use locations. Column-agnostic and configurable: ship with BC fish passage defaults but work for any jurisdiction or data type. Produces break source specs that fresh consumes directly, and reads fresh output back for per-point upstream habitat rollup. Currently powering fish passage prioritization across the province, with the same architecture ready for any network-referenced analysis.
+
+- [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
 <div style="clear: both;"></div>
 
@@ -75,6 +85,26 @@ Climate departure analysis from ERA5-Land reanalysis data. Derive temperature, p
 
 <br>
 
+![](cd_temperature_departure.png)
+
+<br>
+
+<img src="/img/hex/fly.png" alt="fly" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+
+### fly — Airphoto Retrieval and Coverage Selection
+
+Download and georeference historic airphotos, estimate ground footprints from centroids and film scale, compute coverage over areas of interest, and select minimum photo sets. Visualize past watershed conditions from decades of provincial aerial photography — the ground truth behind satellite-derived change detection. Outputs feed into stac_airphoto_bc for cataloging.
+
+- [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
+
+<div style="clear: both;"></div>
+
+<br>
+
+![](fly_priority.png)
+
+<br>
+
 ---
 
 <br>
@@ -97,21 +127,11 @@ Provincial-scale imagery, elevation data, and stream temperature records — cat
 
 ### water-temp-bc — Stream Temperature Data
 
-Stream temperature records from federal hydrometric stations across BC — scraped from Environment and Climate Change Canada's real-time web service and combined with historic data extracts. Served as cloud-hosted files queryable from R without a database. Feeds into spatial stream network temperature modelling conducted in partnership with [Poisson Consulting](https://www.poissonconsulting.ca/) — see [Skeena watershed temperatures 2025](https://www.poissonconsulting.ca/f/1130667589) and [Nechako watershed temperatures 2022](https://www.poissonconsulting.ca/f/1295467017).
+Stream temperature records from federal hydrometric stations across BC — scraped from Environment and Climate Change Canada's real-time web service and combined with historic data extracts. Served as cloud-hosted files queryable from R without a database.
+
+This data feeds into collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/) that is advancing fish habitat modelling across the province — spatial stream network temperature modelling ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and [channel width regression models](https://www.poissonconsulting.ca/temporary-hidden-link/859859031/channel-width-21b/) that integrate with fresh and link for habitat classification.
 
 - [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
-
-<div style="clear: both;"></div>
-
-<br>
-
-<img src="/img/hex/fly.png" alt="fly" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
-
-### fly — Airphoto Retrieval and Coverage Selection
-
-Download and georeference historic airphotos, estimate ground footprints from centroids and film scale, compute coverage over areas of interest, and select minimum photo sets. Outputs feed directly into stac_airphoto_bc for cataloging.
-
-- [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
 <div style="clear: both;"></div>
 
@@ -131,7 +151,7 @@ Reproducible, field-ready GIS projects for any watershed in the province. Digita
 
 GIS project assembly and digital field form management. Pull provincial datasets from the BC Data Catalogue, Freshwater Atlas, and cloud-hosted layers, clip to any set of watershed groups, and assemble a fully styled QGIS project with digital field forms — ready to deploy to mobile devices for collaborative offline field collection.
 
-Field forms for fish passage assessment and habitat confirmation write directly to provincial database formats. Photos are automatically renamed and organized into site directories. Multiple team members contribute within the same shared project, with changes syncing between field and office.
+We build and maintain forms for fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling, and benthic invertebrate collection — with more added as programs evolve. Data collected in some forms is structured for direct submission to provincial database systems (FISS, PSCIS, CABIN), while other data lands within central database systems we maintain and share with partners. Photos are automatically renamed and organized into site directories. Multiple team members contribute within the same shared project, with changes syncing between field and office.
 
 - [Documentation](https://www.newgraphenvironment.com/rfp/) | [Source](https://github.com/NewGraphEnvironment/rfp)
 
