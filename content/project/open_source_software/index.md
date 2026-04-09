@@ -1,6 +1,6 @@
 ---
 title: "Open Source Software Development"
-excerpt: "R packages, STAC catalogs, and reproducible analytical tools — built in the open and available to anyone working on watershed health in British Columbia."
+excerpt: "Analytical tools, data infrastructure, and reproducible workflows for watershed health — built in the open and available to anyone working on restoration, monitoring, and conservation in British Columbia."
 layout: single
 weight: 3
 ---
