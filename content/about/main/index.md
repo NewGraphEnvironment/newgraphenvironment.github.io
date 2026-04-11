@@ -10,7 +10,7 @@ intro: |
   
   <br>
   
-  Our work combines field biology, spatial data science, and software development to facilitate aquatic ecosystem restoration — with an emphasis on inclusive engagement and knowledge sharing. 
+  Our work combines field biology, spatial data science, and software development to facilitate aquatic ecosystem conservation and restoration — with an emphasis on inclusive engagement and knowledge sharing. 
 
 
 show_outro: false
