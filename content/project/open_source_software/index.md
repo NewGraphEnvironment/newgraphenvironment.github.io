@@ -37,7 +37,7 @@ Running on BC's Freshwater Atlas today, designed to work on any stream network �
 
 Connects field data to the stream network and interprets what it means. Load, match, and score any point data — fish-passage barriers, observations, eDNA detections, density samples, thermal loggers, water quality stations, traditional use locations — and track where each record came from and how it was corrected.
 
-link ships with BC fish-passage defaults but is designed to swap in different rules for another watershed, species, or jurisdiction. It feeds fresh the break points and barrier lists it needs to classify habitat, and reads fresh's output back to summarise habitat above each field site.
+Feeds fresh the break points and barrier lists it needs to classify habitat, and reads fresh's output back to summarise habitat above each field site.
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
