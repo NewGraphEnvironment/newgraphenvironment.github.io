@@ -5,19 +5,21 @@ layout: single
 weight: 3
 ---
 
-Our data, analytical tools, and methods are publicly available on GitHub — built in R, Python, SQL, shell, OpenTofu, and GitHub Actions. We work in the open wherever transparency improves science. The packages highlighted here are designed to work together — network analysis feeds floodplain delineation, historic imagery feeds change detection, and field data flows through to published reports.
+Our data, analytical tools, and methods are publicly available on GitHub — built in R, Python, SQL, shell, OpenTofu, and GitHub Actions. We work in the open wherever transparency improves science. The packages highlighted here are designed to work together — field data (observations, eDNA, barriers) and stream measurements (temperature, channel width, climate) feed fresh and link, which produce habitat and connectivity models for the watershed. Those outputs then drive floodplain delineation, land cover change detection, and climate analysis, all rendered as interactive reports and print-ready PDFs.
 
 <br>
 
 ## Watershed Modelling
 
-Composable tools for understanding watersheds — habitat classification, barrier prioritization, floodplain delineation, land cover change, historic condition, and climate trends. Built on the Freshwater Atlas and designed to work alongside provincial connectivity models.
+Composable tools for understanding watersheds — per-species habitat classification, connectivity modelling, barrier interpretation, floodplain delineation, land cover change, historic condition, and climate trends. Built on the Freshwater Atlas, portable to any stream network.
 
 <img src="/img/hex/fresh.png" alt="fresh" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### fresh — Freshwater Referenced Spatial Hydrology
 
-A composable stream network modelling engine. Query and extract stream networks, classify habitat by gradient and channel width, segment networks at barriers and break points, aggregate features upstream or downstream, and run multi-species habitat modelling with parallel workers. Supports custom model outputs and attribute joining — channel width, mean annual discharge, precipitation, or any scalar value. Currently running on BC's Freshwater Atlas, designed to model fish habitat, connectivity, water temperature, channel morphology, and custom attributes for any species or question on any stream network.
+A stream network modelling engine. Classify habitat for any species using any measurable stream attribute — gradient, channel width, temperature, discharge, climate departures — break the network at barriers or falls, and summarise habitat upstream or downstream of any point on the network.
+
+Running on BC's Freshwater Atlas today, designed to work on any stream network — other provincial atlases, LiDAR-derived networks from our STAC DEM catalogue, or streams in other jurisdictions.
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
@@ -33,7 +35,9 @@ A composable stream network modelling engine. Query and extract stream networks,
 
 ### link — Watershed Point Interpretation
 
-Match, score, and interpret any point data on the stream network — crossing barriers, temperature monitoring stations, fish density sample sites, water quality stations, or traditional use locations. Column-agnostic and configurable: ship with BC fish passage defaults but work for any jurisdiction or data type. Produces break source specs that fresh consumes directly, and reads fresh output back for per-point upstream habitat rollup. Currently powering fish passage prioritization across the province, with the same architecture ready for any network-referenced analysis.
+Connects field data to the stream network and interprets what it means. Load, match, and score any point data — fish-passage barriers, observations, eDNA detections, density samples, thermal loggers, water quality stations, traditional use locations — and track where each record came from and how it was corrected.
+
+Feeds fresh the break points and barrier lists it needs to classify habitat, and reads fresh's output back to summarise habitat above each field site.
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
@@ -45,7 +49,9 @@ Match, score, and interpret any point data on the stream network — crossing ba
 
 ### flooded — Floodplain Delineation
 
-Delineate functional floodplains from DEMs and stream networks using the Valley Confinement Algorithm. Identify where floodplains are intact, confined, or disconnected — the areas where rivers do geomorphic work including sediment storage, nutrient exchange, and riparian recruitment.
+Delineate functional floodplains from any elevation model and stream network using the Valley Confinement Algorithm — slope thresholding, cost-distance analysis, and flood-surface modelling with a bankfull regression. Works with any elevation source, from provincial TRIM to 1 m LiDAR from our STAC DEM catalogue.
+
+The difference between coarse and fine elevation data is itself a diagnostic. Coarse data shows the floodplain surface; fine-resolution LiDAR exposes the roads, rail grades, dykes, and agricultural fill that sit above that surface and block lateral connectivity. Comparing the two shows **what is preventing floodplain from functioning, and where to act** — fill removal, dyke breaches, crossing installations.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -61,7 +67,9 @@ Delineate functional floodplains from DEMs and stream networks using the Valley 
 
 ### drift — Detecting Riparian and Inland Floodplain Transitions
 
-Fetch satellite-derived land cover data from STAC catalogs and track what's changing inside floodplains over time. Multi-year analysis from Esri IO LULC and ESA WorldCover. Integrates with flooded to focus change detection on the ecologically relevant floodplain extent.
+Fetch classified land cover rasters from STAC catalogs — Esri IO LULC, ESA WorldCover, or custom sources — apply class labels and colours, and summarise area change over time. Works at global satellite resolution (10 m IO LULC) or the sub-metre UAV classifications from our `stac_uav_bc` catalogue.
+
+Queries crop the data before download, not after — so province-scale areas of interest do not require full-tile fetches. Interactive tiles are served through `titiler` for on-the-fly visualisation of massive rasters. Pair with flooded for within-floodplain analysis, or use on its own for any area of interest.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
@@ -146,6 +154,8 @@ This data feeds into collaborative science with [Poisson Consulting](https://www
 We assemble reproducible, field-ready GIS projects for any watershed in British Columbia. Provincial datasets from the BC Data Catalogue, Freshwater Atlas, and our cloud-hosted layers are pulled, clipped to project boundaries, and delivered as fully styled QGIS projects with digital field forms — ready to deploy to mobile devices for collaborative offline collection.
 
 We maintain forms for fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling, and benthic invertebrate collection, and add new ones as programs evolve. Where possible, collected data is structured for direct submission to provincial database systems (FISS, PSCIS, CABIN); other data lands in central database systems we maintain and share with partners. Photos are automatically renamed and organized into site directories. Multiple team members contribute within the same shared project, with changes syncing between field and office.
+
+Collected data flows back into the same pipeline it came from — fish passage assessments feed into link's barrier scoring; eDNA detections and benthic samples become new records on the stream network; habitat confirmations replace modelled classifications with field-verified ones. Field → network → report, closed loop.
 
 <br>
 
