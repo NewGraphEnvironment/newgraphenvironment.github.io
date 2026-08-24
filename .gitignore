@@ -6,4 +6,9 @@ public/
 .hugo_build.lock
 _archive/
 _archive_tools/
-.claude/
+.claude/*
+# but the visibility marker is load-bearing: it tells
+# claude-md-init whether internal-only conventions may be
+# written into CLAUDE.md. Absent, it defaults to internal,
+# which is the wrong answer for a public repo.
+!.claude/visibility
