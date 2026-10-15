@@ -83,6 +83,8 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 
 ## Claim trace (Phase 4)
 
+> Superseded in part: rows whose wording changed after the plan review and code-check round 1 are re-checked in "Re-trace after review" and "Code-check round 1" below. Where they disagree, the later table holds.
+
 Each changed sentence was checked against what the code does today, at `origin/HEAD`. Claims carried over unchanged from the #53 trace (see `planning/archive/2026-10-issue-53-open-source-page-rework/`) are marked "#53".
 
 | Page / claim | Source | Verdict |
@@ -140,3 +142,13 @@ Word-bounded, HTML-only grep over the three built pages (`grep -rniwoE --include
 
 Decision: the landing-page chips stay as bare package names. They are link labels under a body that introduces the work in plain words.
 Decision: step 4 does not say "we lead in field mapping" (no comparisons with others).
+
+## Code-check round 1
+
+| Row | Source | Verdict |
+|---|---|---|
+| fly "downloads them" | `fly_fetch(type=)` downloads only thumbnails, flight logs, calibration or georef files | **fixed**: "downloads their thumbnails"; matches the catalogue table. This finding was inside the review fix (the re-trace had dropped "thumbnails") |
+| landing step 2 "any two years the satellite record covers" | drift's categorical sources are io-lulc and esa-worldcover | **fixed**: "the satellite land-cover maps cover", matching the Open Source page |
+| flooded "the difference points to…" | flooded README: the gap runs both ways; lidar mostly adds floodplain; only coarse-maps-but-lidar-excludes is diagnostic | **fixed**: "the floodplain the coarse result maps but lidar excludes" |
+| water-temp-bc "archive of the hydrometric record … combined with the historic record" | README: ECCC real-time ~18-month window kept month over month; temperature to 2002, daily discharge to 2016 | **fixed**: "archive of hydrometric station data"; "refreshed monthly from ECCC's real-time service and kept month over month, with water temperature back to 2002 and daily flow back to 2016" |
+| stac_uav_bc table "by project" | README: region / watershed-group / year | **fixed** |

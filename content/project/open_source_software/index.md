@@ -71,7 +71,7 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, from a narrow version to a wide one. Run on coarse elevation data and again on lidar, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and where to act**: fill removal, dyke breaches, crossing installations.
+Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, from a narrow version to a wide one. Run on coarse elevation data and again on lidar, the floodplain the coarse result maps but lidar excludes points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and where to act**: fill removal, dyke breaches, crossing installations.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -113,7 +113,7 @@ Brings link, flooded and drift together for whole watershed groups: the floodpla
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads them and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced photos are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads their thumbnails and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced photos are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
@@ -143,7 +143,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ## What do the ground and water look like now?
 
-Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and our own drone imagery, and an open archive of the hydrometric record, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
+Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and our own drone imagery, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
 <img src="/img/hex/stac_dem_bc.png" alt="stac_dem_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -177,7 +177,7 @@ Our drone flights, catalogued by watershed and year: orthomosaics plus surface a
 
 ### water-temp-bc — water temperature, flow and water level
 
-Our hydrometric archive, water-temp-bc, holds water temperature, flow and water level from federal hydrometric stations across BC, refreshed monthly and combined with the historic record, ready to query from R.
+Our hydrometric archive, water-temp-bc, holds water temperature, flow and water level from federal hydrometric stations across BC. It is refreshed monthly from Environment and Climate Change Canada's real-time service and kept month over month, with water temperature back to 2002 and daily flow back to 2016, ready to query from R.
 
 This data feeds collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/) that is advancing fish habitat modelling across the province. That includes spatial stream network temperature modelling ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width regression models.
 
@@ -201,7 +201,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 | [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
 | [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group |
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |
-| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery; by project |
+| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery; by region, watershed group and year |
 
 <br>
 
