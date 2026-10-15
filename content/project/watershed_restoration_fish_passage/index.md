@@ -13,7 +13,7 @@ We plan and deliver aquatic restoration at scales ranging from individual stream
 
 The Neexdzii Kwah (Upper Bulkley River) has been noted as containing some of the most intense land use in the Skeena Basin. This initiative develops a living governance and prioritization framework for watershed restoration — placing Wet'suwet'en direction at the centre of decision-making and integrating open-source spatial analysis tools to support planning at the sub-basin scale.
 
-The watershed was divided into 14 sub-basins to enable comparison and investment targeting. Floodplain modelling mapped where tree cover was lost over 2017–2023. Field reviews at 26 locations documented conditions ranging from successful past restoration to riparian degradation far exceeding past investment footprints. A collaborative GIS project integrates all analysis outputs and travels into the field on mobile devices.
+The watershed was divided into 14 sub-basins to enable comparison and investment targeting. Floodplain modelling mapped where tree cover appears to have been lost over 2017–2023. Field reviews at 26 locations documented conditions ranging from successful past restoration to riparian degradation far exceeding past investment footprints. A collaborative GIS project integrates all analysis outputs and travels into the field on mobile devices.
 
   - [Neexdzii Kwah Restoration Planning](https://www.newgraphenvironment.com/restoration_wedzin_kwa_2024/)
   - [Benthic Invertebrate Assessment of the Neexdzii Kwa — 2025](https://www.newgraphenvironment.com/neexdzii_kwa_benthic_2025/)

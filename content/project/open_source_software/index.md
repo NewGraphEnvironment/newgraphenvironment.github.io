@@ -19,7 +19,7 @@ For restoration planning, the first questions are where each species' habitat is
 
 ### link — intrinsic habitat potential, per species
 
-Turns field evidence into intrinsic habitat potential for each species. Crossing assessments and falls mark the barriers. Fish observations and habitat confirmations show where fish already get past the modelled ones. link then classifies spawning and rearing habitat and access across whole watershed groups, and checks the modelled habitat against where fish have actually been found.
+Turns field evidence into intrinsic habitat potential for each species. Crossing assessments, falls and steep gradients mark the barriers. Where fish observations or confirmed habitat sit upstream of a gradient or falls barrier, link treats that barrier as passable for the species. link then classifies spawning and rearing habitat and access across whole watershed groups, and checks the modelled habitat against where fish have actually been found.
 
 It is under active development, builds on the bcfishpass methods, and runs fresh for the network classification.
 
@@ -51,7 +51,7 @@ Breaks the network at barriers and falls and rates each reach for a species as a
 
 Monthly and annual flow for every stream segment in the Freshwater Atlas. It comes from a water balance checked against hydrometric gauges, alongside routed flow from the Pacific Climate Impacts Consortium where that exists. At stations, wet gives daily flow and water temperature, with temperature gaps filled from air temperature. Both are summarised over the windows that matter to a species, such as chinook migration and spawning.
 
-Flow sets how much habitat a stream can offer. The station windows, run through cd, show whether conditions in key life stages are departing from normal.
+Flow sets how much habitat a stream can offer. The station windows, run through cd, show how flow and water temperature in key life stages compare with a baseline period.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
@@ -161,7 +161,7 @@ Provincial data and our own. The lidar and drone imagery are catalogued so they 
 
 LidarBC elevation tiles across the province are searchable by place and date: the bare-earth model and, where published, the surface model. LidarBC's raw point clouds are indexed too. The elevation catalogue updates monthly.
 
-The bare earth shows side channels, old channels, and the fill and embankments built across a river's path. The point clouds give canopy height: how tall the streamside forest is, where it shades the water, and where it has been cleared. Where a place has been flown more than once, change becomes measurable.
+The bare earth shows side channels, old channels, and the fill and embankments built across a river's path. The point clouds give canopy height: how tall the streamside forest is, where it shades the water, and where it has been cleared.
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_dem_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
@@ -223,12 +223,12 @@ We maintain forms for fish passage assessment, habitat confirmation, effectivene
 
 Collected data flows back into the same pipeline it came from. Fish passage assessments and habitat confirmations feed link's barrier decisions, and field-confirmed habitat is overlaid on the modelled classification.
 
-Map styles are managed in one registry, [gq](https://www.newgraphenvironment.com/gq/), so layers are styled consistently across our web maps, report maps and field projects.
+Map styles for our web and report maps come from one registry, [gq](https://www.newgraphenvironment.com/gq/), extracted from the QGIS styles our field projects carry.
 
 <br>
 
 ### Dynamic reporting
 
-One set of source files produces both an interactive online report and a print-ready PDF, complete with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every analysis is reproducible, every change is tracked, and most reports are publicly accessible. Citations are checked against the source documents with [cred](https://www.newgraphenvironment.com/cred/), which finds the supporting passage, or the abstract where no source file is attached, for review.
+One set of source files produces both an interactive online report and a print-ready PDF, complete with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every analysis is reproducible, every change is tracked, and most reports are publicly accessible. Citations are checked against the source documents with [cred](https://www.newgraphenvironment.com/cred/), which finds the best-matching passage, or the abstract where no source file is attached, for review.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.

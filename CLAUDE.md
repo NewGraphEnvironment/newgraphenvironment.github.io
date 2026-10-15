@@ -62,7 +62,7 @@ Images live alongside `index.md` in page bundle directories (not in `static/`). 
 - **2025 fish passage reports are live** — Peace and Fraser 2025 are linked; the Skeena 2025 link is tracked in #43.
 - **NRP content has no report link** — report is private.
 - **Contact messaging is partnership-focused** — signals multi-year programs, open-source tool development funded through partnerships.
-- **Open Source copy rules** — plain language, present tense (what the code does today), no counts of published items, no comparisons with others, credit what we build on (bcfishpass, fwapg), say the floodplain and land-cover outputs are screening tools. "Our data, analytical tools, and methods are publicly available" is the approved intro wording (April 2026); the landing says "tools and methods" only, because partner data is not public. Never "everything is open source". Each claim keeps the qualifier its source states.
+- **Open Source copy rules** — plain language, present tense (what the code does today), no counts of published items, no comparisons with others, credit what we build on (bcfishpass, fwapg), say the floodplain and land-cover outputs are screening tools. "Our data, analytical tools, and methods are publicly available" is the approved wording (April 2026); never "everything is open source". Each claim keeps the qualifier its source states.
 
 <!-- BEGIN SOUL CONVENTIONS — DO NOT EDIT BELOW THIS LINE -->
 

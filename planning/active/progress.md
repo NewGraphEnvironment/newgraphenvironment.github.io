@@ -50,3 +50,8 @@
 - 9 findings; 3 sat inside the round-2 fix (streaming claim, "forest lost", "long before satellite records"). The mechanism: pitch sentence without the source's own qualifier.
 - Fixed: crossing-habitat claim (aggregates are not "what fixing opens up"); gq "same" → consistent; streaming claim removed; drift screening caveat; fly framing; landing "tools and methods"; cred abstract fallback; point cloud "index, not a copy"; link barrier wording.
 - Qualifier enumeration over all 16 sources (findings.md) → 1 more change: link "experimental", and crossing ranking is roadmap.
+
+### /code-check branch, round 4 (review-round4.md)
+- 7 findings, all verified and fixed. 2 sat inside the round-3 fix: link's barrier sentence named the wrong barrier types and read presence as passage; the CLAUDE.md rule misdescribed the landing and undercut the approved wording.
+- Others: restoration tile "appears to have been lost"; cred "best-matching"; gq registry vs field-project QML; wet temperature baseline is not a "normal"; point cloud "change becomes measurable" cut.
+- The word-list and qualifier enumerations both missed qualifiers phrased as reasons or contrasts. Next enumeration has no word filter: every sentence of the built pages (138), numbered in claims-enumeration.md, each to get a verdict and a source line.
