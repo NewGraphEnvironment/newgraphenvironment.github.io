@@ -36,3 +36,31 @@ against its original (`scratchpad/issues/<N>.orig.md`).
 Numbers left in place: #38's "50,000+" and #54's "760 ha" and "50,000+" are struck text, or
 the task text naming what to strike. #48's "14 sub-basins" is original proposal text, not a
 count of published items.
+
+## After round 3
+
+Round 3 audited this table. It found two claims missing from it, both wrong. The first was
+#54's "Already done in #56": the line was replaced in 2413619, in PR #55. The blanket "#54
+Annotations" row had hidden it. The second was #39's "earlier years in collapsible lists":
+Fraser lists its two reports openly. Both are fixed. Round 3 checked the remaining rows the
+table lacked against their sources: the #47 node and edge list, #46 usage and the MkDocs
+claim, #48's superseded model (740b658), #50's candidates and #54's visibility and
+"unlinked" notes. They hold, and the full table is in `review-round3.md`.
+
+It also named two further mechanisms: a probe narrower than the claim (stacs in
+`man/figures` only) and quantifiers not walked member by member. Every quantifier in the
+added text (every, each, all, only, none, no, both) was then listed by diffing each body
+against its original and checked member by member:
+
+| Body | Quantified claim | Members checked |
+|------|------------------|-----------------|
+| #39 | Skeena, Peace and Fraser 2025 each have their 2025 overview map | 3 `fishpassage_*_2025.jpg` images on the tile, captions "from the 2025 report" |
+| #39 | Skeena, Peace and Elk River keep earlier years in `<details>`; Fraser does not | `<details>` per region section: Skeena 1, Peace 1, Elk 1, Fraser 0 |
+| #39 | Chinook only in the wet section | index.md:52; none in cd (lines 128–136) |
+| #46 | None of floodplains, stac_floodplains_bc, stac_pointcloud_bc has a logo file | tree search for `logo\|hex` in each: empty |
+| #46 | 12 repos each have `man/figures/logo.png` | `gh api` contents, one per repo |
+| #50 | Most tools have a figure | 10 figure rows against 13 tool sections |
+| #41 | No Tools or About pages in the nav | config.toml menu |
+
+The other matches are original proposal text or imperative instructions, not claims. The
+enumeration covers the candidate set, and nothing in it sits above its source.

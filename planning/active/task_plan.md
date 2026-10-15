@@ -11,7 +11,7 @@ Decisions at the plan gate: water-temp-bc sentence reworded to the collaboration
 - [x] Reword the water-temp-bc collaboration paragraph in `content/project/open_source_software/index.md` (~line 182), so the archive feeds the Poisson/Hillcrest work today and Skeena 2025 and Nechako 2022 are named as outputs of the collaboration, not of the archive. Keep the present tense and the qualifiers (CLAUDE.md copy rules).
 - [x] `git rm static/img/hex/rfp.png static/img/hex/stac_orthophoto_bc.png`. Nothing references them (checked across the repo, `public/` and `planning/` excluded).
 - [x] `git rm content/project/open_source_software/{breaks_screenshot,diggs_screenshot,gq_map_composition}.png`. Nothing references them.
-- [x] CLAUDE.md: confirm the "placeholders" decision is gone. It is: #56 already replaced it with "2025 fish passage reports are live". No edit needed; record that in progress.md.
+- [x] CLAUDE.md: confirm the "placeholders" decision is gone. It is: #53 (PR #55) already replaced it with "2025 fish passage reports are live". No edit needed; record that in progress.md.
 - [x] Build with blogdown's Hugo into a temp dir. Check that the Open Source page renders the new sentence, and that the build output holds no reference to the deleted files.
 
 ## Phase 2: Issue bodies (edit, don't append)
@@ -31,13 +31,13 @@ Closing comments are one line and point to where the work landed.
 
 ## Phase 3: Wrap up
 
-- [ ] Tick #54's checklist in its body to match what landed.
+- [x] Tick #54's checklist in its body to match what landed.
 - [ ] `/code-check` over the branch, then `/planning-archive` and `/gh-pr-push`. The PR body says "Closes #54".
 
 ## Validation
 
-- [ ] Hugo build succeeds, and the Open Source page shows the reworded paragraph
-- [ ] `/code-check` clean (once over the branch)
+- [x] Hugo build succeeds, and the Open Source page shows the reworded paragraph
+- [x] `/code-check` clean (once over the branch)
 - [ ] PWF checkboxes match landed work
 - [ ] `/planning-archive` on completion
 

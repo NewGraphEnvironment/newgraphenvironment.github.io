@@ -28,7 +28,7 @@ Follow "edit the body, don't append": rewrite each body that stays open so it re
 
 ## Exploration (2026-10-15)
 
-- #43 already closed by #56 (commit 202c09f); CLAUDE.md placeholder decision already replaced by #56.
+- #43 already closed by #56 (commit 202c09f); CLAUDE.md placeholder decision already replaced by #53 (PR #55, 2413619); #56 added Skeena to it.
 - rfp and stac_orthophoto_bc are PRIVATE; ngr, breaks, diggs, gq and fpr are PUBLIC.
 - No logo at man/figures/logo.png in floodplains, stac_floodplains_bc, stac_pointcloud_bc, stacs; present in link, fresh, wet, flooded, drift, fly, cd, stac_airphoto_bc, stac_dem_bc, stac_uav_bc, water-temp-bc, cred.
 - water-temp-bc repo createdAt 2025-05-21; README shows temperature back to 2002 (ECCC data), so the archive cannot have fed a 2022 analysis. Poisson pages are JS-rendered; their content was not read.
