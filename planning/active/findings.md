@@ -166,3 +166,20 @@ Round 2 enumerated all 88 added or changed claims on the three pages (`review-ro
 | "Each catalogue is … the data" | stac_pointcloud_bc README: "An index, not a copy"; elevation items link to the province's object store | **fixed**: "the catalogue itself" |
 
 Decision (F6): a tool heading of the form "name — plain description" is a label; the prose under every heading introduces the tool in plain words before its name. The same applies to the landing-page chips.
+
+## Code-check round 3 and how the loop ended
+
+Round 3 named the mechanism: a qualifier stated once in a source ("at stations", "thumbnails", "where published", "an index, not a copy", "not valid") does not travel with its subject. A fix to one sentence left the same over-claim alive in the next sentence, table row, header or landing paragraph that names the subject. It checked 15 subjects across all three pages and found:
+- the table header "What it holds" plus the stac_dem_bc row (an index of the province's files, with surface models only where published): **fixed**, header restored to "What it catalogues", "where published" added;
+- wet station water temperature exists only where the station logs it: **fixed**.
+
+Also restored bcfishpass's full credit ("and maintained with contributions from many groups"), fixed the dangling "this data" in the catalogue band, and added the stac_floodplains_bc README's 1963/1967 airphoto date slip to stac_floodplains_bc#85.
+
+The loop ended by enumeration, not by a quiet round. Round 2 enumerated all 88 changed claims. Round 3 enumerated every mention of the 15 qualified subjects. A final mechanical grep over the three pages (thumbnail, surface, water temperature, compar, index, baseline, normals, record) shows each mention carrying its qualifier.
+
+| Round | Findings | Fixed | Accepted | Inside previous fix? |
+|---|---|---|---|---|
+| Plan review | 17 | 12 | 5 (scope/decisions) | — |
+| 1 | 5 + stale trace | 6 | 0 | y (fly thumbnails) |
+| 2 | 6 | 5 | 1 (heading-as-label decision) | y (bcfishpass, from the plan-review fix) |
+| 3 | 2 | 2 | 0 | n (neighbours of fixes; mechanism enumerated) |
