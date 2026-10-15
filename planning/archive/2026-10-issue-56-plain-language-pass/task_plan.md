@@ -66,4 +66,4 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 - [x] Hugo build passes
 - [x] `/code-check` clean (once over the branch with `/code-check branch`)
 - [x] PWF checkboxes match landed work
-- [ ] `/planning-archive` on completion, then `/gh-pr-push` (body: `Closes #56`, `Closes #43`)
+- [x] `/planning-archive` on completion, then `/gh-pr-push` (body: `Closes #56`, `Closes #43`)
