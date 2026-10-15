@@ -48,6 +48,16 @@ These override the hugo-apero theme defaults. Changes here affect the site witho
 
 Images live alongside `index.md` in page bundle directories (not in `static/`). Hugo-apero uses `featured*` filename pattern for grid thumbnails. Logos are in `static/img/`.
 
+## Previewing changes
+
+- **Build** with blogdown's own Hugo (`blogdown::find_hugo()` gives the path) into a temp dir, never `public/`. CI builds and deploys only on push to `main`, so a PR has no preview.
+- **Phone check:** headless Chrome at 375–390 px. Capture full pages through DevTools with a normal viewport height. A very tall window makes the `100vh` hero fill the whole capture. The Open Source page renders on a dark background, so flatten transparent figures onto white.
+- **Private preview link** (a claude.ai artifact), for review away from the computer: build with `HUGO_RELATIVEURLS=true HUGO_UGLYURLS=true`, then fix what that build still leaves broken:
+  - point directory links at the `.html` pages;
+  - point bundle images at their bundle folder;
+  - make the stylesheet's `/fonts/` paths relative;
+  - drop the stylesheet's `integrity` hash, which no longer matches once its font paths are edited.
+
 ## Archive
 
 - `_archive/` — old project pages (pre-restructuring). Kept for reference, not served by Hugo.
@@ -62,7 +72,7 @@ Images live alongside `index.md` in page bundle directories (not in `static/`). 
 - **2025 fish passage reports are live** — Peace and Fraser 2025 are linked; the Skeena 2025 link is tracked in #43.
 - **NRP content has no report link** — report is private.
 - **Contact messaging is partnership-focused** — signals multi-year programs, open-source tool development funded through partnerships.
-- **Open Source copy rules** — plain language, present tense (what the code does today), no counts of published items, no comparisons with others, credit what we build on (bcfishpass, fwapg), say the floodplain and land-cover outputs are screening tools. "Our data, analytical tools, and methods are publicly available" is the approved wording (April 2026); never "everything is open source". Each claim keeps the qualifier its source states.
+- **Open Source copy rules** — less is more: feature the tools that matter for restoration planning, implementation and monitoring, and leave utilities off. Plain language, present tense (what the code does today), no counts of published items, no comparisons with others, credit what we build on (bcfishpass, fwapg), say the floodplain and land-cover outputs are screening tools. "Our data, analytical tools, and methods are publicly available" is the approved wording (April 2026); never "everything is open source". Each claim keeps the qualifier its source states.
 
 <!-- BEGIN SOUL CONVENTIONS — DO NOT EDIT BELOW THIS LINE -->
 
