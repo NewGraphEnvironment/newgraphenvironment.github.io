@@ -19,7 +19,7 @@ For restoration planning, the first questions are where each species' habitat is
 
 ### link — intrinsic habitat potential, per species
 
-Turns field evidence into intrinsic habitat potential for each species. Crossing assessments, falls and steep gradients mark the barriers. Where fish observations or confirmed habitat sit upstream of a gradient or falls barrier, link treats that barrier as passable for the species. link then classifies spawning and rearing habitat and access across whole watershed groups, and checks the modelled habitat against where fish have actually been found.
+Models intrinsic habitat potential and access for each species. fresh rates the habitat from gradient and channel size. Crossing assessments, falls and steep gradients mark the barriers, and field evidence (fish observations above per-species thresholds, and confirmed habitat upstream) can mark a gradient or falls barrier as passable for a species. link then classifies spawning and rearing habitat and access across whole watershed groups, and checks the modelled habitat against where fish have actually been found.
 
 It is under active development, builds on the bcfishpass methods, and runs fresh for the network classification.
 
@@ -35,7 +35,7 @@ It is under active development, builds on the bcfishpass methods, and runs fresh
 
 ### fresh — the stream network engine
 
-Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient, channel width and stream flow. It summarises the habitat upstream or downstream of any point on the network. Runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/).
+Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient and either channel width or stream flow, chosen per watershed group. It summarises the habitat upstream or downstream of any point on the network. Runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/).
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
@@ -49,9 +49,9 @@ Breaks the network at barriers and falls and rates each reach for a species as a
 
 ### wet — stream flow for every stream
 
-Monthly and annual flow for every stream segment in the Freshwater Atlas. It comes from a water balance checked against hydrometric gauges, alongside routed flow from the Pacific Climate Impacts Consortium where that exists. At stations, wet gives daily flow and water temperature, with temperature gaps filled from air temperature. Both are summarised over the windows that matter to a species, such as chinook migration and spawning.
+Mean annual and monthly flow for every stream segment in the Freshwater Atlas. It comes from a water balance checked against hydrometric gauges, alongside routed flow from the Pacific Climate Impacts Consortium where that exists. At stations, wet gives daily flow and water temperature, with temperature gaps filled from air temperature. Both are summarised over the windows that matter to a species, such as chinook migration and spawning.
 
-Flow sets how much habitat a stream can offer. The station windows, run through cd, show how flow and water temperature in key life stages compare with a baseline period.
+fresh's habitat rules can read that flow. The station windows, run through cd, compare flow and water temperature in key life stages with baseline periods.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
@@ -73,9 +73,9 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Delineates functional floodplains from any elevation model and stream network with the Valley Confinement Algorithm. It runs at several flood factors, which set how high above the channel the water may rise, from the active floodplain out to the whole valley floor. It also attributes the floodplain to the streams that made it.
+Delineates functional floodplains from any elevation model and stream network with the Valley Confinement Algorithm. It runs at several flood factors, giving narrower and wider versions of the floodplain. It also attributes the floodplain to the streams that made it.
 
-The difference between coarse and fine elevation data is itself a diagnostic. Coarse data shows the floodplain surface. Lidar shows the roads, rail grades, dykes and fill that sit above that surface and can cut the river off from it. Comparing the two shows **where to look for what may be preventing the floodplain from functioning, and where to act**: fill removal, dyke breaches, crossing installations.
+The difference between coarse and fine elevation data is itself a diagnostic. Coarse data shows the floodplain surface. Lidar shows the roads, rail grades, dykes and fill that sit above that surface and can cut the river off from it. Where the coarse result maps floodplain that lidar excludes, the difference shows **where to look for what may be cutting the floodplain off, and where to act**: fill removal, dyke breaches, crossing installations.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -89,9 +89,9 @@ The difference between coarse and fine elevation data is itself a diagnostic. Co
 
 ### drift — what has changed in the floodplain
 
-Measures land-cover change inside floodplains from free satellite products: Esri / Impact Observatory annual land cover, ESA WorldCover, and cloud-masked Sentinel-2 imagery. It turns change into patches and tags each patch with the causes it overlaps, such as fire and harvest. It also separates real change from classification noise and misregistration, and reports accuracy-adjusted areas from a stratified reference sample.
+Measures land-cover change inside floodplains from free satellite products: Esri / Impact Observatory annual land cover, ESA WorldCover, and cloud-masked Sentinel-2 imagery. It turns change into patches and tags each patch with the causes it overlaps, such as fire and harvest. It also flags likely classification noise and misregistration, and reports accuracy-adjusted areas from a stratified reference sample.
 
-It shows where tree cover appears to have been lost, and which losses coincide with mapped fire or harvest. Run again over later years, the same measures show whether tree cover is returning. Like the floodplain catalogue built on it, it is a screening tool: each change patch is a candidate to check, not confirmed forest removal.
+It shows where tree cover appears to have been lost, and which losses coincide with mapped fire or harvest. Like the floodplain catalogue built on it, it is a screening tool: each change patch is a candidate to check, not confirmed forest removal.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
@@ -119,7 +119,7 @@ Runs link, flooded and drift across whole watershed groups. The result is the fl
 
 ### fly — historic airphotos
 
-Finds the fewest historic provincial airphotos that cover a site. It estimates each photo's ground footprint, accounting for terrain and each film roll's measured geometry, then downloads and georeferences the photo thumbnails. These photos show the valley as it was decades ago, an earlier condition to measure today's against.
+Finds the fewest historic provincial airphotos that cover a site. It estimates each photo's ground footprint, optionally correcting for terrain, then downloads and georeferences the photo thumbnails. These photos show the valley as it was decades ago, an earlier condition to compare today's against.
 
 [diggs](https://www.newgraphenvironment.com/diggs/) is the interactive version, for picking photos over a floodplain. [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/) serves georeferenced photo thumbnails as a searchable catalogue.
 
@@ -175,7 +175,7 @@ The bare earth shows side channels, old channels, and the fill and embankments b
 
 ### Drone imagery
 
-Our drone flights are catalogued by watershed and year: orthomosaics, plus surface and terrain models. New flights are planned from the floodplain maps, with a reach split into blocks that each fit one battery, and the imagery comes back into the catalogue. Uses include site baselines and before-and-after monitoring of restoration works.
+Our drone flights are catalogued by watershed and year: orthomosaics, plus surface and terrain models. New flights can be planned from the floodplain maps, with a reach split into blocks that each fit one battery, and the imagery comes back into the catalogue. Uses include site baselines and before-and-after monitoring of restoration works.
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
@@ -199,7 +199,7 @@ This data feeds collaborative science with [Poisson Consulting](https://www.pois
 
 <br>
 
-All catalogues are served at [images.a11s.one](https://images.a11s.one) and can be searched from rstac, QGIS 3.42+ or any STAC client.
+The catalogues below are served at [images.a11s.one](https://images.a11s.one) and can be searched from rstac, QGIS 3.42+ or any STAC client.
 
 | Catalogue | What it catalogues |
 |-----------|---------------|
@@ -223,7 +223,7 @@ We maintain forms for fish passage assessment, habitat confirmation, effectivene
 
 Collected data flows back into the same pipeline it came from. Fish passage assessments and habitat confirmations feed link's barrier decisions, and field-confirmed habitat is overlaid on the modelled classification.
 
-Map styles for our web and report maps come from one registry, [gq](https://www.newgraphenvironment.com/gq/), extracted from the QGIS styles our field projects carry.
+Map styles for our web and report maps come from one registry, [gq](https://www.newgraphenvironment.com/gq/), which draws on the same QGIS styles our field projects carry.
 
 <br>
 

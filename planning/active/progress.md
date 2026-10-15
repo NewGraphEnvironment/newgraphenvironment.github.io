@@ -55,3 +55,6 @@
 - 7 findings, all verified and fixed. 2 sat inside the round-3 fix: link's barrier sentence named the wrong barrier types and read presence as passage; the CLAUDE.md rule misdescribed the landing and undercut the approved wording.
 - Others: restoration tile "appears to have been lost"; cred "best-matching"; gq registry vs field-project QML; wet temperature baseline is not a "normal"; point cloud "change becomes measurable" cut.
 - The word-list and qualifier enumerations both missed qualifiers phrased as reasons or contrasts. Next enumeration has no word filter: every sentence of the built pages (138), numbered in claims-enumeration.md, each to get a verdict and a source line.
+
+### /code-check branch, round 5 (review-round5.md): full enumeration
+- Every sentence (138) given a verdict. 17 overstated; all rewritten from the source quotes. The 18 changed sentences were re-extracted and each verified. The review loop ends here, on a complete enumeration.

@@ -189,6 +189,24 @@ Terminal enumeration: for every source behind a public claim (READMEs of link, f
 
 Accepted, not changed: "Our data, analytical tools, and methods are publicly available" on the Open Source intro and in the landing's Our Approach is the wording you approved in April 2026. The two new landing lines say "tools and methods" only.
 
+## Full sentence enumeration (code-check round 5): terminal
+
+`claims-enumeration.md` lists every sentence of the built pages (138, no word filter). Round 5 (`review-round5.md`) gave every number a verdict with its source: 17 OVERSTATES, the rest ok, n/a or pre-existing accepted. All 17 were rewritten from the source quotes in that file, cutting where a cut was cleaner (drift's "run again over later years"; the landing's "with stream flow for every stream").
+
+Afterwards the built pages were re-extracted and set-differenced against the enumeration: 18 sentences changed or were new. Each was checked against the round-5 source quote:
+- link: fresh rates intrinsic potential; per-species observation thresholds; "can mark… passable"
+- fresh: gradient and either channel width or flow, chosen per watershed group
+- wet: mean flow; "habitat rules can read"; baseline periods (plural)
+- flooded: the coarse-versus-lidar diagnostic in one direction only
+- drift: "flags" noise
+- fly: terrain correction optional; "compare"
+- drone: flights "can be planned"
+- catalogues: "the catalogues below" (live endpoint lists exactly those five)
+- gq: "draws on"
+- landing: 2017 to 2023; surface models where published
+
+No sentence remains outside a verified verdict. That is how the loop ended.
+
 ## Errors Encountered
 
 | Error | Resolution |

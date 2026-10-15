@@ -71,7 +71,7 @@ The page lists packages one after another. It should say what a partner can lear
 ## Validation
 
 - [x] Hugo build passes
-- [ ] `/code-check branch` clean
+- [x] `/code-check branch` clean (5 rounds, ended by full sentence enumeration)
 - [ ] PWF checkboxes match landed work
 - [ ] `/planning-archive` on completion, then `/gh-pr-push` (body: `Closes #53`, refs #47 #48 #50)
 
