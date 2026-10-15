@@ -116,3 +116,27 @@ Each changed sentence was checked against what the code does today, at `origin/H
 | Restoration maps: the 2025 reports' background-chapter overview maps | `include_graphics` in each report's `0200-background.Rmd` at `origin/main` | holds |
 
 Plain-language read: every tool on the Open Source page is introduced in plain words before its name (link, fresh, wet, flooded, drift, fly, cd, stacs, cred; stac_airphoto_bc as "our airphoto catalogue"). A grep for `not yet|under active|growing|working toward|will |stratified|misregistration|diggs|/gq` over the three pages returns nothing.
+
+## Re-trace after review
+
+The plan review (`review-plan.md`, finding 4) showed that a #53 verdict does not carry over to a reworded sentence. Each reworded row was re-checked against the caveat lines in its tool's README at `origin/HEAD`:
+
+| Row | README caveat | Verdict |
+|---|---|---|
+| wet → cd | temperature baseline is 2016–2025; flow against 1981–2010 | **fixed**: "flow … with long-term normals, and water temperature with the recent record" |
+| fly | photos are warped onto *estimated* footprints | **fixed**: "places each on the map by its estimated ground footprint" (the first draft said "georeferences", dropping "estimated") |
+| floodplain catalogue | "Cross-group comparison is not valid yet" | **fixed**: "watershed groups can't be compared with each other on hectares lost" |
+| catalogue band | serving runs on internal infrastructure; stac_airphoto_bc has no licence | **fixed**: "the public code that builds it, a worked example others can follow"; licence filed as stac_airphoto_bc#50 |
+| ground lead and landing step 3 | NRCan and LidarBC also publish this data | **fixed**: "so this data can be found and loaded directly"; no claim about what others lack |
+| cd | ERA5-Land 1950 to present; departures and trend | holds |
+| wet flow | per-segment annual and monthly; scored against HYDAT | holds |
+| flooded | resolution changes what you can see (coarse vs 1 m lidar) | holds; the coarse-vs-lidar sentence carries it |
+| fresh | classifies by gradient and channel width; multi-species | holds |
+| link | follows the bcfishpass method (Simon Norris) | holds; credited as "builds on the methods of bcfishpass" |
+| field section | user statement (#56) plus the #53 field section | holds; nothing internal named |
+| restoration intro | user statement (#56); the tile links one effectiveness-monitoring report and the 2025 benthic report | holds; the earlier row wrongly cited eDNA appendices "linked on the tile" |
+
+Word-bounded, HTML-only grep over the three built pages (`grep -rniwoE --include='*.html'`) for the internal tool names, diggs, gq, stratified, misregistration, yet, still, soon, planned, roadmap, currently, in progress, pre-release, until, expand, growing, working toward, under active: one hit, "Flights can be **planned** from the floodplain maps", which is a capability, not roadmap wording.
+
+Decision: the landing-page chips stay as bare package names. They are link labels under a body that introduces the work in plain words.
+Decision: step 4 does not say "we lead in field mapping" (no comparisons with others).

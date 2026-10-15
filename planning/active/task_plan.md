@@ -51,7 +51,7 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 - [x] Fix what the trace finds; commit
 
 ### Phase 5: Verify and docs
-- [x] Build to a temp dir. Grep the built HTML for strings that must not appear: rfp, diggs, gq (on the two pages), "stratified", "misregistration", "not yet"
+- [x] Build to a temp dir. Grep the built HTML for strings that must not appear: the internal tool names, diggs, gq (on the two pages), "stratified", "misregistration", "not yet"
 - [x] Every outbound link on the three pages returns 200 (one curl pass)
 - [x] Phone (390 px) and desktop screenshots of the landing, Open Source and restoration pages, looked at
 - [x] Refresh the private preview artifact (same URL) so it can be reviewed away from the computer

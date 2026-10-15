@@ -19,7 +19,7 @@ For restoration planning, the first questions are where each species' habitat is
 
 ### link — habitat potential, species by species
 
-Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and tested against where fish have actually been found. It builds on the bcfishpass methods.
+Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and tested against where fish have actually been found. It builds on the methods of bcfishpass, the established fish passage model for BC.
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
@@ -33,7 +33,7 @@ Our habitat connectivity model, link, maps the intrinsic habitat potential of st
 
 ### fresh — the stream network engine
 
-Our stream network engine, fresh, does the work underneath. It breaks the network at barriers and rates each stretch of stream as spawning or rearing habitat, lakes and wetlands included, from its gradient and its size or flow. It runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/).
+Our stream network engine, fresh, does the work underneath. It breaks the network at barriers and rates each stretch of stream as spawning or rearing habitat, lakes and wetlands included, from its gradient and its size or flow. It runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/), which loads the Atlas into a spatial database.
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
@@ -49,7 +49,7 @@ Our stream network engine, fresh, does the work underneath. It breaks the networ
 
 Our stream flow tool, wet, estimates mean annual and monthly flow for every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and water temperature.
 
-The flow can feed the habitat rules. Our climate analysis tool, cd (below), compares flow and water temperature during key life stages, such as chinook migration and spawning, with earlier periods.
+The flow can feed the habitat rules. Our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
@@ -97,9 +97,9 @@ Our land-cover change tool, drift, measures how the land inside a floodplain cha
 
 ### Floodplain change catalogue
 
-Brings the three together for whole watershed groups: the floodplain along fish-accessible streams, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
+Brings link, flooded and drift together for whole watershed groups: the floodplain along fish-accessible streams, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
 
-**A screening tool for finding where to look.** It has not been field-validated, and each watershed group is best read on its own.
+**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other on hectares lost.
 
 - [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
 
@@ -113,7 +113,7 @@ Brings the three together for whole watershed groups: the floodplain along fish-
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, then downloads and georeferences their thumbnails. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced photos are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads them and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced photos are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
@@ -143,7 +143,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ## What do the ground and water look like now?
 
-Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar, our own drone imagery and the hydrometric record because this data was not available in a form anyone could search and load directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
+Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and our own drone imagery, and an open archive of the hydrometric record, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
 <img src="/img/hex/stac_dem_bc.png" alt="stac_dem_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -177,7 +177,7 @@ Our drone flights, catalogued by watershed and year: orthomosaics plus surface a
 
 ### water-temp-bc — water temperature, flow and water level
 
-Water temperature, flow and water level from federal hydrometric stations across BC, refreshed monthly and combined with the historic record, ready to query from R.
+Our hydrometric archive, water-temp-bc, holds water temperature, flow and water level from federal hydrometric stations across BC, refreshed monthly and combined with the historic record, ready to query from R.
 
 This data feeds collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/) that is advancing fish habitat modelling across the province. That includes spatial stream network temperature modelling ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width regression models.
 
@@ -189,7 +189,7 @@ This data feeds collaborative science with [Poisson Consulting](https://www.pois
 
 ### Open catalogues, and the recipe for building them
 
-Each catalogue is two things: the data, and an open recipe for building and serving a catalogue like it. The code is open, so anyone can build their own; we don't need to be the only source of this data. Ours are served at [images.a11s.one](https://images.a11s.one) and can be searched from rstac, QGIS 3.42+ or any STAC client.
+Each catalogue is two things: the data, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of this data. Ours are served at [images.a11s.one](https://images.a11s.one) and can be searched from R, Python or QGIS 3.42+ through the open STAC standard.
 
 Our catalogue loader, stacs, puts catalogues into that search service and checks that every record arrived intact.
 
@@ -213,7 +213,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 We take the planning into the field. For each program we build a custom field system: styled map projects of the watershed carrying our analysis and provincial data, and digital forms that work offline on phones and tablets. The whole crew works in one shared project, and changes sync between field and office.
 
-Forms cover fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling and benthic invertebrate collection. Where possible, data is structured for direct submission to the provincial databases (FISS, PSCIS, CABIN). What crews collect flows back into the models it came from: assessments and habitat confirmations feed link's barrier decisions.
+Forms cover fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling and benthic invertebrate collection. Where possible, data is structured for direct submission to the provincial and federal databases: FISS for fish, PSCIS for stream crossings and CABIN for benthic invertebrates. What crews collect flows back into the models it came from: assessments and habitat confirmations feed link's barrier decisions.
 
 We also build the capacity of field teams to navigate to sites, collect data to standard, and interpret what they find.
 

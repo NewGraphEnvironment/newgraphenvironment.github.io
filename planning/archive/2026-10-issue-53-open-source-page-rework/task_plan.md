@@ -62,7 +62,7 @@ The page lists packages one after another. It should say what a partner can lear
 - [x] Hugo build clean; commit
 
 ### Phase 5: Verify and docs
-- [x] Build to a temp dir; word-bounded, HTML-only grep (`grep -rniwE --include='*.html'`) of both pages for: orthophoto, rfp, spacehakr, ngr, 50,000, 10,000, temporary-hidden, thermal logger, traditional use, any stream network, any point data, designed to work on any, pioneer, hundreds of, 40+, 760 ha
+- [x] Build to a temp dir; word-bounded, HTML-only grep (`grep -rniwE --include='*.html'`) of both pages for: orthophoto, the internal field-tool name, spacehakr, ngr, 50,000, 10,000, temporary-hidden, thermal logger, traditional use, any stream network, any point data, designed to work on any, pioneer, hundreds of, 40+, 760 ha
 - [x] Every `href` on both pages returns 200 (one curl pass)
 - [x] Serve locally; screenshot both pages at desktop width and at 375 px
 - [x] Update `CLAUDE.md` (above the marker): the open_source_software tile description (replace the old package list), "How It Works" in the landing-section list, and drop the stale "2025 links are placeholders" note only if #54 has not already done it
