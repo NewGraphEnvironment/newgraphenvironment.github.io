@@ -5,7 +5,9 @@ layout: single
 weight: 1
 ---
 
-We plan and deliver aquatic restoration at scales ranging from individual stream crossings to entire watersheds. Our work integrates floodplain analysis, land cover change detection, riparian assessment, aquatic monitoring, and fish passage barrier prioritization — connecting field observations to watershed-scale planning through open-source tools and collaborative GIS.
+We plan, deliver and monitor aquatic restoration at scales ranging from individual stream crossings to entire watersheds. Our work integrates floodplain analysis, land cover change detection, riparian assessment, aquatic monitoring, and fish passage barrier prioritization — connecting field observations to watershed-scale planning through open-source tools and collaborative GIS.
+
+We monitor restoration effectiveness over the long term with standardised biological tools: eDNA, benthic invertebrate sampling, fish inventories for the provincial database (FISS), fish and fish habitat assessment, UAV surveys, and riparian assessment. The systems we have built track progress and effectiveness and share them with partners, so what we learn at one site carries to the next.
 
 <br>
 
@@ -34,10 +36,11 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 #### Skeena Region
 
-  - [Skeena Watershed Fish Passage Restoration Planning 2024](https://www.newgraphenvironment.com/fish_passage_skeena_2024_reporting/)
+  - [Restoring Fish Passage in the Skeena Region 2025](https://www.newgraphenvironment.com/fish_passage_skeena_2025_reporting/)
 
 <details><summary>Previous Skeena reports</summary>
 
+  - [Skeena Watershed Fish Passage Restoration Planning 2024](https://www.newgraphenvironment.com/fish_passage_skeena_2024_reporting/)
   - [Skeena Watershed Fish Passage Restoration Planning 2023](https://www.newgraphenvironment.com/fish_passage_skeena_2023_reporting/)
   - [Skeena Watershed Fish Passage Restoration Planning 2022](https://www.newgraphenvironment.com/fish_passage_skeena_2022_reporting/)
   - [Bulkley Watershed Fish Passage Restoration Planning 2022](https://www.newgraphenvironment.com/fish_passage_bulkley_2022_reporting/)
@@ -48,7 +51,7 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 <br>
 
-![](fishpassage_skeena_2023b.jpeg)
+![Skeena Region fish passage restoration, from the 2025 report.](fishpassage_skeena_2025.jpg)
 
 <br>
 
@@ -68,7 +71,7 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 <br>
 
-![](peace_fish_passage_2023.jpeg)
+![FWCP Peace Region fish passage restoration, from the 2025 report.](fishpassage_peace_2025.jpg)
 
 <br>
 
@@ -76,6 +79,10 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
   - [Fraser River Fish Passage Restoration Planning 2025](https://www.newgraphenvironment.com/fish_passage_fraser_2025_reporting/)
   - [Fraser River Fish Passage Restoration Planning 2023](https://www.newgraphenvironment.com/fish_passage_fraser_2023_reporting/)
+
+<br>
+
+![Fraser Region fish passage restoration, from the 2025 report.](fishpassage_fraser_2025.jpg)
 
 <br>
 

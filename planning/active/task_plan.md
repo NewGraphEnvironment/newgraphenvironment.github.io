@@ -36,14 +36,14 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 - [x] Hugo build clean; commit
 
 ### Phase 3: Restoration tile (`content/project/watershed_restoration_fish_passage/index.md`)
-- [ ] Intro (line 8), kept tight, adds:
+- [x] Intro (line 8), kept tight, adds:
   - long-term restoration effectiveness monitoring;
   - the systems we built to track progress and effectiveness and share them, so lessons carry to other work;
   - the standardised biological tools: eDNA, benthic invertebrates, FISS fish inventories, fish and fish habitat assessment, UAV surveys, riparian assessment
-- [ ] Copy the three 2025 background maps from each report repo's `origin/main` and convert them to JPEG at a web-reasonable size (check the size first; `sips -Z` scales up too). Name them `fishpassage_skeena_2025.jpg`, `fishpassage_fraser_2025.jpg`, `fishpassage_peace_2025.jpg`
-- [ ] Replace `fishpassage_skeena_2023b.jpeg` and `peace_fish_passage_2023.jpeg` with the new maps, and add the Fraser map under the Fraser list; delete the two old jpegs from the bundle (only this page references them; grep to confirm)
-- [ ] Add the Skeena 2025 report as the visible Skeena link and move 2024 into `<details>` (closes #43)
-- [ ] Hugo build clean; commit
+- [x] Copy the three 2025 background maps from each report repo's `origin/main` and convert them to JPEG at a web-reasonable size (check the size first; `sips -Z` scales up too). Name them `fishpassage_skeena_2025.jpg`, `fishpassage_fraser_2025.jpg`, `fishpassage_peace_2025.jpg`
+- [x] Replace `fishpassage_skeena_2023b.jpeg` and `peace_fish_passage_2023.jpeg` with the new maps, and add the Fraser map under the Fraser list; delete the two old jpegs from the bundle (only this page references them; grep to confirm)
+- [x] Add the Skeena 2025 report as the visible Skeena link and move 2024 into `<details>` (closes #43)
+- [x] Hugo build clean; commit
 
 ### Phase 4: Claim trace and plain-language read
 - [ ] Enumerate every changed sentence on all three pages in `findings.md` with its source (function, README or user statement) and verdict, using the #53 method
