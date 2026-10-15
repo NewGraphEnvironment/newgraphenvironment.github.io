@@ -5,21 +5,21 @@ layout: single
 weight: 3
 ---
 
-Our data, analytical tools, and methods are publicly available on GitHub — built in R, Python, SQL, shell, OpenTofu, and GitHub Actions. We work in the open wherever transparency improves science. The packages highlighted here are designed to work together — field data (observations, eDNA, barriers) and stream measurements (temperature, channel width, climate) feed fresh and link, which produce habitat and connectivity models for the watershed. Those outputs then drive floodplain delineation, land cover change detection, and climate analysis, all rendered as interactive reports and print-ready PDFs.
+Our data, analytical tools, and methods are publicly available on GitHub — built in R, Python, SQL, shell, OpenTofu, and GitHub Actions. We work in the open wherever transparency improves science. The packages highlighted here are designed to work together — field data (crossings, fish observations, habitat confirmations) and stream measurements (gradient, channel width, flow) feed fresh and link, which produce habitat and connectivity models for the watershed. Those outputs then drive floodplain delineation, land cover change detection, and climate analysis, all rendered as interactive reports and print-ready PDFs.
 
 <br>
 
 ## Watershed Modelling
 
-Composable tools for understanding watersheds — per-species habitat classification, connectivity modelling, barrier interpretation, floodplain delineation, land cover change, historic condition, and climate trends. Built on the Freshwater Atlas, portable to any stream network.
+Composable tools for understanding watersheds — per-species habitat classification, connectivity modelling, barrier interpretation, floodplain delineation, land cover change, historic condition, and climate trends. Built on BC's Freshwater Atlas.
 
 <img src="/img/hex/fresh.png" alt="fresh" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### fresh — Freshwater Referenced Spatial Hydrology
 
-A stream network modelling engine. Classify habitat for any species using any measurable stream attribute — gradient, channel width, temperature, discharge, climate departures — break the network at barriers or falls, and summarise habitat upstream or downstream of any point on the network.
+A stream network modelling engine. Break the network at barriers and falls, rate each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing) from gradient, channel width and stream flow, and summarise habitat upstream or downstream of any point on the network.
 
-Running on BC's Freshwater Atlas today, designed to work on any stream network — other provincial atlases, LiDAR-derived networks from our STAC DEM catalogue, or streams in other jurisdictions.
+Runs on BC's Freshwater Atlas.
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
@@ -35,9 +35,9 @@ Running on BC's Freshwater Atlas today, designed to work on any stream network �
 
 ### link — Watershed Point Interpretation
 
-Connects field data to the stream network and interprets what it means. Load, match, and score any point data — fish-passage barriers, observations, eDNA detections, density samples, thermal loggers, water quality stations, traditional use locations — and track where each record came from and how it was corrected.
+Turns field evidence into intrinsic habitat potential for each species. Fish observations, habitat confirmations, falls and crossing assessments decide which barriers actually block fish; link then classifies spawning and rearing habitat and access across whole watershed groups, scores and ranks crossings, and checks the modelled habitat against where fish have actually been found.
 
-Feeds fresh the break points and barrier lists it needs to classify habitat, and reads fresh's output back to summarise habitat above each field site.
+Builds on the bcfishpass methods and runs fresh for the network classification.
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
@@ -119,23 +119,22 @@ Download and georeference historic airphotos, estimate ground footprints from ce
 
 ## Spatial Data Infrastructure
 
-Provincial-scale imagery, elevation data, and stream temperature records — catalogued and queryable from R, QGIS, and Python. Cloud-hosted tile serving for on-the-fly visualization of massive rasters.
+Provincial-scale imagery, elevation data, and hydrometric records — catalogued and queryable from R, QGIS, and Python. Cloud-hosted tile serving for on-the-fly visualization of massive rasters.
 
 | Collection | Content | Scale |
 |-----------|---------|-------|
-| [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models | 50,000+ tiles, province-wide |
-| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photographs (1963–2019) | Growing, ~10,000 georeferenced thumbnails |
-| [**stac_orthophoto_bc**](https://github.com/NewGraphEnvironment/stac_orthophoto_bc) | Provincial orthophoto collection | Province-wide |
+| [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models — bare earth and surface | Province-wide, updated monthly |
+| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photographs (1967–2019), georeferenced | Selected watersheds, growing |
 | [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Drone imagery by watershed | Project-based, growing |
-| [**water-temp-bc**](https://github.com/NewGraphEnvironment/water-temp-bc) | Stream temperature from federal hydrometric stations | Province-wide, cloud-hosted |
+| [**water-temp-bc**](https://github.com/NewGraphEnvironment/water-temp-bc) | Water temperature, discharge and water level at federal hydrometric stations | Province-wide, refreshed monthly |
 
 <br>
 
 <img src="/img/hex/water-temp-bc.png" alt="water-temp-bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### water-temp-bc — Stream Temperature Data
+### water-temp-bc — Water Temperature, Discharge and Water Level
 
-Stream temperature records from federal hydrometric stations across BC — scraped from Environment and Climate Change Canada's real-time web service and combined with historic data extracts. Served as cloud-hosted files queryable from R without a database.
+Water temperature, discharge and water level from federal hydrometric stations across BC — refreshed monthly from Environment and Climate Change Canada's real-time service and combined with the historic record. Served as cloud-hosted files queryable from R without a database.
 
 This data feeds into collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/) that is advancing fish habitat modelling across the province — spatial stream network temperature modelling ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and [channel width regression models](https://www.poissonconsulting.ca/temporary-hidden-link/859859031/channel-width-21b/) that integrate with fresh and link for habitat classification.
 
@@ -155,7 +154,7 @@ We assemble reproducible, field-ready GIS projects for any watershed in British 
 
 We maintain forms for fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling, and benthic invertebrate collection, and add new ones as programs evolve. Where possible, collected data is structured for direct submission to provincial database systems (FISS, PSCIS, CABIN); other data lands in central database systems we maintain and share with partners. Photos are automatically renamed and organized into site directories. Multiple team members contribute within the same shared project, with changes syncing between field and office.
 
-Collected data flows back into the same pipeline it came from — fish passage assessments feed into link's barrier scoring; eDNA detections and benthic samples become new records on the stream network; habitat confirmations replace modelled classifications with field-verified ones. Field → network → report, closed loop.
+Collected data flows back into the same pipeline it came from — fish passage assessments and habitat confirmations feed link's barrier decisions, and field-confirmed habitat is overlaid on the modelled classification. Field → network → report, closed loop.
 
 <br>
 

@@ -12,12 +12,12 @@ The page lists packages one after another. It should say what a partner can lear
 - The landing pipeline is the existing hex-card flow, restructured. The interactive diagram stays in #47.
 
 ### Phase 1: Correctness fixes (own commit)
-- [ ] Remove the orthophoto catalogue row from the Spatial Data Infrastructure table (`index.md:128`)
-- [ ] fresh copy, both pages: what it does today (gradient, channel width, flow; spawning and rearing including lakes and wetlands). Drop "temperature, climate departures" and "designed to work on any stream network".
-- [ ] link copy, both pages: intrinsic habitat potential per species, access, the barrier in the way, checked against fish observations. Drop "eDNA, thermal loggers, traditional use locations".
-- [ ] Elevation catalogue: drop "50,000+" / "over 50,000 tiles" in favour of "province-wide"; the collection is `stac-elevation-bc`
-- [ ] water-temp-bc: temperature, discharge and water level at hydrometric stations
-- [ ] Hugo build clean; commit
+- [x] Remove the orthophoto catalogue row from the Spatial Data Infrastructure table (`index.md:128`)
+- [x] fresh copy, both pages: what it does today (gradient, channel width, flow; spawning and rearing including lakes and wetlands). Drop "temperature, climate departures" and "designed to work on any stream network".
+- [x] link copy, both pages: intrinsic habitat potential per species, access, the barrier in the way, checked against fish observations. Drop "eDNA, thermal loggers, traditional use locations".
+- [x] Elevation catalogue: drop "50,000+" / "over 50,000 tiles" in favour of "province-wide"; the collection is `stac-elevation-bc`
+- [x] water-temp-bc: temperature, discharge and water level at hydrometric stations
+- [x] Hugo build clean; commit
 
 ### Phase 2: Figures and stickers
 - [ ] Copy figures from public repos at `origin/HEAD` into `content/project/open_source_software/`, so nothing comes from a working tree:

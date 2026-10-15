@@ -6,3 +6,9 @@
 - Created branch `53-rework-the-open-source-page-and-landing` off main
 - Scaffolded PWF baseline from issue #53 with approved phases
 - Next: start Phase 1
+
+### Phase 1 — correctness fixes
+- Removed the orthophoto row; fresh and link copy now describes what the code does (checked against fresh `frs_habitat_classify` — accessible/spawning/rearing/lake_rearing/wetland_rearing — and `frs_channel_width`; link `lnk_barrier_overrides`, `lnk_habitat_validate`, `lnk_score`)
+- Dropped "50,000+" counts and the airphoto thumbnail count; airphoto years 1967–2019 per stac_airphoto_bc README; water-temp-bc now temperature, discharge and level
+- Also fixed three more ahead-of-code lines in index.md the plan did not list (line 9 field-data list, line 14 "portable to any stream network", line 157 eDNA/benthic records)
+- Hugo build clean
