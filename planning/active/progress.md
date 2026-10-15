@@ -7,3 +7,4 @@
 - Scaffolded PWF baseline from issue #56 with the approved phases
 - Next: Phase 1
 - Phase 1: Open Source page rewritten in plain language. Each tool is introduced before its name; drift, flooded and the catalogue get one paragraph each; diggs and gq are gone; the catalogue band is framed as data plus an open recipe, with stacs; the field section describes the capability and capacity building; no roadmap wording ("not yet comparable" became "best read on its own"; "growing" was dropped from the table). The claim trace runs in Phase 4.
+- Phase 2: How It Works steps 1–4 and the Open Source evidence card rewritten. The gq chip is gone, and step 4 describes the field system and capacity building. The section lead was already plain, so it is unchanged.

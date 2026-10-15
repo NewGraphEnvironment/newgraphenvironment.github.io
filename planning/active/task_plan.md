@@ -30,10 +30,10 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 - [x] Hugo build clean; commit
 
 ### Phase 2: Landing page (`layouts/index.html`)
-- [ ] How It Works steps 1–3 rewritten to match Phase 1, short and plain (step 1: habitat, flows and temperature, tuned and tested models; step 2: change over any period the imagery covers, from any layer; step 3: the broader framing, taking credit)
-- [ ] Step 4: drop the gq chip; describe the field capability and capacity building; no tool links
-- [ ] Section lead and the Open Source evidence card text in the same plain register
-- [ ] Hugo build clean; commit
+- [x] How It Works steps 1–3 rewritten to match Phase 1, short and plain (step 1: habitat, flows and temperature, tuned and tested models; step 2: change over any period the imagery covers, from any layer; step 3: the broader framing, taking credit)
+- [x] Step 4: drop the gq chip; describe the field capability and capacity building; no tool links
+- [x] Section lead and the Open Source evidence card text in the same plain register
+- [x] Hugo build clean; commit
 
 ### Phase 3: Restoration tile (`content/project/watershed_restoration_fish_passage/index.md`)
 - [ ] Intro (line 8), kept tight, adds:
