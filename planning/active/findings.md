@@ -154,3 +154,4 @@ Also corrected pre-existing copy: "every report is publicly accessible" became "
 
 | Error | Resolution |
 |-------|------------|
+| `hillcrestgeo.ca/fwapg` (homepage listed on the fwapg fork) returns 404 | Link `smnorris.github.io/fwapg/` (200) |

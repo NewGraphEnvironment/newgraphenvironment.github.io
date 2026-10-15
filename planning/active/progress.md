@@ -39,3 +39,4 @@
   - DEM surface model "where flown" → "where published"
   - cred claim → "finds the passage behind each citation for review"
   - fwapg credit added to fresh (it was ticked in the plan but missing)
+- The first fwapg URL (hillcrestgeo.ca/fwapg, the homepage the fork lists) returns 404; it now links smnorris.github.io/fwapg (200).

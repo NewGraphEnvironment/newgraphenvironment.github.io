@@ -35,7 +35,7 @@ It builds on the bcfishpass methods and runs fresh for the network classificatio
 
 ### fresh — the stream network engine
 
-Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient, channel width and stream flow. It summarises the habitat upstream or downstream of any point, which is how much a crossing would open up. Runs on BC's Freshwater Atlas, building on [fwapg](https://www.hillcrestgeo.ca/fwapg/).
+Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient, channel width and stream flow. It summarises the habitat upstream or downstream of any point, which is how much a crossing would open up. Runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/).
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
