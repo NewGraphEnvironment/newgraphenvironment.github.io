@@ -348,7 +348,7 @@ check is almost always to read the thing the prose describes.
   keeps finding them, list every quantified or inherited claim with a measured verdict
   (`code-check.md`, "A guard's scope, escape hatches, and remedies").
 
-*74 lines of evidence for this rule are in `conventions/agent-operations.md`.*
+*86 lines of evidence for this rule are in `conventions/agent-operations.md`.*
 
 ### "It can only be answered by testing" is a claim with an author
 
@@ -441,7 +441,7 @@ rewordings. A full 100 rows means the list was cut: narrow the words.
 gh search issues --include-prs --repo NewGraphEnvironment/<peer> --state open --limit 100 <artifact words>
 ```
 
-*6 lines of evidence for this rule are in `conventions/agent-operations.md`.*
+*12 lines of evidence for this rule are in `conventions/agent-operations.md`.*
 
 ## 4. Decisions Up Front, Then Run
 
