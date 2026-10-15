@@ -8,11 +8,11 @@ Decisions at the plan gate: water-temp-bc sentence reworded to the collaboration
 
 ## Phase 1: Repo changes
 
-- [ ] Reword the water-temp-bc collaboration paragraph in `content/project/open_source_software/index.md` (~line 182), so the archive feeds the Poisson/Hillcrest work today and Skeena 2025 and Nechako 2022 are named as outputs of the collaboration, not of the archive. Keep the present tense and the qualifiers (CLAUDE.md copy rules).
-- [ ] `git rm static/img/hex/rfp.png static/img/hex/stac_orthophoto_bc.png`. Nothing references them (checked across the repo, `public/` and `planning/` excluded).
-- [ ] `git rm content/project/open_source_software/{breaks_screenshot,diggs_screenshot,gq_map_composition}.png`. Nothing references them.
-- [ ] CLAUDE.md: confirm the "placeholders" decision is gone. It is: #56 already replaced it with "2025 fish passage reports are live". No edit needed; record that in progress.md.
-- [ ] Build with blogdown's Hugo into a temp dir. Check that the Open Source page renders the new sentence, and that the build output holds no reference to the deleted files.
+- [x] Reword the water-temp-bc collaboration paragraph in `content/project/open_source_software/index.md` (~line 182), so the archive feeds the Poisson/Hillcrest work today and Skeena 2025 and Nechako 2022 are named as outputs of the collaboration, not of the archive. Keep the present tense and the qualifiers (CLAUDE.md copy rules).
+- [x] `git rm static/img/hex/rfp.png static/img/hex/stac_orthophoto_bc.png`. Nothing references them (checked across the repo, `public/` and `planning/` excluded).
+- [x] `git rm content/project/open_source_software/{breaks_screenshot,diggs_screenshot,gq_map_composition}.png`. Nothing references them.
+- [x] CLAUDE.md: confirm the "placeholders" decision is gone. It is: #56 already replaced it with "2025 fish passage reports are live". No edit needed; record that in progress.md.
+- [x] Build with blogdown's Hugo into a temp dir. Check that the Open Source page renders the new sentence, and that the build output holds no reference to the deleted files.
 
 ## Phase 2: Issue bodies (edit, don't append)
 
