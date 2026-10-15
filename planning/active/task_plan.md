@@ -51,15 +51,15 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 - [x] Fix what the trace finds; commit
 
 ### Phase 5: Verify and docs
-- [ ] Build to a temp dir. Grep the built HTML for strings that must not appear: rfp, diggs, gq (on the two pages), "stratified", "misregistration", "not yet"
-- [ ] Every outbound link on the three pages returns 200 (one curl pass)
-- [ ] Phone (390 px) and desktop screenshots of the landing, Open Source and restoration pages, looked at
-- [ ] Refresh the private preview artifact (same URL) so it can be reviewed away from the computer
-- [ ] `CLAUDE.md` above the marker:
+- [x] Build to a temp dir. Grep the built HTML for strings that must not appear: rfp, diggs, gq (on the two pages), "stratified", "misregistration", "not yet"
+- [x] Every outbound link on the three pages returns 200 (one curl pass)
+- [x] Phone (390 px) and desktop screenshots of the landing, Open Source and restoration pages, looked at
+- [x] Refresh the private preview artifact (same URL) so it can be reviewed away from the computer
+- [x] `CLAUDE.md` above the marker:
   - Site Structure line for the open_source_software tile: gq and diggs out, stacs in;
   - Key Decisions: Skeena 2025 is linked, so drop the #43 note;
   - copy rules gain "celebrate what we have; no roadmap language"
-- [ ] Commit
+- [x] Commit
 
 ## Validation
 
