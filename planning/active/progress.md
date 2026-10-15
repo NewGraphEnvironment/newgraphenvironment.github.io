@@ -24,3 +24,8 @@
 - Lead sentence, evidence card and open-source band now say "our analytical tools, data, and methods are public". "40+ published reports" dropped.
 - Checked at 1280 px and 375 px with headless Chrome over CDP (`scratchpad/fullshot.mjs`). The Chrome extension could not reach the local server.
 - Found in verification: the Open Source page has a dark background on mobile, so the transparent link and wet figures lost their black legend text. Flattened both onto white. The catalogue table overflowed at 375 px; it is now two columns.
+
+### Phase 5: verify and docs
+- Final build clean. Word-bounded grep of the landing, Open Source and restoration pages for the forbidden list: no hits. All outbound hrefs return 200; all image srcs resolve.
+- Screenshots at 1280 px and 375 px reviewed (Phase 4 notes).
+- CLAUDE.md (above the marker only; below-marker diff empty): new landing sections, the Open Source tile's tool list and leave-offs, the 2025 reports note, and the copy rules.
