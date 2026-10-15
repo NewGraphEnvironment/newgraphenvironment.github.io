@@ -19,7 +19,7 @@ For restoration planning, the first questions are where each species' habitat is
 
 ### link — habitat potential, species by species
 
-Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and tested against where fish have actually been found. It builds on the methods of bcfishpass, the established fish passage model for BC.
+Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and tested against where fish have actually been found. It builds on the methods of bcfishpass, the fish passage model built by Simon Norris.
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
@@ -49,7 +49,7 @@ Our stream network engine, fresh, does the work underneath. It breaks the networ
 
 Our stream flow tool, wet, estimates mean annual and monthly flow for every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and water temperature.
 
-The flow can feed the habitat rules. Our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
+The flow can feed the habitat rules. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
@@ -99,7 +99,7 @@ Our land-cover change tool, drift, measures how the land inside a floodplain cha
 
 Brings link, flooded and drift together for whole watershed groups: the floodplain along fish-accessible streams, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
 
-**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other on hectares lost.
+**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
 
 - [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
 
@@ -113,7 +113,7 @@ Brings link, flooded and drift together for whole watershed groups: the floodpla
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads their thumbnails and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced photos are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads their thumbnails and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
@@ -189,7 +189,7 @@ This data feeds collaborative science with [Poisson Consulting](https://www.pois
 
 ### Open catalogues, and the recipe for building them
 
-Each catalogue is two things: the data, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of this data. Ours are served at [images.a11s.one](https://images.a11s.one) and can be searched from R, Python or QGIS 3.42+ through the open STAC standard.
+Each catalogue is two things: the catalogue itself, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of this data. Ours are served at [images.a11s.one](https://images.a11s.one) and can be searched from R, Python or QGIS 3.42+ through the open STAC standard.
 
 Our catalogue loader, stacs, puts catalogues into that search service and checks that every record arrived intact.
 

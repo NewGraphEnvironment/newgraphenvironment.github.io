@@ -152,3 +152,17 @@ Decision: step 4 does not say "we lead in field mapping" (no comparisons with ot
 | flooded "the difference points to…" | flooded README: the gap runs both ways; lidar mostly adds floodplain; only coarse-maps-but-lidar-excludes is diagnostic | **fixed**: "the floodplain the coarse result maps but lidar excludes" |
 | water-temp-bc "archive of the hydrometric record … combined with the historic record" | README: ECCC real-time ~18-month window kept month over month; temperature to 2002, daily discharge to 2016 | **fixed**: "archive of hydrometric station data"; "refreshed monthly from ECCC's real-time service and kept month over month, with water temperature back to 2002 and daily flow back to 2016" |
 | stac_uav_bc table "by project" | README: region / watershed-group / year | **fixed** |
+
+## Code-check round 2 (enumeration)
+
+Round 2 enumerated all 88 added or changed claims on the three pages (`review-round2.md`): 82 held and 6 did not. All six were checked against their sources and fixed:
+
+| Row | Source | Verdict |
+|---|---|---|
+| wet → cd comparison read as every stream | wet README: station flow, summarised per year over month-day windows, goes to cd | **fixed**: "At gauging stations, … cd …" |
+| "Georeferenced photos are served" | the catalogue holds thumbnails only | **fixed**: "thumbnails" |
+| "bcfishpass, the established fish passage model for BC" (introduced by the plan-review fix) | bcfishpass README: "a collection of scripts … fish passage database" | **fixed**: "the fish passage model built by Simon Norris" |
+| "can't be compared … on hectares lost" | stac_floodplains_bc README: cross-group comparison not valid (hectares lost is its example) | **fixed**: "can't be compared with each other" |
+| "Each catalogue is … the data" | stac_pointcloud_bc README: "An index, not a copy"; elevation items link to the province's object store | **fixed**: "the catalogue itself" |
+
+Decision (F6): a tool heading of the form "name — plain description" is a label; the prose under every heading introduces the tool in plain words before its name. The same applies to the landing-page chips.
