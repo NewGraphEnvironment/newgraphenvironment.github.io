@@ -143,7 +143,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ## What do the ground and water look like now?
 
-Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar, our own drone imagery and the hydrometric record because this data was not available in a form anyone could search and load directly. They take down the barriers to sharing it: anyone can find data by place and pull it into a model, a report or a map, by script or by hand in QGIS. Partners and practitioners can see for themselves what is happening on their rivers.
+Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar, our own drone imagery and the hydrometric record because this data was not available in a form anyone could search and load directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
 <img src="/img/hex/stac_dem_bc.png" alt="stac_dem_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -221,6 +221,6 @@ We also build the capacity of field teams to navigate to sites, collect data to 
 
 ### Dynamic reporting
 
-One set of source files produces both an interactive online report and a print-ready PDF, with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every change is tracked, and most reports are publicly accessible. Our citation checker, [cred](https://www.newgraphenvironment.com/cred/), finds the passage in each source that best matches a citation, so it can be reviewed.
+One set of source files produces both an interactive online report and a print-ready PDF, with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every change is tracked, and most reports are publicly accessible. Our citation checker, [cred](https://www.newgraphenvironment.com/cred/), finds the best-matching passage for each citation, or the abstract where no source file is attached, so it can be reviewed.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.

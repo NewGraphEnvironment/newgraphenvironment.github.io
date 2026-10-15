@@ -80,3 +80,39 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 
 | Error | Resolution |
 |-------|------------|
+
+## Claim trace (Phase 4)
+
+Each changed sentence was checked against what the code does today, at `origin/HEAD`. Claims carried over unchanged from the #53 trace (see `planning/archive/2026-10-issue-53-open-source-page-rework/`) are marked "#53".
+
+| Page / claim | Source | Verdict |
+|---|---|---|
+| link: habitat potential per species, access, which barrier is in the way | #53 | holds |
+| link: habitat rules tuned for each species | link `inst/extdata/configs/*/parameters_habitat_thresholds.csv`: one row per `species_code` (BT, CH, …), in config bundles | holds |
+| link: tested against where fish have been found | `lnk_habitat_validate`: scores a run against fish observations; bundles can be compared on the same observations | holds |
+| fresh: rates stretches as spawning/rearing, lakes and wetlands, from gradient and size or flow | #53 (channel width or flow, chosen per watershed group) | holds |
+| wet: annual and monthly flow for every stream, checked against gauges; daily flow and water temperature at stations | #53 | holds |
+| wet → cd: flow and temperature in key life stages compared with earlier periods | #53 ("baseline periods") | holds |
+| flooded: from elevation and streams, narrow to wide; coarse vs lidar difference | #53 (flood factors; VCA) | holds |
+| drift: change between any two years the free satellite land-cover maps cover | `dft_rast_transition(x, from, to)` takes any two layers; `dft_stac_fetch(years=)` | holds; the period is bounded by the products, as stated |
+| drift: tags each change with any mapped layer it overlaps | `dft_transition_attribute(patches, overlay, cols)`: any sf overlay | holds |
+| Floodplain catalogue: code that builds it is open | floodplains and stac_floodplains_bc are public | holds |
+| Floodplain catalogue: "each watershed group is best read on its own" | replaces "not yet comparable"; same caveat, without the roadmap wording | holds |
+| fly: finds the fewest photos, downloads and georeferences thumbnails; served in stac_airphoto_bc | #53; stac_airphoto_bc `scripts/01_fetch.R`, `02_georef.R`, `05_stac_register.py` | holds |
+| cd: departure since 1950 across five variables; trend for any yearly series | #53 (ERA5-Land 1950 onward; departure and trend statistics) | holds |
+| Ground lead: catalogues built because the data was not searchable and loadable directly | user statement (#56) | holds; worded as "not available in a form anyone could search and load directly", not "not available" |
+| Ground lead: imagery and elevation by place, by script or in QGIS; station records by script | STAC via rstac and QGIS 3.42+ (#53); water-temp-bc queried from R | **fixed**: the first draft said all of it is found "by place" |
+| Catalogues: data plus an open recipe; anyone can build their own | all five stac_* repos are public, with build scripts in `scripts/` | holds |
+| stacs: puts catalogues into the search service and checks every record arrived intact | stacs README: register (upsert), verify id sets and body digests; public; docs at /stacs/ return 200 | holds; does not say "every catalogue" (stac_floodplains_bc carries no `stacs.toml`) |
+| Field: custom field system per program; capacity building | user statement (#56) | holds |
+| Field: offline forms, shared project, sync, form list, FISS/PSCIS/CABIN, feeds link's barrier decisions | #53 field section | holds |
+| cred: best-matching passage per citation | cred README: best-matching passage; falls back to the abstract when no local file | **fixed**: the first draft dropped the abstract fallback |
+| Landing step 1: models tuned and tested against fish observations; flow everywhere, temperature at stations | as for link and wet above | holds |
+| Landing step 2: change between any two years, tagged with any mapped layer | as for drift above | holds |
+| Landing step 3: catalogues searchable by place; station data ready to query | as for the Ground lead | **fixed**: same blend as the Ground lead |
+| Landing step 4: field system, capacity building, results flow back, reports rebuild | user statement; #53 | holds |
+| Evidence card: open catalogues of lidar, drone imagery and stream data, with the code to build them | all repos public | holds |
+| Restoration intro: long-term effectiveness monitoring, biological tools, tracking and sharing systems | user statement (#56); eDNA appendices and effectiveness-monitoring reports are linked on the tile | holds |
+| Restoration maps: the 2025 reports' background-chapter overview maps | `include_graphics` in each report's `0200-background.Rmd` at `origin/main` | holds |
+
+Plain-language read: every tool on the Open Source page is introduced in plain words before its name (link, fresh, wet, flooded, drift, fly, cd, stacs, cred; stac_airphoto_bc as "our airphoto catalogue"). A grep for `not yet|under active|growing|working toward|will |stratified|misregistration|diggs|/gq` over the three pages returns nothing.

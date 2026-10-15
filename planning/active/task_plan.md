@@ -46,9 +46,9 @@ The copy rework (#53, PR #55) made every sentence accurate, but the result is to
 - [x] Hugo build clean; commit
 
 ### Phase 4: Claim trace and plain-language read
-- [ ] Enumerate every changed sentence on all three pages in `findings.md` with its source (function, README or user statement) and verdict, using the #53 method
-- [ ] Plain-language read-through: every package introduced before its name; no jargon; no roadmap wording (grep for "not yet|under active|growing|working toward|will ")
-- [ ] Fix what the trace finds; commit
+- [x] Enumerate every changed sentence on all three pages in `findings.md` with its source (function, README or user statement) and verdict, using the #53 method
+- [x] Plain-language read-through: every package introduced before its name; no jargon; no roadmap wording (grep for "not yet|under active|growing|working toward|will ")
+- [x] Fix what the trace finds; commit
 
 ### Phase 5: Verify and docs
 - [ ] Build to a temp dir. Grep the built HTML for strings that must not appear: rfp, diggs, gq (on the two pages), "stratified", "misregistration", "not yet"
