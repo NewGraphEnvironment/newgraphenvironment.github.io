@@ -201,13 +201,13 @@ This data feeds collaborative science with [Poisson Consulting](https://www.pois
 
 All catalogues are served at [images.a11s.one](https://images.a11s.one) and can be searched from rstac, QGIS 3.42+ or any STAC client.
 
-| Catalogue | What it holds | Coverage |
-|-----------|---------------|----------|
-| [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models: bare earth and surface | Province-wide, updated monthly |
-| [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LiDAR point clouds | Province-wide |
-| [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023 | Watershed groups, growing |
-| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photographs (1967–2019), georeferenced | Selected watersheds, growing |
-| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery | Project-based, growing |
+| Catalogue | What it holds |
+|-----------|---------------|
+| [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models, bare earth and surface; province-wide, updated monthly |
+| [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LiDAR point clouds; province-wide |
+| [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group, growing |
+| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photographs (1967–2019), georeferenced; selected watersheds, growing |
+| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery; project-based, growing |
 
 <br>
 

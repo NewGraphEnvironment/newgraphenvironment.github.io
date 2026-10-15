@@ -55,11 +55,11 @@ The page lists packages one after another. It should say what a partner can lear
 - [x] Hugo build clean; commit
 
 ### Phase 4: Landing page
-- [ ] Rewrite "How It Works" (`layouts/index.html`) as the same four steps, with hex or figure nodes and arrows. Reuse the existing `.nge-pipeline-*` classes; no new JS.
-- [ ] Update the section lead sentence and the Open Source evidence card text (plain language; no "STAC catalogs" jargon)
-- [ ] Check the existing `@media (max-width: 640px)` rules still hold for the new markup, and test at 375 px
-- [ ] (review) Figure nodes get a small CSS class (no JS) and absolute image paths; drop "40+ published reports"; "integrated, open-source framework" and "Our methods are open source" become "our analytical tools, data and methods are public"
-- [ ] Hugo build clean; commit
+- [x] Rewrite "How It Works" (`layouts/index.html`) as the same four steps, with hex or figure nodes and arrows. Reuse the existing `.nge-pipeline-*` classes; no new JS.
+- [x] Update the section lead sentence and the Open Source evidence card text (plain language; no "STAC catalogs" jargon)
+- [x] Check the existing `@media (max-width: 640px)` rules still hold for the new markup, and test at 375 px
+- [x] (review) Figure nodes get a small CSS class (no JS) and absolute image paths; drop "40+ published reports"; "integrated, open-source framework" and "Our methods are open source" become "our analytical tools, data and methods are public"
+- [x] Hugo build clean; commit
 
 ### Phase 5: Verify and docs
 - [ ] Build to a temp dir; word-bounded, HTML-only grep (`grep -rniwE --include='*.html'`) of both pages for: orthophoto, rfp, spacehakr, ngr, 50,000, 10,000, temporary-hidden, thermal logger, traditional use, any stream network, any point data, designed to work on any, pioneer, hundreds of, 40+, 760 ha

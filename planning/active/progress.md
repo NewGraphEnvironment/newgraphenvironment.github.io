@@ -18,3 +18,9 @@
 - Each claim is traced in findings.md. Cut drift's UAV claim, "pioneered", "hundreds of deliverables" and the 401 Poisson link.
 - featured.png is now the floodplain coverage map (900 px, 185 KB), replacing a 2.85 MB copy of the breaks screenshot.
 - Plan review saved to review-plan.md; Phase 3 and 4 tasks extended with its verified findings.
+
+### Phase 4: landing page
+- "How It Works" is now four question steps with arrows: link hex, flooded hex, a drone-image figure node (`.nge-pipeline-fig`), and the NGE icon. Each step has text pill links to its tools (`.nge-pipeline-tools`). CSS only, no JS. The small hexes were tried first and dropped: at 44 px every sticker looks the same.
+- Lead sentence, evidence card and open-source band now say "our analytical tools, data, and methods are public". "40+ published reports" dropped.
+- Checked at 1280 px and 375 px with headless Chrome over CDP (`scratchpad/fullshot.mjs`). The Chrome extension could not reach the local server.
+- Found in verification: the Open Source page has a dark background on mobile, so the transparent link and wet figures lost their black legend text. Flattened both onto white. The catalogue table overflowed at 375 px; it is now two columns.

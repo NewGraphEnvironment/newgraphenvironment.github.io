@@ -166,6 +166,26 @@
   }
   .nge-pipeline-row .nge-pipeline-hex img { width: 80px; }
 
+  /* Figure node (a map in place of a hex) and the small tool hexes under each step */
+  .nge-pipeline-fig img {
+    width: 100px; height: 100px; object-fit: cover; border-radius: 50%;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+  }
+  .nge-pipeline-tools {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem;
+  }
+  .nge-pipeline-tools a {
+    font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 600;
+    color: var(--forest-deep); text-decoration: none;
+    border: 1px solid var(--stone-light); border-radius: 999px; padding: 0.15rem 0.7rem;
+    transition: background 0.2s ease;
+  }
+  .nge-pipeline-tools a:hover { background: var(--parchment); }
+  .nge-pipeline-more {
+    font-family: 'DM Sans', sans-serif; font-size: 0.92rem;
+    color: var(--forest-deep); text-decoration: none; font-weight: 600;
+  }
+
   /* ═══ EVIDENCE ═══ */
   .nge-evidence { background: var(--parchment); }
   .nge-evidence-cards {
@@ -304,98 +324,54 @@
       <div class="nge-reveal">
         <hr class="nge-rule">
         <h2 class="nge-section-title">How It Works</h2>
-        <p class="nge-section-lead">An integrated, open-source framework that connects provincial data, spatial analysis, field data collection, and innovative reporting.</p>
+        <p class="nge-section-lead">Four questions about a watershed. Open data catalogues feed the analysis, and the analysis becomes the field maps crews carry and the reports partners read. Our analytical tools, data, and methods are public.</p>
       </div>
-
       <div class="nge-reveal">
-        <div class="nge-pipeline-row">
-          <div class="nge-pipeline-step">
-            <a href="https://www.newgraphenvironment.com/fresh/" class="nge-pipeline-hex" target="_blank">
-              <img src="/img/hex/fresh.png" alt="fresh">
-            </a>
-            <div class="nge-pipeline-body">
-              <h3>Model habitat and connectivity on the stream network</h3>
-              <p><strong>fresh</strong> (Freshwater Referenced Spatial Hydrology) — Rate every reach for a species as accessible, spawning or rearing habitat from gradient, channel width and stream flow, and summarise what sits upstream of any point. Runs on BC's Freshwater Atlas.</p>
-            </div>
-          </div>
-          <div class="nge-pipeline-step">
-            <a href="https://www.newgraphenvironment.com/link/" class="nge-pipeline-hex" target="_blank">
-              <img src="/img/hex/link.png" alt="link">
-            </a>
-            <div class="nge-pipeline-body">
-              <h3>Find the habitat, and what's blocking it</h3>
-              <p><strong>link</strong> (Watershed Point Interpretation) — Turn field evidence — crossings, fish observations, habitat confirmations, falls — into intrinsic habitat potential and access for each species, and check the result against where fish have actually been found.</p>
-            </div>
+        <div class="nge-pipeline-step">
+          <a href="https://www.newgraphenvironment.com/link/" class="nge-pipeline-hex" target="_blank">
+            <img src="/img/hex/link.png" alt="link">
+          </a>
+          <div class="nge-pipeline-body">
+            <h3>Where is the habitat, and what's keeping fish from it?</h3>
+            <p>Intrinsic habitat potential for each species, whether fish can reach it, and which barrier is in the way, checked against where fish have actually been found, with stream flow for every stream. The result is a ranked list of crossings and the habitat each would open up.</p>
+            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/link/" target="_blank">link</a><a href="https://www.newgraphenvironment.com/fresh/" target="_blank">fresh</a><a href="https://www.newgraphenvironment.com/wet/" target="_blank">wet</a></div>
           </div>
         </div>
         <div class="nge-pipeline-arrow">↓</div>
-
         <div class="nge-pipeline-step">
           <a href="https://www.newgraphenvironment.com/flooded/" class="nge-pipeline-hex" target="_blank">
             <img src="/img/hex/flooded.png" alt="flooded">
           </a>
           <div class="nge-pipeline-body">
-            <h3>Map the floodplain</h3>
-            <p><strong>flooded</strong> (Floodplain Delineation) — Delineate where rivers do geomorphic work — sediment storage, nutrient exchange, riparian recruitment. Using provincial LiDAR elevation data from our province-wide catalogue.</p>
+            <h3>Where is the floodplain, what did it look like before, and what has changed?</h3>
+            <p>Where the floodplain is, and where roads, rail and fill cut the river off from it. Historic airphotos give the condition before clearing. Land-cover change since 2017 is tied to fire and harvest. Climate departure shows how far conditions have moved from normal. Together they are a screening map of where to look.</p>
+            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/flooded/" target="_blank">flooded</a><a href="https://www.newgraphenvironment.com/drift/" target="_blank">drift</a><a href="https://www.newgraphenvironment.com/fly/" target="_blank">fly</a><a href="https://www.newgraphenvironment.com/cd/" target="_blank">cd</a></div>
           </div>
         </div>
         <div class="nge-pipeline-arrow">↓</div>
-
         <div class="nge-pipeline-step">
-          <a href="https://www.newgraphenvironment.com/drift/" class="nge-pipeline-hex" target="_blank">
-            <img src="/img/hex/drift.png" alt="drift">
+          <a href="/project/open_source_software/" class="nge-pipeline-hex nge-pipeline-fig">
+            <img src="/project/open_source_software/uav_cover.jpg" alt="Drone imagery of a stream">
           </a>
           <div class="nge-pipeline-body">
-            <h3>Detect what's changed</h3>
-            <p><strong>drift</strong> (Detecting Riparian and Inland Floodplain Transitions) — Track land cover change inside floodplains over time using satellite imagery. Quantify where tree cover has been lost, where agriculture is expanding, and where riparian areas are degrading.</p>
+            <h3>What do the ground and water look like now?</h3>
+            <p>Provincial lidar (bare earth, surface and point clouds), our own drone imagery, and water temperature, flow and level at hydrometric stations, all searchable by place. These are the baselines for site design and before-and-after monitoring.</p>
+            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/stac_dem_bc/" target="_blank">stac_dem_bc</a><a href="https://www.newgraphenvironment.com/stac_uav_bc/" target="_blank">stac_uav_bc</a><a href="https://www.newgraphenvironment.com/stac_airphoto_bc/" target="_blank">stac_airphoto_bc</a><a href="https://www.newgraphenvironment.com/water-temp-bc/" target="_blank">water-temp-bc</a></div>
           </div>
         </div>
         <div class="nge-pipeline-arrow">↓</div>
-
-        <div class="nge-pipeline-row">
-          <div class="nge-pipeline-step">
-            <a href="https://www.newgraphenvironment.com/fly/" class="nge-pipeline-hex" target="_blank">
-              <img src="/img/hex/fly.png" alt="fly">
-            </a>
-            <div class="nge-pipeline-body">
-              <h3>Find the historic photos</h3>
-              <p><strong>fly</strong> (Airphoto Retrieval and Coverage Selection) — Download, georeference, and select from decades of historic aerial photographs — ground-truth current conditions against documented prior state.</p>
-            </div>
-          </div>
-          <div class="nge-pipeline-step">
-            <a href="https://www.newgraphenvironment.com/cd/" class="nge-pipeline-hex" target="_blank">
-              <img src="/img/hex/cd.png" alt="cd">
-            </a>
-            <div class="nge-pipeline-body">
-              <h3>Quantify climate departures</h3>
-              <p><strong>cd</strong> (Climate Departure) — Analyze temperature, precipitation, and soil moisture departures for any watershed using global reanalysis data.</p>
-            </div>
-          </div>
-        </div>
-        <div class="nge-pipeline-arrow">↓</div>
-
         <div class="nge-pipeline-step">
           <div class="nge-pipeline-hex" style="width: 100px; display: flex; align-items: center; justify-content: center;">
-            <img src="/img/nge-icon_white.png" alt="field project" style="width: 60px; height: auto; background: var(--forest-deep); border-radius: 8px; padding: 12px;">
+            <img src="/img/nge-icon_white.png" alt="field and reporting" style="width: 60px; height: auto; background: var(--forest-deep); border-radius: 8px; padding: 12px;">
           </div>
           <div class="nge-pipeline-body">
-            <h3>Build the field project</h3>
-            <p>We assemble complete, field-ready GIS projects for any watershed — provincial datasets, habitat models, historic imagery, and digital field forms that write directly to provincial database formats. Deploy to mobile devices for collaborative offline collection.</p>
+            <h3>Into the field and back</h3>
+            <p>Crews carry field-ready map projects with digital forms that work offline. Maps are styled the same from the phone to the printed page. Interactive reports and print-ready PDFs rebuild when new data arrives, and field results flow back into the models.</p>
+            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/gq/" target="_blank">gq</a></div>
           </div>
         </div>
-        <div class="nge-pipeline-arrow">↓</div>
-
-        <div class="nge-pipeline-step">
-          <div class="nge-pipeline-hex" style="width: 100px; display: flex; align-items: center; justify-content: center;">
-            <img src="/img/nge-icon_white.png" alt="reporting" style="width: 60px; height: auto; background: var(--forest-deep); border-radius: 8px; padding: 12px;">
-          </div>
-          <div class="nge-pipeline-body">
-            <h3>Publish interactive reports and print-ready PDFs</h3>
-            <p>One set of source files produces interactive online reports and print-ready PDFs — version-controlled, reproducible, and publicly accessible. When new data arrives, the report rebuilds.</p>
-          </div>
-        </div>
+        <p style="margin-top: 0.5rem;"><a href="/project/open_source_software/" class="nge-pipeline-more">See the tools →</a></p>
       </div>
-
     </div>
   </section>
 
@@ -410,7 +386,7 @@
       <div class="nge-evidence-cards nge-reveal">
         <a href="/project/watershed_restoration_fish_passage/" class="nge-evidence-card">
           <h3>Watershed Restoration &amp; Conservation</h3>
-          <p>Aquatic restoration planning across British Columbia — from the Neexdzii Kwah watershed restoration framework to fish passage assessment across Skeena, Peace, Fraser, and Elk River regions. 40+ published reports since 2020.</p>
+          <p>Aquatic restoration planning across British Columbia — from the Neexdzii Kwah watershed restoration framework to fish passage assessment across Skeena, Peace, Fraser, and Elk River regions.</p>
           <span class="nge-card-arrow">Explore →</span>
         </a>
         <a href="/project/aquatic_monitoring_assessment/" class="nge-evidence-card">
@@ -420,7 +396,7 @@
         </a>
         <a href="/project/open_source_software/" class="nge-evidence-card">
           <h3>Open Source Software</h3>
-          <p>Our analytical tools are publicly available. R packages with documentation, STAC catalogs with provincial coverage, dynamic reports anyone can access. Built in the open wherever transparency improves science.</p>
+          <p>Habitat and access per species, floodplains and how they have changed, provincial lidar and our drone imagery: open tools and data that each partnership extends. Built in the open wherever transparency improves science.</p>
           <span class="nge-card-arrow">Explore →</span>
         </a>
       </div>
@@ -432,7 +408,7 @@
     <svg class="nge-opensource-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(242,237,228,0.5)" stroke-width="1.5" stroke-linecap="round">
       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
     </svg>
-    <p class="nge-opensource-text">Our methods are open source. Transparent, reproducible, and built to share.</p>
+    <p class="nge-opensource-text">Our analytical tools, data, and methods are public. Transparent, reproducible, and built to share.</p>
     <a href="https://github.com/NewGraphEnvironment" class="nge-opensource-link">VIEW ON GITHUB</a>
   </section>
 
