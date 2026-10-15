@@ -166,6 +166,29 @@ Kept, with source:
 - "for any watershed in British Columbia" (field projects): pre-existing capability copy, built from provincial data. Unchanged by this branch.
 - "with every project" (evidence lead): pre-existing positioning.
 
+## Qualifier enumeration (code-check, after round 3)
+
+Round 3 named the mechanism: the copy took each source's pitch sentence and dropped the qualifier the same source states a paragraph later. The round-2 word list checked "does a line support this?" and never "does the source narrow it?". Three of round 3's findings sat inside the round-2 fix.
+
+Terminal enumeration: for every source behind a public claim (READMEs of link, fresh, wet, flooded, drift, floodplains, fly, stac_airphoto_bc, cd, stac_dem_bc, stac_uav_bc, water-temp-bc, gq, cred, stac_pointcloud_bc, stac_floodplains_bc), extract every qualifier line, case-insensitively (not, only, minority, candidate, screening, experimental, roadmap, planned, yet, except, estimated, caveat, limitation, validated, approximate, whole), and check the copy against each one.
+
+| source qualifier | copy now |
+|---|---|
+| floodplains: screening, not validated; every patch a candidate; "accessible" is connectivity, not habitat; most tree loss has no source yet | catalogue caveat; "fish-accessible streams"; "how much of that loss is attributed" |
+| stac_floodplains_bc: ~2/3 unattributed; groups not comparable; tree loss = class transition; `ff` is not flood frequency | landing "where it can be, matched to…"; groups caveat; drift caveat "candidate, not confirmed forest removal"; flood factor worded as water height |
+| wet: no scenario output yet; PCIC only Peace/Fraser/Columbia | no scenario claim; "where that exists" |
+| fresh: network-agnostic is design intent | "Runs on BC's Freshwater Atlas" |
+| link: Experimental; crossing prioritisation is roadmap | **changed**: "under active development"; "scores and ranks crossings" removed; landing says "which barriers stand between each species and its habitat" |
+| fly / stac_airphoto_bc: footprints estimated; thumbnails; measured placement validated only in an area | "estimates each photo's ground footprint"; "photo thumbnails"; no accuracy claim |
+| cd: some snow variables are annual only | no period claim |
+| stac_dem_bc: DSM coverage not measured; some DSMs are point-cloud only | "where published" |
+| stac_pointcloud_bc: index, not a copy; most tiles must be downloaded whole | "an index, not a copy"; streaming claim removed |
+| gq: QML for field projects, registry for tmap and mapgl | "styled consistently across…"; landing "same" sentence removed |
+| cred: abstract fallback; human makes the call | "supporting passage, or the abstract…, for review" |
+| water-temp-bc: queried by station from R | section 3 says so; place search scoped to lidar and drone |
+
+Accepted, not changed: "Our data, analytical tools, and methods are publicly available" on the Open Source intro and in the landing's Our Approach is the wording you approved in April 2026. The two new landing lines say "tools and methods" only.
+
 ## Errors Encountered
 
 | Error | Resolution |

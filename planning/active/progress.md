@@ -45,3 +45,8 @@
 - 4 findings, all verified and fixed. One sat inside a round-1 fix: drift's heading and "lost and why" still claimed causation after "ties each patch to causes" was softened.
 - Also: airphoto catalogue serves thumbnails; the place-search claim was scoped to lidar and drone (water-temp-bc is queried by station); findings row updated; "before clearing" → "decades ago, often before…".
 - Because a defect sat inside a fix, enumerated the claim class: 56 sentences, 2 more changed (crossing ranking, fly thumbnails). Recorded in findings.md.
+
+### /code-check branch, round 3 (review-round3.md)
+- 9 findings; 3 sat inside the round-2 fix (streaming claim, "forest lost", "long before satellite records"). The mechanism: pitch sentence without the source's own qualifier.
+- Fixed: crossing-habitat claim (aggregates are not "what fixing opens up"); gq "same" → consistent; streaming claim removed; drift screening caveat; fly framing; landing "tools and methods"; cred abstract fallback; point cloud "index, not a copy"; link barrier wording.
+- Qualifier enumeration over all 16 sources (findings.md) → 1 more change: link "experimental", and crossing ranking is roadmap.

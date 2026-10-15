@@ -13,15 +13,15 @@ The tools answer four questions about a watershed. Open data catalogues feed the
 
 ## Where is the habitat, and what's keeping fish from it?
 
-For restoration planning, the first questions are where each species' habitat is and which barriers cut fish off from it. The answer is a ranked list of crossings, with the habitat each would open up, and field results flow back in.
+For restoration planning, the first questions are where each species' habitat is and which barriers cut fish off from it. The answer shows which barriers stand between each species and its habitat, and field results flow back in.
 
 <img src="/img/hex/link.png" alt="link" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### link — intrinsic habitat potential, per species
 
-Turns field evidence into intrinsic habitat potential for each species. Fish observations, habitat confirmations, falls and crossing assessments decide which barriers actually block fish. link then classifies spawning and rearing habitat and access across whole watershed groups, scores and ranks crossings, and checks the modelled habitat against where fish have actually been found.
+Turns field evidence into intrinsic habitat potential for each species. Crossing assessments and falls mark the barriers. Fish observations and habitat confirmations show where fish already get past the modelled ones. link then classifies spawning and rearing habitat and access across whole watershed groups, and checks the modelled habitat against where fish have actually been found.
 
-It builds on the bcfishpass methods and runs fresh for the network classification.
+It is under active development, builds on the bcfishpass methods, and runs fresh for the network classification.
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
@@ -35,7 +35,7 @@ It builds on the bcfishpass methods and runs fresh for the network classificatio
 
 ### fresh — the stream network engine
 
-Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient, channel width and stream flow. It summarises the habitat upstream or downstream of any point, which is how much a crossing would open up. Runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/).
+Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient, channel width and stream flow. It summarises the habitat upstream or downstream of any point on the network. Runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/).
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
@@ -91,7 +91,7 @@ The difference between coarse and fine elevation data is itself a diagnostic. Co
 
 Measures land-cover change inside floodplains from free satellite products: Esri / Impact Observatory annual land cover, ESA WorldCover, and cloud-masked Sentinel-2 imagery. It turns change into patches and tags each patch with the causes it overlaps, such as fire and harvest. It also separates real change from classification noise and misregistration, and reports accuracy-adjusted areas from a stratified reference sample.
 
-It shows where riparian forest has been lost, and which losses coincide with mapped fire or harvest. Run again over later years, the same measures show whether forest is returning.
+It shows where tree cover appears to have been lost, and which losses coincide with mapped fire or harvest. Run again over later years, the same measures show whether tree cover is returning. Like the floodplain catalogue built on it, it is a screening tool: each change patch is a candidate to check, not confirmed forest removal.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
@@ -117,9 +117,9 @@ Runs link, flooded and drift across whole watershed groups. The result is the fl
 
 <img src="/img/hex/fly.png" alt="fly" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### fly — the historic reference condition
+### fly — historic airphotos
 
-Finds the fewest historic provincial airphotos that cover a site. It estimates each photo's ground footprint, accounting for terrain and each film roll's measured geometry, then downloads and georeferences the photo thumbnails. These photos show the valley as it was decades ago, often before clearing, channelisation or fire, and long before satellite records, which is the reference condition restoration targets need.
+Finds the fewest historic provincial airphotos that cover a site. It estimates each photo's ground footprint, accounting for terrain and each film roll's measured geometry, then downloads and georeferences the photo thumbnails. These photos show the valley as it was decades ago, an earlier condition to measure today's against.
 
 [diggs](https://www.newgraphenvironment.com/diggs/) is the interactive version, for picking photos over a floodplain. [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/) serves georeferenced photo thumbnails as a searchable catalogue.
 
@@ -153,7 +153,7 @@ This is the climate context for deciding which watersheds and life stages are un
 
 ## What do the ground and water look like now?
 
-Provincial data and our own. The lidar and drone imagery are catalogued so they can be found by place and loaded straight into R, Python or QGIS, without downloading whole datasets. The hydrometric records are queried by station from R. These are the baselines for site design and for before-and-after monitoring.
+Provincial data and our own. The lidar and drone imagery are catalogued so they can be found by place and opened from R, Python or QGIS. The hydrometric records are queried by station from R. These are the baselines for site design and for before-and-after monitoring.
 
 <img src="/img/hex/stac_dem_bc.png" alt="stac_dem_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -201,10 +201,10 @@ This data feeds collaborative science with [Poisson Consulting](https://www.pois
 
 All catalogues are served at [images.a11s.one](https://images.a11s.one) and can be searched from rstac, QGIS 3.42+ or any STAC client.
 
-| Catalogue | What it holds |
+| Catalogue | What it catalogues |
 |-----------|---------------|
 | [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models, bare earth and surface; province-wide, updated monthly |
-| [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LiDAR point clouds; province-wide |
+| [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
 | [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group, growing |
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds, growing |
 | [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery; project-based, growing |
@@ -223,12 +223,12 @@ We maintain forms for fish passage assessment, habitat confirmation, effectivene
 
 Collected data flows back into the same pipeline it came from. Fish passage assessments and habitat confirmations feed link's barrier decisions, and field-confirmed habitat is overlaid on the modelled classification.
 
-Map styles come from one registry, [gq](https://www.newgraphenvironment.com/gq/), so a layer looks the same on a crew's phone, in a web map and in the printed report.
+Map styles are managed in one registry, [gq](https://www.newgraphenvironment.com/gq/), so layers are styled consistently across our web maps, report maps and field projects.
 
 <br>
 
 ### Dynamic reporting
 
-One set of source files produces both an interactive online report and a print-ready PDF, complete with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every analysis is reproducible, every change is tracked, and most reports are publicly accessible. Citations are checked against the source documents with [cred](https://www.newgraphenvironment.com/cred/), which finds the passage behind each citation for review.
+One set of source files produces both an interactive online report and a print-ready PDF, complete with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every analysis is reproducible, every change is tracked, and most reports are publicly accessible. Citations are checked against the source documents with [cred](https://www.newgraphenvironment.com/cred/), which finds the supporting passage, or the abstract where no source file is attached, for review.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.
