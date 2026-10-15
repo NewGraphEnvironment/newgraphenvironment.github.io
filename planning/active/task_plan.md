@@ -19,6 +19,8 @@ The page lists packages one after another. It should say what a partner can lear
 - [x] water-temp-bc: temperature, discharge and water level at hydrometric stations
 - [x] Hugo build clean; commit
 
+- [ ] (from plan review) Drop the superseded "approximately 760 ha" figure from `watershed_restoration_fish_passage/index.md:16`; own commit
+
 ### Phase 2: Figures and stickers
 - [x] Copy figures from public repos at `origin/HEAD` into `content/project/open_source_software/`, so nothing comes from a working tree:
   - fly `man/figures/readme-priority.png`
@@ -45,20 +47,25 @@ The page lists packages one after another. It should say what a partner can lear
 - [ ] Keep the "screening, not field-validated" caveat on the floodplain and land-cover outputs
 - [ ] Keep the Poisson / Hillcrest collaboration credit, and "building on" wording for bcfishpass and fwapg
 - [ ] Update the front-matter `excerpt`
+- [ ] (review) Remove the 401 Poisson channel-width link, keeping the plain-text credit
+- [ ] (review) Cut drift's untraceable "sub-metre UAV classifications" claim; drop "We pioneered" and "hundreds of deliverables"
+- [ ] (review) Replace `featured.png` (a copy of the breaks screenshot, 2.85 MB) with a downscaled floodplain coverage map; no new bundle file name contains "hex" or "feature"
+- [ ] (review) Keep one intro line: the tools are built and extended through partner programs
 - [ ] Leave off spacehakr, ngr, xciter, mc, crate, stacs, breaks and fpr. Leave the unused breaks, diggs and gq screenshots in the bundle untouched; listing them is #54's job.
 - [ ] Hugo build clean; commit
 
 ### Phase 4: Landing page
 - [ ] Rewrite "How It Works" (`layouts/index.html`) as the same four steps, with hex or figure nodes and arrows. Reuse the existing `.nge-pipeline-*` classes; no new JS.
 - [ ] Update the section lead sentence and the Open Source evidence card text (plain language; no "STAC catalogs" jargon)
-- [ ] Check the existing `@media (max-width: 480px)` rules still hold for the new markup
+- [ ] Check the existing `@media (max-width: 640px)` rules still hold for the new markup, and test at 375 px
+- [ ] (review) Figure nodes get a small CSS class (no JS) and absolute image paths; drop "40+ published reports"; "integrated, open-source framework" and "Our methods are open source" become "our analytical tools, data and methods are public"
 - [ ] Hugo build clean; commit
 
 ### Phase 5: Verify and docs
-- [ ] Build to a temp dir; grep the built HTML for strings that must not appear: orthophoto, rfp, "50,000", spacehakr, ngr, "designed to work on any"
-- [ ] Every outbound docs/source link on both pages returns 200 (one curl pass)
+- [ ] Build to a temp dir; word-bounded, HTML-only grep (`grep -rniwE --include='*.html'`) of both pages for: orthophoto, rfp, spacehakr, ngr, 50,000, 10,000, temporary-hidden, thermal logger, traditional use, any stream network, any point data, designed to work on any, pioneer, hundreds of, 40+, 760 ha
+- [ ] Every `href` on both pages returns 200 (one curl pass)
 - [ ] Serve locally; screenshot both pages at desktop width and at 375 px
-- [ ] Update `CLAUDE.md` (above the marker): the open_source_software tile description, and drop the stale "2025 links are placeholders" note only if #54 has not already done it
+- [ ] Update `CLAUDE.md` (above the marker): the open_source_software tile description (replace the old package list), "How It Works" in the landing-section list, and drop the stale "2025 links are placeholders" note only if #54 has not already done it
 - [ ] Commit
 
 ## Validation
