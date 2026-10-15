@@ -16,14 +16,15 @@ New Graph Environment company website — landing page, work portfolio, and cont
 
 **Landing page** (`layouts/index.html`) — custom layout, not the theme default. Sections:
 - Hero with full logo + "Open-Source Watershed Science" tagline
-- Who We Are — company description
-- Our Work — 3 cards linking to project tiles
+- The Challenge, Who We Are, Our Approach — company framing
+- How It Works — four question steps (habitat and barriers; floodplain, history and change; the ground and water now; into the field and back), each linking its tools
+- What This Looks Like in Practice — 3 cards linking to the Our Work tiles
 - Open Source — GitHub link band
 
 **Our Work** (`content/project/`) — 3 tiles:
 - `watershed_restoration_fish_passage/` — Neexdzii Kwah restoration + fish passage reports by region (Skeena, Peace, Fraser, Elk). Report lists use `<details>` for collapsible previous reports.
 - `aquatic_monitoring_assessment/` — NRP nutrient loading (private report, no link), Duncan kokanee, Sheep Creek benthic/NMDS, fish & habitat assessment.
-- `open_source_software/` — R packages (fresh, flooded, drift, breaks, cd, gq, fpr, ngr), STAC catalogs, digital field forms (dff-2022), diggs, fly. Links to pkgdown sites and GitHub repos.
+- `open_source_software/` — organised by the same four questions as How It Works. Headline: link, fresh, wet; flooded, drift, the floodplain change catalogue (floodplains + stac_floodplains_bc), fly (with diggs and stac_airphoto_bc), cd; BC lidar (stac_dem_bc + stac_pointcloud_bc), drone imagery (stac_uav_bc), water-temp-bc. Supporting mentions: gq, cred, and the field-project capability (described, never named). Deliberately left off: spacehakr, ngr, xciter, mc, crate, stacs, breaks, and fpr until its README is rewritten (fpr#131). Copy is traced to functions; see the #53 archive.
 
 **Contact** (`content/form/contact.md`) — Formspree form with partnership-focused messaging. Custom layout override.
 
@@ -58,9 +59,10 @@ Images live alongside `index.md` in page bundle directories (not in `static/`). 
 - **Open Source Software as a work type** — positions tool development as a billable service, not just internal infrastructure.
 - **No standalone tools/about pages** — consolidated into landing page and Our Work tiles to reduce nav items.
 - **Report links use collapsible sections** — most recent report is always visible, previous years in `<details>` tags.
-- **2025 fish passage report links are placeholders** — Peace and Fraser 2025 will 404 until deployed. Skeena 2025 tracked in #43.
+- **2025 fish passage reports are live** — Peace and Fraser 2025 are linked; the Skeena 2025 link is tracked in #43.
 - **NRP content has no report link** — report is private.
 - **Contact messaging is partnership-focused** — signals multi-year programs, open-source tool development funded through partnerships.
+- **Open Source copy rules** — plain language, present tense (what the code does today), no counts of published items, no comparisons with others, credit what we build on (bcfishpass, fwapg), say the floodplain and land-cover outputs are screening tools. "Our data, analytical tools, and methods are publicly available" is the approved wording (April 2026); never "everything is open source". Each claim keeps the qualifier its source states.
 
 <!-- BEGIN SOUL CONVENTIONS — DO NOT EDIT BELOW THIS LINE -->
 
