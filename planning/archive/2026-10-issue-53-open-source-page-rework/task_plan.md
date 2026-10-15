@@ -72,8 +72,8 @@ The page lists packages one after another. It should say what a partner can lear
 
 - [x] Hugo build passes
 - [x] `/code-check branch` clean (5 rounds, ended by full sentence enumeration)
-- [ ] PWF checkboxes match landed work
-- [ ] `/planning-archive` on completion, then `/gh-pr-push` (body: `Closes #53`, refs #47 #48 #50)
+- [x] PWF checkboxes match landed work
+- [x] `/planning-archive` on completion, then `/gh-pr-push` (body: `Closes #53`, refs #47 #48 #50)
 
 ## Copy rules (from #53 and the April 2026 decisions)
 Plain language for funders, program managers and First Nations partners. Present tense only, nothing aspirational. No counts of published items. Positive framing, no comparisons. Never claim others' tools. Name no internal tooling. Be specific about what is public ("our analytical tools, data, and methods"), never "everything is open source".
