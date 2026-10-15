@@ -1,0 +1,7 @@
+## Outcome
+
+Tidied the open site issues that predated the #53 and #56 reworks, so that none reads as a stale spec. On the site: the water-temp-bc sentence no longer implies that the archive, created in May 2025, fed the Nechako 2022 modelling. It now names both Poisson analyses as outputs of the collaboration the archive feeds. The hexes of two private repos (rfp, stac_orthophoto_bc) and three unused screenshots (breaks, diggs, gq) were deleted. On GitHub: #46, #47 and #50 were rewritten to the current page and stay open. #38, #39, #41 and #48 got Resolution headers and were closed. #43 and the CLAUDE.md line had already landed in #53/#55 and #56.
+
+What was learned: the reviews kept finding claims written from page reading and memory instead of from the record that holds each fact. There were five provenance or edge slips across the plan review and code-check rounds 1–3, two of them inside earlier fixes. Examples are a PR credited with work another PR did, a data-flow edge with no README behind it, stacs' sticker missed because only `man/figures/` was probed, and quantifiers not walked member by member. What ended the loop was an enumeration of every attribution, edge, number and quantifier in the added text, each checked against git, a README or the page (`claims-enumeration.md`). A reviewer's verdict did not end it.
+
+Closed by: PR for #54 (branch `54-tidy-the-open-site-issues-against-the-53`)

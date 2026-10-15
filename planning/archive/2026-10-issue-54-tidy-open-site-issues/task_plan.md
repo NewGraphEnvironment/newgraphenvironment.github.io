@@ -32,14 +32,14 @@ Closing comments are one line and point to where the work landed.
 ## Phase 3: Wrap up
 
 - [x] Tick #54's checklist in its body to match what landed.
-- [ ] `/code-check` over the branch, then `/planning-archive` and `/gh-pr-push`. The PR body says "Closes #54".
+- [x] `/code-check` over the branch, then `/planning-archive` and `/gh-pr-push`. The PR body says "Closes #54".
 
 ## Validation
 
 - [x] Hugo build succeeds, and the Open Source page shows the reworded paragraph
 - [x] `/code-check` clean (once over the branch)
-- [ ] PWF checkboxes match landed work
-- [ ] `/planning-archive` on completion
+- [x] PWF checkboxes match landed work
+- [x] `/planning-archive` on completion
 
 ## Verification
 
