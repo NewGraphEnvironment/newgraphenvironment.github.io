@@ -19,15 +19,15 @@ Decisions at the plan gate: water-temp-bc sentence reworded to the collaboration
 Each body is fetched to a scratch file, revised and pushed with `gh issue edit --body-file`.
 Closing comments are one line and point to where the work landed.
 
-- [ ] **#38** (tools section): strike the stale "50,000+ DEMs" and orthophoto lines in the body, then close as done, pointing to the Open Source page (#53, #56).
-- [ ] **#41** (nav): close. The comment says the decision was no standalone Tools or About pages, and the nav is Our Work | Contact | Blog.
-- [ ] **#43**: already closed by #56. Verify only.
-- [ ] **#46** (hex stickers): rewrite to the advertised set. Still needed: floodplains, stac_floodplains_bc, stac_pointcloud_bc and stacs (none of these repos has `man/figures/logo.png`). Already have one: link, fresh, wet, flooded, drift, fly, cd, stac_airphoto_bc, stac_dem_bc, stac_uav_bc, water-temp-bc and cred. Drop ngr, rfp and stac_orthophoto_bc. Note that wet's logo is already in `static/img/hex/wet.png`. Keep the issue open.
-- [ ] **#47** (pipeline diagram): rewrite to #53's structure: the four How It Works questions (habitat and barriers; floodplain, history and change; the ground and water now; into the field and back). Catalogues (stac_dem_bc, stac_pointcloud_bc, stac_uav_bc, stac_airphoto_bc, stac_floodplains_bc, water-temp-bc) feed the tools (link, fresh, wet, flooded, drift, fly, cd), and the tools produce field maps and reports. Remove the orthophoto, dff-2022, ngr, diggs, gq and breaks nodes, and the `static/dag-preview.html` reference (the file does not exist). Point to #46 for the missing hexes. Keep the issue open.
-- [ ] **#48** (narrative landing): edit the body to strike the "760 ha" figure and the "no other environmental consultancy in BC" comparison. Also fix the stale "#46 done, all 16 generated" and "dag-preview.html" lines. Then close in favour of #53.
-- [ ] **#50** (visual tour): rewrite the figure table to what is on the page now: link, fresh, wet, flooded, drift, floodplains (coverage and attribution), fly, cd, lidar canopy (stac_pointcloud_bc) and drone cover (stac_uav_bc). Remaining gap: water-temp-bc. Drop rfp. Keep the issue open.
-- [ ] **#39** (update projects): edit the body to record where each listed item landed (2025 reports and region maps on the restoration tile; Neexdzii Kwah; NRP on the monitoring tile; climate departure (cd), stream temperature (water-temp-bc) and airphotos (fly) on the Open Source page). Then close into #53/#56.
-- [ ] **#45**: no change.
+- [x] **#38** (tools section): strike the stale "50,000+ DEMs" and orthophoto lines in the body, then close as done, pointing to the Open Source page (#53, #56).
+- [x] **#41** (nav): close. The comment says the decision was no standalone Tools or About pages, and the nav is Our Work | Contact | Blog.
+- [x] **#43**: already closed by #56. Verify only.
+- [x] **#46** (hex stickers): rewrite to the advertised set. Still needed: floodplains, stac_floodplains_bc, stac_pointcloud_bc and stacs (none of these repos has `man/figures/logo.png`). Already have one: link, fresh, wet, flooded, drift, fly, cd, stac_airphoto_bc, stac_dem_bc, stac_uav_bc, water-temp-bc and cred. Drop ngr, rfp and stac_orthophoto_bc. Note that wet's logo is already in `static/img/hex/wet.png`. Keep the issue open.
+- [x] **#47** (pipeline diagram): rewrite to #53's structure: the four How It Works questions (habitat and barriers; floodplain, history and change; the ground and water now; into the field and back). Catalogues (stac_dem_bc, stac_pointcloud_bc, stac_uav_bc, stac_airphoto_bc, stac_floodplains_bc, water-temp-bc) feed the tools (link, fresh, wet, flooded, drift, fly, cd), and the tools produce field maps and reports. Remove the orthophoto, dff-2022, ngr, diggs, gq and breaks nodes, and the `static/dag-preview.html` reference (the file does not exist). Point to #46 for the missing hexes. Keep the issue open.
+- [x] **#48** (narrative landing): edit the body to strike the "760 ha" figure and the "no other environmental consultancy in BC" comparison. Also fix the stale "#46 done, all 16 generated" and "dag-preview.html" lines. Then close in favour of #53.
+- [x] **#50** (visual tour): rewrite the figure table to what is on the page now: link, fresh, wet, flooded, drift, floodplains (coverage and attribution), fly, cd, lidar canopy (stac_pointcloud_bc) and drone cover (stac_uav_bc). Remaining gap: water-temp-bc. Drop rfp. Keep the issue open.
+- [x] **#39** (update projects): edit the body to record where each listed item landed (2025 reports and region maps on the restoration tile; Neexdzii Kwah; NRP on the monitoring tile; climate departure (cd), stream temperature (water-temp-bc) and airphotos (fly) on the Open Source page). Then close into #53/#56.
+- [x] **#45**: no change.
 
 ## Phase 3: Wrap up
 
