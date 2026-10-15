@@ -53,10 +53,12 @@ Images live alongside `index.md` in page bundle directories (not in `static/`). 
 - **Build** with blogdown's own Hugo (`blogdown::find_hugo()` gives the path) into a temp dir, never `public/`. CI builds and deploys only on push to `main`, so a PR has no preview.
 - **Phone check:** headless Chrome at 375–390 px. Capture full pages through DevTools with a normal viewport height. A very tall window makes the `100vh` hero fill the whole capture. The Open Source page renders on a dark background, so flatten transparent figures onto white.
 - **Private preview link** (a claude.ai artifact), for review away from the computer: build with `HUGO_RELATIVEURLS=true HUGO_UGLYURLS=true`, then fix what that build still leaves broken:
-  - point directory links at the `.html` pages;
+  - point directory links at the `.html` pages, or at `dir/index.html` where there is no sibling page (`contact/`);
   - point bundle images at their bundle folder;
   - make the stylesheet's `/fonts/` paths relative;
   - drop the stylesheet's `integrity` hash, which no longer matches once its font paths are edited.
+
+  To refresh an existing preview, publish to the same URL and send only the pages and images that changed: files left out are kept, and `null` removes one.
 
 ## Archive
 
