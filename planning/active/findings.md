@@ -112,6 +112,44 @@ Dropped after fetching:
 - floodplains `floodplain.png`: overlaps `flooded_scenarios.png`.
 - fresh `plot-access-1.png`: `fresh_subbasin.png` already covers it.
 
+## Claim trace (Phase 3): each claim on the Open Source page and the function or README line behind it
+
+Read at each repo's `origin/HEAD` on 2026-10-14.
+
+| tool | claim | source |
+|---|---|---|
+| link | barriers decided by observations, habitat confirmations, falls | `lnk_barrier_overrides()` roxygen |
+| link | spawning/rearing and access across watershed groups | `lnk_pipeline_classify()` (calls `fresh::frs_habitat_classify`), `lnk_access`, `lnk_rollup_wsg` |
+| link | scores and ranks crossings | `lnk_score()` (`method = "severity"` or `"rank"`) |
+| link | checked against where fish have been found | `lnk_habitat_validate()`, `lnk_habitat_validate_band()` |
+| fresh | accessible/spawning/rearing incl. lake and wetland rearing | `frs_habitat_classify()` output schema |
+| fresh | gradient, channel width, stream flow | `frs_channel_width()`; `mad` predicate (fresh#114, closed) |
+| fresh | habitat upstream/downstream of a point | `frs_network_upstream/downstream`, `frs_aggregate` |
+| wet | monthly/annual flow per segment | `wet_segment_monthly()` |
+| wet | water balance checked at gauges | `wet_wb_fit()`, `wet_flow_validate()` |
+| wet | PCIC routed flow where it exists | `wet_pcic_*`; README: PCIC covers Peace, Fraser, Columbia |
+| wet | station daily flow and temperature, gap-filled | `wet_station_daily()`, `wet_temp_daily()`, `wet_temp_fill()` |
+| wet | species windows | `wet_flow_window()`, `wet_window_stats()`; README chinook vignette |
+| wet → cd | departure statistics | wet README: per-year values to cd; cd 0.5.0 accepts any annual series |
+| flooded | VCA from any DEM and stream network | `fl_valley_confine()` |
+| flooded | flood-factor scenarios | `fl_scenarios()`, `fl_params()`. Worded as "how high the water may rise", not as flood frequency (floodplains README: `ff` is not a flood-frequency product) |
+| flooded | floodplain attributed to the streams that made it | `fl_valley_attribute()` |
+| drift | IO LULC, ESA WorldCover, Sentinel-2 | `dft_stac_config()` sources |
+| drift | patches, attribution to fire/harvest | `dft_transition_vectors()`, `dft_transition_attribute()` |
+| drift | real change vs noise and misregistration | `dft_rast_break_class()`, `dft_transition_artifact()` |
+| drift | accuracy-adjusted area | `dft_accuracy_estimate()` |
+| drift | ~~sub-metre UAV classifications~~ | not traceable: cut |
+| floodplains | runs link, flooded, drift by watershed group; screening caveat | floodplains README:30-44 |
+| fly | fewest photos, footprints, terrain, roll geometry, georeference | `fly_select()`, `fly_footprint(dem =)`, `fly_rotation_calibrate()`, `fly_georef()` |
+| cd | variables incl. VPD, soil moisture, snowpack | `cd_variables()` (swe, snowfall, snowmelt, snow_cover, vpd, soil_moisture) |
+| cd | daily air temperature at points | `cd_extract_daily()` |
+| lidar | DEM + DSM where flown; monthly | stac_dem_bc README |
+| lidar | point cloud index; canopy height; repeat flights | stac_pointcloud_bc README:8-20 |
+| drone | ortho, DSM, DTM; flight planning from floodplains | stac_uav_bc README (odm_process.R; `flight_plan.py`) |
+| catalogues | all at images.a11s.one | each README's api badge/endpoint (dem, uav, airphoto, floodplains, pointcloud) |
+
+Also corrected pre-existing copy: "every report is publicly accessible" became "most" (the NRP report is private, per CLAUDE.md).
+
 ## Errors Encountered
 
 | Error | Resolution |

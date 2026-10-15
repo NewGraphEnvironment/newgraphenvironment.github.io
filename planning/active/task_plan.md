@@ -37,22 +37,22 @@ The page lists packages one after another. It should say what a partner can lear
 - [x] Commit
 
 ### Phase 3: Open Source page rewrite
-- [ ] Before writing each headline tool's copy, read its key exported functions at `origin/HEAD`: signatures, roxygen titles and descriptions, and arguments (e.g. `lnk_habitat_validate`, `frs_habitat*`/`frs_channel_width`, `wet_segment_monthly`, `fl_valley_confine`/`fl_scenarios`, `dft_accuracy_*`/`dft_transition_attribute`, `fly_footprint`, `cd_*`). Every claim on the page must trace to a function that exists and does it. Record the trace in `findings.md`.
-- [ ] Restructure `index.md` into four sections, catalogues feeding tools feeding field maps and reports:
+- [x] Before writing each headline tool's copy, read its key exported functions at `origin/HEAD`: signatures, roxygen titles and descriptions, and arguments (e.g. `lnk_habitat_validate`, `frs_habitat*`/`frs_channel_width`, `wet_segment_monthly`, `fl_valley_confine`/`fl_scenarios`, `dft_accuracy_*`/`dft_transition_attribute`, `fly_footprint`, `cd_*`). Every claim on the page must trace to a function that exists and does it. Record the trace in `findings.md`.
+- [x] Restructure `index.md` into four sections, catalogues feeding tools feeding field maps and reports:
   1. **Where is the habitat, and what's keeping fish from it?** link, fresh, wet
   2. **Where is the floodplain, what did it look like before, and what has changed?** flooded, drift, the floodplain change catalogue (floodplains + stac_floodplains_bc as one product), historic airphotos (fly with diggs and stac_airphoto_bc as one story), cd
   3. **What do the ground and water look like now?** BC lidar (stac_dem_bc + stac_pointcloud_bc), drone imagery (stac_uav_bc, including flight planning from the floodplain maps), water-temp-bc
   4. **Into the field and back.** The field-project capability (described, no repo named), gq, cred, dynamic reporting (keep the existing section, tightened)
-- [ ] Each headline tool: a plain-language line on what it does, a line on what decision it informs, a figure, and Documentation | Source links
-- [ ] Keep the "screening, not field-validated" caveat on the floodplain and land-cover outputs
-- [ ] Keep the Poisson / Hillcrest collaboration credit, and "building on" wording for bcfishpass and fwapg
-- [ ] Update the front-matter `excerpt`
-- [ ] (review) Remove the 401 Poisson channel-width link, keeping the plain-text credit
-- [ ] (review) Cut drift's untraceable "sub-metre UAV classifications" claim; drop "We pioneered" and "hundreds of deliverables"
-- [ ] (review) Replace `featured.png` (a copy of the breaks screenshot, 2.85 MB) with a downscaled floodplain coverage map; no new bundle file name contains "hex" or "feature"
-- [ ] (review) Keep one intro line: the tools are built and extended through partner programs
-- [ ] Leave off spacehakr, ngr, xciter, mc, crate, stacs, breaks and fpr. Leave the unused breaks, diggs and gq screenshots in the bundle untouched; listing them is #54's job.
-- [ ] Hugo build clean; commit
+- [x] Each headline tool: a plain-language line on what it does, a line on what decision it informs, a figure, and Documentation | Source links
+- [x] Keep the "screening, not field-validated" caveat on the floodplain and land-cover outputs
+- [x] Keep the Poisson / Hillcrest collaboration credit, and "building on" wording for bcfishpass and fwapg
+- [x] Update the front-matter `excerpt`
+- [x] (review) Remove the 401 Poisson channel-width link, keeping the plain-text credit
+- [x] (review) Cut drift's untraceable "sub-metre UAV classifications" claim; drop "We pioneered" and "hundreds of deliverables"
+- [x] (review) Replace `featured.png` (a copy of the breaks screenshot, 2.85 MB) with a downscaled floodplain coverage map; no new bundle file name contains "hex" or "feature"
+- [x] (review) Keep one intro line: the tools are built and extended through partner programs
+- [x] Leave off spacehakr, ngr, xciter, mc, crate, stacs, breaks and fpr. Leave the unused breaks, diggs and gq screenshots in the bundle untouched; listing them is #54's job.
+- [x] Hugo build clean; commit
 
 ### Phase 4: Landing page
 - [ ] Rewrite "How It Works" (`layouts/index.html`) as the same four steps, with hex or figure nodes and arrows. Reuse the existing `.nge-pipeline-*` classes; no new JS.
