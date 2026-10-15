@@ -19,3 +19,7 @@
 - #46 now lists floodplains, stac_floodplains_bc, stac_pointcloud_bc and stacs as needing stickers. stacs was added beyond #54's list because the page advertises it and it has no logo.
 - #47 follows the page's four questions, with catalogues in and maps and reports out; the dag-preview reference is gone.
 - #39 resolution: Elk River has no 2025 report or map, so only Skeena, Peace and Fraser 2025 are named.
+
+### Reviews (2026-10-15)
+- Plan review (Plan agent) returned after Phases 1–2: 11 findings, triaged in `review-plan.md`. The real ones were fixed in the issue bodies: stacs already has a sticker (`docs/assets/logo.png`), #47's flow direction, the banned "everything is open source" line in #48, chinook in #39, the field row in #50, `/about/` in #41, and the kept hexes named in #54.
+- Code-check round 1 (`review-round1.md`): 4 claim slips in the issue bodies (cred and stacs hexes not in `static/img/hex/`, the catalogues section has no figure, chinook in the wet section only, the tile was created in #44). All fixed. The reviewer confirmed Irvine is a co-author on both Poisson analyses, so "That collaboration has produced" holds.
