@@ -19,7 +19,7 @@ The page lists packages one after another. It should say what a partner can lear
 - [x] water-temp-bc: temperature, discharge and water level at hydrometric stations
 - [x] Hugo build clean; commit
 
-- [ ] (from plan review) Drop the superseded "approximately 760 ha" figure from `watershed_restoration_fish_passage/index.md:16`; own commit
+- [x] (from plan review) Drop the superseded "approximately 760 ha" figure from `watershed_restoration_fish_passage/index.md:16`; own commit
 
 ### Phase 2: Figures and stickers
 - [x] Copy figures from public repos at `origin/HEAD` into `content/project/open_source_software/`, so nothing comes from a working tree:
