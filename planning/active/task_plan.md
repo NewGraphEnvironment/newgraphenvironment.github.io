@@ -20,7 +20,7 @@ The page lists packages one after another. It should say what a partner can lear
 - [x] Hugo build clean; commit
 
 ### Phase 2: Figures and stickers
-- [ ] Copy figures from public repos at `origin/HEAD` into `content/project/open_source_software/`, so nothing comes from a working tree:
+- [x] Copy figures from public repos at `origin/HEAD` into `content/project/open_source_software/`, so nothing comes from a working tree:
   - fly `man/figures/readme-priority.png`
   - floodplains `fig/floodplain.png`, `fig/attribution.png`
   - stac_floodplains_bc `fig/coverage.png` (via `gh api`; not cloned)
@@ -29,10 +29,10 @@ The page lists packages one after another. It should say what a partner can lear
   - wet gh-pages `articles/segment-discharge_files/figure-html/map-pick-1.png`
   - fresh `vignettes/figure/plot-access-1.png`
   - stac_uav_bc `fig/cover.JPG`
-- [ ] Downscale only those wider than ~1600 px (check the size first; `sips -Z` scales up too) and keep file sizes web-reasonable
-- [ ] Look at every image before using it: no private-landowner or internal content
-- [ ] Copy wet's `man/figures/logo.png` to `static/img/hex/wet.png`
-- [ ] Commit
+- [x] Downscale only those wider than ~1600 px (check the size first; `sips -Z` scales up too) and keep file sizes web-reasonable
+- [x] Look at every image before using it: no private-landowner or internal content
+- [x] Copy wet's `man/figures/logo.png` to `static/img/hex/wet.png`
+- [x] Commit
 
 ### Phase 3: Open Source page rewrite
 - [ ] Before writing each headline tool's copy, read its key exported functions at `origin/HEAD`: signatures, roxygen titles and descriptions, and arguments (e.g. `lnk_habitat_validate`, `frs_habitat*`/`frs_channel_width`, `wet_segment_monthly`, `fl_valley_confine`/`fl_scenarios`, `dft_accuracy_*`/`dft_transition_attribute`, `fly_footprint`, `cd_*`). Every claim on the page must trace to a function that exists and does it. Record the trace in `findings.md`.

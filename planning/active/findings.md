@@ -93,6 +93,25 @@ Tidying the older site issues is its own issue, #54.
 - [ ] Mobile layout checked at 375 px (see #45)
 
 
+## Figures (Phase 2)
+
+Pulled from each repo's `origin/HEAD` or `origin/gh-pages` (link, wet), or through `gh api` (stac_floodplains_bc, stac_pointcloud_bc). Anything over 1400 px on its longest side was downscaled to 1400; nothing was scaled up. I looked at every image: no landowner or internal content.
+
+| file | source | note |
+|---|---|---|
+| `link_bull_trout.png` | link gh-pages, pars-habitat-connectivity `map-bt-1.png` | transparent background, legend text is black (fine on a light page) |
+| `wet_discharge_source.png` | wet gh-pages, segment-discharge `map-pick-1.png` | transparent background |
+| `floodplains_coverage.png` | stac_floodplains_bc `fig/coverage.png` | BC map of watershed groups with published floodplains |
+| `floodplains_attribution.png` | floodplains `fig/attribution.png` | Bulkley tree loss by cause; carries ha figures and a config path in the subtitle (the repo's own published figure) |
+| `lidar_canopy.png` | stac_pointcloud_bc `fig/maxan_chm.png` | canopy height from point clouds, Maxan Creek |
+| `uav_cover.jpg` | stac_uav_bc `fig/cover.JPG` | drone orthomosaic |
+| `static/img/hex/wet.png` | wet `man/figures/logo.png` | |
+
+Dropped after fetching:
+- fly `readme-priority.png`: byte-identical to `fly_priority.png`, already on the page.
+- floodplains `floodplain.png`: overlaps `flooded_scenarios.png`.
+- fresh `plot-access-1.png`: `fresh_subbasin.png` already covers it.
+
 ## Errors Encountered
 
 | Error | Resolution |
