@@ -29,3 +29,13 @@
 - Final build clean. Word-bounded grep of the landing, Open Source and restoration pages for the forbidden list: no hits. All outbound hrefs return 200; all image srcs resolve.
 - Screenshots at 1280 px and 375 px reviewed (Phase 4 notes).
 - CLAUDE.md (above the marker only; below-marker diff empty): new landing sections, the Open Source tile's tool list and leave-offs, the 2025 reports note, and the copy rules.
+
+### /code-check branch, round 1 (review-round1.md)
+- 6 findings, all verified against sources, all fixed:
+  - landing step 2 overclaimed attribution (66% of loss is unattributed) and blockage → hedged
+  - drift "ties each patch to causes" → "tags each patch with the causes it overlaps"
+  - flooded comparison → "where to look for what may be preventing", per flooded README:55-57
+  - step 3 chip airphoto → pointcloud
+  - DEM surface model "where flown" → "where published"
+  - cred claim → "finds the passage behind each citation for review"
+  - fwapg credit added to fresh (it was ticked in the plan but missing)

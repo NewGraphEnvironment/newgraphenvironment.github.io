@@ -35,7 +35,7 @@ It builds on the bcfishpass methods and runs fresh for the network classificatio
 
 ### fresh — the stream network engine
 
-Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient, channel width and stream flow. It summarises the habitat upstream or downstream of any point, which is how much a crossing would open up. Runs on BC's Freshwater Atlas.
+Breaks the network at barriers and falls and rates each reach for a species as accessible, spawning or rearing habitat (including lake and wetland rearing), from gradient, channel width and stream flow. It summarises the habitat upstream or downstream of any point, which is how much a crossing would open up. Runs on BC's Freshwater Atlas, building on [fwapg](https://www.hillcrestgeo.ca/fwapg/).
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
@@ -75,7 +75,7 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 Delineates functional floodplains from any elevation model and stream network with the Valley Confinement Algorithm. It runs at several flood factors, which set how high above the channel the water may rise, from the active floodplain out to the whole valley floor. It also attributes the floodplain to the streams that made it.
 
-The difference between coarse and fine elevation data is itself a diagnostic. Coarse data shows the floodplain surface. Lidar shows the roads, rail grades, dykes and fill that sit above that surface and cut the river off from it. Comparing the two shows **what is preventing the floodplain from functioning, and where to act**: fill removal, dyke breaches, crossing installations.
+The difference between coarse and fine elevation data is itself a diagnostic. Coarse data shows the floodplain surface. Lidar shows the roads, rail grades, dykes and fill that sit above that surface and can cut the river off from it. Comparing the two shows **where to look for what may be preventing the floodplain from functioning, and where to act**: fill removal, dyke breaches, crossing installations.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -89,7 +89,7 @@ The difference between coarse and fine elevation data is itself a diagnostic. Co
 
 ### drift — what has changed, and why
 
-Measures land-cover change inside floodplains from free satellite products: Esri / Impact Observatory annual land cover, ESA WorldCover, and cloud-masked Sentinel-2 imagery. It turns change into patches and ties each patch to causes such as fire and harvest. It also separates real change from classification noise and misregistration, and reports accuracy-adjusted areas from a stratified reference sample.
+Measures land-cover change inside floodplains from free satellite products: Esri / Impact Observatory annual land cover, ESA WorldCover, and cloud-masked Sentinel-2 imagery. It turns change into patches and tags each patch with the causes it overlaps, such as fire and harvest. It also separates real change from classification noise and misregistration, and reports accuracy-adjusted areas from a stratified reference sample.
 
 It shows where riparian forest has been lost and why, and whether restoration is holding over time.
 
@@ -159,7 +159,7 @@ Provincial data and our own, catalogued so any of it can be found by place and l
 
 ### BC lidar, ready to query
 
-LidarBC elevation tiles across the province are searchable by place and date: the bare-earth model and, where flown, the surface model. LidarBC's raw point clouds are indexed too. The elevation catalogue updates monthly.
+LidarBC elevation tiles across the province are searchable by place and date: the bare-earth model and, where published, the surface model. LidarBC's raw point clouds are indexed too. The elevation catalogue updates monthly.
 
 The bare earth shows side channels, old channels, and the fill and embankments built across a river's path. The point clouds give canopy height: how tall the streamside forest is, where it shades the water, and where it has been cleared. Where a place has been flown more than once, change becomes measurable.
 
@@ -229,6 +229,6 @@ Map styles come from one registry, [gq](https://www.newgraphenvironment.com/gq/)
 
 ### Dynamic reporting
 
-One set of source files produces both an interactive online report and a print-ready PDF, complete with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every analysis is reproducible, every change is tracked, and most reports are publicly accessible. Citations are checked against the source documents themselves with [cred](https://www.newgraphenvironment.com/cred/), so each reference supports the claim it is attached to.
+One set of source files produces both an interactive online report and a print-ready PDF, complete with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every analysis is reproducible, every change is tracked, and most reports are publicly accessible. Citations are checked against the source documents with [cred](https://www.newgraphenvironment.com/cred/), which finds the passage behind each citation for review.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.
