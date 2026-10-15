@@ -143,12 +143,28 @@ Read at each repo's `origin/HEAD` on 2026-10-14.
 | fly | fewest photos, footprints, terrain, roll geometry, georeference | `fly_select()`, `fly_footprint(dem =)`, `fly_rotation_calibrate()`, `fly_georef()` |
 | cd | variables incl. VPD, soil moisture, snowpack | `cd_variables()` (swe, snowfall, snowmelt, snow_cover, vpd, soil_moisture) |
 | cd | daily air temperature at points | `cd_extract_daily()` |
-| lidar | DEM + DSM where flown; monthly | stac_dem_bc README |
+| lidar | DEM + DSM where published; monthly | stac_dem_bc README |
 | lidar | point cloud index; canopy height; repeat flights | stac_pointcloud_bc README:8-20 |
 | drone | ortho, DSM, DTM; flight planning from floodplains | stac_uav_bc README (odm_process.R; `flight_plan.py`) |
 | catalogues | all at images.a11s.one | each README's api badge/endpoint (dem, uav, airphoto, floodplains, pointcloud) |
 
 Also corrected pre-existing copy: "every report is publicly accessible" became "most" (the NRP report is private, per CLAUDE.md).
+
+## Claim enumeration (code-check, after round 2)
+
+Mechanism behind rounds 1 and 2: copy stated causation, completeness or coverage more absolutely than the source does ("tied to", "and why", "all searchable", "the photos", "ranked by"). Round 2 found an instance inside a round-1 fix, so the class was enumerated, not just patched.
+
+Method: every sentence on the Open Source page and the landing page from How It Works to the end that contains an absolute, causal or coverage word (why, cause, every, all, any, each, whole, province, straight, show(s), before, only, actually, ranked, checked, tied, public, monthly, updated, across, exist(s), decide(s), open up, measure(s), builds on, growing) was extracted by script: 56 sentences. Each was checked against the claim-trace table above and the tool READMEs.
+
+Changed after the enumeration:
+- "ranked by the habitat each would open up" (OSS and landing): `lnk_score(method = "rank")` is weighted multi-criteria, not habitat-only. Now "a ranked list of crossings, with the habitat each would open up".
+- fly "downloads and georeferences the photos": the catalogue and fly README say thumbnails. Now "photo thumbnails".
+
+Kept, with source:
+- wet "every stream segment": the wet README calls the water balance "province-wide" per segment.
+- "All catalogues are served at images.a11s.one": each of the five STAC READMEs names that endpoint.
+- "for any watershed in British Columbia" (field projects): pre-existing capability copy, built from provincial data. Unchanged by this branch.
+- "with every project" (evidence lead): pre-existing positioning.
 
 ## Errors Encountered
 

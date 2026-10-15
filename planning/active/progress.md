@@ -40,3 +40,8 @@
   - cred claim → "finds the passage behind each citation for review"
   - fwapg credit added to fresh (it was ticked in the plan but missing)
 - The first fwapg URL (hillcrestgeo.ca/fwapg, the homepage the fork lists) returns 404; it now links smnorris.github.io/fwapg (200).
+
+### /code-check branch, round 2 (review-round2.md)
+- 4 findings, all verified and fixed. One sat inside a round-1 fix: drift's heading and "lost and why" still claimed causation after "ties each patch to causes" was softened.
+- Also: airphoto catalogue serves thumbnails; the place-search claim was scoped to lidar and drone (water-temp-bc is queried by station); findings row updated; "before clearing" → "decades ago, often before…".
+- Because a defect sat inside a fix, enumerated the claim class: 56 sentences, 2 more changed (crossing ranking, fly thumbnails). Recorded in findings.md.

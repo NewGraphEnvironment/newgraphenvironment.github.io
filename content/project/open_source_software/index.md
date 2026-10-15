@@ -13,7 +13,7 @@ The tools answer four questions about a watershed. Open data catalogues feed the
 
 ## Where is the habitat, and what's keeping fish from it?
 
-For restoration planning, the first questions are where each species' habitat is and which barriers cut fish off from it. The answer is a list of crossings ranked by the habitat each would open up, and field results flow back in.
+For restoration planning, the first questions are where each species' habitat is and which barriers cut fish off from it. The answer is a ranked list of crossings, with the habitat each would open up, and field results flow back in.
 
 <img src="/img/hex/link.png" alt="link" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -87,11 +87,11 @@ The difference between coarse and fine elevation data is itself a diagnostic. Co
 
 <img src="/img/hex/drift.png" alt="drift" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### drift — what has changed, and why
+### drift — what has changed in the floodplain
 
 Measures land-cover change inside floodplains from free satellite products: Esri / Impact Observatory annual land cover, ESA WorldCover, and cloud-masked Sentinel-2 imagery. It turns change into patches and tags each patch with the causes it overlaps, such as fire and harvest. It also separates real change from classification noise and misregistration, and reports accuracy-adjusted areas from a stratified reference sample.
 
-It shows where riparian forest has been lost and why, and whether restoration is holding over time.
+It shows where riparian forest has been lost, and which losses coincide with mapped fire or harvest. Run again over later years, the same measures show whether forest is returning.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
@@ -119,9 +119,9 @@ Runs link, flooded and drift across whole watershed groups. The result is the fl
 
 ### fly — the historic reference condition
 
-Finds the fewest historic provincial airphotos that cover a site. It estimates each photo's ground footprint, accounting for terrain and each film roll's measured geometry, then downloads and georeferences the photos. These photos show the valley before clearing, channelisation or fire, decades before satellite records, which is the reference condition restoration targets need.
+Finds the fewest historic provincial airphotos that cover a site. It estimates each photo's ground footprint, accounting for terrain and each film roll's measured geometry, then downloads and georeferences the photo thumbnails. These photos show the valley as it was decades ago, often before clearing, channelisation or fire, and long before satellite records, which is the reference condition restoration targets need.
 
-[diggs](https://www.newgraphenvironment.com/diggs/) is the interactive version, for picking photos over a floodplain. [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/) serves the georeferenced photos as a searchable catalogue.
+[diggs](https://www.newgraphenvironment.com/diggs/) is the interactive version, for picking photos over a floodplain. [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/) serves georeferenced photo thumbnails as a searchable catalogue.
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
@@ -153,7 +153,7 @@ This is the climate context for deciding which watersheds and life stages are un
 
 ## What do the ground and water look like now?
 
-Provincial data and our own, catalogued so any of it can be found by place and loaded straight into R, Python or QGIS. There is no need to download whole datasets. These are the baselines for site design and for before-and-after monitoring.
+Provincial data and our own. The lidar and drone imagery are catalogued so they can be found by place and loaded straight into R, Python or QGIS, without downloading whole datasets. The hydrometric records are queried by station from R. These are the baselines for site design and for before-and-after monitoring.
 
 <img src="/img/hex/stac_dem_bc.png" alt="stac_dem_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -206,7 +206,7 @@ All catalogues are served at [images.a11s.one](https://images.a11s.one) and can 
 | [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models, bare earth and surface; province-wide, updated monthly |
 | [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LiDAR point clouds; province-wide |
 | [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group, growing |
-| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photographs (1967–2019), georeferenced; selected watersheds, growing |
+| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds, growing |
 | [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery; project-based, growing |
 
 <br>
