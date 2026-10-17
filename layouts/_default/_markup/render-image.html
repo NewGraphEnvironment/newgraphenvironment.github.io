@@ -1,0 +1,12 @@
+{{- /* Markdown images become lazy-loaded figures; the alt text is also the
+       visible caption. Needs markup.goldmark.parser.wrapStandAloneImageWithinParagraph
+       = false in config.toml, or the figure lands inside a <p>. */ -}}
+{{- $src := .Destination -}}
+{{- with .Page.Resources.GetMatch .Destination }}{{ $src = .RelPermalink }}{{ end -}}
+{{- /* .Text is rendered HTML (typographer entities such as &rsquo;); plainify alone
+       leaves them to be escaped a second time, so unescape before the template escapes. */ -}}
+{{- $alt := .Text | plainify | htmlUnescape -}}
+<figure>
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  {{- with $alt }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

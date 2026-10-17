@@ -1,0 +1,19 @@
+// New Graph Environment palette for the hugo-apero scaffold. The "hex" in the
+// filename makes scaffold.scss import theme/set-theme after this file.
+// Tokens match layouts/index.html: forest #1a2e1f / #2d4a35 / #3d6b4a,
+// river #3a6b8c, parchment #f2ede4, cream #faf7f2, stone #5f5a4e / #b0a99a.
+$siteBgColorCustom: #faf7f2;
+$sidebarBgColorCustom: #f2ede4;
+$textColorCustom: #1a1a18;
+$sidebarTextColorCustom: #1a1a18;
+$headlineColorCustom: #5f5a4e;
+$headingColorCustom: #1a2e1f;
+$bodyLinkColorCustom: #3a6b8c;
+$navLinkColorCustom: #faf7f2;
+$sidebarLinkColorCustom: #3a6b8c;
+$footerTextColorCustom: #b0a99a;
+$buttonTextColorCustom: #faf7f2;
+$buttonHoverTextColorCustom: #faf7f2;
+$buttonBgColorCustom: #2d4a35;
+$buttonHoverBgColorCustom: #3d6b4a;
+$borderColorCustom: #e5ddd0;

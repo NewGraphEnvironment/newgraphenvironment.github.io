@@ -9,11 +9,9 @@ We plan, deliver and monitor aquatic restoration at scales ranging from individu
 
 We monitor restoration effectiveness over the long term with standardised biological tools: eDNA, benthic invertebrate sampling, fish inventories for the provincial database (FISS), fish and fish habitat assessment, drone surveys, and riparian assessment. The systems we have built track progress and effectiveness and share the results with partners, so what we learn at one site carries to the next.
 
-<br>
+## Neexdzii Kwah Watershed Restoration
 
-### Neexdzii Kwah Watershed Restoration
-
-The Neexdzii Kwah (Upper Bulkley River) has been noted as containing some of the most intense land use in the Skeena Basin. This initiative develops a living governance and prioritization framework for watershed restoration — placing Wet'suwet'en direction at the centre of decision-making and integrating open-source spatial analysis tools to support planning at the sub-basin scale.
+The Neexdzii Kwah (Upper Bulkley River) has some of the most intense land use in the Skeena Basin, as the 2024 restoration plan documents. This initiative develops a living governance and prioritization framework for watershed restoration — placing Wet'suwet'en direction at the centre of decision-making and integrating open-source spatial analysis tools to support planning at the sub-basin scale.
 
 The watershed was divided into 14 sub-basins to enable comparison and investment targeting. Floodplain modelling mapped where tree cover appears to have been lost over 2017–2023. Field reviews at 26 locations documented conditions ranging from successful past restoration to riparian degradation far exceeding past investment footprints. A collaborative GIS project integrates all analysis outputs and travels into the field on mobile devices.
 
@@ -22,19 +20,13 @@ The watershed was divided into 14 sub-basins to enable comparison and investment
 
 This work is conducted on behalf of the Wet'suwet'en Treaty Office Society, delivered under the leadership of the Society for Ecosystem Restoration in Northern BC (SERNbc), with technical implementation by New Graph Environment.
 
-<br>
+![The Neexdzii Kwah divided into sub-basins, with the modelled floodplain, Highway 16 and the CN railway.](map-lulc-subbasins.jpg)
 
-![](map-lulc-subbasins.png)
+## Fish Passage Restoration Planning
 
-<br>
+Multi-year fish passage assessment and restoration planning across more than 20 watershed groups in British Columbia. We collaborate with First Nations, provincial agencies, and stewardship organizations to identify barriers, prioritize restoration, and track outcomes. The Skeena, Fraser and Peace programs are delivered with SERNbc: for the Habitat Conservation Trust Foundation and the Ministry of Transportation and Infrastructure in the Skeena and Fraser, and for the Fish and Wildlife Compensation Program in the Peace. The 2021 and 2022 Elk River reports were for Nupqu Resource Limited Partnership, the 2020 Upper Elk and Flathead work was with Nupqu for the Canadian Wildlife Federation, and the 2022 effectiveness monitoring was for the Ministry of Transportation and Infrastructure. Reports since 2020 are living documents: each rebuilds when new data or review comments arrive, and the version and date on its title page say where it stands.
 
-### Fish Passage Restoration Planning
-
-Multi-year fish passage assessment and restoration planning across more than 20 watershed groups in British Columbia. We collaborate with First Nations, provincial agencies, and stewardship organizations to identify barriers, prioritize restoration, and track outcomes. Initiatives have led to substantial funding to support not only fish passage restoration but also cattle exclusion fencing, streambank stabilization, and riparian planting programs.
-
-<br>
-
-#### Skeena Region
+### Skeena Region
 
   - [Restoring Fish Passage in the Skeena Region 2025](https://www.newgraphenvironment.com/fish_passage_skeena_2025_reporting/)
 
@@ -49,13 +41,9 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 </details>
 
-<br>
-
 ![Skeena Region fish passage restoration, from the 2025 report.](fishpassage_skeena_2025.jpg)
 
-<br>
-
-#### Peace Region
+### Peace Region
 
   - [Restoring Fish Passage in the Peace Region 2025](https://www.newgraphenvironment.com/fish_passage_peace_2025_reporting/)
   - [Restoring Fish Passage in the Peace Region 2024](https://www.newgraphenvironment.com/fish_passage_peace_2024_reporting/)
@@ -69,24 +57,16 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 </details>
 
-<br>
-
 ![Fish and Wildlife Compensation Program (FWCP) Peace Region fish passage restoration, from the 2025 report.](fishpassage_peace_2025.jpg)
 
-<br>
+### Fraser Region
 
-#### Fraser Region
-
-  - [Fraser River Fish Passage Restoration Planning 2025](https://www.newgraphenvironment.com/fish_passage_fraser_2025_reporting/)
-  - [Fraser River Fish Passage Restoration Planning 2023](https://www.newgraphenvironment.com/fish_passage_fraser_2023_reporting/)
-
-<br>
+  - [Restoring Fish Passage in the Fraser Region 2025](https://www.newgraphenvironment.com/fish_passage_fraser_2025_reporting/)
+  - [Restoring Fish Passage in the Fraser Region 2023](https://www.newgraphenvironment.com/fish_passage_fraser_2023_reporting/)
 
 ![Fraser Region fish passage restoration, from the 2025 report.](fishpassage_fraser_2025.jpg)
 
-<br>
-
-#### Elk River
+### Elk River
 
   - [Elk River Watershed Group Fish Passage Restoration Planning 2022](https://www.newgraphenvironment.com/fish_passage_elk_2022_reporting/)
 
@@ -97,13 +77,9 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 </details>
 
-<br>
+![Cutthroat trout measured against a tape during fish sampling, September 2022.](TimePhoto_20220927_131549.JPG)
 
-![](TimePhoto_20220927_131549.JPG)
-
-<br>
-
-#### Effectiveness Monitoring
+### Effectiveness Monitoring
 
   - [Effectiveness Monitoring for Cross Creek, Bittner Creek and Five Mile Creek - 2022](https://www.newgraphenvironment.com/fish_passage_moti_2022_reporting/)
 

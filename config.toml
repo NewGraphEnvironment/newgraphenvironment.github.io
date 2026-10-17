@@ -13,12 +13,17 @@ paginate = 5
 preserveTaxonomyNames = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 enableEmoji = true
+# No tag, category or series pages: nothing uses them, and empty ones were indexed
+disableKinds = ["taxonomy", "term"]
 
 [markup]
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark.renderer]
     unsafe = true  # Enable user to embed HTML snippets in Markdown content.
-    hardwraps = false 
+    hardwraps = false
+  [markup.goldmark.parser]
+    # layouts/_default/_markup/render-image.html wraps images in <figure>
+    wrapStandAloneImageWithinParagraph = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 2
@@ -30,8 +35,8 @@ enableEmoji = true
 [params]
   orgName = "New Graph Environment"
   orgLocal = ""
-  description = "Biology and ecosystem restoration"
-  #favicon = "/img/nge-full_black.png"
+  description = "Open-source watershed science in British Columbia: aquatic restoration planning and delivery, long-term monitoring, and the open tools behind them."
+  favicon = "/favicon.ico"
   logo = "/img/nge-full_white.png"
   mainSections = ["project"]
   navallcaps = true
@@ -41,28 +46,24 @@ enableEmoji = true
   socialInFooter = true
   # Default image for social sharing and search engines. 
   # Place image file in `static` folder and specify image name here.
-  sharing_image = "/img/papillons.jpg"
-  # Twitter username (without @). Used when a visitor shares your site on Twitter.
-  twitter = "apreshill"
-  
+  sharing_image = "/img/share-1200x630.jpg"
+
   # use a built-in color theme
   # one of: earth / forest / grayscale / magma / paper / peach / plum /
   #         poppy / primer / sky / violet / water 
-  theme = "primer"
-  
+  theme = ""
+
   # or, leave theme empty & make your own palette
   # see docs at https://hugo-apero.netlify.app/blog/color-themes/
   # the custom scss file must be in the assets/ folder
   # add the filename name here, without extension
   # to use hex colors instead of named tachyons colors, include "hex" in filename
-  custom_theme = "" 
-  
-  # use an embedded font-family
-  # serif options: Fraunces / EB Garamond / Bitter
-  # sans-serif options: Commissioner / Atkinson Hyperlegible / Metropolis
-  # if you import your own fonts, name them here too
-  customtextFontFamily = "Metropolis"
-  customheadingFontFamily = "Commissioner"
+  custom_theme = "nge-hex"
+
+  # fonts: loaded from Google Fonts in layouts/partials/head.html;
+  # fallbacks are in assets/custom.scss
+  customtextFontFamily = "DM Sans"
+  customheadingFontFamily = "Cormorant Garamond"
   # alternatively, leave empty and select basic font options: sans-serif or serif
   # for more http://tachyons.io/docs/typography/font-family/
   textFontFamily = "sans-serif"
@@ -70,15 +71,15 @@ enableEmoji = true
 
   # Configuration of https://utteranc.es/ for comments
   [params.utterances]
-    use_utterances = true
-    repo_name = "apreshill/apero"
+    use_utterances = false
+    repo_name = ""
     issue_term = "pathname" # url, pathname, or title
     theme = "boxy-light"
     label = "comments :crystal_ball:"
 
-  # Configuration of math rendering
-  [params.math]
-    renderer = "katex" # one of "mathjax" / "katex" 
+  # Configuration of math rendering: off, nothing on the site uses it
+  # [params.math]
+  #   renderer = "katex" # one of "mathjax" / "katex"
 
   # Social icons may appear on homepage and in site header or footer
   # Configure show/hide above - add as many as you like below
@@ -110,21 +111,9 @@ enableEmoji = true
   [[menu.header]]
     name = "Blog"
     title = "Blog"
-    url = "https://newgraphenvironment.github.io/new_graphiti/"
+    url = "https://www.newgraphenvironment.com/new_graphiti/"
     weight = 4
 
-  
-    
-  # Configure footer  
-#  [[menu.footer]]
-#    title = "License"
-#    url = "/license/"
-#    weight = 1
-  [[menu.footer]]
-    name = "Contact"
-    title = "Contact form"
-    url = "/contact/"
-    weight = 2
 
 
 # see https://gohugo.io/about/hugo-and-gdpr/    

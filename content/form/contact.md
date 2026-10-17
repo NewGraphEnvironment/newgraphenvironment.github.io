@@ -1,7 +1,7 @@
 ---
 title: Get in Touch
 name: Contact
-description: "We partner on multi-year watershed programs — building tools, technical capacity, and reproducible methods alongside restoration and monitoring work. The science we develop together — methods, data, and analytical tools — becomes publicly available to the broader community."
+description: "We partner on multi-year watershed programs — building tools, technical capacity, and reproducible methods alongside restoration and monitoring work. The methods and analytical tools we develop together become publicly available to the broader community."
 date: 2019-02-25T13:38:41-06:00
 draft: false
 url: contact
@@ -15,8 +15,11 @@ show_poweredby_formspree: false
 formspree_form_id: "mvoepqnn"
 ---
 
-** Contact page don't contain a body, just the front matter above.
-See form.html in the layouts folder.
+<!--
+The contact page has no body, just the front matter above; the layout is
+layouts/form/split-right.html.
 
-Formspree requires a (free) account and new form to be set up. The link is made on the final published url in the field: Restrict to Domain. It is possible to register up to 2 emails free and you can select which one you want the forms to go to within Formspree in the Settings tab.
-**
+Formspree requires a (free) account and a form set up with the published URL in
+"Restrict to Domain". Up to two emails can be registered free; which one the
+forms go to is chosen in Formspree's Settings tab.
+-->

@@ -1,8 +1,11 @@
 {{ define "main" }}
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap');
+  /* Fonts are loaded site-wide in layouts/partials/head.html */
 
+  /* The grid stretches main to the footer; the dark section fills it */
+  .page-main { display: flex; flex-direction: column; }
   .nge-contact {
+    flex: 1;
     padding: 4rem 2rem 5rem;
     background: #1a2e1f;
     min-height: 70vh;
@@ -15,7 +18,7 @@
   .nge-contact-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/img/snowshoe.JPG');
+    background-image: url('/img/snowshoe-1600.jpg');
     background-size: cover;
     background-position: center 40%;
     filter: brightness(0.4) saturate(0.7);
@@ -149,12 +152,14 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
     color: #1a2e1f;
-    background: rgba(255,255,255,0.9);
+    background: #faf7f2;
     border: 1px solid rgba(255,255,255,0.4);
     margin: 0 0 1.25rem;
     transition: border-color 0.2s ease;
     box-sizing: border-box;
   }
+
+  .nge-contact-form ::placeholder { color: #5f5a4e; opacity: 1; }
 
   .nge-contact-form input[type="text"]:focus,
   .nge-contact-form input[type="email"]:focus,

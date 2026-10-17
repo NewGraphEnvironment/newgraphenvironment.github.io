@@ -3,6 +3,11 @@
   .nge-nav-logo-full { display: none; }
   .nge-nav-logo-icon { display: inline-block; height: 2rem; width: auto; }
   .nge-social-hide-mobile { display: none; }
+  /* phone: the theme's 4rem side padding left 262px for three nav links, which wrapped */
+  @media (max-width: 60em) {
+    .site-header { padding: 1.25rem 1rem 0.5rem; }
+    .site-links { letter-spacing: .06em; }
+  }
   @media (min-width: 60em) {
     .nge-social-hide-mobile { display: inline-block; }
     .nge-nav-logo-full { display: inline-block; height: 3.5rem; width: auto; }
@@ -12,7 +17,7 @@
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
     <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="{{ .Site.BaseURL }}" title="Home">
-      <img src="/img/nge-full_white.png" class="nge-nav-logo-full" alt="{{ .Site.Title }}">
+      <img src="/img/nge-icon_name_white.png" class="nge-nav-logo-full" alt="{{ .Site.Title }}">
       <img src="/img/nge-icon_white.png" class="nge-nav-logo-icon" alt="{{ .Site.Title }}">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l {{ if $.Site.Params.navallcaps }}ttu tracked{{ end }}">

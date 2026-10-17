@@ -1,5 +1,5 @@
 ---
-title: "Open Source Software Development"
+title: "Open Source Software"
 excerpt: "Open tools and data for planning, carrying out and monitoring restoration in British Columbia: where the habitat is and what blocks it, where the floodplain is and how it has changed, and what the ground and water look like now."
 layout: single
 weight: 3
@@ -7,15 +7,13 @@ weight: 3
 
 Our analytical tools, data, and methods are publicly available on GitHub. We work in the open wherever transparency improves science. The tools are built and extended through our partner programs, so each project strengthens the tools the next one uses.
 
-They answer four questions about a watershed. Open data catalogues feed the analysis, and the analysis becomes the field maps crews carry and the reports that rebuild when new data arrives.
-
-<br>
+The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is.
 
 ## Where is the habitat, and what's keeping fish from it?
 
 For restoration planning, the first questions are where each species' habitat is and which barriers cut fish off from it. Field results flow back into the answer.
 
-<img src="/img/hex/link.png" alt="link" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/link.png" alt="link" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### link — habitat potential, species by species
 
@@ -23,13 +21,9 @@ Our habitat connectivity model, link, maps the intrinsic habitat potential of st
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
-<div style="clear: both;"></div>
-
 ![Bull trout habitat potential and access across the Parsnip watershed group.](link_bull_trout.png)
 
-<br>
-
-<img src="/img/hex/fresh.png" alt="fresh" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### fresh — the stream network engine
 
@@ -37,67 +31,49 @@ Our stream network engine, fresh, does the work underneath. It breaks the networ
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
-<div style="clear: both;"></div>
+![Modelled coho spawning and rearing habitat across a sub-basin, with falls and coho observations.](fresh_subbasin.png)
 
-![](fresh_subbasin.png)
-
-<br>
-
-<img src="/img/hex/wet.png" alt="wet" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/wet.png" alt="wet" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### wet — flow and water temperature
 
-Our stream flow tool, wet, estimates mean annual and monthly flow for every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and, where the station logs it, water temperature.
+Our stream flow tool, wet, estimates mean annual and monthly flow for almost every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and, where the station logs it, water temperature.
 
 The flow can feed the habitat rules. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
-<div style="clear: both;"></div>
-
 ![Which source each stream segment's published flow draws on.](wet_discharge_source.png)
 
-<br>
-
 ---
-
-<br>
 
 ## Where is the floodplain, what did it look like before, and what has changed?
 
 The floodplain is where a river stores water, builds side channels and grows the wood that becomes its pools and cover. Restoring at the scale of the loss means seeing the whole floodplain: where it is, its condition before clearing and channelisation, and what is changing now.
 
-<img src="/img/hex/flooded.png" alt="flooded" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/flooded.png" alt="flooded" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, from a narrow version to a wide one. Run on coarse elevation data and again on lidar, the floodplain the coarse result maps but lidar excludes points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and where to act**: fill removal, dyke breaches, crossing installations.
+Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
-<div style="clear: both;"></div>
+![Floodplain scenarios from flooded, from the active channel margin to the valley bottom.](flooded_scenarios.png)
 
-![](flooded_scenarios.png)
-
-<br>
-
-<img src="/img/hex/drift.png" alt="drift" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/drift.png" alt="drift" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### drift — what has changed
 
-Our land-cover change tool, drift, measures how the land inside a floodplain changed between any two years that free satellite land-cover maps cover. It tags each change with what it overlaps in any mapped layer, such as fire or harvest. It is a screening tool: each change it finds is a place to check, not confirmed loss.
+Our land-cover change tool, drift, measures how the land inside a floodplain changed between any two years that free satellite land-cover maps cover. It tags each change with what it overlaps in any mapped layer of areas, such as fire perimeters or cutblocks. It is a screening tool: each change it finds is a place to check, not confirmed loss.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
-<div style="clear: both;"></div>
-
-![](drift_classified.png)
-
-<br>
+![Land cover inside a floodplain classified for 2017, 2020 and 2023.](drift_classified.png)
 
 ### Floodplain change catalogue
 
-Brings link, flooded and drift together for whole watershed groups: the floodplain along fish-accessible streams, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
+Brings link, flooded and drift together for whole watershed groups: the floodplain of each group's whole stream network, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
 
 **A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
 
@@ -107,9 +83,7 @@ Brings link, flooded and drift together for whole watershed groups: the floodpla
 
 ![Floodplain tree loss 2017–2023 in the Bulkley watershed group, by attributed cause.](floodplains_attribution.png)
 
-<br>
-
-<img src="/img/hex/fly.png" alt="fly" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/fly.png" alt="fly" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### fly — historic airphotos
 
@@ -117,13 +91,9 @@ Our airphoto tool, fly, finds the fewest historic provincial airphotos that cove
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
-<div style="clear: both;"></div>
+![Historic airphoto footprints selected to cover a site with the fewest photos.](fly_priority.png)
 
-![](fly_priority.png)
-
-<br>
-
-<img src="/img/hex/cd.png" alt="cd" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/cd.png" alt="cd" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### cd — climate departure
 
@@ -131,49 +101,35 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-<div style="clear: both;"></div>
-
-![](cd_temperature_departure.png)
-
-<br>
+![Temperature departure, 2015 to 2025 against 1951 to 1980, around Castlegar, Nelson and Creston.](cd_temperature_departure.png)
 
 ---
 
-<br>
-
 ## What do the ground and water look like now?
 
-Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and our own drone imagery, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
+Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and the drone imagery from our programs, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
-<img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### BC lidar, ready to query
 
-LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, updated monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
+LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, new tiles added monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
-<div style="clear: both;"></div>
-
 ![Canopy height from LidarBC point clouds, Maxan Creek.](lidar_canopy.png)
 
-<br>
-
-<img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### Drone imagery
 
-Our drone flights, catalogued by watershed and year: orthomosaics plus surface and terrain models. Flights can be planned from the floodplain maps, and the imagery comes back into the catalogue for site baselines and before-and-after monitoring of restoration works.
+Drone imagery from our programs, catalogued by region, watershed and year, with the time each flight was flown where the imagery records it. The photographs are stitched with OpenDroneMap into orthomosaics and, for nearly all flights, surface and terrain models, and each item records the stream and watershed group and, where the flight is at a crossing, the crossing; repeat flights of one site carry a label that tells them apart. Where provincial lidar covers a flight and the fit could be made, the item also records how far the drone's GPS placed it from the lidar ground and the correction that brings it onto the lidar; the imagery itself is published as captured. It can be found by place and date from R or QGIS, or opened in the viewer. Imagery flown before works are built is the baseline later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
-<div style="clear: both;"></div>
+![Drone imagery of a stream reach.](uav_cover.jpg)
 
-![](uav_cover.jpg)
-
-<br>
-
-<img src="/img/hex/water-temp-bc.png" alt="water-temp-bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/water-temp-bc.png" alt="water-temp-bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### water-temp-bc — water temperature, flow and water level
 
@@ -183,13 +139,9 @@ This data feeds our collaborative science with [Poisson Consulting](https://www.
 
 - [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
 
-<div style="clear: both;"></div>
-
-<br>
-
 ### Open catalogues, and the recipe for building them
 
-Each catalogue is two things: the catalogue itself, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of any of it. Ours are served at [images.a11s.one](https://images.a11s.one) and can be searched from R, Python or QGIS 3.42+ through the open STAC standard.
+Each catalogue is two things: the catalogue itself, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of any of it. Ours are served from our catalogue server, [images.a11s.one](https://images.a11s.one), and can be searched from R, Python or QGIS 3.42+ through the open STAC standard. Four of the five carry a CC BY 4.0 licence.
 
 Our catalogue loader, stacs, puts catalogues into that search service and checks that every record arrived intact.
 
@@ -197,17 +149,13 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 | Catalogue | What it catalogues |
 |-----------|---------------|
-| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, updated monthly |
+| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly |
 | [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
 | [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group |
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |
-| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery; by region, watershed group and year |
-
-<br>
+| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Drone imagery from our programs; by region, watershed group and year |
 
 ---
-
-<br>
 
 ## Into the field and back
 
@@ -216,8 +164,6 @@ We take the planning into the field. For each program we build a custom field sy
 Forms cover fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling and benthic invertebrate collection. Where possible, data is structured for direct submission to the provincial and federal databases: FISS for fish, PSCIS for stream crossings and CABIN for benthic invertebrates. What crews collect flows back into the models it came from: assessments and habitat confirmations feed link's barrier decisions.
 
 We also build the capacity of field teams to navigate to sites, collect data to standard, and interpret what they find.
-
-<br>
 
 ### Dynamic reporting
 

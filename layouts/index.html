@@ -1,6 +1,6 @@
 {{ define "main" }}
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+  /* Fonts are loaded site-wide in layouts/partials/head.html */
 
   /* Break out of hugo-apero grid */
   .grid-container.home {
@@ -20,8 +20,8 @@
     --river: #3a6b8c;
     --river-light: #5a9ab5;
     --river-pale: #c8dde8;
-    --stone: #7a7568;
-    --stone-light: #b0a99a;
+    --stone-text: #5f5a4e;   /* body copy: 5.9:1 on parchment, 6.4:1 on cream */
+    --stone-light: #b0a99a;  /* rules, arrows, pill borders */
     --parchment: #f2ede4;
     --parchment-dark: #e5ddd0;
     --cream: #faf7f2;
@@ -40,7 +40,7 @@
   }
   .nge-hero-bg {
     position: absolute; inset: 0;
-    background-image: url('/img/snowshoe.JPG');
+    background-image: url('/img/snowshoe-1600.jpg');
     background-size: cover;
     background-position: center 40%;
     filter: brightness(0.4) saturate(0.7);
@@ -98,8 +98,8 @@
   }
   .nge-section-lead {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.05rem; color: var(--stone);
-    max-width: 42rem; line-height: 1.7; margin: 0 0 3rem;
+    font-size: 1.05rem; color: var(--stone-text);
+    max-width: 36rem; line-height: 1.7; margin: 0 0 3rem;
   }
   .nge-rule {
     width: 40px; height: 1px;
@@ -110,9 +110,9 @@
   .nge-problem { background: var(--parchment); }
   .nge-problem-text {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.05rem; color: var(--stone);
+    font-size: 1.05rem; color: var(--stone-text);
     line-height: 1.8; margin: 0 0 1.5rem;
-    max-width: 42rem;
+    max-width: 36rem;
   }
   .nge-problem-text:last-child { margin-bottom: 0; }
 
@@ -147,8 +147,8 @@
   }
   .nge-pipeline-body p {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.92rem; color: var(--stone);
-    line-height: 1.6; margin: 0;
+    font-size: 1rem; color: var(--stone-text);
+    line-height: 1.6; margin: 0; max-width: 34em;
   }
   .nge-pipeline-arrow {
     text-align: left; padding-left: 32px;
@@ -166,21 +166,32 @@
   }
   .nge-pipeline-row .nge-pipeline-hex img { width: 80px; }
 
-  /* Figure node (a map in place of a hex) and the small tool hexes under each step */
-  .nge-pipeline-fig img {
-    width: 100px; height: 100px; object-fit: cover; border-radius: 50%;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+  /* Photo and icon nodes cut to the same pointy-top hexagon as the stickers (518x600) */
+  .nge-pipeline-fig img, .nge-pipeline-field {
+    width: 86px; height: 100px;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   }
+  .nge-pipeline-fig img { object-fit: cover; filter: none; }
+  .nge-pipeline-field {
+    background: var(--forest-deep);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nge-pipeline-field img { width: 44px; height: auto; }
   .nge-pipeline-tools {
     display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem;
   }
   .nge-pipeline-tools a {
-    font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 600;
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600;
     color: var(--forest-deep); text-decoration: none;
-    border: 1px solid var(--stone-light); border-radius: 999px; padding: 0.15rem 0.7rem;
+    border: 1px solid var(--stone-light); border-radius: 999px; padding: 0.3rem 0.8rem;
     transition: background 0.2s ease;
   }
   .nge-pipeline-tools a:hover { background: var(--parchment); }
+  .nge-pipeline-tools a:focus-visible, .nge-pipeline-hex:focus-visible,
+  .nge-evidence-card:focus-visible, .nge-pipeline-more:focus-visible,
+  .nge-opensource-link:focus-visible {
+    outline: 2px solid var(--river); outline-offset: 2px;
+  }
   .nge-pipeline-more {
     font-family: 'DM Sans', sans-serif; font-size: 0.92rem;
     color: var(--forest-deep); text-decoration: none; font-weight: 600;
@@ -216,7 +227,7 @@
   }
   .nge-evidence-card p {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem; color: var(--stone);
+    font-size: 0.95rem; color: var(--stone-text);
     line-height: 1.6; margin: 0 0 1rem;
   }
   .nge-evidence-card .nge-card-arrow {
@@ -252,6 +263,12 @@
   }
   .nge-reveal.visible { opacity: 1; transform: translateY(0); }
 
+  @media (prefers-reduced-motion: reduce) {
+    .nge-reveal { opacity: 1; transform: none; transition: none; }
+    .nge-scroll-indicator { animation: none; }
+    .nge-hero-bg, .nge-evidence-card, .nge-pipeline-hex, .nge-card-arrow { transition: none; }
+  }
+
   @media (max-width: 640px) {
     .nge-section { padding: 3rem 1.2rem; }
     .nge-hero { min-height: 85vh; }
@@ -259,10 +276,10 @@
     .nge-pipeline-arrow { padding-left: 0; text-align: center; }
     .nge-pipeline-row { flex-direction: column; }
     .nge-pipeline-row .nge-pipeline-step { min-width: 0; }
-    .nge-problem-text, .nge-section-lead { font-size: 0.95rem; }
     .nge-section-title { font-size: 1.6rem; }
   }
 </style>
+<noscript><style>.nge-reveal { opacity: 1; transform: none; }</style></noscript>
 
 <main role="main">
 
@@ -274,7 +291,7 @@
     <div class="nge-hero-content">
       <img src="/img/nge-full_white.png" alt="New Graph Environment" class="nge-hero-logo">
     </div>
-    <p class="nge-hero-subtitle">Open-Source Watershed Science</p>
+    <h1 class="nge-hero-subtitle">Open-Source Watershed Science</h1>
     <div class="nge-scroll-indicator">
       <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round">
         <path d="M12 5v14M5 12l7 7 7-7"/>
@@ -288,7 +305,7 @@
       <div class="nge-reveal">
         <hr class="nge-rule">
         <h2 class="nge-section-title">The Challenge</h2>
-        <p class="nge-problem-text">Governments, First Nations, non-profits, and stewardship organizations across British Columbia need reliable ways to understand their watersheds — whether they're planning restoration, assessing fish habitat, monitoring water quality, or responding to climate-driven changes. But the technical barriers are high. Critical information remains scattered across provincial databases, historic archives, and specialized models — difficult to assemble and overly dependent on outside specialists.</p>
+        <p class="nge-problem-text">Governments, First Nations, non-profits, and stewardship organizations across British Columbia need reliable ways to understand their watersheds — whether they're planning restoration, assessing fish habitat, monitoring water quality, or responding to climate-driven changes. But the technical barriers are high. Critical information remains scattered across provincial databases, historic archives, and specialized models — difficult to assemble, and hard for the people responsible for a watershed to keep hold of between projects. Our answer is open data, open tools, and field teams who can use them.</p>
       </div>
     </div>
   </section>
@@ -300,6 +317,7 @@
         <hr class="nge-rule">
         <h2 class="nge-section-title">Who We Are</h2>
         <p class="nge-problem-text">Our work combines field biology, spatial data science, and software development to facilitate aquatic ecosystem conservation and restoration — with an emphasis on inclusive engagement and knowledge sharing.</p>
+        <p class="nge-problem-text">We work alongside stewardship organizations, First Nations and agencies across BC. The work is stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, field programs and interactive online reporting, connected so that provincial data, analysis, field collection and reporting are one workflow.</p>
       </div>
     </div>
   </section>
@@ -312,8 +330,7 @@
         <h2 class="nge-section-title">Our Approach</h2>
         <p class="nge-problem-text">We understand our well-being as inseparable from the health of the land and waters we work within. When we care for ecosystems, we care for ourselves.</p>
         <p class="nge-problem-text">We work in the open because shared methods, shared tools, and shared findings are how we move the needle faster — on conservation and restoration, on understanding, on justice for the places and people we care about.</p>
-        <p class="nge-problem-text">Working alongside stewardship organizations, First Nations, and agencies across BC, we connect provincial data, spatial analysis, field data collection, and reporting into a coherent workflow — stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, and interactive online reporting.</p>
-        <p class="nge-problem-text">Our analytical tools, data, and methods are publicly available — so every project strengthens shared infrastructure, and every partnership compounds across watersheds and years.</p>
+        <p class="nge-problem-text">Our analytical tools, data, and methods are publicly available — so every project strengthens shared tools, and every partnership compounds across watersheds and years.</p>
       </div>
     </div>
   </section>
@@ -324,45 +341,45 @@
       <div class="nge-reveal">
         <hr class="nge-rule">
         <h2 class="nge-section-title">How It Works</h2>
-        <p class="nge-section-lead">Four questions about a watershed. Open data catalogues feed the analysis, and the analysis becomes the field maps crews carry and the reports partners read. Our analytical tools and methods are public.</p>
+        <p class="nge-section-lead">Four questions about a watershed. Open data catalogues feed the analysis, and the analysis becomes the field maps crews carry and the reports partners read.</p>
       </div>
       <div class="nge-reveal">
         <div class="nge-pipeline-step">
-          <a href="https://www.newgraphenvironment.com/link/" class="nge-pipeline-hex" target="_blank">
+          <a href="https://www.newgraphenvironment.com/link/" class="nge-pipeline-hex" target="_blank" rel="noopener">
             <img src="/img/hex/link.png" alt="link">
           </a>
           <div class="nge-pipeline-body">
             <h3>Where is the habitat, and what's keeping fish from it?</h3>
-            <p>Intrinsic habitat potential for each species, whether fish can reach it, and which barrier is in the way. The habitat models can be tuned and tested against where fish have actually been found. Flow for every stream, and water temperature at gauging stations, round out the picture.</p>
-            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/link/" target="_blank">link</a><a href="https://www.newgraphenvironment.com/fresh/" target="_blank">fresh</a><a href="https://www.newgraphenvironment.com/wet/" target="_blank">wet</a></div>
+            <p>Habitat potential for each species, whether fish can reach it, and which barrier is in the way. The habitat models can be tuned and tested against where fish have actually been found. Flow for almost every stream, and water temperature at gauging stations, round out the picture.</p>
+            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/link/" target="_blank" rel="noopener">link</a><a href="https://www.newgraphenvironment.com/fresh/" target="_blank" rel="noopener">fresh</a><a href="https://www.newgraphenvironment.com/wet/" target="_blank" rel="noopener">wet</a></div>
           </div>
         </div>
         <div class="nge-pipeline-arrow">↓</div>
         <div class="nge-pipeline-step">
-          <a href="https://www.newgraphenvironment.com/flooded/" class="nge-pipeline-hex" target="_blank">
+          <a href="https://www.newgraphenvironment.com/flooded/" class="nge-pipeline-hex" target="_blank" rel="noopener">
             <img src="/img/hex/flooded.png" alt="flooded">
           </a>
           <div class="nge-pipeline-body">
             <h3>Where is the floodplain, what did it look like before, and what has changed?</h3>
-            <p>Where the floodplain is, and where roads, rail and fill may cut the river off from it. Historic airphotos show earlier conditions to compare against. Land-cover change can be mapped between any two years the satellite land-cover maps cover and tagged with any mapped layer it overlaps, such as fire or harvest. Climate departure shows how far conditions have moved from normal. Together they are a screening map of where to look.</p>
-            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/flooded/" target="_blank">flooded</a><a href="https://www.newgraphenvironment.com/drift/" target="_blank">drift</a><a href="https://www.newgraphenvironment.com/fly/" target="_blank">fly</a><a href="https://www.newgraphenvironment.com/cd/" target="_blank">cd</a></div>
+            <p>Where the floodplain is, and where roads, rail and fill may cut the river off from it. Historic airphotos show earlier conditions to compare against. Land-cover change can be mapped between any two years the satellite land-cover maps cover and tagged with any mapped area it overlaps, such as fire perimeters or cutblocks. Climate departure shows how far conditions have moved from normal. Together they are a screening map of where to look.</p>
+            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/flooded/" target="_blank" rel="noopener">flooded</a><a href="https://www.newgraphenvironment.com/drift/" target="_blank" rel="noopener">drift</a><a href="https://www.newgraphenvironment.com/fly/" target="_blank" rel="noopener">fly</a><a href="https://www.newgraphenvironment.com/cd/" target="_blank" rel="noopener">cd</a></div>
           </div>
         </div>
         <div class="nge-pipeline-arrow">↓</div>
         <div class="nge-pipeline-step">
           <a href="/project/open_source_software/" class="nge-pipeline-hex nge-pipeline-fig">
-            <img src="/project/open_source_software/uav_cover.jpg" alt="Drone imagery of a stream">
+            <img src="/img/uav_node-200.jpg" alt="Drone imagery of a stream">
           </a>
           <div class="nge-pipeline-body">
             <h3>What do the ground and water look like now?</h3>
-            <p>Provincial lidar and our own drone imagery in open catalogues anyone can search by place, and water temperature, flow and level at hydrometric stations ready to query. We built them so this data can be found and loaded directly. They are how we understand floodplains past and present, and how the data gets into models and reports.</p>
-            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/stac_elevation_bc/" target="_blank">stac_elevation_bc</a><a href="https://www.newgraphenvironment.com/stac_uav_bc/" target="_blank">stac_uav_bc</a><a href="https://www.newgraphenvironment.com/stac_pointcloud_bc/" target="_blank">stac_pointcloud_bc</a><a href="https://www.newgraphenvironment.com/water-temp-bc/" target="_blank">water-temp-bc</a></div>
+            <p>Open catalogues of provincial lidar and drone imagery from our programs, searchable by place, and the water temperature, flow and level records from stream gauges, ready to query. We built them so this data can be found and loaded straight into models, field maps and reports.</p>
+            <div class="nge-pipeline-tools"><a href="https://www.newgraphenvironment.com/stac_elevation_bc/" target="_blank" rel="noopener">stac_elevation_bc</a><a href="https://www.newgraphenvironment.com/stac_uav_bc/" target="_blank" rel="noopener">stac_uav_bc</a><a href="https://www.newgraphenvironment.com/stac_pointcloud_bc/" target="_blank" rel="noopener">stac_pointcloud_bc</a><a href="https://www.newgraphenvironment.com/water-temp-bc/" target="_blank" rel="noopener">water-temp-bc</a></div>
           </div>
         </div>
         <div class="nge-pipeline-arrow">↓</div>
         <div class="nge-pipeline-step">
-          <div class="nge-pipeline-hex" style="width: 100px; display: flex; align-items: center; justify-content: center;">
-            <img src="/img/nge-icon_white.png" alt="field and reporting" style="width: 60px; height: auto; background: var(--forest-deep); border-radius: 8px; padding: 12px;">
+          <div class="nge-pipeline-hex nge-pipeline-field">
+            <img src="/img/nge-icon_white.png" alt="field and reporting">
           </div>
           <div class="nge-pipeline-body">
             <h3>Into the field and back</h3>
@@ -380,12 +397,12 @@
       <div class="nge-reveal">
         <hr class="nge-rule">
         <h2 class="nge-section-title">What This Looks Like in Practice</h2>
-        <p class="nge-section-lead">Long-term programs where the system is in production — delivering results, building capacity, and advancing the tools with every project.</p>
+        <p class="nge-section-lead">Long-term programs that use these tools today: delivering reports, building field capacity, and improving the tools with every season.</p>
       </div>
       <div class="nge-evidence-cards nge-reveal">
         <a href="/project/watershed_restoration_fish_passage/" class="nge-evidence-card">
           <h3>Watershed Restoration &amp; Conservation</h3>
-          <p>Aquatic restoration planning, delivery and monitoring across British Columbia — from the Neexdzii Kwah watershed restoration framework to fish passage assessment across Skeena, Peace, Fraser, and Elk River regions.</p>
+          <p>Aquatic restoration planning, delivery and monitoring across British Columbia — from the Neexdzii Kwah watershed restoration framework to fish passage assessment across the Skeena, Peace and Fraser regions and the Elk River.</p>
           <span class="nge-card-arrow">Explore →</span>
         </a>
         <a href="/project/aquatic_monitoring_assessment/" class="nge-evidence-card">

@@ -1,1 +1,53 @@
-// Override this file to add your own SCSS styling.
+// Site-wide rules on top of the nge-hex palette (assets/nge-hex.scss).
+// scaffold.scss imports this file last, so these win over the theme.
+// The landing page and contact page carry their own styles inline.
+
+// Fonts named in config.toml, with fallbacks
+.custom-text-font { font-family: 'DM Sans', sans-serif; }
+.custom-heading-font { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+// Chrome: one dark on every page, the hero's green. The header's theme
+// margin-bottom showed as a cream strip above the hero once the body went
+// light; below the footer the html background carries the same green, and
+// the grid fills the viewport so the footer sits at the bottom of short pages.
+html { background-color: #1a2e1f; }
+.site-header, .site-footer { background: #1a2e1f; }
+.site-header { margin-bottom: 0; }
+.headroom { opacity: 1; }
+.grid-container:not(.home) { min-height: 100vh; grid-template-rows: auto 1fr auto; }
+
+// Project pages: title, measure, links, heading rhythm, figures
+.post-header h1 { font-size: 2.8rem; font-weight: 600; }
+.post-body p, .post-body li { max-width: 38em; }
+.post-body a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(58, 107, 140, 0.35);
+}
+.post-body a:hover { border-bottom-color: #3a6b8c; }
+.post-body h2 { margin-top: 3.5rem; }
+.post-body h3 { margin-top: 2.5rem; }
+.post-body h4 { margin-top: 2rem; }
+// Markdown images render as <figure> (layouts/_default/_markup/render-image.html);
+// the figure clears the floated hex stickers, as the old clear divs did
+.post-body figure { margin: 2.5rem 0; clear: both; }
+.post-body figure img { display: block; margin: 0; max-width: 100%; background: #fff; border: 1px solid #e5ddd0; }
+.post-body figcaption { font-family: 'DM Sans', sans-serif; font-size: .875rem; color: #5f5a4e; margin-top: .6rem; max-width: 38em; }
+.post-body details { margin-top: 1rem; }
+
+// Our Work grid: cards in the landing page's style
+.blog-content { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.blog-content article {
+  width: auto;
+  flex: 1 1 280px;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  background: #fff;
+  border: 1px solid #e5ddd0;
+}
+.page-main .blog-content h3 a {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  color: #1a2e1f;
+  text-decoration: none;
+}
+.blog-content p { color: #5f5a4e; }
