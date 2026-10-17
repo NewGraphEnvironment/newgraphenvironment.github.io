@@ -135,6 +135,43 @@ Triage of its findings, verified against the code before acting:
 
 Not filed: stac_airphoto_bc#50 (licence) already exists.
 
+## Quantified claims in the changed copy, each against its population (code-check rounds 1–2 → terminal check)
+
+Rounds 1 and 2 found four copy defects of one shape: a universal word ("each", "the Elk River work", "where lidar covers a flight") swept over a population it did not fully cover. The terminating measurement is this table: every quantified or universal claim in the copy this branch changed, with the population it was checked against. Checked 2026-10-17.
+
+| Claim | Where | Population / source | Verdict |
+|---|---|---|---|
+| "more than 20 watershed groups" | restoration:27 | 30 distinct `wsg_code` values across the Skeena, Peace and Fraser 2025 `index.Rmd` params | holds |
+| "The Skeena, Fraser and Peace programs are delivered with SERNbc: for HCTF and MoTI in the Skeena and Fraser, and for FWCP in the Peace" | restoration:27 | 2025 title pages (3 of 3); present tense excludes earlier years, which differ (Fraser 2023 MoTI + SERNbc; Bulkley 2020–22 HCTF + CWF) | holds |
+| "The 2021 and 2022 Elk River reports were for Nupqu…; the 2020 … with Nupqu for the Canadian Wildlife Federation" | restoration:27 | 3 Elk title pages | holds (round 1 fix) |
+| "the 2022 effectiveness monitoring was for MoTI" | restoration:27 | title page | holds |
+| "Reports since 2020 are living documents … version and date on its title page" | restoration:27 | 19 linked fish passage reports: 18 carry a version line; Parsnip 2019 (dated 2020-08-30, no version line) is excluded by the label; Bulkley 2020 carries Version 0.1.3 | holds (round 2 fix) |
+| "14 sub-basins", "26 locations", "2017–2023" | restoration:16–18 | Neexdzii Kwah plan | holds |
+| "as the 2024 restoration plan documents" | restoration:16 | the plan's URL slug carries 2024; its title page carries no year | accepted: the label readers see |
+| "Three mainstem sites … in triplicate", "2004 and 2018", "1972 to 2024, more than one hundred stations" | monitoring:28–30 | benthic report §3.1, §2.3, §2 | holds |
+| "one grey line per year" | monitoring caption | the NRP plot's encoding, not a count | holds |
+| "2013 to 2018 … 2013 to 2017" | monitoring caption | the two panels' legends | holds (round 1 fix) |
+| "every stream in the Freshwater Atlas" | oss:50; landing "Flow for every stream" | wet README: province-wide water balance | holds as the README's claim |
+| "lakes and wetlands included" | oss:36 | fresh `R/frs_habitat_classify.R` | holds |
+| "between any two years that free satellite land-cover maps cover", "any mapped layer" | oss:88; landing | drift README; `dft_transition_attribute` roxygen | holds |
+| "whole watershed groups", "whole stream network", "2017 to 2023" | oss:100 | live `stac-floodplains-bc` description (v2.0.0) | holds |
+| "Four of the five carry a CC BY 4.0 licence" | oss:192 | live `/collections`: 4 × CC-BY-4.0, 1 × proprietary | holds |
+| "each flight with the date it was flown" | oss:126 | `datetime` on 245 of 245 live items | holds |
+| "each item records the stream and watershed group" | oss:126 | 245 of 245 | holds |
+| "where the flight is at a crossing, the crossing" | oss:126 | 141 of 245 carry `bcfishpass:aggregated_crossings_id` | holds (round 1 fix) |
+| "repeat flights of one site carry a label that tells them apart" | oss:126 | `newgraph:alias` on 6 items; the README names it as the repeat-flight marker; whether every repeat flight carries one is not measurable from the API | accepted as the README's claim |
+| "Where provincial lidar covers a flight and the fit could be made" | oss:126 | README: 46 of 52 lidar-covered datasets fitted; 138 items carry `alignment:*` | holds (round 2 fix) |
+| "the imagery itself is published as captured" | oss:126 | `alignment:applied = false` on 138 of 138 | holds today; stac_uav_bc#46 would change it |
+| "Flights are by our team and, in the Neexdzii Kwah, with the … provincial drone specialist" | oss:126 | the Neexdzii Kwah plan is the only source naming WLRS | holds as scoped |
+| "new tiles added monthly" | oss:152, :200 | stac_elevation_bc `update.yml` monthly cron; runs 2026-10-03 and 2026-10-13 green | holds |
+| "water temperature back to 2002 and daily flow back to 2016", "refreshed monthly" | oss:180 | water-temp-bc README | holds |
+| "LidarBC elevation tiles across the province", "bare earth and, where published, surface models" | oss:152 | stac_elevation_bc README (DSM on 95,888 of 102,460) | holds |
+| "Each catalogue is two things: the catalogue itself, and the public code that builds it" | oss:192 | 5 catalogue repos, all public | holds |
+| "Every change is tracked, and most reports are publicly accessible" | oss:224 | reports are git-backed; 21 of 21 linked report URLs answer 200; the NRP report is private | holds |
+| "Long-term programs that use these tools today" | landing:383 | the Neexdzii Kwah plan used drift and the floodplain modelling; the fish passage programs use the field system and dynamic reporting | holds ("run on" → "use", round 2) |
+| "every project strengthens shared tools, and every partnership compounds" | landing:316 | pre-existing framing, not a measurable claim | accepted |
+| "Three kinds of work, each shown through the programs that use it" | project/_index.md | three tiles, each with named programs | holds |
+
 ## Errors Encountered
 
 | Error | Resolution |

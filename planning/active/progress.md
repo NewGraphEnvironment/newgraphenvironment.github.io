@@ -18,4 +18,5 @@
 - Phase 7 in progress: seven upstream issues filed (list in findings.md); CLAUDE.md updated for the overrides, theme, images, phone check and the #59 decisions
 - Private preview republished to the same artifact URL (version 5); stale pages and images removed from it
 - /code-check branch round 1: 4 findings, 4 fixed (render-image double-escaped typographer entities; Elk 2020 report was for CWF with Nupqu, not for Nupqu; 'each item records the crossing' held for 141 of 245 UAV items; hydrograph caption years). Unused --stone token dropped.
-- Next: code-check rounds 2 and 3, archive, PR
+- /code-check branch round 2: 2 findings, 2 fixed, one of them inside round 1's sentence (lidar fit clause: 46 of 52 fitted; living-document sentence scoped to reports since 2020). Mechanism named: a universal word swept over a population it does not cover. Terminal check: every quantified claim in the changed copy enumerated against its population (findings.md). Bulkley 2022 report's stash markers filed upstream.
+- Next: code-check round 3 (mechanism + enumeration check), archive, PR
