@@ -10,4 +10,5 @@
 - Scaffolded PWF baseline from issue #59 with approved phases
 - Phase 1 landed: theme residue and metadata (about/ and form/ no longer build, taxonomy pages off, share card, meta/footer/single/heading overrides, utterances and KaTeX off)
 - Phase 2 landed: floodplain catalogue sentence and coverage figure at v2.0.0 (upstream 9dceb49), drone imagery rewritten for what is live with the WLRS credit, lidar fit stated as a fact, "rebuilt monthly", flooded paragraph, CC BY 4.0 count, Fraser link texts, Elk River card
-- Next: Phase 3
+- Phase 3 landed: Who We Are carries the service list (unnamed, D2), commissioning bodies and the living-document sentence on the restoration tile, funding sentence dropped (D6), Neexdzii Kwah / Treaty Office Society (D4), contact sentence softened (D5), three sentences rewritten, jargon and duplicates removed, Blog URL final
+- Next: Phase 4

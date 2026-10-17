@@ -13,7 +13,7 @@ We monitor restoration effectiveness over the long term with standardised biolog
 
 ### Neexdzii Kwah Watershed Restoration
 
-The Neexdzii Kwah (Upper Bulkley River) has been noted as containing some of the most intense land use in the Skeena Basin. This initiative develops a living governance and prioritization framework for watershed restoration — placing Wet'suwet'en direction at the centre of decision-making and integrating open-source spatial analysis tools to support planning at the sub-basin scale.
+The Neexdzii Kwah (Upper Bulkley River) has some of the most intense land use in the Skeena Basin, as the 2024 restoration plan documents. This initiative develops a living governance and prioritization framework for watershed restoration — placing Wet'suwet'en direction at the centre of decision-making and integrating open-source spatial analysis tools to support planning at the sub-basin scale.
 
 The watershed was divided into 14 sub-basins to enable comparison and investment targeting. Floodplain modelling mapped where tree cover appears to have been lost over 2017–2023. Field reviews at 26 locations documented conditions ranging from successful past restoration to riparian degradation far exceeding past investment footprints. A collaborative GIS project integrates all analysis outputs and travels into the field on mobile devices.
 
@@ -30,7 +30,7 @@ This work is conducted on behalf of the Wet'suwet'en Treaty Office Society, deli
 
 ### Fish Passage Restoration Planning
 
-Multi-year fish passage assessment and restoration planning across more than 20 watershed groups in British Columbia. We collaborate with First Nations, provincial agencies, and stewardship organizations to identify barriers, prioritize restoration, and track outcomes. Initiatives have led to substantial funding to support not only fish passage restoration but also cattle exclusion fencing, streambank stabilization, and riparian planting programs.
+Multi-year fish passage assessment and restoration planning across more than 20 watershed groups in British Columbia. We collaborate with First Nations, provincial agencies, and stewardship organizations to identify barriers, prioritize restoration, and track outcomes. The Skeena, Fraser and Peace programs are delivered with the Society for Ecosystem Restoration in Northern BC (SERNbc): for the Habitat Conservation Trust Foundation and the Ministry of Transportation and Infrastructure in the Skeena and Fraser, and for the Fish and Wildlife Compensation Program in the Peace. The Elk River work was for Nupqu Resource Limited Partnership, and the 2022 effectiveness monitoring for the Ministry of Transportation and Infrastructure. Each report is a living document: it rebuilds when new data or review comments arrive, and the version and date on its title page say where it stands.
 
 <br>
 

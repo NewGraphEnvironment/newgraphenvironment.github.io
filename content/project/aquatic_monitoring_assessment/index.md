@@ -1,6 +1,6 @@
 ---
 title: "Aquatic Monitoring & Assessment"
-excerpt: "Nutrient dynamics, water quality, fish populations, and benthic community health in regulated and impacted systems. Reproducible analytical workflows integrating decades of monitoring data."
+excerpt: "Nutrient dynamics, water quality, fish populations, and benthic community health in reservoirs, regulated rivers and impacted streams. Reproducible analytical workflows integrating decades of monitoring data."
 layout: single
 weight: 2
 ---
@@ -35,9 +35,9 @@ Data analysis, mapping and reporting to support large lake specialists on a mult
 
 <br>
 
-### Neexdzii Kwa Benthic Invertebrate Assessment
+### Neexdzii Kwah Benthic Invertebrate Assessment
 
-Baseline assessment of stream health along the Neexdzii Kwa (Upper Bulkley River) mainstem, undertaken with the Society for Ecosystem Restoration in Northern BC (SERNbc) and the Wet'suwet'en Treaty Society to fill a data gap identified during [companion restoration planning research on the watershed](https://www.newgraphenvironment.com/restoration_wedzin_kwa_2024/). Three mainstem sites were sampled in triplicate following the CABIN wadeable streams protocol, with taxonomic processing by Cordillera Consulting.
+Baseline assessment of stream health along the Neexdzii Kwah (Upper Bulkley River) mainstem, undertaken with the Society for Ecosystem Restoration in Northern BC (SERNbc) and the Wet'suwet'en Treaty Office Society to fill a data gap identified during [companion restoration planning research on the watershed](https://www.newgraphenvironment.com/restoration_wedzin_kwa_2024/). Three mainstem sites were sampled in triplicate following the CABIN wadeable streams protocol, with taxonomic processing by Cordillera Consulting.
 
 We combined the 2025 field data with historical benthic samples from the same reach (2004 and 2018) and over five decades of BC Environmental Monitoring System (EMS) water quality records — 1972 to 2024, more than one hundred stations in the watershed. Records were grouped by source — Houston wastewater treatment plant, Knockholt Landfill, Equity Silver Mine, and the mainstem and tributary stations — in a reproducible workflow that updates as new data arrives. Statistical analysis combined community composition, feeding strategies, pollution-tolerance scores, and multivariate ordination. The report proposes an expanded monitoring design including priority tributaries and an upstream reference site.
 
@@ -69,7 +69,7 @@ Non-metric Multidimensional Scaling (NMDS) ordination models incorporated in bot
 
 ### Fish & Habitat Assessment
 
-Extensive experience with stream classifications, detailed habitat assessments, and fish sampling to support restoration and responsible natural resource management. Work includes rapid and detailed habitat assessments, Fish Habitat Assessment Procedures, and electrofishing for fish presence, density, and movement analysis.
+We carry out stream classifications, rapid and detailed habitat assessments, Fish Habitat Assessment Procedures, and electrofishing for fish presence, density and movement, and submit the results to the provincial fish database (FISS).
 
 <br>
 

@@ -1,5 +1,5 @@
 ---
-title: "Open Source Software Development"
+title: "Open Source Software"
 excerpt: "Open tools and data for planning, carrying out and monitoring restoration in British Columbia: where the habitat is and what blocks it, where the floodplain is and how it has changed, and what the ground and water look like now."
 layout: single
 weight: 3
@@ -7,7 +7,7 @@ weight: 3
 
 Our analytical tools, data, and methods are publicly available on GitHub. We work in the open wherever transparency improves science. The tools are built and extended through our partner programs, so each project strengthens the tools the next one uses.
 
-They answer four questions about a watershed. Open data catalogues feed the analysis, and the analysis becomes the field maps crews carry and the reports that rebuild when new data arrives.
+The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is.
 
 <br>
 

@@ -44,22 +44,22 @@ The branch fast-forwards PR #60's commit (`stac_dem_bc` → `stac_elevation_bc`)
 - [x] Build; commit
 
 ### Phase 3: Copy and credibility
-- [ ] Who We Are (`layouts/index.html:302`, D2: unnamed): keep the identity sentence; move the service list from `:315` into Who We Are as two sentences ("We work alongside stewardship organizations, First Nations and agencies across BC. The work is stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, field programs and interactive online reporting, connected so that provincial data, analysis, field collection and reporting are one workflow."); Our Approach keeps `:313`, `:314`, `:316`
-- [ ] Commissioning bodies sentence after `watershed_restoration_fish_passage/index.md:33` ("for", not "funded by"): SERNbc; HCTF and MoTI (Skeena, Fraser); FWCP (Peace); Nupqu Resource Limited Partnership (Elk 2022); MoTI (2022 effectiveness monitoring)
-- [ ] Living-document sentence after `:33`: "Each report is a living document: it rebuilds when new data or review comments arrive, and the version and date on its title page say where it stands."
-- [ ] `:33` "Initiatives have led to substantial funding …" sentence deleted (D6)
-- [ ] `:16` "has been noted as containing" → "…has some of the most intense land use in the Skeena Basin, as the 2024 restoration plan documents"
-- [ ] `aquatic_monitoring_assessment/index.md:72` "Extensive experience with…" → the concrete list (stream classifications, rapid and detailed habitat assessments, FHAP, electrofishing for presence, density and movement, FISS submission)
-- [ ] `layouts/index.html:358` question 3 rewrite; `:383` "the system is in production" rewrite; `:291` one bridging sentence after "outside specialists"
-- [ ] Landing jargon: "Intrinsic habitat potential" (`:336`), "hydrometric stations" (`:358`), "coherent workflow" and "shared infrastructure" (`:315-316`)
-- [ ] One spelling per document (D4): `aquatic_monitoring_assessment/index.md:38,40` prose → "Neexdzii Kwah" and "Wet'suwet'en Treaty Office Society"; the restoration tile already has both; report link texts keep each report's own title
-- [ ] `open_source_software/index.md:3` title → "Open Source Software"
-- [ ] Duplicates: cut the last sentence of `layouts/index.html:327`; rewrite the `open_source_software/index.md:10` opener so it does not repeat the landing page
+- [x] Who We Are (`layouts/index.html:302`, D2: unnamed): keep the identity sentence; move the service list from `:315` into Who We Are as two sentences ("We work alongside stewardship organizations, First Nations and agencies across BC. The work is stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, field programs and interactive online reporting, connected so that provincial data, analysis, field collection and reporting are one workflow."); Our Approach keeps `:313`, `:314`, `:316`
+- [x] Commissioning bodies sentence after `watershed_restoration_fish_passage/index.md:33` ("for", not "funded by"): SERNbc; HCTF and MoTI (Skeena, Fraser); FWCP (Peace); Nupqu Resource Limited Partnership (Elk 2022); MoTI (2022 effectiveness monitoring)
+- [x] Living-document sentence after `:33`: "Each report is a living document: it rebuilds when new data or review comments arrive, and the version and date on its title page say where it stands."
+- [x] `:33` "Initiatives have led to substantial funding …" sentence deleted (D6)
+- [x] `:16` "has been noted as containing" → "…has some of the most intense land use in the Skeena Basin, as the 2024 restoration plan documents"
+- [x] `aquatic_monitoring_assessment/index.md:72` "Extensive experience with…" → the concrete list (stream classifications, rapid and detailed habitat assessments, FHAP, electrofishing for presence, density and movement, FISS submission)
+- [x] `layouts/index.html:358` question 3 rewrite; `:383` "the system is in production" rewrite; `:291` one bridging sentence after "outside specialists"
+- [x] Landing jargon: "Intrinsic habitat potential" (`:336`), "hydrometric stations" (`:358`), "coherent workflow" and "shared infrastructure" (`:315-316`)
+- [x] One spelling per document (D4): `aquatic_monitoring_assessment/index.md:38,40` prose → "Neexdzii Kwah" and "Wet'suwet'en Treaty Office Society"; the restoration tile already has both; report link texts keep each report's own title
+- [x] `open_source_software/index.md:3` title → "Open Source Software"
+- [x] Duplicates: cut the last sentence of `layouts/index.html:327`; rewrite the `open_source_software/index.md:10` opener so it does not repeat the landing page
 - [x] `open_source_software/index.md:192`: "served from our catalogue server, images.a11s.one" (landed with Phase 2)
-- [ ] `aquatic_monitoring_assessment/index.md:3` excerpt: "reservoirs, regulated rivers and impacted streams"
-- [ ] Contact `content/form/contact.md:4` (D5): second sentence → "The methods and analytical tools we develop together become publicly available to the broader community." (drops "data"; no governance claim added)
-- [ ] Blog nav `config.toml:113` → the final URL `https://www.newgraphenvironment.com/new_graphiti/`; label stays "Blog"
-- [ ] Build; commit
+- [x] `aquatic_monitoring_assessment/index.md:3` excerpt: "reservoirs, regulated rivers and impacted streams"
+- [x] Contact `content/form/contact.md:4` (D5): second sentence → "The methods and analytical tools we develop together become publicly available to the broader community." (drops "data"; no governance claim added)
+- [x] Blog nav `config.toml:113` → the final URL `https://www.newgraphenvironment.com/new_graphiti/`; label stays "Blog"
+- [x] Build; commit
 
 ### Phase 4: Theme pages onto the landing palette (reads D1)
 - [ ] Light (D1): `assets/nge-hex.scss` defining the 16 `*Custom` variables (`$siteBgColorCustom: #faf7f2; $textColorCustom: #1a1a18; $headingColorCustom: #1a2e1f; $headlineColorCustom: #5f5a4e; $bodyLinkColorCustom: #3a6b8c; $navLinkColorCustom: #faf7f2; $sidebarBgColorCustom: #f2ede4; $sidebarTextColorCustom: #1a1a18; $sidebarLinkColorCustom: #3a6b8c; $footerTextColorCustom: #b0a99a; $buttonTextColorCustom: #faf7f2; $buttonHoverTextColorCustom: #faf7f2; $buttonBgColorCustom: #2d4a35; $buttonHoverBgColorCustom: #3d6b4a; $borderColorCustom: #e5ddd0`); `config.toml` `theme = ""`, `custom_theme = "nge-hex"`, `customtextFontFamily = "DM Sans"`, `customheadingFontFamily = "Cormorant Garamond"`

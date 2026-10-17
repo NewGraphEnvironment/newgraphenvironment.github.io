@@ -110,7 +110,7 @@ disableKinds = ["taxonomy", "term"]
   [[menu.header]]
     name = "Blog"
     title = "Blog"
-    url = "https://newgraphenvironment.github.io/new_graphiti/"
+    url = "https://www.newgraphenvironment.com/new_graphiti/"
     weight = 4
 
 

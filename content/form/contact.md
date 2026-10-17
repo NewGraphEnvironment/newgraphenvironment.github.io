@@ -1,7 +1,7 @@
 ---
 title: Get in Touch
 name: Contact
-description: "We partner on multi-year watershed programs — building tools, technical capacity, and reproducible methods alongside restoration and monitoring work. The science we develop together — methods, data, and analytical tools — becomes publicly available to the broader community."
+description: "We partner on multi-year watershed programs — building tools, technical capacity, and reproducible methods alongside restoration and monitoring work. The methods and analytical tools we develop together become publicly available to the broader community."
 date: 2019-02-25T13:38:41-06:00
 draft: false
 url: contact
