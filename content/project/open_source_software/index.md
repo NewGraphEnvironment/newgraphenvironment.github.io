@@ -37,7 +37,7 @@ Our stream network engine, fresh, does the work underneath. It breaks the networ
 
 ### wet — flow and water temperature
 
-Our stream flow tool, wet, estimates mean annual and monthly flow for every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and, where the station logs it, water temperature.
+Our stream flow tool, wet, estimates mean annual and monthly flow for almost every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and, where the station logs it, water temperature.
 
 The flow can feed the habitat rules. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
 
@@ -65,7 +65,7 @@ Our floodplain mapping tool, flooded, maps the floodplain from elevation data an
 
 ### drift — what has changed
 
-Our land-cover change tool, drift, measures how the land inside a floodplain changed between any two years that free satellite land-cover maps cover. It tags each change with what it overlaps in any mapped layer, such as fire or harvest. It is a screening tool: each change it finds is a place to check, not confirmed loss.
+Our land-cover change tool, drift, measures how the land inside a floodplain changed between any two years that free satellite land-cover maps cover. It tags each change with what it overlaps in any mapped layer of areas, such as fire perimeters or cutblocks. It is a screening tool: each change it finds is a place to check, not confirmed loss.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
@@ -123,7 +123,7 @@ LidarBC elevation tiles across the province, searchable by place and date: bare 
 
 ### Drone imagery
 
-Drone imagery from our programs, catalogued by region, watershed and year, each flight with the date it was flown. The photographs are stitched into orthomosaics and surface and terrain models with OpenDroneMap, and each item records the stream and watershed group and, where the flight is at a crossing, the crossing; repeat flights of one site carry a label that tells them apart. Where provincial lidar covers a flight and the fit could be made, the item also records how far the drone's GPS placed it from the lidar ground and the correction that brings it onto the lidar; the imagery itself is published as captured. It can be found by place and date from R or QGIS, or opened in the viewer. Imagery flown before works are built is the baseline later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
+Drone imagery from our programs, catalogued by region, watershed and year, with the time each flight was flown where the imagery records it. The photographs are stitched with OpenDroneMap into orthomosaics and, for nearly all flights, surface and terrain models, and each item records the stream and watershed group and, where the flight is at a crossing, the crossing; repeat flights of one site carry a label that tells them apart. Where provincial lidar covers a flight and the fit could be made, the item also records how far the drone's GPS placed it from the lidar ground and the correction that brings it onto the lidar; the imagery itself is published as captured. It can be found by place and date from R or QGIS, or opened in the viewer. Imagery flown before works are built is the baseline later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 

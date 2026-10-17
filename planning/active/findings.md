@@ -132,6 +132,8 @@ Triage of its findings, verified against the code before acting:
 - new_graphiti: https://github.com/NewGraphEnvironment/new_graphiti/issues/7
 - floodplains: https://github.com/NewGraphEnvironment/floodplains/issues/136
 - newgraphenvironment.github.io: https://github.com/NewGraphEnvironment/newgraphenvironment.github.io/issues/61
+- fish_passage_bulkley_2022_reporting: https://github.com/NewGraphEnvironment/fish_passage_bulkley_2022_reporting/issues/166
+- stac_uav_bc: https://github.com/NewGraphEnvironment/stac_uav_bc/issues/53
 
 Not filed: stac_airphoto_bc#50 (licence) already exists.
 
@@ -151,12 +153,18 @@ Rounds 1 and 2 found four copy defects of one shape: a universal word ("each", "
 | "Three mainstem sites … in triplicate", "2004 and 2018", "1972 to 2024, more than one hundred stations" | monitoring:28–30 | benthic report §3.1, §2.3, §2 | holds |
 | "one grey line per year" | monitoring caption | the NRP plot's encoding, not a count | holds |
 | "2013 to 2018 … 2013 to 2017" | monitoring caption | the two panels' legends | holds (round 1 fix) |
-| "every stream in the Freshwater Atlas" | oss:50; landing "Flow for every stream" | wet README: province-wide water balance | holds as the README's claim |
+| "almost every stream in the Freshwater Atlas" | oss:50; landing "Flow for almost every stream" | wet README headline says "almost every stream"; the earlier row read its scope sentence instead of its qualifier | holds (round 3 fix) |
+| "stitched with OpenDroneMap into orthomosaics and, for nearly all flights, surface and terrain models" | oss:126 | by item id, 162 of 164 datasets carry DSM and DTM items; the two Bulkley 2024 datasets are orthophoto-only (measured 2026-10-17) | holds (round 3 fix) |
+| "catalogued by region, watershed and year" | oss:126 | 245 of 245 item ids are region-wsg-year-site | holds |
+| "any mapped layer of areas, such as fire perimeters or cutblocks" | oss:88; landing | drift `overlay` takes polygon layers (roxygen); "mapped layer" alone over-generalised | holds (round 3 fix) |
+| "R, Python or QGIS 3.42+" | oss:192 | each catalogue README | holds |
+| "We run it twice … the difference points to the roads, rail grades, dykes and fill" | oss:74 | flooded README and its STAC-DEM article | holds |
+| "submit the results to the provincial fish database (FISS)" | monitoring:48 | owner-stated capability; the restoration intro states the same | accepted |
 | "lakes and wetlands included" | oss:36 | fresh `R/frs_habitat_classify.R` | holds |
 | "between any two years that free satellite land-cover maps cover", "any mapped layer" | oss:88; landing | drift README; `dft_transition_attribute` roxygen | holds |
 | "whole watershed groups", "whole stream network", "2017 to 2023" | oss:100 | live `stac-floodplains-bc` description (v2.0.0) | holds |
 | "Four of the five carry a CC BY 4.0 licence" | oss:192 | live `/collections`: 4 × CC-BY-4.0, 1 × proprietary | holds |
-| "each flight with the date it was flown" | oss:126 | `datetime` on 245 of 245 live items | holds |
+| "with the time each flight was flown where the imagery records it" | oss:126 | 243 of 245 live items carry a capture time; the two orthophoto-only Bulkley 2024 items carry the item builder's 2024-01-01 placeholder (measured 2026-10-17). Round 3 showed the earlier row scored the field's presence, not the property; wording scoped | holds (round 3 fix) |
 | "each item records the stream and watershed group" | oss:126 | 245 of 245 | holds |
 | "where the flight is at a crossing, the crossing" | oss:126 | 141 of 245 carry `bcfishpass:aggregated_crossings_id` | holds (round 1 fix) |
 | "repeat flights of one site carry a label that tells them apart" | oss:126 | `newgraph:alias` on 6 items; the README names it as the repeat-flight marker; whether every repeat flight carries one is not measurable from the API | accepted as the README's claim |
