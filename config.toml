@@ -20,7 +20,10 @@ disableKinds = ["taxonomy", "term"]
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark.renderer]
     unsafe = true  # Enable user to embed HTML snippets in Markdown content.
-    hardwraps = false 
+    hardwraps = false
+  [markup.goldmark.parser]
+    # layouts/_default/_markup/render-image.html wraps images in <figure>
+    wrapStandAloneImageWithinParagraph = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 2

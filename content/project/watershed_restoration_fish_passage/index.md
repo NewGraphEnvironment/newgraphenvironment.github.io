@@ -9,8 +9,6 @@ We plan, deliver and monitor aquatic restoration at scales ranging from individu
 
 We monitor restoration effectiveness over the long term with standardised biological tools: eDNA, benthic invertebrate sampling, fish inventories for the provincial database (FISS), fish and fish habitat assessment, drone surveys, and riparian assessment. The systems we have built track progress and effectiveness and share the results with partners, so what we learn at one site carries to the next.
 
-<br>
-
 ### Neexdzii Kwah Watershed Restoration
 
 The Neexdzii Kwah (Upper Bulkley River) has some of the most intense land use in the Skeena Basin, as the 2024 restoration plan documents. This initiative develops a living governance and prioritization framework for watershed restoration — placing Wet'suwet'en direction at the centre of decision-making and integrating open-source spatial analysis tools to support planning at the sub-basin scale.
@@ -22,17 +20,11 @@ The watershed was divided into 14 sub-basins to enable comparison and investment
 
 This work is conducted on behalf of the Wet'suwet'en Treaty Office Society, delivered under the leadership of the Society for Ecosystem Restoration in Northern BC (SERNbc), with technical implementation by New Graph Environment.
 
-<br>
-
-![](map-lulc-subbasins.png)
-
-<br>
+![The Neexdzii Kwah divided into sub-basins, with the modelled floodplain, Highway 16 and the CN railway.](map-lulc-subbasins.jpg)
 
 ### Fish Passage Restoration Planning
 
 Multi-year fish passage assessment and restoration planning across more than 20 watershed groups in British Columbia. We collaborate with First Nations, provincial agencies, and stewardship organizations to identify barriers, prioritize restoration, and track outcomes. The Skeena, Fraser and Peace programs are delivered with SERNbc: for the Habitat Conservation Trust Foundation and the Ministry of Transportation and Infrastructure in the Skeena and Fraser, and for the Fish and Wildlife Compensation Program in the Peace. The Elk River work was for Nupqu Resource Limited Partnership, and the 2022 effectiveness monitoring for the Ministry of Transportation and Infrastructure. Each report is a living document: it rebuilds when new data or review comments arrive, and the version and date on its title page say where it stands.
-
-<br>
 
 #### Skeena Region
 
@@ -49,11 +41,7 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 </details>
 
-<br>
-
 ![Skeena Region fish passage restoration, from the 2025 report.](fishpassage_skeena_2025.jpg)
-
-<br>
 
 #### Peace Region
 
@@ -69,22 +57,14 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 </details>
 
-<br>
-
 ![Fish and Wildlife Compensation Program (FWCP) Peace Region fish passage restoration, from the 2025 report.](fishpassage_peace_2025.jpg)
-
-<br>
 
 #### Fraser Region
 
   - [Restoring Fish Passage in the Fraser Region 2025](https://www.newgraphenvironment.com/fish_passage_fraser_2025_reporting/)
   - [Restoring Fish Passage in the Fraser Region 2023](https://www.newgraphenvironment.com/fish_passage_fraser_2023_reporting/)
 
-<br>
-
 ![Fraser Region fish passage restoration, from the 2025 report.](fishpassage_fraser_2025.jpg)
-
-<br>
 
 #### Elk River
 
@@ -97,11 +77,7 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 </details>
 
-<br>
-
-![](TimePhoto_20220927_131549.JPG)
-
-<br>
+![Cutthroat trout measured against a tape during fish sampling, September 2022.](TimePhoto_20220927_131549.JPG)
 
 #### Effectiveness Monitoring
 

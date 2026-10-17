@@ -69,11 +69,11 @@ The branch fast-forwards PR #60's commit (`stac_dem_bc` → `stac_elevation_bc`)
 - [x] Build; phone (390) and desktop (1440) screenshots of all six pages; commit
 
 ### Phase 5: Images and loading
-- [ ] `static/img/snowshoe.JPG` → `static/img/snowshoe-1600.jpg` (1600 px, JPEG q70); update `layouts/index.html:43`, `layouts/form/split-right.html:18`; `background-color: var(--forest-deep)` on `.nge-hero-bg`; remove the original from `static/`
-- [ ] Monitoring bundle: `overview_zoomed_out.png` → `overview_zoomed_out.jpg` (1600 px q75); `dunc_elevations.png` → `.jpg` (q75); Restoration: `map-lulc-subbasins.png` → `.jpg` (1600 px q75); `featured.png` → `featured.jpg` (q82); markdown references updated; originals removed
-- [ ] Delete unreferenced: `static/img/jasper_lake.JPG`, `aquatic_monitoring_assessment/site1.png`, `IMG_0796_benthic.JPG`, `robert_hatch_plan_20211023_k_.JPG`
-- [ ] `layouts/_default/_markup/render-image.html`: `<figure><img src loading="lazy" decoding="async" alt>` with alt → `<figcaption>`; alt text written for the 15 `![](…)` images across the three tiles; `loading="lazy"` on the hex `<img>`s; the `<br>`, `---` and `<div style="clear: both">` spacing tags removed now that Phase 4's margins exist
-- [ ] Page weight measured before and after (HEAD each asset): `/` ≤ 1.2 MB, Monitoring ≤ 2 MB, Restoration ≤ 2 MB; commit
+- [x] `static/img/snowshoe.JPG` → `static/img/snowshoe-1600.jpg` (1600 px, JPEG q70); update `layouts/index.html:43`, `layouts/form/split-right.html:18`; `background-color: var(--forest-deep)` on `.nge-hero-bg`; remove the original from `static/`
+- [x] Monitoring bundle: `overview_zoomed_out.png` → `overview_zoomed_out.jpg` (1600 px q75); `dunc_elevations.png` → `.jpg` (q75); Restoration: `map-lulc-subbasins.png` → `.jpg` (1600 px q75); `featured.png` → `featured.jpg` (q82); markdown references updated; originals removed
+- [x] Delete unreferenced: `static/img/jasper_lake.JPG`, `aquatic_monitoring_assessment/site1.png`, `IMG_0796_benthic.JPG`, `robert_hatch_plan_20211023_k_.JPG`
+- [x] `layouts/_default/_markup/render-image.html`: `<figure><img src loading="lazy" decoding="async" alt>` with alt → `<figcaption>`; alt text written for the 15 `![](…)` images across the three tiles; `loading="lazy"` on the hex `<img>`s; the `<br>`, `---` and `<div style="clear: both">` spacing tags removed now that Phase 4's margins exist
+- [x] Page weight measured before and after (HEAD each asset): `/` ≤ 1.2 MB, Monitoring ≤ 2 MB, Restoration ≤ 2 MB; commit
 
 ### Phase 6: Typography, accessibility, small fixes
 - [ ] `layouts/index.html`: `--stone-text: #5f5a4e` on `.nge-section-lead`, `.nge-problem-text`, `.nge-pipeline-body p`, `.nge-evidence-card p`; phone sizes to 1rem (`:262`, pipeline `:150`, card `p`); `.nge-problem-text, .nge-section-lead { max-width: 36rem }`; `.nge-pipeline-body p { max-width: 34em }`; pills `font-size: .85rem; padding: .3rem .8rem`; hero tagline `<h1 class="nge-hero-subtitle">`; `@media (prefers-reduced-motion: reduce)` rule and `<noscript>` fallback for `.nge-reveal`; `rel="noopener"` on every `target="_blank"`; `:focus-visible { outline: 2px solid var(--river); outline-offset: 2px }` on cards and pills; pipeline nodes all hex (`clip-path` hexagon on the drone photo at `:170-173`; NGE icon on a hex for the field step at `:364-366`)

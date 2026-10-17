@@ -9,13 +9,11 @@ Our analytical tools, data, and methods are publicly available on GitHub. We wor
 
 The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is.
 
-<br>
-
 ## Where is the habitat, and what's keeping fish from it?
 
 For restoration planning, the first questions are where each species' habitat is and which barriers cut fish off from it. Field results flow back into the answer.
 
-<img src="/img/hex/link.png" alt="link" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/link.png" alt="link" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### link — habitat potential, species by species
 
@@ -23,13 +21,9 @@ Our habitat connectivity model, link, maps the intrinsic habitat potential of st
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
-<div style="clear: both;"></div>
-
 ![Bull trout habitat potential and access across the Parsnip watershed group.](link_bull_trout.png)
 
-<br>
-
-<img src="/img/hex/fresh.png" alt="fresh" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### fresh — the stream network engine
 
@@ -37,13 +31,9 @@ Our stream network engine, fresh, does the work underneath. It breaks the networ
 
 - [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
-<div style="clear: both;"></div>
+![Modelled coho spawning and rearing habitat across a sub-basin, with falls and coho observations.](fresh_subbasin.png)
 
-![](fresh_subbasin.png)
-
-<br>
-
-<img src="/img/hex/wet.png" alt="wet" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/wet.png" alt="wet" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### wet — flow and water temperature
 
@@ -53,21 +43,15 @@ The flow can feed the habitat rules. At gauging stations, our climate analysis t
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
-<div style="clear: both;"></div>
-
 ![Which source each stream segment's published flow draws on.](wet_discharge_source.png)
 
-<br>
-
 ---
-
-<br>
 
 ## Where is the floodplain, what did it look like before, and what has changed?
 
 The floodplain is where a river stores water, builds side channels and grows the wood that becomes its pools and cover. Restoring at the scale of the loss means seeing the whole floodplain: where it is, its condition before clearing and channelisation, and what is changing now.
 
-<img src="/img/hex/flooded.png" alt="flooded" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/flooded.png" alt="flooded" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### flooded — where the floodplain is
 
@@ -75,13 +59,9 @@ Our floodplain mapping tool, flooded, maps the floodplain from elevation data an
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
-<div style="clear: both;"></div>
+![Floodplain scenarios from flooded, from the active channel margin to the valley bottom.](flooded_scenarios.png)
 
-![](flooded_scenarios.png)
-
-<br>
-
-<img src="/img/hex/drift.png" alt="drift" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/drift.png" alt="drift" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### drift — what has changed
 
@@ -89,11 +69,7 @@ Our land-cover change tool, drift, measures how the land inside a floodplain cha
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
-<div style="clear: both;"></div>
-
-![](drift_classified.png)
-
-<br>
+![Land cover inside a floodplain classified for 2017, 2020 and 2023.](drift_classified.png)
 
 ### Floodplain change catalogue
 
@@ -107,9 +83,7 @@ Brings link, flooded and drift together for whole watershed groups: the floodpla
 
 ![Floodplain tree loss 2017–2023 in the Bulkley watershed group, by attributed cause.](floodplains_attribution.png)
 
-<br>
-
-<img src="/img/hex/fly.png" alt="fly" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/fly.png" alt="fly" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### fly — historic airphotos
 
@@ -117,13 +91,9 @@ Our airphoto tool, fly, finds the fewest historic provincial airphotos that cove
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
-<div style="clear: both;"></div>
+![Historic airphoto footprints selected to cover a site with the fewest photos.](fly_priority.png)
 
-![](fly_priority.png)
-
-<br>
-
-<img src="/img/hex/cd.png" alt="cd" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/cd.png" alt="cd" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### cd — climate departure
 
@@ -131,21 +101,15 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-<div style="clear: both;"></div>
-
-![](cd_temperature_departure.png)
-
-<br>
+![Temperature departure, 2015 to 2025 against 1951 to 1980, around Castlegar, Nelson and Creston.](cd_temperature_departure.png)
 
 ---
-
-<br>
 
 ## What do the ground and water look like now?
 
 Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and the drone imagery from our programs, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
-<img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### BC lidar, ready to query
 
@@ -153,13 +117,9 @@ LidarBC elevation tiles across the province, searchable by place and date: bare 
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
-<div style="clear: both;"></div>
-
 ![Canopy height from LidarBC point clouds, Maxan Creek.](lidar_canopy.png)
 
-<br>
-
-<img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### Drone imagery
 
@@ -167,13 +127,9 @@ Drone imagery from our programs, catalogued by region, watershed and year, each 
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
-<div style="clear: both;"></div>
+![Drone imagery of a stream reach.](uav_cover.jpg)
 
-![](uav_cover.jpg)
-
-<br>
-
-<img src="/img/hex/water-temp-bc.png" alt="water-temp-bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/water-temp-bc.png" alt="water-temp-bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### water-temp-bc — water temperature, flow and water level
 
@@ -182,10 +138,6 @@ Our hydrometric archive, water-temp-bc, holds water temperature, flow and water 
 This data feeds our collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/), which is advancing fish habitat modelling across the province. That collaboration has produced spatial stream network temperature modelling ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width regression models.
 
 - [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
-
-<div style="clear: both;"></div>
-
-<br>
 
 ### Open catalogues, and the recipe for building them
 
@@ -203,11 +155,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |
 | [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Drone imagery from our programs; by region, watershed group and year |
 
-<br>
-
 ---
-
-<br>
 
 ## Into the field and back
 
@@ -216,8 +164,6 @@ We take the planning into the field. For each program we build a custom field sy
 Forms cover fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling and benthic invertebrate collection. Where possible, data is structured for direct submission to the provincial and federal databases: FISS for fish, PSCIS for stream crossings and CABIN for benthic invertebrates. What crews collect flows back into the models it came from: assessments and habitat confirmations feed link's barrier decisions.
 
 We also build the capacity of field teams to navigate to sites, collect data to standard, and interpret what they find.
-
-<br>
 
 ### Dynamic reporting
 

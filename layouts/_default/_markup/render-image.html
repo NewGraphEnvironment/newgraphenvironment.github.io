@@ -1,0 +1,9 @@
+{{- /* Markdown images become lazy-loaded figures; the alt text is also the
+       visible caption. Needs markup.goldmark.parser.wrapStandAloneImageWithinParagraph
+       = false in config.toml, or the figure lands inside a <p>. */ -}}
+{{- $src := .Destination -}}
+{{- with .Page.Resources.GetMatch .Destination }}{{ $src = .RelPermalink }}{{ end -}}
+<figure>
+  <img src="{{ $src | safeURL }}" alt="{{ .Text | plainify }}" loading="lazy" decoding="async">
+  {{- with .Text }}<figcaption>{{ . | plainify }}</figcaption>{{ end }}
+</figure>

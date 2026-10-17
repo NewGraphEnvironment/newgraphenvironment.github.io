@@ -27,8 +27,11 @@ html { background-color: #1a2e1f; }
 .post-body h2 { margin-top: 3.5rem; }
 .post-body h3 { margin-top: 2.5rem; }
 .post-body h4 { margin-top: 2rem; }
-.post-body img, .post-body figure { margin: 2.5rem 0; }
-.post-body > p > img, .post-body figure img { background: #fff; border: 1px solid #e5ddd0; }
+// Markdown images render as <figure> (layouts/_default/_markup/render-image.html);
+// the figure clears the floated hex stickers, as the old clear divs did
+.post-body figure { margin: 2.5rem 0; clear: both; }
+.post-body figure img { display: block; margin: 0; max-width: 100%; background: #fff; border: 1px solid #e5ddd0; }
+.post-body figcaption { font-family: 'DM Sans', sans-serif; font-size: .875rem; color: #5f5a4e; margin-top: .6rem; max-width: 38em; }
 .post-body details { margin-top: 1rem; }
 
 // Our Work grid: cards in the landing page's style

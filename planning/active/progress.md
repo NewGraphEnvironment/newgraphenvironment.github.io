@@ -13,4 +13,5 @@
 - Phase 3 landed: Who We Are carries the service list (unnamed, D2), commissioning bodies and the living-document sentence on the restoration tile, funding sentence dropped (D6), Neexdzii Kwah / Treaty Office Society (D4), contact sentence softened (D5), three sentences rewritten, jargon and duplicates removed, Blog URL final
 - Phase 4 landed: light nge-hex theme for the four theme pages, one green chrome, DM Sans / Cormorant site-wide from head.html, Our Work cards (summary-grid override, tile titles h3), figures framed; resources/_gen out of git
 - Plan review arrived during Phase 4 (see findings.md); its valid items folded into Phases 4–7, three copy nits (lidar cadence, flooded sentence, SERNbc) landed in the same commit
-- Next: Phase 5
+- Phase 5 landed: hero and five bundle images re-encoded (maps at 4:4:4), three 2025 report maps to 1400 px, a 200 px node crop for the landing page, four unreferenced images deleted, render-image hook with wrapStandAloneImageWithinParagraph off, 15 alt texts as captions, 42 spacing tags removed. On-disk weight: / 8236 -> 964 KB, contact 7758 -> 887, monitoring 10672 -> 1885, restoration 5472 -> ~2000, Our Work 1998 -> 805
+- Next: Phase 6
