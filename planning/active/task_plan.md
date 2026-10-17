@@ -19,18 +19,18 @@ The branch fast-forwards PR #60's commit (`stac_dem_bc` → `stac_elevation_bc`)
 - D7 Monitoring tile thumbnail: **the cutthroat photo**, `IMG_9866_cutty.JPG`, square-cropped with the GPS stamp removed.
 
 ### Phase 1: Theme residue and metadata
-- [ ] `content/about/_index.md`: page-level `_build: {render: never, list: never}` (keep the existing `cascade: headless: true`); `/about/` no longer builds
-- [ ] `content/form/contact.md`: wrap the developer note (lines 18–22) in `<!-- -->`; add `content/form/_index.md` with `_build: {render: never, list: never}`; `/contact/` still renders
-- [ ] `config.toml`: remove `twitter`; `sharing_image = "/img/share-1200x630.jpg"`; `description = "Open-source watershed science in British Columbia: aquatic restoration planning and delivery, long-term monitoring, and the open tools behind them."`; `favicon = "/favicon.ico"` (the file exists in `static/`); comment out `[params.math]`; remove `[[menu.footer]]`; `disableKinds = ["taxonomy", "term"]`
-- [ ] `content/_index.md`: `title: "New Graph Environment"`, `description:` the same sentence; `images:` → `/img/share-1200x630.jpg`; drop the stale `action_link: /about` fields and the `subtitle`
-- [ ] `layouts/partials/meta.html` override: the `images:` branch also emits `og:image` (the theme emits only `twitter:image` there, so the home page has no `og:image`)
-- [ ] `content/project/_index.md`: `title: "Our Work"`, `description: "Three kinds of work, each shown through the programs that use it: restoration planning and delivery, long-term monitoring and assessment, and the open tools behind both."`
-- [ ] `layouts/partials/footer.html` override: `© {{ now.Format "2006" }} New Graph Environment` + GitHub icon; no "Made with", no attribution partial, no footer menu
-- [ ] `layouts/project/single.html` override: theme `_default/single.html` minus `post-details` and `post-pagination`
-- [ ] `layouts/_default/_markup/render-heading.html` override: `<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}</h{{ .Level }}>`
-- [ ] `static/img/share-1200x630.jpg`: 1200×630 crop of the hero photo, ≤ 150 KB
-- [ ] Delete `content/project/sidebar-listing.jpg`
-- [ ] Build to a temp dir; confirm `/about/`, `/form/`, `/tags/`, `/categories/`, `/series/` absent from the build and `sitemap.xml`; `<title>`, `og:title`, `og:description`, `og:image`, `twitter:*` correct on `/`, `/project/`, `/contact/`; commit
+- [x] `content/about/_index.md`: page-level `_build: {render: never, list: never}` (keep the existing `cascade: headless: true`); `/about/` no longer builds
+- [x] `content/form/contact.md`: wrap the developer note (lines 18–22) in `<!-- -->`; add `content/form/_index.md` with `_build: {render: never, list: never}`; `/contact/` still renders
+- [x] `config.toml`: remove `twitter`; `sharing_image = "/img/share-1200x630.jpg"`; `description = "Open-source watershed science in British Columbia: aquatic restoration planning and delivery, long-term monitoring, and the open tools behind them."`; `favicon = "/favicon.ico"` (the file exists in `static/`); comment out `[params.math]`; remove `[[menu.footer]]`; `disableKinds = ["taxonomy", "term"]`
+- [x] `content/_index.md`: `title: "New Graph Environment"`, `description:` the same sentence; `images:` → `/img/share-1200x630.jpg`; drop the stale `action_link: /about` fields and the `subtitle`
+- [x] `layouts/partials/meta.html` override: the `images:` branch also emits `og:image` (the theme emits only `twitter:image` there, so the home page has no `og:image`)
+- [x] `content/project/_index.md`: `title: "Our Work"`, `description: "Three kinds of work, each shown through the programs that use it: restoration planning and delivery, long-term monitoring and assessment, and the open tools behind both."`
+- [x] `layouts/partials/footer.html` override: `© {{ now.Format "2006" }} New Graph Environment` + GitHub icon; no "Made with", no attribution partial, no footer menu
+- [x] `layouts/project/single.html` override: theme `_default/single.html` minus `post-details` and `post-pagination`
+- [x] `layouts/_default/_markup/render-heading.html` override: `<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}</h{{ .Level }}>`
+- [x] `static/img/share-1200x630.jpg`: 1200×630 crop of the hero photo, ≤ 150 KB
+- [x] Delete `content/project/sidebar-listing.jpg`
+- [x] Build to a temp dir; confirm `/about/`, `/form/`, `/tags/`, `/categories/`, `/series/` absent from the build and `sitemap.xml`; `<title>`, `og:title`, `og:description`, `og:image`, `twitter:*` correct on `/`, `/project/`, `/contact/`; commit
 
 ### Phase 2: Stale and under-qualified facts
 - [ ] `content/project/open_source_software/index.md:100`: floodplain catalogue sentence → whole stream network, no access filter; re-copy stac_floodplains_bc `fig/coverage.png` at `main` → `floodplains_coverage.png` (1400 px)

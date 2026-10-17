@@ -1,20 +1,10 @@
 ---
-title: "new graph enVironment"
-subtitle: "Biology and Ecosystem Restoration"
-description: "Innovative environmental research and consulting solutions."
+title: "New Graph Environment"
+description: "Open-source watershed science in British Columbia: aquatic restoration planning and delivery, long-term monitoring, and the open tools behind them."
 
 images:
-  - img/snowshoe.JPG
-image_left: false
-text_align_left: true
-show_social_links: false # specify social accounts in site config
-show_action_link: true
-action_link: /about
-action_label: "Read More &rarr;"
-action_type: text # text, button
+  - /img/share-1200x630.jpg
 type: home
 ---
-<img src="/img/nge-icon_white.png" alt="New Graph Environment Logo" style="max-width: 200px; display: block; margin: auto;">
+<!-- The landing page has no body; it is layouts/index.html. -->
 
-** index doesn't contain a body, just front matter above.
-See index.html in the layouts folder **

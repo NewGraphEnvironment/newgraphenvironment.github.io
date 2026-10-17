@@ -8,4 +8,5 @@
 - Plan reviewer (Plan agent) spawned on the plan file; findings fold in when they arrive
 - Created branch `59-site-review-oct-2026-fact-check-copy-and` off main (eeb4eb2), fast-forwarded PR #60's rename commit (a4776a2) so Phase 2 does not conflict with it
 - Scaffolded PWF baseline from issue #59 with approved phases
-- Next: Phase 1
+- Phase 1 landed: theme residue and metadata (about/ and form/ no longer build, taxonomy pages off, share card, meta/footer/single/heading overrides, utterances and KaTeX off)
+- Next: Phase 2
