@@ -6,7 +6,7 @@ Three independent reviews of www.newgraphenvironment.com ran on 2026-10-17 again
 
 `/code-check branch` ran three rounds and found eight real defects, all fixed (`review-round1.md` to `review-round3.md`). Six of the eight were one shape: a universal clause in the copy ("each item records the crossing", "the Elk River work was for Nupqu", "each flight with the date it was flown", "every stream") written from the producer's own account of itself rather than from the population it ranges over. Round 2 found one inside round 1's sentence and round 3 found two more there, so the loop was ended by enumeration, not by a quiet round: every quantified claim in the changed copy was listed against the population it was checked on (`findings.md`, "Quantified claims"), round 3 reproduced 25 rows, measured one more, disputed two as proxies for the property (a `datetime` field's presence rather than a capture time; a README's scope sentence rather than its "almost every"), and those two became the last fixes. What was learned: when copy says "each" or "every" about a catalogue, read the catalogue, not the README; and when a table claims to close a class, each row has to test the property the words name, not a field that correlates with it.
 
-Closed by: PR #PR_NUMBER (opened from the branch by `/gh-pr-push`).
+Closed by: PR #62.
 
 ## Measurement
 
