@@ -71,7 +71,7 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, from a narrow version to a wide one. Run on coarse elevation data and again on lidar, the floodplain the coarse result maps but lidar excludes points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and where to act**: fill removal, dyke breaches, crossing installations.
+Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. We run it twice, on coarse elevation data and on lidar. The ground the coarse run maps as floodplain and the lidar run leaves out points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -97,7 +97,7 @@ Our land-cover change tool, drift, measures how the land inside a floodplain cha
 
 ### Floodplain change catalogue
 
-Brings link, flooded and drift together for whole watershed groups: the floodplain along fish-accessible streams, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
+Brings link, flooded and drift together for whole watershed groups: the floodplain of each group's whole stream network, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
 
 **A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
 
@@ -143,13 +143,13 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ## What do the ground and water look like now?
 
-Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and our own drone imagery, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
+Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and the drone imagery from our programs, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
 <img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### BC lidar, ready to query
 
-LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, updated monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
+LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, rebuilt monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
@@ -163,7 +163,7 @@ LidarBC elevation tiles across the province, searchable by place and date: bare 
 
 ### Drone imagery
 
-Our drone flights, catalogued by watershed and year: orthomosaics plus surface and terrain models. Flights can be planned from the floodplain maps, and the imagery comes back into the catalogue for site baselines and before-and-after monitoring of restoration works.
+Drone imagery from our programs, catalogued by region, watershed and year, each flight with the date it was flown. The photographs are stitched into orthomosaics and surface and terrain models with OpenDroneMap, and each item records the stream, the watershed group and the crossing it covers, with a label that tells repeat flights of one site apart. Where provincial lidar covers a flight, the item also records how far the drone's GPS placed it from the lidar ground and the correction that brings it onto the lidar; the imagery itself is published as captured. It can be found by place and date from R or QGIS, or opened in the viewer. Imagery flown before works are built is the baseline later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
@@ -189,7 +189,7 @@ This data feeds our collaborative science with [Poisson Consulting](https://www.
 
 ### Open catalogues, and the recipe for building them
 
-Each catalogue is two things: the catalogue itself, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of any of it. Ours are served at [images.a11s.one](https://images.a11s.one) and can be searched from R, Python or QGIS 3.42+ through the open STAC standard.
+Each catalogue is two things: the catalogue itself, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of any of it. Ours are served from our catalogue server, [images.a11s.one](https://images.a11s.one), and can be searched from R, Python or QGIS 3.42+ through the open STAC standard. Four of the five carry a CC BY 4.0 licence.
 
 Our catalogue loader, stacs, puts catalogues into that search service and checks that every record arrived intact.
 
@@ -197,11 +197,11 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 | Catalogue | What it catalogues |
 |-----------|---------------|
-| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, updated monthly |
+| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, rebuilt monthly |
 | [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
 | [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group |
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |
-| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Our drone imagery; by region, watershed group and year |
+| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Drone imagery from our programs; by region, watershed group and year |
 
 <br>
 

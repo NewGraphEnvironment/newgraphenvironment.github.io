@@ -33,15 +33,15 @@ The branch fast-forwards PR #60's commit (`stac_dem_bc` → `stac_elevation_bc`)
 - [x] Build to a temp dir; confirm `/about/`, `/form/`, `/tags/`, `/categories/`, `/series/` absent from the build and `sitemap.xml`; `<title>`, `og:title`, `og:description`, `og:image`, `twitter:*` correct on `/`, `/project/`, `/contact/`; commit
 
 ### Phase 2: Stale and under-qualified facts
-- [ ] `content/project/open_source_software/index.md:100`: floodplain catalogue sentence → whole stream network, no access filter; re-copy stac_floodplains_bc `fig/coverage.png` at `main` → `floodplains_coverage.png` (1400 px)
-- [ ] `:166` Drone imagery rewrite (D3): "Drone imagery from our programs"; drop the flight-planning sentence; add OpenDroneMap stitching, date flown, per-item site registry (stream, watershed group, crossing covered, repeat flights distinguished), the lidar fit stated as a present-tense fact with "the imagery is published as captured", findable by place and date from R, QGIS or the viewer, baseline before works compared against later flights; one credit sentence: flights by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone program
-- [ ] `:204` table row → "Drone imagery from our programs; by region, watershed group and year"; `layouts/index.html:358` "our own drone imagery" → "drone imagery from our programs"
-- [ ] `:146`, `:190`, `:203`: airphoto catalogue — the row states the licence the live collection carries until stac_airphoto_bc#50 lands, and "open" is scoped to the four CC-BY-4.0 catalogues
-- [ ] `:152`, `:200`: "updated monthly" → "rebuilt monthly"
-- [ ] `:74` flooded: second sentence rewritten (copy review wording); "where to look, and what to check before acting: fill, dykes, crossings"
-- [ ] `content/project/watershed_restoration_fish_passage/index.md:80-81`: Fraser link texts → "Restoring Fish Passage in the Fraser Region 2025" / "… 2023"
-- [ ] `layouts/index.html:388`: "across the Skeena, Peace and Fraser regions and the Elk River"
-- [ ] Build; commit
+- [x] `content/project/open_source_software/index.md:100`: floodplain catalogue sentence → whole stream network, no access filter; re-copy stac_floodplains_bc `fig/coverage.png` at `main` → `floodplains_coverage.png` (1400 px)
+- [x] `:166` Drone imagery rewrite (D3): "Drone imagery from our programs"; drop the flight-planning sentence; add OpenDroneMap stitching, date flown, per-item site registry (stream, watershed group, crossing covered, repeat flights distinguished), the lidar fit stated as a present-tense fact with "the imagery is published as captured", findable by place and date from R, QGIS or the viewer, baseline before works compared against later flights; one credit sentence: flights by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone program
+- [x] `:204` table row → "Drone imagery from our programs; by region, watershed group and year"; `layouts/index.html:358` "our own drone imagery" → "drone imagery from our programs"
+- [x] `:146`, `:190`, `:203`: airphoto catalogue — the row states the licence the live collection carries until stac_airphoto_bc#50 lands, and "open" is scoped to the four CC-BY-4.0 catalogues
+- [x] `:152`, `:200`: "updated monthly" → "rebuilt monthly"
+- [x] `:74` flooded: second sentence rewritten (copy review wording); "where to look, and what to check before acting: fill, dykes, crossings"
+- [x] `content/project/watershed_restoration_fish_passage/index.md:80-81`: Fraser link texts → "Restoring Fish Passage in the Fraser Region 2025" / "… 2023"
+- [x] `layouts/index.html:388`: "across the Skeena, Peace and Fraser regions and the Elk River"
+- [x] Build; commit
 
 ### Phase 3: Copy and credibility
 - [ ] Who We Are (`layouts/index.html:302`, D2: unnamed): keep the identity sentence; move the service list from `:315` into Who We Are as two sentences ("We work alongside stewardship organizations, First Nations and agencies across BC. The work is stream network modelling, floodplain analysis, land cover change detection, nutrient loading, aquatic health monitoring, field programs and interactive online reporting, connected so that provincial data, analysis, field collection and reporting are one workflow."); Our Approach keeps `:313`, `:314`, `:316`
@@ -55,7 +55,7 @@ The branch fast-forwards PR #60's commit (`stac_dem_bc` → `stac_elevation_bc`)
 - [ ] One spelling per document (D4): `aquatic_monitoring_assessment/index.md:38,40` prose → "Neexdzii Kwah" and "Wet'suwet'en Treaty Office Society"; the restoration tile already has both; report link texts keep each report's own title
 - [ ] `open_source_software/index.md:3` title → "Open Source Software"
 - [ ] Duplicates: cut the last sentence of `layouts/index.html:327`; rewrite the `open_source_software/index.md:10` opener so it does not repeat the landing page
-- [ ] `open_source_software/index.md:192`: "served from our catalogue server, images.a11s.one"
+- [x] `open_source_software/index.md:192`: "served from our catalogue server, images.a11s.one" (landed with Phase 2)
 - [ ] `aquatic_monitoring_assessment/index.md:3` excerpt: "reservoirs, regulated rivers and impacted streams"
 - [ ] Contact `content/form/contact.md:4` (D5): second sentence → "The methods and analytical tools we develop together become publicly available to the broader community." (drops "data"; no governance claim added)
 - [ ] Blog nav `config.toml:113` → the final URL `https://www.newgraphenvironment.com/new_graphiti/`; label stays "Blog"

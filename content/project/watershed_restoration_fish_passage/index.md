@@ -77,8 +77,8 @@ Multi-year fish passage assessment and restoration planning across more than 20 
 
 #### Fraser Region
 
-  - [Fraser River Fish Passage Restoration Planning 2025](https://www.newgraphenvironment.com/fish_passage_fraser_2025_reporting/)
-  - [Fraser River Fish Passage Restoration Planning 2023](https://www.newgraphenvironment.com/fish_passage_fraser_2023_reporting/)
+  - [Restoring Fish Passage in the Fraser Region 2025](https://www.newgraphenvironment.com/fish_passage_fraser_2025_reporting/)
+  - [Restoring Fish Passage in the Fraser Region 2023](https://www.newgraphenvironment.com/fish_passage_fraser_2023_reporting/)
 
 <br>
 

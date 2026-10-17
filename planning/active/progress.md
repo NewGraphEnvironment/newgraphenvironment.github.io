@@ -9,4 +9,5 @@
 - Created branch `59-site-review-oct-2026-fact-check-copy-and` off main (eeb4eb2), fast-forwarded PR #60's rename commit (a4776a2) so Phase 2 does not conflict with it
 - Scaffolded PWF baseline from issue #59 with approved phases
 - Phase 1 landed: theme residue and metadata (about/ and form/ no longer build, taxonomy pages off, share card, meta/footer/single/heading overrides, utterances and KaTeX off)
-- Next: Phase 2
+- Phase 2 landed: floodplain catalogue sentence and coverage figure at v2.0.0 (upstream 9dceb49), drone imagery rewritten for what is live with the WLRS credit, lidar fit stated as a fact, "rebuilt monthly", flooded paragraph, CC BY 4.0 count, Fraser link texts, Elk River card
+- Next: Phase 3
