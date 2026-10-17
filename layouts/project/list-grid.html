@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $caller := . }}
+<!--site override of the theme's project/list-grid.html: the page title is an h1,
+    so Our Work reads h1 > h3 (tile titles) instead of h2 > h3-->
+<main class="page-main pa4" role="main">
+  <section class="blog-intro mw8 center tc mb5">
+    <h1 class="f2 f1-ns lh-solid center fw4">{{ .Title }}</h1>
+    <p class="f6 f5-ns measure lh-copy center">{{ .Description }}</p>
+  </section>
+  <section class="blog-content db flex-ns flex-row-ns flex-wrap-ns items-start mw8 center">
+    {{ $pages := (where .RegularPagesRecursive "Type" "project") }}
+      {{ range $pages }}
+        {{ .Scratch.Set "$root" $caller }}
+        {{ partial "shared/summary-grid" . }}
+      {{ end }}
+  </section>
+</main>
+{{ end }}

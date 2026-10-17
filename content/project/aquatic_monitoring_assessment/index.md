@@ -7,7 +7,7 @@ weight: 2
 
 We provide data analysis, monitoring design, and reporting for long-term aquatic programs — from nutrient loading in large regulated reservoirs to biological impact assessment in small tributaries.
 
-### Kootenay Lake & Arrow Lakes Nutrient Restoration Program
+## Kootenay Lake & Arrow Lakes Nutrient Restoration Program
 
 Data analysis and reporting for the Nutrient Restoration Program — a long-running initiative that applies limiting nutrients to Kootenay Lake and Arrow Lakes Reservoir to counter cultural oligotrophication caused by dam construction and operation. Our work quantifies natural nutrient loading alongside fertilizer additions, comparing dissolved phosphorus and nitrogen inputs across seasons and systems to assess the relative contribution of fertilization to biologically available nutrient supply during the growing season.
 
@@ -15,7 +15,7 @@ The analysis integrates hydrometric, water quality, and fertilization records sp
 
 ![Monthly phosphorus load in tonnes, particulate (PP) and total (TP): one grey line per year, the red line and band the central estimate and its spread.](nrp_monthly_load.png)
 
-### Duncan Reservoir Kokanee Stock Assessment
+## Duncan Reservoir Kokanee Stock Assessment
 
 Data analysis, mapping and reporting to support large lake specialists on a multi-year synthesis report for a water use planning study. Reporting incorporated results and data from multiple water use planning projects in the Columbia Basin to explore impacts and mitigation strategies related to flow regulation and water impoundment in the Duncan River watershed. We built tools in R to automate the processing of hydroacoustic fish density outputs as well as associated water quality, zooplankton, and hydrometric data.
 
@@ -23,7 +23,7 @@ Data analysis, mapping and reporting to support large lake specialists on a mult
 
 ![Seasonal pattern by year, 2013 to 2018: depth of withdrawal at Duncan Reservoir, and mean discharge at the LLOGS site.](hydrograph_res_vs_llogs2.png)
 
-### Neexdzii Kwah Benthic Invertebrate Assessment
+## Neexdzii Kwah Benthic Invertebrate Assessment
 
 Baseline assessment of stream health along the Neexdzii Kwah (Upper Bulkley River) mainstem, undertaken with the Society for Ecosystem Restoration in Northern BC (SERNbc) and the Wet'suwet'en Treaty Office Society to fill a data gap identified during [companion restoration planning research on the watershed](https://www.newgraphenvironment.com/restoration_wedzin_kwa_2024/). Three mainstem sites were sampled in triplicate following the CABIN wadeable streams protocol, with taxonomic processing by Cordillera Consulting.
 
@@ -33,7 +33,7 @@ We combined the 2025 field data with historical benthic samples from the same re
 
 [**Read the report →**](https://www.newgraphenvironment.com/neexdzii_kwa_benthic_2025/)
 
-### Sheep Creek Biological Impact Assessment
+## Sheep Creek Biological Impact Assessment
 
 Environmental impact assessment of landfill leachate on aquatic values in a major tributary to the Salmo River. Water quality impacts quantified using analysis of benthic macro-invertebrate and periphyton communities. Reproducible workflows conducted in R including standardization of multi-year project data and amalgamation within a sqlite database.
 
@@ -43,7 +43,7 @@ Non-metric Multidimensional Scaling (NMDS) ordination models incorporated in bot
 
 ![Three-dimensional NMDS ordination of benthic invertebrate samples from Sheep Creek.](nmds2.png)
 
-### Fish & Habitat Assessment
+## Fish & Habitat Assessment
 
 We carry out stream classifications, rapid and detailed habitat assessments, Fish Habitat Assessment Procedures, and electrofishing for fish presence, density and movement, and submit the results to the provincial fish database (FISS).
 
