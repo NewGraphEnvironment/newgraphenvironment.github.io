@@ -123,6 +123,18 @@ Triage of its findings, verified against the code before acting:
 - Not taken: swapping Font Awesome for an inline SVG (out of scope); the plan's "16 variables" was a miscount of 15.
 - Recorded for the PR body: D2 (unnamed) is an explicit non-fix; questions 6 (private-report wording) and 10 (DRAFT markers) are deferred asks; the Ktunaxa phrase has no destination now that `/about/` is unbuilt.
 
+## Upstream issues filed (2026-10-17)
+
+- stac_elevation_bc: https://github.com/NewGraphEnvironment/stac_elevation_bc/issues/68
+- stac_uav_bc: https://github.com/NewGraphEnvironment/stac_uav_bc/issues/52
+- stac_airphoto_bc: https://github.com/NewGraphEnvironment/stac_airphoto_bc/issues/51
+- fresh: https://github.com/NewGraphEnvironment/fresh/issues/256
+- new_graphiti: https://github.com/NewGraphEnvironment/new_graphiti/issues/7
+- floodplains: https://github.com/NewGraphEnvironment/floodplains/issues/136
+- newgraphenvironment.github.io: https://github.com/NewGraphEnvironment/newgraphenvironment.github.io/issues/61
+
+Not filed: stac_airphoto_bc#50 (licence) already exists.
+
 ## Errors Encountered
 
 | Error | Resolution |

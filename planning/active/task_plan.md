@@ -84,9 +84,9 @@ The branch fast-forwards PR #60's commit (`stac_dem_bc` → `stac_elevation_bc`)
 - [x] Build; phone check at 390 px (no horizontal scroll, nav on one line, header under 110 px); commit
 
 ### Phase 7: Upstream issues, preview, docs
-- [ ] File issues: stac_elevation_bc and stac_uav_bc README airphoto range 1963→1967; "~58k GeoTIFFs" in stac_airphoto_bc and stac_uav_bc READMEs; fresh README roadmap still lists the MAD predicate; new_graphiti masthead; in-plot titles on `link_bull_trout`, `flooded_scenarios`, `floodplains_attribution`, `fly_priority` figures
+- [x] File issues: stac_elevation_bc and stac_uav_bc README airphoto range 1963→1967; "~58k GeoTIFFs" in stac_airphoto_bc and stac_uav_bc READMEs; fresh README roadmap still lists the MAD predicate; new_graphiti masthead; in-plot titles on `link_bull_trout`, `flooded_scenarios`, `floodplains_attribution`, `fly_priority` figures
 - [ ] Private preview artifact refreshed (CLAUDE.md recipe) and the link given
-- [ ] `CLAUDE.md`: Layout Overrides table gains `footer.html`, `head.html`, `meta.html`, `project/single.html`, `project/list-grid.html`, `render-heading.html`, `render-image.html`, `assets/nge-hex.scss`; Site Structure notes the Drone imagery rule (flight planning not claimed), "rebuilt monthly", and the Who We Are content
+- [x] `CLAUDE.md`: Layout Overrides table gains `footer.html`, `head.html`, `meta.html`, `project/single.html`, `project/list-grid.html`, `render-heading.html`, `render-image.html`, `assets/nge-hex.scss`; Site Structure notes the Drone imagery rule (flight planning not claimed), "rebuilt monthly", and the Who We Are content
 - [ ] `/code-check branch`; `/planning-archive`; `/gh-pr-push`
 
 ## Validation

@@ -16,21 +16,21 @@ New Graph Environment company website — landing page, work portfolio, and cont
 
 **Landing page** (`layouts/index.html`) — custom layout, not the theme default. Sections:
 - Hero with full logo + "Open-Source Watershed Science" tagline
-- The Challenge, Who We Are, Our Approach — company framing
+- The Challenge, Who We Are, Our Approach — company framing. Who We Are carries the identity sentence and the list of what the work is; it names no people, place or dates by decision (#59, Oct 2026). The Challenge ends on the answer (open data, open tools, field teams), not on "outside specialists".
 - How It Works — four question steps (habitat and barriers; floodplain, history and change; the ground and water now; into the field and back), each linking its tools
 - What This Looks Like in Practice — 3 cards linking to the Our Work tiles
 - Open Source — GitHub link band
 
 **Our Work** (`content/project/`) — 3 tiles:
-- `watershed_restoration_fish_passage/` — intro covers planning, delivery and long-term effectiveness monitoring with the biological tools; Neexdzii Kwah restoration + fish passage reports by region (Skeena, Peace, Fraser, Elk), each region with its 2025 overview map. Report lists use `<details>` for collapsible previous reports.
-- `aquatic_monitoring_assessment/` — NRP nutrient loading (private report, no link), Duncan kokanee, Sheep Creek benthic/NMDS, fish & habitat assessment.
-- `open_source_software/` — organised by the same four questions as How It Works. Headline: link, fresh, wet; flooded, drift, the floodplain change catalogue (floodplains + stac_floodplains_bc), fly (with stac_airphoto_bc), cd; BC lidar (stac_elevation_bc + stac_pointcloud_bc), drone imagery (stac_uav_bc), water-temp-bc; the catalogues framed as data plus an open recipe, with stacs. Supporting mentions: cred, and the field capability (described, never named; no tool links). Deliberately left off: gq, diggs, spacehakr, ngr, xciter, mc, crate, breaks, and fpr until its README is rewritten (fpr#131). Every tool is introduced in plain words before its name. Copy is traced to functions; see the #53 and #56 archives.
+- `watershed_restoration_fish_passage/` — intro covers planning, delivery and long-term effectiveness monitoring with the biological tools; Neexdzii Kwah restoration + fish passage reports by region (Skeena, Peace, Fraser, Elk), each region with its 2025 overview map. The fish passage paragraph names who the programs are for (SERNbc; HCTF and MoTI; FWCP; Nupqu; MoTI), with "for", as the title pages say, and states that reports are living documents whose title page carries the version and date. Report lists use `<details>` for collapsible previous reports.
+- `aquatic_monitoring_assessment/` — NRP nutrient loading (private report, no link), Duncan kokanee, Neexdzii Kwah benthic, Sheep Creek benthic/NMDS, fish & habitat assessment. Tile thumbnail is the cutthroat photo (`featured.jpg`). Site prose spells it "Neexdzii Kwah" and "Wet'suwet'en Treaty Office Society"; report titles in link text stay as the report has them.
+- `open_source_software/` — organised by the same four questions as How It Works. Headline: link, fresh, wet; flooded, drift, the floodplain change catalogue (floodplains + stac_floodplains_bc), fly (with stac_airphoto_bc), cd; BC lidar (stac_elevation_bc + stac_pointcloud_bc), drone imagery (stac_uav_bc), water-temp-bc; the catalogues framed as data plus an open recipe, with stacs. Supporting mentions: cred, and the field capability (described, never named; no tool links). Deliberately left off: gq, diggs, spacehakr, ngr, xciter, mc, crate, breaks, and fpr until its README is rewritten (fpr#131). Every tool is introduced in plain words before its name. Copy is traced to functions; see the #53, #56 and #59 archives. Drone imagery: "from our programs" (some flights are the province's), what is live in stac_uav_bc (OpenDroneMap stitching, capture dates, the per-item site registry, the lidar fit as fields with the imagery published as captured); the flight-planning script is not in use and is not claimed. Lidar: "new tiles added monthly" (the build is monthly; registration into the served API is by hand). Four of the five catalogues carry CC BY 4.0 (stac_airphoto_bc#50 is open).
 
-**Contact** (`content/form/contact.md`) — Formspree form with partnership-focused messaging. Custom layout override.
+**Contact** (`content/form/contact.md`) — Formspree form with partnership-focused messaging; the description says methods and analytical tools become public, not partners' data. Custom layout override. `content/form/_index.md` stops Hugo building a `/form/` list page.
 
-**Blog** — external link to https://newgraphenvironment.github.io/new_graphiti/ — not hosted in this repo.
+**Blog** — external link to https://www.newgraphenvironment.com/new_graphiti/ — not hosted in this repo.
 
-**About** (`content/about/`) — content exists but not linked in nav. "Who We Are" section on landing page replaced the standalone about page.
+**About** (`content/about/`) — kept for reference, not built (`_build: render: never` on the section, resources unpublished). "Who We Are" on the landing page replaced it. Tag, category and series pages are disabled (`disableKinds`).
 
 ## Layout Overrides
 
@@ -38,24 +38,32 @@ These override the hugo-apero theme defaults. Changes here affect the site witho
 
 | File | Overrides | Purpose |
 |------|-----------|---------|
-| `layouts/index.html` | Theme homepage | Custom landing page with hero, sections, scroll-reveal JS |
+| `layouts/index.html` | Theme homepage | Custom landing page with hero, sections, scroll-reveal JS (with reduced-motion and no-JS paths) |
 | `layouts/form/split-right.html` | Theme contact form | Dark photo backdrop, custom typography |
-| `layouts/partials/header.html` | Theme header | Larger logo in nav (`3.5rem`) |
+| `layouts/partials/header.html` | Theme header | Icon-and-name mark on desktop, icon on phone; compact phone padding so the nav fits one line |
+| `layouts/partials/head.html` | Theme head | Loads Cormorant Garamond and DM Sans from Google Fonts once for every page |
+| `layouts/partials/meta.html` | Theme meta | Emits `og:image` as well as `twitter:image` when a page sets `images:` |
+| `layouts/partials/footer.html` | Theme footer | Copyright and GitHub icon only; no theme credit, no footer menu, no KaTeX |
+| `layouts/partials/shared/summary-grid.html` | Theme grid tile | Tile titles are `h3` under the list page's `h1` |
+| `layouts/project/list-grid.html` | Theme list page | Our Work title is an `h1` |
+| `layouts/project/single.html` | Theme single page | No "Posted on" details block, no prev/next links |
+| `layouts/_default/_markup/render-heading.html` | Theme heading hook | Plain headings, no anchor icon |
+| `layouts/_default/_markup/render-image.html` | Hugo default | Markdown images become lazy-loaded `<figure>`s with the alt text as caption; needs `wrapStandAloneImageWithinParagraph = false` (set in `config.toml`) |
 
-**CSS:** Landing page and contact page styles are inline in their respective layout files using CSS custom properties (`--forest-deep`, `--river-light`, `--cream`, etc.). The theme uses Tachyons CSS + SCSS in `assets/`.
+**CSS:** the four theme-rendered pages (Our Work and the three tiles) use `assets/nge-hex.scss` (`custom_theme = "nge-hex"` in `config.toml`): parchment background, forest headings, river links, the same tokens as the landing page. `assets/custom.scss` is imported last by the theme's `scaffold.scss` and carries the site-wide rules: header and footer in the hero's green on every page, font fallbacks, the 38em measure, link underlines as border-bottom, figure frames and captions, the Our Work cards. Landing page and contact page styles are inline in their layout files using CSS custom properties (`--forest-deep`, `--river`, `--cream`, `--stone-text`, etc.); body copy uses `--stone-text` (`#5f5a4e`, AA on parchment and cream), `--stone` is for rules and arrows only. The theme uses Tachyons CSS + SCSS in `assets/`. Hugo's `resources/_gen/` cache is gitignored.
 
 ## Images
 
-Images live alongside `index.md` in page bundle directories (not in `static/`). Hugo-apero uses `featured*` filename pattern for grid thumbnails. Logos are in `static/img/`.
+Images live alongside `index.md` in page bundle directories (not in `static/`). Hugo-apero uses the `featured*` filename pattern for grid thumbnails and `og:image`, so a bundle holds exactly one `featured.*`. Logos are in `static/img/`; the hero and contact backdrop is `static/img/snowshoe-1600.jpg`, the share card `static/img/share-1200x630.jpg`, the landing drone node `static/img/uav_node-200.jpg`. Every markdown image carries alt text, which the render hook shows as the caption. Keep images near the size they are shown (the widest column is ~700 px; 1400–1600 px covers 2x) and under about 750 KB; maps with text go to JPEG with 4:4:4 chroma (`subsampling=0` in Pillow) or stay PNG. Field photos with burned-in GPS stamps are cropped before use.
 
 ## Previewing changes
 
 - **Build** with blogdown's own Hugo (`blogdown::find_hugo()` gives the path) into a temp dir, never `public/`. CI builds and deploys only on push to `main`, so a PR has no preview.
-- **Phone check:** headless Chrome at 375–390 px. Capture full pages through DevTools with a normal viewport height. A very tall window makes the `100vh` hero fill the whole capture. The Open Source page renders on a dark background, so flatten transparent figures onto white.
-- **Private preview link** (a claude.ai artifact), for review away from the computer: build with `HUGO_RELATIVEURLS=true HUGO_UGLYURLS=true`, then fix what that build still leaves broken:
+- **Phone check:** plain headless Chrome with `--window-size=390,844` lays the page out at a wider minimum width and clips it, which looks like horizontal overflow and is not. Emulate a phone through the DevTools protocol instead: Node ≥ 22 has a built-in `WebSocket`; launch Chrome with `--remote-debugging-port`, `Target.createTarget` + `Target.attachToTarget`, `Emulation.setDeviceMetricsOverride` (390×844, `mobile: true`, scale 2), then `Runtime.evaluate` for `scrollWidth`, header height and the like, and `Page.captureScreenshot`. The #59 archive carries the script. A very tall window makes the `100vh` hero fill the whole capture; use a normal viewport height, or `captureBeyondViewport` with a clip. Add `.visible` to `.nge-reveal` before a full-page capture or the sections below the fold stay transparent.
+- **Private preview link** (a claude.ai artifact), for review away from the computer: build with `HUGO_RELATIVEURLS=true HUGO_UGLYURLS=true`, then fix what that build still leaves broken (the #59 archive carries a script that does all four):
   - point directory links at the `.html` pages, or at `dir/index.html` where there is no sibling page (`contact/`);
-  - point bundle images at their bundle folder;
-  - make the stylesheet's `/fonts/` paths relative;
+  - rewrite the inline `url('/img/…')` backgrounds in the landing and contact layouts, which `relativeURLs` does not touch;
+  - make the stylesheet's `/fonts/` and `/webfonts/` paths relative;
   - drop the stylesheet's `integrity` hash, which no longer matches once its font paths are edited.
 
   To refresh an existing preview, publish to the same URL and send only the pages and images that changed: files left out are kept, and `null` removes one.
@@ -73,6 +81,7 @@ Images live alongside `index.md` in page bundle directories (not in `static/`). 
 - **Report links use collapsible sections** — most recent report is always visible, previous years in `<details>` tags.
 - **2025 fish passage reports are live** — Skeena, Peace and Fraser 2025 are linked, and each region's map is the overview map from its 2025 report's background chapter.
 - **NRP content has no report link** — report is private.
+- **Site review, Oct 2026 (#59)** — three reviews (fact-check, copy, design) distilled into the issue; the full reports are in the archive. Owner's calls recorded there: Who We Are stays unnamed; the drone imagery is "from our programs" with the province's drone specialist credited; the contact sentence promises nothing about partners' data; the unsupported funding sentence is gone. Six of the ten linked reports open on DRAFT; that is theirs to change, and the site says reports are living documents.
 - **Contact messaging is partnership-focused** — signals multi-year programs, open-source tool development funded through partnerships.
 - **Open Source copy rules** — less is more: feature the tools that matter for restoration planning, implementation and monitoring, and leave utilities off. Plain language, present tense (what the code does today), no counts of published items, no comparisons with others, credit what we build on (bcfishpass, fwapg), say the floodplain and land-cover outputs are screening tools. "Our data, analytical tools, and methods are publicly available" is the approved wording (April 2026); never "everything is open source". Each claim keeps the qualifier its source states. Celebrate what we have: describe what exists and leave out what is not dialed in, with no "not yet", "working toward" or roadmap wording. A caveat the reader needs is stated as a present-tense fact, never dropped. Take credit for what we built without claiming what others lack.
 
