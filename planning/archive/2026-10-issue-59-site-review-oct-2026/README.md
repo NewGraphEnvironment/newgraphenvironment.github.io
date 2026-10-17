@@ -32,3 +32,4 @@ A method finding worth keeping: plain headless Chrome with `--window-size=390,84
 - `progress.md` — per-phase acceptance checks, the weight table, the code-check rounds.
 - `review-round1.md`, `review-round2.md`, `review-round3.md` — the code-check rounds.
 - `cdp_check.cjs`, `preview_fix.py`, `weigh.py` — the phone-emulation checker, the preview-link fixer and the page-weight script.
+- `share_card.py`, `phase5_images.py`, `phase5_md.py` — how the share card and the re-encoded images were made, and the alt-text and spacing pass over the three tiles.
