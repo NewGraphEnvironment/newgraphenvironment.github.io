@@ -357,7 +357,7 @@ check is almost always to read the thing the prose describes.
   keeps finding them, list every quantified or inherited claim with a measured verdict
   (`code-check.md`, "A guard's scope, escape hatches, and remedies").
 
-*91 lines of evidence for this rule are in `conventions/agent-operations.md`.*
+*92 lines of evidence for this rule are in `conventions/agent-operations.md`.*
 
 ### "It can only be answered by testing" is a claim with an author
 
@@ -783,6 +783,23 @@ With `cancel-in-progress: false`, GitHub keeps one running and one pending run p
 Before telling anyone a Pages URL is live, fetch it and compare the bytes with the source: the deploy commit lands on `gh-pages` before the `pages-build-deployment` run publishes it, and until that run finishes the URL still answers 404.
 
 *1 line of evidence for this rule is in `conventions/ci-monitoring.md`.*
+
+# Code Check — Python
+Traps in Python: the interpreter, pytest, the HTTP stack under pystac, and MkDocs.
+
+*Index only: each rule's heading and first sentence. The full text is `~/Projects/repo/soul/conventions/code-check-python.md`; read it before writing or reviewing code in its area. `/code-check` loads it in full.*
+
+### A script named after a stdlib module shadows that module when run by path
+Name a script so it cannot collide with the standard library (`enum_sites.py`, not `enum.py`): run by path, its directory is first on `sys.path`, so every `import enum` in the process, `re`'s included, gets the script.
+
+### Proxy variables do not take a pystac test offline: block at the socket
+To make Python tests network-proof, patch the socket layer to refuse every non-loopback lookup and connection, in `pytest_configure`, and clear the proxy variables with `NO_PROXY=*`.
+
+### A conftest guard covers only the invocations that load it
+Put a session-wide guard in the repository's root `conftest.py`, and pin it by behaviour in a child process: pytest loads a conftest only for the paths it is given and their parents, so a guard in `tests/conftest.py` is absent from `pytest src/...`.
+
+### `mkdocs build --strict -q` passes a dead link
+Run `mkdocs build --strict` without `-q`, and set all seven `validation:` keys to `warn` in `mkdocs.yml`: `-q` raises the log level past WARNING, strict counts only the warnings it sees, and so it counts nothing.
 
 # Code Check — R
 Traps in R: the language and base/utils behaviour, package internals (`R CMD build`, `.Rbuildignore`, roxygen, lintr, `data-raw/`, testthat, pak), and the DBI/duckdb/arrow data layer.
@@ -2211,6 +2228,23 @@ behaviour, the domain convention otherwise.
 | `/planning-init` | First time in a repo — creates directory structure |
 | `/planning-update` | Mid-session — sync checkboxes and progress |
 | `/planning-archive` | Issue complete — archive and create fresh active/ |
+
+# Python Conventions
+How New Graph Environment repos declare and run Python, the sibling of `r-packages.md`.
+
+*Index only: each rule's heading and first sentence. The full text is `~/Projects/repo/soul/conventions/python.md`; read it before writing or reviewing code in its area.*
+
+### Declare dependencies in `pyproject.toml` and commit `uv.lock`
+A repo whose Python is a package, or whose scripts import a shared module of the repo's own, declares its dependencies in `pyproject.toml`, commits the `uv.lock` that `uv lock` writes, runs through `uv run`, and adds no `environment.yml`.
+
+### A loose script carries its dependencies inline
+A standalone script that imports no module of the repo's own declares its third-party imports in PEP 723 inline metadata and runs with `uv run --script`; one that imports only the standard library needs none.
+
+### Two exceptions, each named in the repo's `CLAUDE.md`
+Conda stays where a conda-forge binary that has no wheel is load-bearing, and PyQGIS scripts declare nothing, because QGIS's own interpreter runs them.
+
+### Never `conda run -n` an environment the repo does not declare
+A script that runs `conda run -n <env>` against an environment declared in no file of its own repo cannot run from a fresh clone, so declare the dependencies here instead.
 
 
 # Reference Management Conventions
