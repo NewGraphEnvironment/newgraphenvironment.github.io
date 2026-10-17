@@ -110,6 +110,19 @@ The landing page's section order and the four questions with their tool pills; e
 
 Fact-check: 64 URLs (0 rendered links broken), 78 claims (0 wrong, 3 stale, 6 rule, 4 unsupported, 65 OK), 21 report title pages fetched, four reports read in full. Design: DevTools network log with cache disabled — `/` 8,325 KB / 18 requests, Monitoring 11,302 KB, Restoration 6,127 KB, Contact 7,861 KB; contrast from computed colours; first-line character counts at 1440 px; 94 screenshots at 390×844 and 1440×900. Copy: ten report title pages read (six DRAFT), three peer sites for calibration (Hillcrest Geographics, Poisson Consulting, InStream Fisheries Research).
 
+## Coverage figure provenance
+
+`floodplains_coverage.png` is stac_floodplains_bc `fig/coverage.png` at `9dceb49` (2026-10-16, "Post-release bookkeeping for v2.0.0"), sha256 prefix `28acde0b8fb02609`, downscaled 1800→1400 px with Pillow LANCZOS. It cannot byte-match upstream; check width = 1400 and compare visually.
+
+## Plan review (Plan agent, delivered during Phase 4)
+
+Triage of its findings, verified against the code before acting:
+
+- Taken: `clear: both` on h3 pushed headings under the floated hex stickers (found independently in the screenshots; removed) — `clear` goes on `figure` in Phase 5; figure and img margins would double once the render hook wraps images (Phase 5 sets the margin on `figure` and zero on its `img`); `wrapStandAloneImageWithinParagraph = false` must land with the hook; `uav_cover.jpg` (422 KB) in a 100 px node needs a small crop (Phase 5); page title 2.4rem sat below the 2.25rem h2s (now 2.8rem); tile titles were h1 under an h2 (summary-grid override, h3); `resources/_gen` was tracked and churned by every build (ignored, untracked); "rebuilt monthly" overstated an incremental append ("new tiles added monthly"); the flooded sentence still garden-pathed (reworded); SERNbc spelled out twice (bare the second time); `---` dividers on the Open Source page are section breaks, not spacing (kept); hex clip-path needs 86×100 (Phase 6); `background-color` on `.nge-hero-bg` would render under the brightness filter (dropped); JPEG for maps with text needs 4:4:4 (Phase 5); CLAUDE.md lines on About and the dark Open Source page become false (Phase 7); `featured.jpg` and `featured.png` must not coexist (Phase 6).
+- Already handled when it arrived: fonts carry fallbacks in `custom.scss`; home `og:image`; favicon; about resources unpublished.
+- Not taken: swapping Font Awesome for an inline SVG (out of scope); the plan's "16 variables" was a miscount of 15.
+- Recorded for the PR body: D2 (unnamed) is an explicit non-fix; questions 6 (private-report wording) and 10 (DRAFT markers) are deferred asks; the Ktunaxa phrase has no destination now that `/about/` is unbuilt.
+
 ## Errors Encountered
 
 | Error | Resolution |

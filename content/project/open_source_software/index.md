@@ -71,7 +71,7 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. We run it twice, on coarse elevation data and on lidar. The ground the coarse run maps as floodplain and the lidar run leaves out points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
+Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -149,7 +149,7 @@ Understanding a floodplain means seeing it as it is now and as it was. We built 
 
 ### BC lidar, ready to query
 
-LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, rebuilt monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
+LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, new tiles added monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
@@ -197,7 +197,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 | Catalogue | What it catalogues |
 |-----------|---------------|
-| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, rebuilt monthly |
+| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly |
 | [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
 | [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group |
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |

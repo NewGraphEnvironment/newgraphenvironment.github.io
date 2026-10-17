@@ -1,8 +1,11 @@
 {{ define "main" }}
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap');
+  /* Fonts are loaded site-wide in layouts/partials/head.html */
 
+  /* The grid stretches main to the footer; the dark section fills it */
+  .page-main { display: flex; flex-direction: column; }
   .nge-contact {
+    flex: 1;
     padding: 4rem 2rem 5rem;
     background: #1a2e1f;
     min-height: 70vh;

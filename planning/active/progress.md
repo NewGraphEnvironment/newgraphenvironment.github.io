@@ -11,4 +11,6 @@
 - Phase 1 landed: theme residue and metadata (about/ and form/ no longer build, taxonomy pages off, share card, meta/footer/single/heading overrides, utterances and KaTeX off)
 - Phase 2 landed: floodplain catalogue sentence and coverage figure at v2.0.0 (upstream 9dceb49), drone imagery rewritten for what is live with the WLRS credit, lidar fit stated as a fact, "rebuilt monthly", flooded paragraph, CC BY 4.0 count, Fraser link texts, Elk River card
 - Phase 3 landed: Who We Are carries the service list (unnamed, D2), commissioning bodies and the living-document sentence on the restoration tile, funding sentence dropped (D6), Neexdzii Kwah / Treaty Office Society (D4), contact sentence softened (D5), three sentences rewritten, jargon and duplicates removed, Blog URL final
-- Next: Phase 4
+- Phase 4 landed: light nge-hex theme for the four theme pages, one green chrome, DM Sans / Cormorant site-wide from head.html, Our Work cards (summary-grid override, tile titles h3), figures framed; resources/_gen out of git
+- Plan review arrived during Phase 4 (see findings.md); its valid items folded into Phases 4–7, three copy nits (lidar cadence, flooded sentence, SERNbc) landed in the same commit
+- Next: Phase 5
