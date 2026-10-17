@@ -21,7 +21,7 @@ Data analysis, mapping and reporting to support large lake specialists on a mult
 
 ![Duncan Reservoir at full pool, 577 m, and low pool, 547 m, showing the drawdown zone exposed between them.](dunc_elevations.jpg)
 
-![Seasonal pattern by year, 2013 to 2018: depth of withdrawal at Duncan Reservoir, and mean discharge at the LLOGS site.](hydrograph_res_vs_llogs2.png)
+![Seasonal pattern by year: depth of withdrawal at Duncan Reservoir, 2013 to 2018, and mean discharge at the LLOGS site, 2013 to 2017.](hydrograph_res_vs_llogs2.png)
 
 ## Neexdzii Kwah Benthic Invertebrate Assessment
 
