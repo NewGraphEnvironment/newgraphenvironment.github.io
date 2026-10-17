@@ -145,13 +145,13 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and our own drone imagery, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
-<img src="/img/hex/stac_dem_bc.png" alt="stac_dem_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### BC lidar, ready to query
 
 LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, updated monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
 
-- [Elevation catalogue](https://www.newgraphenvironment.com/stac_dem_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
+- [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
 <div style="clear: both;"></div>
 
@@ -197,7 +197,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 | Catalogue | What it catalogues |
 |-----------|---------------|
-| [**stac_dem_bc**](https://github.com/NewGraphEnvironment/stac_dem_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, updated monthly |
+| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, updated monthly |
 | [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
 | [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group |
 | [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |
