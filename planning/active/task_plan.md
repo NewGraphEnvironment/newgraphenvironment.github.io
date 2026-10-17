@@ -85,13 +85,13 @@ The branch fast-forwards PR #60's commit (`stac_dem_bc` → `stac_elevation_bc`)
 
 ### Phase 7: Upstream issues, preview, docs
 - [x] File issues: stac_elevation_bc and stac_uav_bc README airphoto range 1963→1967; "~58k GeoTIFFs" in stac_airphoto_bc and stac_uav_bc READMEs; fresh README roadmap still lists the MAD predicate; new_graphiti masthead; in-plot titles on `link_bull_trout`, `flooded_scenarios`, `floodplains_attribution`, `fly_priority` figures
-- [ ] Private preview artifact refreshed (CLAUDE.md recipe) and the link given
+- [x] Private preview artifact refreshed (CLAUDE.md recipe) and the link given
 - [x] `CLAUDE.md`: Layout Overrides table gains `footer.html`, `head.html`, `meta.html`, `project/single.html`, `project/list-grid.html`, `render-heading.html`, `render-image.html`, `assets/nge-hex.scss`; Site Structure notes the Drone imagery rule (flight planning not claimed), "rebuilt monthly", and the Who We Are content
-- [ ] `/code-check branch`; `/planning-archive`; `/gh-pr-push`
+- [x] `/code-check branch` (3 rounds, 8 findings, 8 fixed; closed by enumeration); `/planning-archive`; `/gh-pr-push`
 
 ## Validation
 
-- [ ] Hugo build clean to a temp dir (blogdown's Hugo 0.121.1; never `public/`)
-- [ ] `/code-check` clean (once over the branch with `/code-check branch`)
-- [ ] PWF checkboxes match landed work
+- [x] Hugo build clean to a temp dir (blogdown's Hugo 0.121.1; never `public/`)
+- [x] `/code-check` clean (once over the branch with `/code-check branch`)
+- [x] PWF checkboxes match landed work
 - [ ] `/planning-archive` on completion
