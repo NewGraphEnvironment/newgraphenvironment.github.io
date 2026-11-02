@@ -1,0 +1,74 @@
+{{- /* The registry and the site, checked against each other on every build (#64). Each mismatch
+       fails the build with a line saying what to change. Called once, from the home page. */ -}}
+{{- $show := site.Data.showcase -}}
+{{- $site := site.Data.showcase_site -}}
+{{- if not (and $show $show.rows) -}}{{- errorf "showcase: data/showcase.json is missing or has no rows" -}}{{- end -}}
+{{- if not (and $site $site.steps) -}}{{- errorf "showcase: data/showcase_site.yaml is missing or has no steps" -}}{{- end -}}
+
+{{- /* every row carries what the site reads from it */ -}}
+{{- $repos := slice -}}
+{{- $catalogues := slice -}}
+{{- range $show.rows -}}
+  {{- $repos = $repos | append .repo -}}
+  {{- $row := . -}}
+  {{- range slice "repo" "kind" "tagline" "homepage" "source" -}}
+    {{- if not (index $row .) -}}{{- errorf "showcase: a row of data/showcase.json (%s) has no %s" ($row.repo | default "unnamed") . -}}{{- end -}}
+  {{- end -}}
+  {{- if and (eq .kind "data") .collection -}}
+    {{- $catalogues = $catalogues | append .repo -}}
+    {{- if not .start -}}{{- errorf "showcase: catalogue %s has no start date in data/showcase.json" .repo -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* registry -> site: every showcase row has a place; site -> registry: every placed repo is a showcase row */ -}}
+{{- $placed := slice -}}
+{{- range $step, $names := $site.steps -}}
+  {{- range $names -}}{{- $placed = $placed | append . -}}{{- end -}}
+{{- end -}}
+{{- range complement $placed $repos -}}
+  {{- errorf "showcase: %s is marked for showcase but placed in no How It Works step; add it to steps in data/showcase_site.yaml" . -}}
+{{- end -}}
+{{- range complement $repos $placed -}}
+  {{- errorf "showcase: %s is placed in data/showcase_site.yaml but is not a public showcase row in data/showcase.json; mark it in the registry and refresh, or take it out" . -}}
+{{- end -}}
+{{- range complement $catalogues ($site.catalogues | default slice) -}}
+  {{- errorf "showcase: catalogue %s is marked for showcase but missing from catalogues in data/showcase_site.yaml" . -}}
+{{- end -}}
+{{- range complement ($site.catalogues | default slice) $catalogues -}}
+  {{- errorf "showcase: %s is in catalogues in data/showcase_site.yaml but is not a showcase catalogue in data/showcase.json" . -}}
+{{- end -}}
+
+{{- /* the registry is held to the site's words */ -}}
+{{- range $show.rows -}}
+  {{- $row := . -}}
+  {{- range $site.ruled_out -}}
+    {{- if findRE (printf "(?i)\\b%s\\b" .) $row.tagline 1 -}}
+      {{- errorf "showcase: %s's registry tagline %q uses %q, a word the site rules out; reword it in the registry and refresh" $row.repo $row.tagline . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* the Open Source page's prose links exactly the showcase rows and the supporting mentions */ -}}
+{{- with site.GetPage "/project/open_source_software" -}}
+  {{- $raw := .RawContent -}}
+  {{- if not (findRE `\{\{%\s*catalogue-table\s*%\}\}` $raw 1) -}}
+    {{- errorf "showcase: the Open Source page no longer calls {{%% catalogue-table %%}}, so its catalogue table is not generated" -}}
+  {{- end -}}
+  {{- $linked := slice -}}
+  {{- range findRESubmatch `(?:newgraphenvironment\.com/|github\.com/NewGraphEnvironment/)([A-Za-z0-9_-]+)` $raw -}}
+    {{- $linked = $linked | append (index . 1) -}}
+  {{- end -}}
+  {{- $linked = uniq $linked -}}
+  {{- $allowed := $repos | append ($site.supporting | default slice) -}}
+  {{- range complement $allowed $linked -}}
+    {{- errorf "showcase: the Open Source page links %s, which is neither a showcase row nor in supporting in data/showcase_site.yaml" . -}}
+  {{- end -}}
+  {{- range complement $linked $repos -}}
+    {{- errorf "showcase: %s is marked for showcase but the Open Source page never links it" . -}}
+  {{- end -}}
+  {{- range complement $linked ($site.supporting | default slice) -}}
+    {{- errorf "showcase: %s is in supporting in data/showcase_site.yaml but the Open Source page no longer links it" . -}}
+  {{- end -}}
+{{- else -}}
+  {{- errorf "showcase: the Open Source page (/project/open_source_software) was not found" -}}
+{{- end -}}

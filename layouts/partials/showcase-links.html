@@ -1,0 +1,7 @@
+{{- /* One How It Works step's tool links, in data/showcase_site.yaml's order (#64). */ -}}
+{{- range index site.Data.showcase_site.steps . -}}
+  {{- with where site.Data.showcase.rows "repo" . -}}
+    {{- $row := index . 0 -}}
+    <a href="{{ partial "showcase-href.html" $row }}" target="_blank" rel="noopener">{{ $row.repo }}</a>
+  {{- end -}}
+{{- end -}}

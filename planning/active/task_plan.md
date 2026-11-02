@@ -61,9 +61,9 @@ Decided by me (mechanism; say at approval if any should change):
 
 ## Phase 3: How It Works from the data
 
-- [ ] `layouts/partials/showcase-links.html`: one step's `<a>` tags in overlay order, href from the data file's homepage normalised to `https://www.newgraphenvironment.com/<path>/`, markup as today
-- [ ] Replace the three typed `nge-pipeline-tools` divs in `layouts/index.html`
-- [ ] Build errors: an overlay repo not in the data file (dropped, or no longer public); a showcase row placed in no step; a row with no homepage
+- [x] `layouts/partials/showcase-links.html`: one step's `<a>` tags in overlay order, href from the data file's homepage normalised to `https://www.newgraphenvironment.com/<path>/`, markup as today
+- [x] Replace the three typed `nge-pipeline-tools` divs in `layouts/index.html`
+- [x] Build errors: an overlay repo not in the data file (dropped, or no longer public); a showcase row placed in no step; a row with no homepage
 
 ## Phase 4: the Open Source table from the data
 
