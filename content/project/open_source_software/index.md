@@ -53,7 +53,7 @@ Our evidence tool, knowledge, tests habitat rules against what we know about whe
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 
-![Chinook rearing on the Bulkley River, Telkwa to Houston, under link's existing rule and the rule tuned in knowledge, joined to the floodplain. Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
+![Chinook rearing on the Bulkley River, Telkwa to Houston, under link's existing rule and the rule tuned in knowledge, carried onto the modelled floodplain beside each stream. Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
 
 ---
 

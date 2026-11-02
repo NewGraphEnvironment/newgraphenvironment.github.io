@@ -76,7 +76,7 @@ Done in its own worktree of the repo that holds it, because other sessions share
 - [x] Check the knowledge anchor in the built HTML
 - [x] Check each new image's caption for attribution
 - [x] Grep the diff, PR body and comments for home paths, hosts and private repo names
-- [ ] `/code-check branch`
+- [x] `/code-check branch`
 - [ ] Refresh the private preview so the figures can be reviewed away from the computer
 - [ ] Update #50's table
 - [ ] `/planning-archive`, then `/gh-pr-push` with `Fixes #65` and `Fixes #61`
@@ -92,7 +92,7 @@ Also during the work: a Plan agent reviews this plan in the background once the 
 ## Validation
 
 - [x] Hugo build passes (this site has no test suite)
-- [ ] `/code-check` clean, once over the branch
+- [x] `/code-check` clean, once over the branch
 - [ ] PWF checkboxes match landed work
 - [ ] `/planning-archive` on completion
 

@@ -3,7 +3,9 @@
 #
 # mapping_code_bt is {ACCESS|SPAWN|REAR};{NONE|DAM|MODELLED|ASSESSED|REMEDIATED}[;INTERMITTENT], from
 # link::lnk_mapping_code(). The table schema is an argument because it is where link's run persisted.
-# Run from the repo root, with the standard PG* variables set:
+# The same PostgreSQL connection (the standard PG* variables) reads the group outline from fwapg. A first
+# run also reads the river name from fwapg and towns from the BC Data Catalogue, cached in CACHE_DIR.
+# Run from the repo root:
 #
 #   CACHE_DIR=<dir> OUT_DIR=<dir> LINK_SCHEMA=<schema> Rscript scripts/figure_link-bull-trout.R
 
