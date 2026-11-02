@@ -1,5 +1,7 @@
 {{- /* The registry and the site, checked against each other on every build (#64). Each mismatch
-       fails the build with a line saying what to change. Called once, from the home page. */ -}}
+       fails the build with a line saying what to change. Called once, from the home page, after How
+       It Works, so it can compare what that section drew. Each claim is checked against what the
+       built pages show, not against the files that should produce it. */ -}}
 {{- $show := site.Data.showcase -}}
 {{- $site := site.Data.showcase_site -}}
 {{- if not (and $show $show.rows) -}}{{- errorf "showcase: data/showcase.json is missing or has no rows" -}}{{- end -}}
@@ -39,6 +41,22 @@
 {{- if ne (len $placed) (len (uniq $placed)) -}}
   {{- errorf "showcase: a repo is placed twice in steps in data/showcase_site.yaml: %v" $placed -}}
 {{- end -}}
+{{- /* what How It Works drew (showcase-links.html records each link): every showcase row, once */ -}}
+{{- $drawn := .Scratch.Get "showcaseDrawn" | default slice -}}
+{{- range complement $drawn $repos -}}
+  {{- errorf "showcase: %s is marked for showcase but How It Works does not show it; check its step in data/showcase_site.yaml and the showcase-links calls in layouts/index.html" . -}}
+{{- end -}}
+{{- /* an action inside an HTML comment still runs (so it is recorded above) but draws nothing, and a
+       template cannot read its own output: so the layout's source, comments stripped, must hold each call */ -}}
+{{- $layout := replaceRE `(?s)<!--.*?-->` "" (os.ReadFile "layouts/index.html") -}}
+{{- range slice "habitat" "floodplain" "now" -}}
+  {{- if not (findRE (printf `showcase-links\.html"\s+\(dict\s+"page"\s+\.\s+"step"\s+"%s"\)` .) $layout 1) -}}
+    {{- errorf "showcase: layouts/index.html does not draw How It Works step %q outside a comment" . -}}
+  {{- end -}}
+{{- end -}}
+{{- if ne (len $drawn) (len (uniq $drawn)) -}}
+  {{- errorf "showcase: How It Works shows a repo twice: %v" $drawn -}}
+{{- end -}}
 {{- $cats := $site.catalogues | default slice -}}
 {{- if ne (len $cats) (len (uniq $cats)) -}}
   {{- errorf "showcase: a catalogue is listed twice in catalogues in data/showcase_site.yaml: %v" $cats -}}
@@ -66,18 +84,32 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* the Open Source page links exactly the showcase rows and the supporting mentions. Read from the
-       rendered page, comments stripped, so a link only in a comment or code is not counted; any
-       host spelling GitHub or our site resolves is. */ -}}
+{{- /* the Open Source page, as rendered (comments stripped, so a link only in a comment is not
+       counted): its table shows exactly the catalogues, in order, and its links reach exactly the
+       showcase rows and the supporting mentions, by any spelling that resolves to a repo or its
+       site, root-relative included. A first path segment that is one of this site's own pages is
+       not a tool. */ -}}
+{{- $own := slice -}}
+{{- range site.Pages -}}
+  {{- with index (split (strings.TrimPrefix "/" .RelPermalink) "/") 0 -}}{{- $own = $own | append (lower .) -}}{{- end -}}
+{{- end -}}
+{{- $own = $own | append "img" "css" "js" "fonts" "webfonts" -}}
 {{- with site.GetPage "/project/open_source_software" -}}
-  {{- $raw := .RawContent -}}
-  {{- if not (findRE `\{\{%\s*catalogue-table\s*%\}\}` $raw 1) -}}
-    {{- errorf "showcase: the Open Source page no longer calls {{%% catalogue-table %%}}, so its catalogue table is not generated" -}}
+  {{- $html := replaceRE `(?s)<!--.*?-->` "" (string .Content) -}}
+  {{- $rows := slice -}}
+  {{- range findRESubmatch `(?i)<td>\s*<a href="https://github\.com/NewGraphEnvironment/([^"/]+)"[^>]*>\s*<strong>` $html -}}
+    {{- $rows = $rows | append (index . 1) -}}
+  {{- end -}}
+  {{- if ne (delimit $rows ",") (delimit $cats ",") -}}
+    {{- errorf "showcase: the Open Source page's catalogue table shows %v; data/showcase_site.yaml's catalogues are %v (is {{%% catalogue-table %%}} still called, and not inside a comment or code?)" $rows $cats -}}
   {{- end -}}
   {{- $linked := slice -}}
-  {{- $html := replaceRE `(?s)<!--.*?-->` "" (string .Content) -}}
-  {{- range findRESubmatch `(?i)href="(?:https?:)?//(?:www\.)?(?:newgraphenvironment\.com/|newgraphenvironment\.github\.io/|github\.com/NewGraphEnvironment/)([a-z0-9_.-]+)` $html -}}
+  {{- range findRESubmatch `(?i)href\s*=\s*["']?(?:https?:)?//(?:www\.)?(?:newgraphenvironment\.com/|newgraphenvironment\.github\.io/|github\.com/NewGraphEnvironment/)([a-z0-9_.-]+)` $html -}}
     {{- $linked = $linked | append (lower (strings.TrimSuffix ".git" (index . 1))) -}}
+  {{- end -}}
+  {{- range findRESubmatch `(?i)href\s*=\s*["']?/([a-z0-9_.-]+)` $html -}}
+    {{- $seg := lower (index . 1) -}}
+    {{- if not (in $own $seg) -}}{{- $linked = $linked | append $seg -}}{{- end -}}
   {{- end -}}
   {{- $linked = uniq $linked -}}
   {{- $allowed := $repos | append ($site.supporting | default slice) -}}
