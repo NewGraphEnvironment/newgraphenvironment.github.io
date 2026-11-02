@@ -106,9 +106,8 @@ Read from knowledge's origin/main.
 | Tunes, where they allow, link's thresholds; chinook example | README; `knw_tune_run()` |
 | Scores on held-out watershed groups | DESCRIPTION, "scores candidate rules on held-out watershed groups"; `knw_tune_score()` |
 | Compares with link's rule, stream by stream | `knw_compare_rules()`; README |
-| Too few records | `knw_tune_run()` labels `underpowered`, `too_few_groups` and `no_response`, and `research/westslope_cutthroat_rearing_tuned.md` reports one |
 
-The issue's draft said "Where the evidence cannot carry a change, it says so". No README or vignette says that, so it was reworded to what `knw_tune_run()` does. "fit" became "the choice", the article's plain word for selecting a rule.
+The issue's draft closed with "Where the evidence cannot carry a change, it says so". The owner cut it (2026-11-01): too strong, and the page does not need to point out deficiencies. "fit" became "the choice", the article's plain word for selecting a rule.
 
 ## Errors Encountered
 

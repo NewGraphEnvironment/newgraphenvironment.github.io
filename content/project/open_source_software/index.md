@@ -49,7 +49,7 @@ The flow can feed the habitat rules. At gauging stations, our climate analysis t
 
 ### knowledge — testing the rules against the evidence
 
-Our fisheries evidence tool, knowledge, gathers what is known about where fish live in BC's streams: the Province's fish sampling records, past reports, and values from the published literature with their quotes. From the fish records it tunes, where they allow, the thresholds link's habitat rules use, such as the smallest stream and the steepest gradient for juvenile chinook rearing. It scores candidate rules on watershed groups held out of the choice and compares each with link's current rule, stream by stream. Where the records are too few to settle a rule, the result says so.
+Our fisheries evidence tool, knowledge, gathers what is known about where fish live in BC's streams: the Province's fish sampling records, past reports, and values from the published literature with their quotes. From the fish records it tunes, where they allow, the thresholds link's habitat rules use, such as the smallest stream and the steepest gradient for juvenile chinook rearing. It scores candidate rules on watershed groups held out of the choice and compares each with link's current rule, stream by stream.
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 
