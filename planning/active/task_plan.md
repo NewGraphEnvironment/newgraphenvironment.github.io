@@ -20,12 +20,12 @@ Owner approved this plan on 2026-11-01 (Vancouver time), which accepted items 1 
 
 ## Phase 1: knowledge on the page
 
-- [ ] Trace each sentence of the issue's draft copy to functions and articles, and record the trace in `findings.md`. Check "Where the evidence cannot carry a change, it says so" with care: a grep of the vignettes and README for that wording found nothing, so its support has to be found in the articles or the tune functions, or the sentence is reworded.
-- [ ] Add `static/img/hex/knowledge.png`, the post's 259 x 300 sticker
-- [ ] Add the knowledge section after wet, with documentation and source links, and links to the methodology and chinook articles
-- [ ] Link "tested against where fish have actually been found" in link's section to the new section
-- [ ] Add knowledge to How It Works step 1 in `layouts/index.html`
-- [ ] Add knowledge to `CLAUDE.md`: the Open Source tile list and "Three categories of tool"
+- [x] Trace each sentence of the issue's draft copy to functions and articles, and record the trace in `findings.md`. Check "Where the evidence cannot carry a change, it says so" with care: a grep of the vignettes and README for that wording found nothing, so its support has to be found in the articles or the tune functions, or the sentence is reworded.
+- [x] Add `static/img/hex/knowledge.png`, the post's 259 x 300 sticker
+- [x] Add the knowledge section after wet, with documentation and source links, and links to the methodology and chinook articles
+- [x] Link "tested against where fish have actually been found" in link's section to the new section
+- [x] Add knowledge to How It Works step 1 in `layouts/index.html`
+- [x] Add knowledge to `CLAUDE.md`: the Open Source tile list and "Three categories of tool"
 
 ## Phase 2: figures that are ready to swap
 

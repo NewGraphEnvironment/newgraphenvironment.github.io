@@ -17,7 +17,7 @@ For restoration planning, the first questions are where each species' habitat is
 
 ### link — habitat potential, species by species
 
-Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and tested against where fish have actually been found. It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
+Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and [tested against where fish have actually been found](#knowledge--testing-the-rules-against-the-evidence). It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
@@ -44,6 +44,14 @@ The flow can feed the habitat rules. At gauging stations, our climate analysis t
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
 ![Which source each stream segment's published flow draws on.](wet_discharge_source.png)
+
+<img src="/img/hex/knowledge.png" alt="knowledge" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+
+### knowledge — testing the rules against the evidence
+
+Our fisheries evidence tool, knowledge, gathers what is known about where fish live in BC's streams: the Province's fish sampling records, past reports, and values from the published literature with their quotes. From the fish records it tunes, where they allow, the thresholds link's habitat rules use, such as the smallest stream and the steepest gradient for juvenile chinook rearing. It scores candidate rules on watershed groups held out of the choice and compares each with link's current rule, stream by stream. Where the records are too few to settle a rule, the result says so.
+
+- [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 
 ---
 

@@ -94,6 +94,22 @@ The registry change is a small edit in the repo that holds it, landed before #64
 - [ ] The registry row changes are landed
 - [ ] #61 is closed by this work, and #50's table is updated
 
+## Copy trace: the knowledge section (2026-11-01)
+
+Read from knowledge's origin/main.
+
+| Sentence | Source |
+|---|---|
+| Fish sampling records | `knw_fdis_*`, `knw_fiss_visits()`; DESCRIPTION |
+| Past reports | `knw_pscis_reports()`; DESCRIPTION, "past-report tables" |
+| Literature values with their quotes | `knw_literature_read()`; DESCRIPTION, "cited literature values with their quotes" |
+| Tunes, where they allow, link's thresholds; chinook example | README; `knw_tune_run()` |
+| Scores on held-out watershed groups | DESCRIPTION, "scores candidate rules on held-out watershed groups"; `knw_tune_score()` |
+| Compares with link's rule, stream by stream | `knw_compare_rules()`; README |
+| Too few records | `knw_tune_run()` labels `underpowered`, `too_few_groups` and `no_response`, and `research/westslope_cutthroat_rearing_tuned.md` reports one |
+
+The issue's draft said "Where the evidence cannot carry a change, it says so". No README or vignette says that, so it was reworded to what `knw_tune_run()` does. "fit" became "the choice", the article's plain word for selecting a rule.
+
 ## Errors Encountered
 
 | Error | Resolution |
