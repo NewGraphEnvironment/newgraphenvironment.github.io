@@ -26,7 +26,7 @@ link runs on our stream network engine, fresh, which places surveys on streams, 
 
 <img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="display: block; width: 60px; margin: 0 0 1rem 0;">
 
-![Chinook habitat potential and access on the Bulkley River, Telkwa to Houston. Orange reaches sit above a road or rail crossing that is or may be a barrier, and purple reaches above a dam. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bulkley.jpg)
+![Chinook habitat potential and access on the Bulkley River, Telkwa to Houston. Orange reaches sit above a road or rail crossing that is or may be a barrier, and purple reaches above a dam. The faded corner is outside the Bulkley and Morice watershed groups mapped here. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bulkley.jpg)
 
 <img src="/img/hex/wet.png" alt="wet" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
