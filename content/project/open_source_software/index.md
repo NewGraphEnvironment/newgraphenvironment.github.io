@@ -84,7 +84,7 @@ Brings link, flooded and drift together for whole watershed groups: the floodpla
 
 - [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
 
-![Watershed groups with published floodplains.](floodplains_coverage.png)
+![Watershed groups with floodplains published through stac_floodplains_bc.](floodplains_coverage.png)
 
 ![Floodplain tree loss 2017–2023 in the Bulkley watershed group, by attributed cause.](floodplains_attribution.png)
 
@@ -106,7 +106,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-![Temperature departure, 2015 to 2025 against 1951 to 1980, across the Kootenay Lake region.](cd_temperature_departure.png)
+![Each year's average temperature in the Bulkley, Nechako and Parsnip watershed groups since 1950, against the 1951 to 1980 normal (grey band). The dashed line marks the warmest year of the normal: almost every recent year is warmer than normal, and many are warmer than any year in it. Figure: cd's northern BC article.](cd_temperature_years.png)
 
 ---
 
