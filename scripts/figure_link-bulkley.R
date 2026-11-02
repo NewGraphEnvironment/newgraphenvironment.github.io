@@ -33,8 +33,9 @@ s$barrier <- ifelse(grepl("DAM", s$code), "dam",
                     ifelse(grepl("MODELLED|ASSESSED", s$code), "crossing", "none"))
 s <- st_crop(s, st_bbox(w))
 col_barrier <- c(none = "#1b6ca8", crossing = "#d95f02", dam = "#7b3f98")
-# REMEDIATED outranks the other tokens in link, so these reaches can still have another barrier below
-lab_barrier <- c(none = "Remediated, or none mapped", crossing = "Road or rail crossing", dam = "Dam")
+# REMEDIATED (a fixed crossing) outranks the other tokens in link, so these reaches can still have another
+# barrier below
+lab_barrier <- c(none = "No barrier, or a fixed crossing", crossing = "Road or rail crossing", dam = "Dam")
 lwd_habitat <- c(access = 0.25, rear = 0.8, spawn = 1.5)
 lab_habitat <- c("Fish can reach, not habitat", "Rearing", "Spawning")
 shown <- names(col_barrier)[names(col_barrier) %in% s$barrier]
