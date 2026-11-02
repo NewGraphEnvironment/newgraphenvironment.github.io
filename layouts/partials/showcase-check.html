@@ -20,7 +20,8 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* registry -> site: every showcase row has a place; site -> registry: every placed repo is a showcase row */ -}}
+{{- /* registry -> site: every showcase row has a place; site -> registry: every placed repo is a showcase row.
+       `complement A B` is what B holds that A does not. */ -}}
 {{- $placed := slice -}}
 {{- range $step, $names := $site.steps -}}
   {{- range $names -}}{{- $placed = $placed | append . -}}{{- end -}}
@@ -31,10 +32,10 @@
 {{- range complement $repos $placed -}}
   {{- errorf "showcase: %s is placed in data/showcase_site.yaml but is not a public showcase row in data/showcase.json; mark it in the registry and refresh, or take it out" . -}}
 {{- end -}}
-{{- range complement $catalogues ($site.catalogues | default slice) -}}
+{{- range complement ($site.catalogues | default slice) $catalogues -}}
   {{- errorf "showcase: catalogue %s is marked for showcase but missing from catalogues in data/showcase_site.yaml" . -}}
 {{- end -}}
-{{- range complement ($site.catalogues | default slice) $catalogues -}}
+{{- range complement $catalogues ($site.catalogues | default slice) -}}
   {{- errorf "showcase: %s is in catalogues in data/showcase_site.yaml but is not a showcase catalogue in data/showcase.json" . -}}
 {{- end -}}
 

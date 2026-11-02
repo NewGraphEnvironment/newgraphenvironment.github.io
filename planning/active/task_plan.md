@@ -73,7 +73,7 @@ Decided by me (mechanism; say at approval if any should change):
 
 ## Phase 5: prove each guard fires
 
-- [ ] In a temp copy, one mutation per guard, each must fail the Hugo build with its message: drop a showcase row from the JSON; add an unplaced row; drop a catalogue from the overlay; put "rules" in a tagline; add a prose link to an unlisted repo; remove a showcase tool's prose links. Table in `findings.md`
+- [x] In a temp copy, one mutation per guard, each must fail the Hugo build with its message: drop a showcase row from the JSON; add an unplaced row; drop a catalogue from the overlay; put "rules" in a tagline; add a prose link to an unlisted repo; remove a showcase tool's prose links. Table in `findings.md`
 
 ## Phase 6: docs and PR
 
