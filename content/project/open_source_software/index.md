@@ -17,7 +17,7 @@ For restoration planning, the first questions are where each species' habitat is
 
 ### link and fresh — habitat potential, species by species
 
-Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat definitions can be tuned for each species and [tested against where fish have actually been found](#knowledge--testing-the-habitat-definitions-against-the-evidence). It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
+Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The fish habitat definitions can be tuned for each species and [tested against where fish have actually been found](#knowledge--testing-fish-habitat-definitions-against-the-evidence). It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
 
 link runs on our stream network engine, fresh, which places surveys on streams, walks the network and applies the habitat definitions. It works on BC's Freshwater Atlas through [fwapg](https://smnorris.github.io/fwapg/), which loads the Atlas into a spatial database.
 
@@ -34,7 +34,7 @@ link runs on our stream network engine, fresh, which places surveys on streams, 
 
 Our stream flow tool, wet, estimates mean annual and monthly flow for almost every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and, where the station logs it, water temperature.
 
-The flow can feed the habitat definitions. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
+The flow can feed the fish habitat definitions. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
@@ -42,9 +42,9 @@ The flow can feed the habitat definitions. At gauging stations, our climate anal
 
 <img src="/img/hex/knowledge.png" alt="knowledge" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### knowledge — testing the habitat definitions against the evidence
+### knowledge — testing fish habitat definitions against the evidence
 
-Our evidence tool, knowledge, tests habitat definitions against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's definitions from the fish records where they allow, checking each on parts of the province it was not chosen from. Its results record how they were made, so they can be checked, rerun and built on.
+Our evidence tool, knowledge, tests fish habitat definitions against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's habitat definitions from the fish records where they allow, checking each on parts of the province it was not chosen from. Its results record how they were made, so they can be checked, rerun and built on.
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a habitat definition is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 
@@ -60,7 +60,7 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. It can assign each part of a floodplain to the streams it belongs to, so habitat joins it by position and a new habitat definition does not redraw the ground. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
+Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. It can assign each part of a floodplain to the streams it belongs to, so habitat joins it by position and a new fish habitat definition does not redraw the ground. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
