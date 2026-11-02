@@ -1441,6 +1441,293 @@ Translate before counting: `tr '\r' '\n' < log | grep -c '^upload:'`.
 ### `a && b || c` runs `c` when any step before the `||` fails
 Give each setup step its own `|| exit 1` and branch with `if`: in `a && b || c`, `c` runs when `a` fails as well as when `b` does, so a failed setup reaches the fallback with its variable unset.
 
+# Code Check — Spatial
+terra, sf, bcdata, GDAL/OGR CLIs.
+
+*Index only: each rule's heading and first sentence. The full text is soul's `conventions/code-check-spatial.md`; read it before writing or reviewing code in its area. `/code-check` loads it in full.*
+
+### Negative coordinates get parsed as CLI options — every BC bbox hits this
+- BC longitudes are all negative, so `--bounds -124.73 49.485 -124.595 49.565` fails with `Error: No such option: -1`.
+
+### bcdata: an empty result raises AttributeError, it does not return an empty collection
+- A bbox query matching nothing exits non-zero with `AttributeError: You are calling a geospatial method on the GeoDataFrame, but the active geometry column to use has not been set.` — geopandas complaining about an empty frame, several layers below the query.
+
+### bcdata: `filter()` translates the calls inside it, so build strings, value lists and transforms before the query
+Compute any query string, value list or transformed geometry into a variable before `bcdata::filter()`, or wrap the call in `local()`.
+
+### terra: operator dispatch and edge cases in package code
+- **SpatRaster `%in%` is not dispatched when terra is *imported* (only when *attached*).**
+
+### A classed abort raised while computing an argument to a terra S4 generic loses its class
+Compute an argument whose evaluation can abort before calling the terra generic: `pre <- f(); post <- g(); terra::cover(pre, post)`, never `terra::cover(f(), g())`.
+
+### terra: `extract()` returns no row for ground beyond the raster, and counts cells by centre
+- Two traps in one call, and both make a partial result look complete.
+
+### A `...` constructor may discard trailing arguments based on the class of the first one
+- A constructor that takes `...` is free to branch on **what its first argument is** and build the result from that alone.
+
+### terra: `mask()` is `touches = TRUE`, so two "clip to the polygon" routines disagree by a cell ring
+Swapping one polygon clip for another looks like a refactor and is a **methodology change**.
+
+### terra: `sources()` on a derived raster is `""` or a random temp path, never the input
+- A raster that came out of `crop()`, `project()`, `mask()`, or arithmetic is **derived**, so it has no source file.
+
+### `sf::st_as_binary()` returns a LIST of raw vectors, so `is.raw()` on it is FALSE
+The obvious way to feed WKB into a canonicalizer is a `is.raw(x)` branch that hex-encodes it.
+
+### Canonicalize geometry before hashing it — ring order and orientation are not fixed by topology
+`code-check.md`'s cache-key row prescribes hashing WKB (`sf::st_as_binary(sf::st_geometry(x), endian = "little")`) rather than the sfc object.
+
+### sf: `st_join(largest = TRUE)` ignores the join predicate
+`st_join(largest = TRUE)` matches by intersection area whatever `join =` says, and drops zero-area geometries, so point and line overlays cannot use it.
+
+### sf: name validation must account for the geometry column
+- The active geometry column is a named entry in `names(x)`, but its name is **not fixed** — `"geometry"` from `sf::st_read()` of some sources, `"geom"` from a GeoPackage/PostGIS layer, `"geometry"` or `"_ogr_geometry_"` elsewhere.
+
+### sf: `st_intersection()` / `st_difference()` return a GEOMETRYCOLLECTION that QGIS will not draw
+- Intersecting or differencing two polygon layers yields a `GEOMETRYCOLLECTION` wherever the inputs *also* touch along a line or at a point.
+
+### sf: reproject the polygon to get a lat/lon bbox, never transform the projected bbox corners
+- To hand a geographic (EPSG:4326) bounding box to a bbox-filtered query (WFS/OGC features, `?bbox=`), reproject the whole AOI **geometry** then take its bbox: `sf::st_bbox(sf::st_transform(aoi, 4326))`.
+
+### An offset regex must be anchored to a time, or a date looks like a zone
+- Refusing or stripping a trailing UTC offset with something like `[+-][0-9]{2}(:?[0-9]{2})?$` also matches the end of a plain ISO date: `"2026-08-15"` ends in `-15`, which reads as a −15 hour zone.
+
+### A reader that accepts a UTC offset may not be applying it
+GDAL accepts a UTC offset in a GeoPackage `DATETIME` and silently drops it, returning wall-clock digits that are then read in the machine's zone, so one file gives a different instant on every machine.
+
+### Ask the file about its field names, not R
+`sf::st_read()` returns a data frame, and R makes column names syntactic on the way in.
+
+### QGIS embeds a layer's style in the `.qgs`, so rewriting the `.qml` sidecar changes nothing
+A `.qgs` carries each layer's style **inside** its `<maplayer>` node — the sidecar's children are copied in when the layer is declared.
+
+### A QGIS value map's empty choice is a fixed GUID value; its `<NULL>` label is editable
+When reading a value map's choices from a `.qml` or `.qgs`, drop QGIS's empty choice by its value, `{2839923C-8B7D-419E-B84B-CA2FE9B80EC7}`, not by its `<NULL>` label, which a form author can edit.
+
+### A GeoPackage is a SQLite database, and that leaks in three ways
+Writing to one directly (a `layer_styles` row, an attribute fix) is a plain `INSERT` and needs no GDAL.
+
+### The same leak reaches R and OGR SQL, and a GeoPackage's bytes are not its content
+Edit a live GeoPackage through GDAL (`ogrinfo -sql`) rather than RSQLite, and assert row state rather than `dbExecute()`'s count, which includes trigger writes.
+
+### Restoring a GeoPackage from a copy: refuse sidecars before the first read, delete them before the copy-back
+A byte copy of the main file is a snapshot only when no `-journal`, `-wal` or `-shm` exists and the header is in rollback mode (bytes 18-19 = `01 01`).
+
+### A coordinate stored as an attribute can disagree with the geometry it describes
+A spatial layer that also carries `LATITUDE` / `LONGITUDE` columns has the same fact twice, and nothing keeps them consistent.
+
+### GeoJSON in a projected CRS is silently non-portable
+`sf::st_write()` and `ogr2ogr` will write GeoJSON from a projected object and emit a `crs` member naming it:
+
+### `sf::st_perimeter()` needs lwgeom on projected data, and lwgeom is not a dependency of sf
+An exported sf function whose body branches on `requireNamespace("lwgeom")` is an undeclared dependency: `R CMD check` does not report it, and a test suite cannot see it on a machine that happens to have lwgeom installed.
+
+### terra keeps a result in memory whenever it fits, so a per-class loop over a large grid accumulates full-grid rasters
+`ifel()`, `focal()`, arithmetic and `rasterize()` return in-memory SpatRasters whenever the result fits under `memfrac` (60% of RAM by default).
+
+### `geom_sf(data = NULL)` draws nothing, silently
+A `NULL` `data` argument does not error and does not warn — the layer inherits the plot's data, which for `ggplot()` with no global data is empty, so it contributes a **zero-row layer**.
+
+### terra: `app()` calls a vector-tolerant `fun` once per CELL, and reads a 5-column return on a 5-column raster as transposed
+Two contracts inside `terra::app()` that read as the opposite of what they are, both measured on terra 1.9.34 (drift#9, 2026-09-05):
+
+### terra: `levels<-` and `coltab<-` copy first; `set.cats()` mutates in place, setting or stripping
+`terra::set.cats()` mutates the raster it is given whether it strips (`value = NULL`) or sets levels; `levels<-` and `coltab<-` deep-copy first, so on a caller's raster call `set.cats()` only on the copy one of them returned, or on a `deepcopy()` you own.
+
+### terra `metags()`: the empty case is `NULL`, and the sidecar is half the artefact
+Three measured facts about raster **container** metadata, all of which fail quietly (floodplains#83, 2026-09-05, terra 1.9.34 / GDAL 3.8.5).
+
+### terra `metags<-` merges into the tags a raster already has, and its setters work only from 1.8-54
+To replace a raster's dataset tags, clear them first (`metags(x) <- NULL`, only when there are any) and then set, and require `terra (>= 1.8-54)`.
+
+### `ggmap`: a fixed `zoom` silently crops points off the basemap, and `calc_zoom()` does not fix it
+`ggmap::get_map()` fetches ONE fixed-size image at whatever `zoom` it is given.
+
+### terra: `zonal()` outside its six-function fast path materializes the WHOLE grid in R
+`terra::zonal()` dispatches to C++ only when `fun` is one of `max`, `min`, `mean`, `sum`, `notNA`, `isNA`.
+
+### sf: close a rotated ring by copying the first vertex, never by recomputing it
+Rotating a polygon by multiplying its whole vertex matrix — `xy %*% rot` — looks exact, and for a ring built closed it is not.
+
+### terra: `plot(type = "classes", levels =, col =)` maps colours by POSITION, per layer
+A `levels`/`col` pair is not a value-to-colour mapping.
+
+### terra: `wrap()` carries the tempfile basename in `varnames`, so a committed artifact churns
+Set `varnames` and `longnames` before `wrap()` or writing a raster produced with `filename = tempfile()`, or the random tempfile basename makes a committed artifact change on every run.
+
+### `terra::plot()` leaves the device in a state where a keyword-placed `legend()` draws nothing
+`graphics::legend("topleft", …)` after a `terra::plot()` or `terra::plotRGB()` **silently draws nothing** — no error, no warning, and the rest of the figure renders normally.
+
+### A name is not a key: `GNIS_NAME` matches features all over BC
+`filter(GNIS_NAME == "Buck Creek")` returns every Buck Creek in the province.
+
+### `sf::st_read()` on a KML drops `<SchemaData>`, silently
+GDAL has two KML drivers and picks `KML` by default, which does not read the `<SchemaData>` block.
+
+### GDAL applies `-srcnodata` and an alpha mask together, and the mask loses
+Two ways of saying "these pixels are not data" reach `gdalwarp` independently, and giving it both is not an error — it is an instruction to do both.
+
+### Check an alpha-masked raster by its mask flags, not its colorinterp
+Assert that rasterio's `ds.mask_flag_enums` is `[per_dataset, alpha]` on every image band, as an absolute check.
+
+### `parallel::mclapply()` over a remote raster aborts every fork on macOS, and the wrapper exits 0
+GDAL's curl handles do not survive a fork.
+
+### terra: `align()` defaults to `snap = "near"`, so the aligned window need not contain the input
+`terra::align(e, r)` snaps each edge of `e` to the **nearest** cell boundary of `r`, which moves an edge *inward* as readily as outward.
+
+### GDAL reserves 3,276 MB per process before reading a cell, and PSOCK workers outlive their master
+Two independent reasons a parallel raster job uses far more memory than its data, both measured 2026-09-20 on a 64 GB machine (fly#58) while a sweep was killed four times.
+
+### `terra::distance(x, target = NA)` measures FROM the NA cells, so every data cell reads 0
+Reaching for it to answer "how far is each data cell from the nearest nodata" gives the opposite: `distance()` fills the **target** cells with their distance to the nearest non-target, so data cells come back `0` and any `dist < threshold` test is true everywhere.
+
+### `summarise()` on a grouped `sf` returns an `sf`, and the geometry rides into your CSV
+`dplyr::summarise()` dispatches to `summarise.sf` on an `sf` object.
+
+### A raster's drawn footprint is its valid data, not its extent
+Before comparing a rendered shape against a raster, get the raster's valid-data window, not its bbox.
+
+### `sf::gdal_utils()` does not raise when GDAL cannot open the source
+Test the result for `character(0)` or `NA` before parsing it.
+
+### A shift measured on one grid is wrong when applied on another
+Apply a displacement in the CRS it was measured in: transform the point there, add the shift, transform back.
+
+### Writing KML: `<color>` is `aabbggrr`, and a remote icon href renders nothing offline
+Do the hex swap in **one** helper and omit `<Icon><href>` entirely.
+
+### `rio cogeo validate` exits 0 when the file is NOT a valid COG
+It reports the verdict in text and returns success either way, so the exit status carries no information at all:
+
+### `terra::rast()` on a SpatRaster returns an empty template, not a copy
+Pass a SpatRaster through as is (`if (inherits(x, "SpatRaster")) x else terra::rast(x)`): `rast(x)` on one returns a template with the same geometry and **no values**.
+
+### terra integer rasters: `rasterize(filename =)` writes the background as 0, and `project()` keeps NoData as data
+Rasterise in memory and then `writeRaster(datatype = …)`, and cast an integer raster to float (`x * 1`) before `terra::project()`.
+
+### GDAL's `average` warp across a rotated CRS weights the wrong pixels; average in the target CRS instead
+To take class fractions or means from a fine grid in one CRS onto a coarse grid in another, resample nearest onto a grid aligned with the target and `fact` times finer (`terra::disagg(terra::rast(target), fact)`), then `terra::aggregate(fact, mean)`.
+
+### `terra::densify()` on lon/lat follows great circles, so a raster extent's parallel edges bow poleward
+Pass `flat = TRUE` (with the interval in degrees) when densifying a lon/lat extent before projecting it.
+
+### Planetary Computer STAC: a floodplain-scale read hits three limits a reach never does
+Query a large AOI by its convex hull, re-sign items before each tile, and give `datetime` explicit times (`…T00:00:00Z/…T23:59:59Z`).
+
+### gdalcubes records only a failed image OPEN; check `chunk_status`, and know what it misses
+Read the `chunk_status` variable of every `write_ncdf()` output with ncdf4 and abort on any value other than 0 or the netCDF int fill, and abort after the call returns on the R warning `could not be added to output`.
+
+### `gdalcubes::cube_view()` reads an aggregation or resampling it does not know as a default, with no error
+Validate `aggregation` and `resampling` against sets measured by round-tripping each value through `cube_view()`, not against `?cube_view`.
+
+### terra reads a multi-variable gdalcubes NetCDF with its variables in alphabetical order
+Select layers by name after `terra::rast()` of a `gdalcubes::write_ncdf()` output, never by position.
+
+### terra's COG writer emits a `.aux.json` sidecar when the raster carries a time
+Strip `time` (and `units`, `varnames`, `longnames`, `metags`, `scoff`) before `writeRaster(filetype = "COG")`, or have the publisher move `<file>.aux.json` with the raster.
+
+### `sf::st_read()` promotes a mixed POLYGON/MULTIPOLYGON layer to all-MULTIPOLYGON
+Read with `promote_to_multi = FALSE` whenever a layer will be written back.
+
+### `sf::st_make_valid()` rewrites geometry that was already valid
+Run it on the invalid rows only (`!st_is_valid(x)`), or keep the original geometry and use the made-valid copy just for the computation.
+
+### `st_union()` fails after `st_transform()` of a source mixing XY and XYZ rings
+Drop Z with `sf::st_zm()` before any `st_union()` or `st_combine()` on data that may mix XY and XYZ rings and has been through `st_transform()`.
+
+### terra: `unique()` and `freq()` on a factor return its labels, not its codes
+Read a factor raster's codes from a copy with its levels stripped (`levels(y) <- NULL`), never from `terra::unique(x)[, 1]` or `terra::freq(x)$value`, which on a factor return the active category's labels.
+
+### A GDAL failure partway through `sf::st_read()` returns the rows read so far, with only a warning
+Treat any warning during a read whose completeness matters as a failed read: wrap it in `withCallingHandlers(st_read(...), warning = function(w) stop(...))`, retry, then stop.
+
+### `terra::project()` over a remote strip-organised TIFF issues a range request per strip, so download it first
+Check `gdalinfo` for `Block=<width>x1` before reading a remote raster through `/vsicurl/`, and where it is strip-organised (one row per block, no overviews) download the whole file to a tempfile and read that.
+
+### LidarBC tiles can carry an undeclared nodata of -3.4e38, which a mean takes as data
+Clamp a LidarBC DEM or DSM to plausible elevations before any aggregate: `terra::clamp(r, -100, 5000, values = FALSE)`.
+
+### bcdata returns a column whose values are all missing as character, not numeric
+Coerce every field you do arithmetic on (`as.numeric(v$PROJ_AGE_1)`) right after `bcdata::collect()`.
+
+### The BC WFS caps an un-paged `GetFeature` at 10,000 features and still answers HTTP 200
+Hold any raw WFS read to the server's own count.
+
+### bcdata's error text does not carry a WFS failure's cause, so read it from the response
+To tell a throttle from any other bcdata failure, record the status off the request itself (wrap `crul:::crul_fetch`), not from the message.
+
+### sf and terra can link different GDALs, so a probe through one says nothing about the other
+Check `sf::sf_extSoftVersion()[["GDAL"]]` and `terra::gdal()` before concluding that "GDAL" cannot read something: one R session can hold two GDALs, and a driver or codec missing from one may be present in the other.
+
+### `arrow::write_parquet()` of a geoarrow table is not GeoParquet
+Write GeoParquet with GDAL's Parquet driver (`ogr2ogr -f Parquet`), and check the file's schema metadata carries a `geo` key.
+
+### `atan2(0, 0)` is 0, so two points at one place have a bearing of due north
+Treat a zero-length step as having no heading: test the step length before taking its azimuth, and return `NA` rather than a bearing when it is 0, because `atan2(0, 0)` returns 0 with no warning, and that reads as north.
+
+### gdalwarp writes INTO an existing destination and keeps its grid
+Delete the output before re-warping to the same path (`unlink(out)` before `sf::gdal_utils("warp", ...)`, or pass `-overwrite`).
+
+### GDAL caches a failed `/vsicurl/` open, so an in-process retry sends no request
+Before retrying a `/vsicurl/` read in the same process, set `CPL_VSIL_CURL_NON_CACHED` to the URL's prefix.
+
+### THREDDS NCSS returns one time step unless the request says `temporal=all`
+Add `&temporal=all` (or an explicit `time_start`/`time_end`) to every NetCDF Subset Service grid request.
+
+### BC's water rights licence view repeats a row per licensee, so deduplicate before summing quantities
+Keep one row per licence, purpose, point of diversion, `QUANTITY_FLAG` and units before summing `QUANTITY` from `WHSE_WATER_MANAGEMENT.WLS_WATER_RIGHTS_LICENCES_SV`.
+
+### QGIS cannot draw Esri Wayback, and a Wayback release date is not a capture date
+Fetch Wayback imagery with GDAL or curl into a local raster, choosing the release by its **capture** date (from the release's `metadataLayerUrl`), never by its release date.
+
+### A VRT composites over a source's mask band, so overlapping chips must be clipped with nodata
+Clip overlapping rasters bound for one VRT with a nodata value, not a mask band: a VRT honours a source's nodata when it composites and ignores its mask, so the source listed last overwrites its neighbour.
+
+### Test HTTP range support by a 206, not by `Accept-Ranges`
+Trust a `Range` GET's `206`, not a HEAD's `Accept-Ranges`, and refuse a `200` (the whole object).
+
+### A label slice that ends exactly on a grid edge drops that edge when the stored coordinates drift
+Pad a label slice by half a cell (`sel(latitude=slice(60.05, 47.95))`, not `slice(60, 48)`) and assert the cell count of the result before fetching anything.
+
+### `terra::cells(r, lines, touches = FALSE)` gives each line's own cells, so a shared cell can belong to both
+Take per-feature cell membership from `terra::cells(r, terra::vect(x), touches = FALSE)`, which returns an `ID` (row of `x`) and `cell` for exactly the cells `rasterize(touches = FALSE)` burns.
+
+### A Freshwater Atlas main stem's downstream end lies on the receiving river's centreline, not at the confluence
+Do not use the `DOWNSTREAM_ROUTE_MEASURE = 0` point of a tributary's main stem as its mouth on the ground.
+
+### `terra::project()` given only a CRS lets GDAL and PROJ choose the grid and the datum step, and their choices move between versions
+Pass `terra::project()` a template grid, and between east/north NAD83 CRSs a pinned `pipeline`, when a reprojection must reproduce.
+
+### pystac `Collection.add_item()` rewrites the item's self href and fetches the root over the network
+Re-set the item's self href after `add_item()`, and call `collection.set_root(collection)` once its self href is set.
+
+### `pdist::pdist()` loses centimetres at projected coordinates
+Subtract a local origin before `pdist::pdist()`: at BC Albers magnitudes it returns 0 for points up to 7 cm apart.
+
+### FWA `upstream_route_measure` misses the next segment's start
+Take a segment's top from the next segment's `downstream_route_measure`, and compare measures from different sources within 1 mm.
+
+### FWA main flow is not edge type 1000 alone
+Select main flow with `edge_type IN (1000, 1050, 1200, 1250, 1450)`, and test what the layer is for rather than that it is non-empty: 1000 is single-line stream only, so a filter built on it draws no large river.
+
+### terra: `focal(na.rm = TRUE)` drops NA cells from the vote, so where you fill NA around a filter changes its output
+Fill NA with the value you mean (`ifel(is.na(x), 0L, x)`) **before** a `focal()` majority or min/max filter, not after it, whenever those cells should count.
+
+### `terra::plot()` and `plotRGB()` draw at most 500,000 cells, so a large raster's thin features break up
+Pass `maxcell = terra::ncell(r)`, or draw with `rasterImage()` at one cell per device pixel, whenever a figure's point is a thin feature.
+
+### lidR's `rasterize_terrain()` masks every cell beyond the points' hull by default, whatever `extrapolate` says
+Pass `shape = "bbox"` (or a polygon) to `rasterize_terrain()` when the DTM must cover the whole window.
+
+### A plain difference of two DEMs can hide a half-cell shift between them
+Before calling two DEMs the same surface, regress their difference on the reference's gradient, or difference them at each half-cell shift.
+
+### A nodata value written to PNG comes back from magick as alpha
+Read a PNG that terra or GDAL wrote with `magick::image_convert(magick::image_read(f), matte = FALSE)`: their nodata becomes a tRNS chunk, which magick reads as alpha.
+
 # Code Check Conventions
 Structured checklist for reviewing diffs before commit.
 
