@@ -29,13 +29,13 @@ Owner approved this plan on 2026-11-01 (Vancouver time), which accepted items 1 
 
 ## Phase 2: figures that are ready to swap
 
-- [ ] flooded: post's `habitat-rules_scenarios.jpg`, resampled, with the post's caption
-- [ ] drift: `man/figures/readme-change.png`, with its caption and its land cover and imagery attribution
-- [ ] fly: `man/figures/readme-history.png`, with its place and years in the caption, and "Neexdzii Kwah" as the site spells it. Check that the images are what the page's copy says they are
-- [ ] flooded copy: one floodplain is keyed to its streams, so habitat joins it and a new rule does not redraw the ground. Keep the screening language
-- [ ] One sentence in the page's opening links the post as the account of how the pieces fit
-- [ ] State the Esri basemap on the flooded map's caption
-- [ ] Delete each replaced image once a grep shows nothing else uses it
+- [x] flooded: post's `habitat-rules_scenarios.jpg`, resampled, with the post's caption
+- [x] drift: `man/figures/readme-change.png`, with its caption and its land cover and imagery attribution
+- [x] fly: `man/figures/readme-history.png`, with its place and years in the caption, and "Neexdzii Kwah" as the site spells it. Check that the images are what the page's copy says they are
+- [x] flooded copy: one floodplain is keyed to its streams, so habitat joins it and a new rule does not redraw the ground. Keep the screening language
+- [x] One sentence in the page's opening links the post as the account of how the pieces fit
+- [x] State the Esri basemap on the flooded map's caption
+- [x] Delete each replaced image once a grep shows nothing else uses it
 
 Image handling, for every new image: at most 1600 px, under 750 KB, JPEG with 4:4:4 chroma for maps (`subsampling=0` in Pillow), alt text written for the figure.
 

@@ -7,7 +7,7 @@ weight: 3
 
 Our analytical tools, data, and methods are publicly available on GitHub. We work in the open wherever transparency improves science. The tools are built and extended through our partner programs, so each project strengthens the tools the next one uses.
 
-The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is.
+The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is. For how the pieces fit together, from fish evidence to the floodplain, see [Habitat rules, tested and carried onto the floodplain](https://www.newgraphenvironment.com/new_graphiti/posts/2026-11-01-habitat-rules-tested/).
 
 ## Where is the habitat, and what's keeping fish from it?
 
@@ -63,11 +63,11 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
+Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. It can assign each part of a floodplain to the streams it belongs to, so habitat joins it by position and a new habitat rule does not redraw the ground. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
-![Floodplain scenarios from flooded, from the active channel margin to the valley bottom.](flooded_scenarios.png)
+![One floodplain under three flood factors on the Kootenay River at Creston: active channel margin, functional floodplain and valley bottom. Each is a modelled scenario, nested inside the next. Basemap: Esri World Topographic Map and World Shaded Relief.](flooded_scenarios.jpg)
 
 <img src="/img/hex/drift.png" alt="drift" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -77,7 +77,7 @@ Our land-cover change tool, drift, measures how the land inside a floodplain cha
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
-![Land cover inside a floodplain classified for 2017, 2020 and 2023.](drift_classified.png)
+![Where the mapped land-cover class changed between 2017 and 2023 on a reach of the Neexdzii Kwah. Land cover: Esri / Impact Observatory. Imagery: Esri World Imagery.](drift_change.jpg)
 
 ### Floodplain change catalogue
 
@@ -99,7 +99,7 @@ Our airphoto tool, fly, finds the fewest historic provincial airphotos that cove
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
-![Historic airphoto footprints selected to cover a site with the fewest photos.](fly_priority.png)
+![The upper Bulkley River (Neexdzii Kwah) near Houston, BC, in 1971 and 1981, placed on the map by fly. Each photo sits on its own estimated footprint, so features line up approximately.](fly_history.jpg)
 
 <img src="/img/hex/cd.png" alt="cd" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
