@@ -1,9 +1,10 @@
 {{- /* The Open Source page's catalogue table, from data/showcase.json in data/showcase_site.yaml's
        order (#64). Called as {{% catalogue-table %}}, so it emits markdown and goldmark makes the
-       same table markup as a typed one. Each sentence is the registry's tagline; the years are the
-       collection's, as of the data file's refresh. */ -}}
-| Catalogue | What it catalogues | Years |
-|-----------|---------------|-------|
+       same table markup as a typed one. Each sentence is the registry's tagline, with the
+       collection's years in brackets, as of the data file's refresh. Two columns, not a Years
+       column: a third pushed the page past a 390 px phone screen. */ -}}
+| Catalogue | What it catalogues |
+|-----------|---------------|
 {{ range site.Data.showcase_site.catalogues -}}
 {{- with where site.Data.showcase.rows "repo" . -}}
 {{- $row := index . 0 -}}
@@ -13,6 +14,6 @@
   {{- $to := substr . 0 4 -}}
   {{- $years = cond (eq $from $to) $from (printf "%s–%s" $from $to) -}}
 {{- end -}}
-| [**{{ $row.repo }}**]({{ $row.source }}) | {{ replace $row.tagline "|" "\\|" }} | {{ $years }} |
+| [**{{ $row.repo }}**]({{ $row.source }}) | {{ replace $row.tagline "|" "\\|" }} ({{ $years }}) |
 {{ end -}}
 {{- end -}}

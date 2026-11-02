@@ -31,7 +31,7 @@ Membership agrees: How It Works links exactly the 16 showcase rows; the Open Sou
 
 Decided by me (mechanism; say at approval if any should change):
 
-- **The table gains a Years column** read from each collection (elevation 2011–2025, point clouds 2012–2026, floodplains 2017–2023, airphotos 1967–2019, drone 2020–2026), because a data tagline carries no digits. The typed ranges leave the sentences.
+- **The table gains a Years column** read from each collection (elevation 2011–2025, point clouds 2012–2026, floodplains 2017–2023, airphotos 1967–2019, drone 2020–2026), because a data tagline carries no digits. The typed ranges leave the sentences. *Changed in Phase 6:* a third column pushed the page to 415 px on a 390 px phone (main: 390), so the years sit in brackets after each sentence instead, as the airphoto row had them.
 - **The new catalogue taglines are the site's reviewed table sentences**, minus the typed years, with "a screen for where to look" kept on floodplains (the copy rules want the screening caveat):
   - stac_elevation_bc: "LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly"
   - stac_pointcloud_bc: "LidarBC point cloud files (an index, not a copy); province-wide"

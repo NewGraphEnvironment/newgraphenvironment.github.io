@@ -68,8 +68,21 @@ Each mutation applied to a copy of the site (`rsync` without .git/public), built
 | open_end (uav end null) | 0 | builds; table reads `2020 onward` |
 | same_year (uav 2026 to 2026) | 0 | builds; table reads `2026` |
 
+## Phone width (2026-11-02)
+
+DevTools emulation, 390×844 mobile at 2x, of the built Open Source page:
+
+| Build | `scrollWidth` | Table width |
+|---|---|---|
+| main (two columns) | 390 | 326 |
+| branch, Years column | **415** | 383 |
+| branch, years in brackets | 390 | 326 |
+
+The Years column overflowed a phone, so the years moved into the sentence.
+
 ## Errors Encountered
 
 | Error | Resolution |
 |-------|------------|
+| A Years column pushed the Open Source page to 415 px on a 390 px phone | Years in brackets after the sentence; two columns as before |
 | The two catalogue errors named the wrong direction | Hugo's `complement A B` returns what B holds that A does not; arguments swapped, comment added |
