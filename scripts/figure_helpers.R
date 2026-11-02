@@ -3,7 +3,7 @@
 # BC Albers, topographic and shaded relief tiles blended by gq, towns, rivers, a scale bar, a white
 # legend box and no in-plot title: the caption carries the title.
 #
-# CACHE_DIR holds what a first run fetches (towns, rivers). OUT_DIR takes the map, default ".".
+# CACHE_DIR holds what a first run fetches (towns, rivers, watershed group outlines). OUT_DIR takes the map, default ".".
 # Rivers read a PostgreSQL fwapg through the standard PG* variables.
 
 suppressPackageStartupMessages({
@@ -43,9 +43,26 @@ towns_of <- function(w) {
   }
   towns <- st_read(f, quiet = TRUE)
   if (!nrow(towns)) stop("no towns", call. = FALSE)
-  # far enough inside the frame that the name is not cut off
-  towns[lengths(st_intersects(towns, st_buffer(w, -4000))) > 0, ]
+  # far enough inside the frame that the name is not cut off; Telkwa and Houston sit about 3 km in
+  towns[lengths(st_intersects(towns, st_buffer(w, -2500))) > 0, ]
 }
+
+# the part of the window outside the named watershed groups, to fade where a map's data does not reach
+outside_groups <- function(w, codes) {
+  f <- file.path(dir_cache, paste0("groups_", paste(sort(codes), collapse = "_"), ".gpkg"))
+  if (!file.exists(f)) {
+    conn <- DBI::dbConnect(RPostgres::Postgres())
+    on.exit(DBI::dbDisconnect(conn), add = TRUE)
+    x <- st_read(conn, quiet = TRUE, query = sprintf(
+      "SELECT watershed_group_code, geom FROM whse_basemapping.fwa_watershed_groups_poly
+       WHERE watershed_group_code IN (%s)", paste0("'", codes, "'", collapse = ", ")))
+    if (nrow(x) != length(codes)) stop("expected the outlines of ", paste(codes, collapse = ", "), call. = FALSE)
+    st_write(x, f, quiet = TRUE)
+  }
+  st_difference(st_buffer(w, 1000), st_union(st_read(f, quiet = TRUE)))
+}
+
+fade <- function(m, outside) m + tm_shape(outside) + tm_polygons(fill = "white", fill_alpha = 0.65, col = NA)
 
 rivers_of <- function(name) {
   f <- file.path(dir_cache, paste0("river_", gsub(" ", "_", tolower(name)), ".gpkg"))

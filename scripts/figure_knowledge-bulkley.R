@@ -4,9 +4,10 @@
 #
 # CAT_DIR holds the `floodplain` asset of stac-floodplains-bc items bulk_all_ff04 and morr_all_ff04, saved as
 # <group>_floodplain.gpkg. KNOWLEDGE_GPKG is data/compare/gpkg in a knowledge checkout, which knowledge
-# builds and does not commit. The join is the one knowledge::knw_floodplain_ha() uses. A first run reads the
-# river name from a PostgreSQL fwapg through the standard PG* variables, and towns from the BC Data Catalogue;
-# both are cached in CACHE_DIR. Run from the repo root:
+# builds and does not commit. The join is the one knowledge::knw_floodplain_ha() uses. The catalogue covers the
+# Bulkley and Morice groups, so the rest of the window is faded. A first run reads their outlines and the river
+# name from a PostgreSQL fwapg through the standard PG* variables, and towns from the BC Data Catalogue; all are
+# cached in CACHE_DIR. Run from the repo root:
 #
 #   CACHE_DIR=<dir> OUT_DIR=<dir> CAT_DIR=<dir> KNOWLEDGE_GPKG=<dir> Rscript scripts/figure_knowledge-bulkley.R
 
@@ -62,6 +63,7 @@ m <- tm_shape(basemap_of(w, 12), bbox = st_bbox(w)) + tm_rgb() +
 for (k in c("both", "current", "tested")) {
   m <- m + tm_shape(hab[hab$class == k, ]) + tm_lines(col = col_rule[[k]], lwd = 0.9)
 }
+m <- fade(m, outside_groups(w, c("BULK", "MORR")))
 m <- m + tm_add_legend(type = "polygons", labels = lab_rule, fill = see(col_rule), col = NA, title = "Chinook rearing")
 
 save_map(frame_map(m, w, rivers = rivers_of("Bulkley River"), leg = c("left", "bottom")), "knowledge_bulkley.png", w)

@@ -4,10 +4,9 @@
 #
 # mapping_code_ch is {ACCESS|SPAWN|REAR};{NONE|DAM|MODELLED|ASSESSED|REMEDIATED}[;INTERMITTENT], from
 # link::lnk_mapping_code(). The table schema is an argument because it is where link's run persisted.
-# It is read through a PostgreSQL connection (the standard PG* variables), with the watershed group outlines
-# from fwapg: link's run covers the Bulkley and Morice groups, so the rest of the window is faded. A first
-# run also reads the river name from fwapg and towns from the BC Data Catalogue, cached in CACHE_DIR. Run
-# from the repo root:
+# It is read through a PostgreSQL connection (the standard PG* variables). link's run covers the Bulkley and
+# Morice groups, so the rest of the window is faded. A first run also reads their outlines and the river name
+# from fwapg and towns from the BC Data Catalogue, cached in CACHE_DIR. Run from the repo root:
 #
 #   CACHE_DIR=<dir> OUT_DIR=<dir> LINK_SCHEMA=<schema> Rscript scripts/figure_link-bulkley.R
 
@@ -25,12 +24,7 @@ s <- st_read(conn, quiet = TRUE, query = sprintf("
   JOIN %1$s.streams s USING (id_segment, watershed_group_code)
   WHERE m.watershed_group_code IN ('BULK', 'MORR') AND coalesce(m.mapping_code_ch, '') <> ''
     AND ST_Intersects(s.geom, ST_GeomFromText('%2$s', 3005))", schema, st_as_text(w_big)))
-wsg <- st_read(conn, quiet = TRUE, query = "
-  SELECT watershed_group_code, geom FROM whse_basemapping.fwa_watershed_groups_poly
-  WHERE watershed_group_code IN ('BULK', 'MORR')")
 DBI::dbDisconnect(conn)
-if (nrow(wsg) != 2) stop("expected the BULK and MORR outlines", call. = FALSE)
-outside <- st_difference(st_buffer(w, 1000), st_union(wsg))
 s <- st_zm(s, drop = TRUE)
 if (!nrow(s)) stop("no segments", call. = FALSE)
 
@@ -46,8 +40,7 @@ lab_habitat <- c("Fish can reach, not habitat", "Rearing", "Spawning")
 shown <- names(col_barrier)[names(col_barrier) %in% s$barrier]
 print(table(s$habitat, s$barrier))
 
-m <- tm_shape(basemap_of(w, 12), bbox = st_bbox(w)) + tm_rgb() +
-  tm_shape(outside) + tm_polygons(fill = "white", fill_alpha = 0.65, col = NA)
+m <- fade(tm_shape(basemap_of(w, 12), bbox = st_bbox(w)) + tm_rgb(), outside_groups(w, c("BULK", "MORR")))
 # thin first, so the habitat reads over the streams that only carry access
 for (h in names(lwd_habitat)) {
   for (b in names(col_barrier)) {
