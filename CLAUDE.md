@@ -17,7 +17,7 @@ New Graph Environment company website — landing page, work portfolio, and cont
 **Landing page** (`layouts/index.html`) — custom layout, not the theme default. Sections:
 - Hero with full logo + "Open-Source Watershed Science" tagline
 - The Challenge, Who We Are, Our Approach — company framing. Who We Are carries the identity sentence and the list of what the work is; it names no people, place or dates by decision (#59, Oct 2026). The Challenge ends on the answer (open data, open tools, field teams), not on "outside specialists".
-- How It Works — four question steps (habitat and barriers; floodplain, history and change; the ground and water now; into the field and back), each linking its tools
+- How It Works — four question steps (habitat and barriers; floodplain, history and change; the ground and water now; into the field and back), each linking its tools. The links cover every tool the asset registry marks for showcase (floodplains and stac_airphoto_bc under the floodplain step; stac_floodplains_bc and stacs under the ground and water now); #64 generates them from the registry
 - What This Looks Like in Practice — 3 cards linking to the Our Work tiles
 - Open Source — GitHub link band
 
