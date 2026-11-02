@@ -60,22 +60,22 @@ Recipe: `posts/2026-11-01-habitat-rules-tested/scripts/habitat-rules_fig-build.R
 
 Done in its own worktree of the repo that holds it, because other sessions share that checkout.
 
-- [ ] knowledge: move from coordination to tools, add a tagline, mark showcase
-- [ ] water-temp-bc: mark showcase
-- [ ] crate: drop the showcase mark
-- [ ] Run the registry's `check` and open the PR
+- [x] knowledge: move from coordination to tools, add a tagline, mark showcase
+- [x] water-temp-bc: mark showcase
+- [x] crate: drop the showcase mark
+- [x] Run the registry's `check` and open the PR
 
 ## Phase 6: check and open the PR
 
-- [ ] Build with blogdown's Hugo into a temp directory, not `public/`
-- [ ] Check desktop and 390 x 844 phone layout through DevTools emulation: horizontal scroll, each new figure, each caption
-- [ ] Check every new link answers 200
-- [ ] Measure every new image against the limits
-- [ ] Grep the page for analyst titles, `ff=`, and words the copy rules bar
-- [ ] View every figure on the page, kept ones included, against the done-when list
-- [ ] Check the knowledge anchor in the built HTML
-- [ ] Check each new image's caption for attribution
-- [ ] Grep the diff, PR body and comments for home paths, hosts and private repo names
+- [x] Build with blogdown's Hugo into a temp directory, not `public/`
+- [x] Check desktop and 390 x 844 phone layout through DevTools emulation: horizontal scroll, each new figure, each caption
+- [x] Check every new link answers 200
+- [x] Measure every new image against the limits
+- [x] Grep the page for analyst titles, `ff=`, and words the copy rules bar
+- [x] View every figure on the page, kept ones included, against the done-when list
+- [x] Check the knowledge anchor in the built HTML
+- [x] Check each new image's caption for attribution
+- [x] Grep the diff, PR body and comments for home paths, hosts and private repo names
 - [ ] `/code-check branch`
 - [ ] Refresh the private preview so the figures can be reviewed away from the computer
 - [ ] Update #50's table
@@ -86,12 +86,12 @@ Also during the work: a Plan agent reviews this plan in the background once the 
 ## Owed at the end (reported, done after merge)
 
 - [ ] Merge the registry PR, on your word
-- [ ] Swap `floodplains_attribution.png` once floodplains#136 ships
+- [ ] Swap `floodplains_attribution.png` once floodplains#136 ships (tracked in site issue #66)
 - [ ] Fetch the live Open Source page after the site PR merges and compare it with the source
 
 ## Validation
 
-- [ ] Hugo build passes (this site has no test suite)
+- [x] Hugo build passes (this site has no test suite)
 - [ ] `/code-check` clean, once over the branch
 - [ ] PWF checkboxes match landed work
 - [ ] `/planning-archive` on completion
