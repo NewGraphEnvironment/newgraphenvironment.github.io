@@ -1,4 +1,7 @@
 {{- /* One How It Works step's tool links, in data/showcase_site.yaml's order (#64). */ -}}
+{{- if not (isset site.Data.showcase_site.steps .) -}}
+  {{- errorf "showcase: the home page asks for How It Works step %q, which data/showcase_site.yaml does not have" . -}}
+{{- end -}}
 {{- range index site.Data.showcase_site.steps . -}}
   {{- with where site.Data.showcase.rows "repo" . -}}
     {{- $row := index . 0 -}}

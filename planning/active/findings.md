@@ -45,28 +45,36 @@ The site names its tools and catalogues in hand-written copy. What the How It Wo
 | stac_elevation_bc | "The ground under the trees, and the canopy on it where a surface model was flown, found by place" | "LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly" | two sentences for one thing |
 | stac_floodplains_bc | "Mapped floodplains, and where trees were lost and grew back: a screen for where to look" | "Floodplains and land-cover change, 2017–2023; by watershed group" | two sentences for one thing |
 
-## Guards proved (Phase 5, 2026-11-02)
+## Guards proved (Phase 5, re-run after code-check round 1, 2026-11-02)
 
-Each mutation applied to a copy of the site (`rsync` without .git/public), built with blogdown's Hugo 0.121.1. Exit 1 is a failed build.
+Each mutation applied to a copy of the site (`rsync` without .git/public), built with blogdown's Hugo 0.121.1. Exit 1 is a failed build. The last eight rows are the gaps code-check round 1 found (each built with exit 0 before its fix).
 
 | Mutation | Exit | Message |
 |---|---|---|
 | drop_row | 1 | showcase: drift is placed in data/showcase_site.yaml but is not a public showcase row in data/showcase.json; mark it in the registry and refresh, or take it out  |
-| unplaced_row | 1 | showcase: newtool is marked for showcase but placed in no How It Works step; add it to steps in data/showcase_site.yaml showcase: newtool is marked for showcase  |
-| drop_catalogue | 1 | first run: the two catalogue messages were swapped (Hugo's `complement A B` is what B holds that A does not); after the fix: showcase: catalogue stac_elevation_bc is marked for showcase but missing from catalogues in data/showcase_site.yaml |
-| extra_catalogue | 1 | after the fix: showcase: water-temp-bc is in catalogues in data/showcase_site.yaml but is not a showcase catalogue in data/showcase.json |
-| rules_tagline | 1 | showcase: link's registry tagline "...every rule editable" uses "rules?", a word the site rules out |
-| keepout_tagline | 1 | showcase: stacs's registry tagline "Registers catalogues for any AOI" uses "AOI" |
+| unplaced_row | 1 | showcase: newtool is marked for showcase but placed in no How It Works step; add it to steps in data/showcase_site.yaml  |
+| drop_catalogue | 1 | showcase: catalogue stac_elevation_bc is marked for showcase but missing from catalogues in data/showcase_site.yaml  |
+| extra_catalogue | 1 | showcase: water-temp-bc is in catalogues in data/showcase_site.yaml but is not a showcase catalogue in data/showcase.json  |
+| rules_tagline | 1 | showcase: link's registry tagline "Build, compare and test fish habitat and access models, every rule editable" uses "rules?", a word the site rules out; reword it in the  |
+| keepout_tagline | 1 | showcase: stacs's registry tagline "Registers catalogues for any AOI" uses "AOI", a word the site rules out; reword it in the registry and refresh  |
 | ruled_in_word_ok ("overruled", "breakfast") | 0 | builds: word boundaries hold |
-| prose_unlisted | 1 | showcase: the Open Source page links gq, which is neither a showcase row nor in supporting in data/showcase_site.yaml   |
-| prose_drop_showcase | 1 | showcase: cd is marked for showcase but the Open Source page never links it   |
-| stale_supporting | 1 | showcase: cred is in supporting in data/showcase_site.yaml but the Open Source page no longer links it   |
-| no_shortcode | 1 | showcase: the Open Source page no longer calls {{% catalogue-table %}}, so its catalogue table is not generated   |
-| foreign_homepage | 1 | showcase: fly's homepage "https://fly.example.org/" is not on newgraphenvironment.com |
-| missing_tagline | 1 | showcase: a row of data/showcase.json (wet) has no tagline   |
-| missing_start | 1 | showcase: catalogue stac_uav_bc has no start date in data/showcase.json   |
-| open_end (uav end null) | 0 | builds; table reads `2020 onward` |
-| same_year (uav 2026 to 2026) | 0 | builds; table reads `2026` |
+| prose_unlisted | 1 | showcase: the Open Source page links gq, which is neither a showcase row nor in supporting in data/showcase_site.yaml  |
+| prose_drop_showcase | 1 | showcase: cd is marked for showcase but the Open Source page never links it  |
+| stale_supporting | 1 | showcase: cred is in supporting in data/showcase_site.yaml but the Open Source page no longer links it  |
+| no_shortcode | 1 | showcase: the Open Source page no longer calls {{% catalogue-table %}}, so its catalogue table is not generated  |
+| foreign_homepage | 1 | showcase: fly's homepage "https://fly.example.org/" is not on newgraphenvironment.com; set it on GitHub, then refresh data/showcase.json  |
+| missing_tagline | 1 | showcase: a row of data/showcase.json (wet) has no tagline  |
+| missing_start | 1 | showcase: catalogue stac_uav_bc has no start date in data/showcase.json  |
+| open_end (uav end null) | 0 | builds; reads `(2020 onward)` |
+| same_year (uav 2026 to 2026) | 0 | builds; reads `(2026)` |
+| rename_step | 1 | showcase: steps in data/showcase_site.yaml are [field floodplains habitat now]; they must be exactly habitat, floodplain, now and field, the four the home page draws  |
+| tool_in_field | 1 | showcase: steps.field in data/showcase_site.yaml lists [cd]; the field step names no tools, so place them under another step  |
+| duplicate | 1 | showcase: a repo is placed twice in steps in data/showcase_site.yaml: [link fresh wet knowledge link flooded drift fly stac_airphoto_bc cd floodplains stac_elevation_bc s  |
+| dup_catalogue | 1 | showcase: a catalogue is listed twice in catalogues in data/showcase_site.yaml: [stac_elevation_bc stac_pointcloud_bc stac_floodplains_bc stac_airphoto_bc stac_uav_bc sta  |
+| lowercase_org | 1 | showcase: the Open Source page links gq, which is neither a showcase row nor in supporting in data/showcase_site.yaml  |
+| github_io | 1 | showcase: the Open Source page links gq, which is neither a showcase row nor in supporting in data/showcase_site.yaml  |
+| comment_only | 1 | showcase: cd is marked for showcase but the Open Source page never links it  |
+| minutes_tagline | 1 | showcase: stacs's registry tagline "Registers catalogues, runs in  minutes" uses "minutes?", a word the site rules out; reword it in the registry and refresh  |
 
 ## Phone width (2026-11-02)
 

@@ -30,7 +30,7 @@ ruled_out:
   - rules?
   - fast
   - cheap
-  - in minutes
+  - minutes?
   - modelling core
   - network-joinable attributes
   - config bundles

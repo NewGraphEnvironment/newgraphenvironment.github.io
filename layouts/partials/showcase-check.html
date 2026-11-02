@@ -22,9 +22,26 @@
 
 {{- /* registry -> site: every showcase row has a place; site -> registry: every placed repo is a showcase row.
        `complement A B` is what B holds that A does not. */ -}}
+{{- /* the steps are exactly the four the home page draws, and only the three it gives links to
+       hold any: a renamed key or a tool under `field` would render nothing and pass */ -}}
+{{- $keys := slice -}}
+{{- range $k, $_ := $site.steps -}}{{- $keys = $keys | append $k -}}{{- end -}}
+{{- if not (eq (delimit (sort $keys) ",") "field,floodplain,habitat,now") -}}
+  {{- errorf "showcase: steps in data/showcase_site.yaml are %v; they must be exactly habitat, floodplain, now and field, the four the home page draws" (sort $keys) -}}
+{{- end -}}
+{{- with $site.steps.field -}}
+  {{- errorf "showcase: steps.field in data/showcase_site.yaml lists %v; the field step names no tools, so place them under another step" . -}}
+{{- end -}}
 {{- $placed := slice -}}
-{{- range $step, $names := $site.steps -}}
-  {{- range $names -}}{{- $placed = $placed | append . -}}{{- end -}}
+{{- range slice "habitat" "floodplain" "now" -}}
+  {{- range index $site.steps . -}}{{- $placed = $placed | append . -}}{{- end -}}
+{{- end -}}
+{{- if ne (len $placed) (len (uniq $placed)) -}}
+  {{- errorf "showcase: a repo is placed twice in steps in data/showcase_site.yaml: %v" $placed -}}
+{{- end -}}
+{{- $cats := $site.catalogues | default slice -}}
+{{- if ne (len $cats) (len (uniq $cats)) -}}
+  {{- errorf "showcase: a catalogue is listed twice in catalogues in data/showcase_site.yaml: %v" $cats -}}
 {{- end -}}
 {{- range complement $placed $repos -}}
   {{- errorf "showcase: %s is marked for showcase but placed in no How It Works step; add it to steps in data/showcase_site.yaml" . -}}
@@ -49,15 +66,18 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* the Open Source page's prose links exactly the showcase rows and the supporting mentions */ -}}
+{{- /* the Open Source page links exactly the showcase rows and the supporting mentions. Read from the
+       rendered page, comments stripped, so a link only in a comment or code is not counted; any
+       host spelling GitHub or our site resolves is. */ -}}
 {{- with site.GetPage "/project/open_source_software" -}}
   {{- $raw := .RawContent -}}
   {{- if not (findRE `\{\{%\s*catalogue-table\s*%\}\}` $raw 1) -}}
     {{- errorf "showcase: the Open Source page no longer calls {{%% catalogue-table %%}}, so its catalogue table is not generated" -}}
   {{- end -}}
   {{- $linked := slice -}}
-  {{- range findRESubmatch `(?:newgraphenvironment\.com/|github\.com/NewGraphEnvironment/)([A-Za-z0-9_-]+)` $raw -}}
-    {{- $linked = $linked | append (index . 1) -}}
+  {{- $html := replaceRE `(?s)<!--.*?-->` "" (string .Content) -}}
+  {{- range findRESubmatch `(?i)href="(?:https?:)?//(?:www\.)?(?:newgraphenvironment\.com/|newgraphenvironment\.github\.io/|github\.com/NewGraphEnvironment/)([a-z0-9_.-]+)` $html -}}
+    {{- $linked = $linked | append (lower (strings.TrimSuffix ".git" (index . 1))) -}}
   {{- end -}}
   {{- $linked = uniq $linked -}}
   {{- $allowed := $repos | append ($site.supporting | default slice) -}}
