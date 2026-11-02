@@ -47,11 +47,11 @@ Decided by me (mechanism; say at approval if any should change):
 
 ## Phase 1: the registry — taglines in step, and a JSON render
 
-- [ ] Edit the registry's open issue (it proposed a section key) to this scope (JSON render for the website; showcase taglines aligned with the site)
-- [ ] Worktree of the registry's repo off its default branch
-- [ ] Rewrite the seven taglines above in `ecosystem.yml`
-- [ ] `ecosystem_registry.py render --format json`: the same rows and filters as the markdown (`--public`, `--showcase`); one object per row (repo, name, kind, status, tagline, homepage, source; for catalogues collection, start, end, items, bbox) plus `generated`; the same no-cite check on the serialised text, the same exit 2 on an unreadable source
-- [ ] Offline cases in `test_ecosystem_registry.sh`: fixtures render byte-identical JSON; `--showcase` keeps only marked public rows; a marked name in a field is refused; a mutated copy of each new guard goes red
+- [x] Edit the registry's open issue (it proposed a section key) to this scope (JSON render for the website; showcase taglines aligned with the site)
+- [x] Worktree of the registry's repo off its default branch
+- [x] Rewrite the seven taglines above in `ecosystem.yml`
+- [x] `ecosystem_registry.py render --format json`: the same rows and filters as the markdown (`--public`, `--showcase`); one object per row (repo, name, kind, status, tagline, homepage, source; for catalogues collection, start, end, items, bbox) plus `generated`; the same no-cite check on the serialised text, the same exit 2 on an unreadable source
+- [x] Offline cases in `test_ecosystem_registry.sh`: fixtures render byte-identical JSON; `--showcase` keeps only marked public rows; a marked name in a field is refused; a mutated copy of each new guard goes red
 - [ ] `check` and the suite pass; `/code-check`; open the registry PR (merge on the owner's word)
 
 ## Phase 2: site data
