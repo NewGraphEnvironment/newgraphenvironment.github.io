@@ -26,7 +26,7 @@ link runs on our stream network engine, fresh, which places surveys on streams, 
 
 <img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="display: block; width: 60px; margin: 0 0 1rem 0;">
 
-![Chinook habitat potential and access on the Bulkley River, Telkwa to Houston. Orange reaches sit above a road or rail crossing that is or may be a barrier, and purple reaches above a documented dam. The faded corner is outside the Bulkley and Morice watershed groups mapped here. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bulkley.jpg)
+![Chinook habitat potential and access on the Bulkley River, Telkwa to Houston. Orange reaches sit above a road or rail crossing that is or may be a barrier, and purple reaches above a documented dam. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bulkley.jpg)
 
 <img src="/img/hex/wet.png" alt="wet" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -48,7 +48,7 @@ Our evidence tool, knowledge, tests habitat rules against what we know about whe
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 
-![Chinook rearing on the Bulkley River, Telkwa to Houston, comparing link's existing rule with the rule tuned in knowledge. The habitat on each stream is carried onto the floodplain beside it by flooded (below). The faded corner is outside the Bulkley and Morice watershed groups mapped here. Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
+![Chinook rearing on the Bulkley River, Telkwa to Houston, comparing link's existing rule with the rule tuned in knowledge. The habitat on each stream is carried onto the floodplain beside it by flooded (below). Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
 
 ---
 
