@@ -84,7 +84,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-![Each year's average temperature in the Bulkley, Nechako and Parsnip watershed groups since 1950, against the 1951 to 1980 normal (grey band). The dashed line marks the warmest year of the normal: almost every recent year is warmer than normal, and many are warmer than any year in it. Figure: cd's northern BC article.](cd_temperature_years.png)
+![Each year's average temperature in the Bulkley, Nechako and Parsnip watershed groups since 1950. Orange bars are years warmer than the 1951 to 1980 average (normal), and blue bars are years cooler. The dashed line is the warmest year of the normal, and many recent years are warmer still. Figure: cd's northern BC article.](cd_temperature_years.png)
 
 <img src="/img/hex/fly.png" alt="fly" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
