@@ -19,19 +19,14 @@ For restoration planning, the first questions are where each species' habitat is
 
 Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and [tested against where fish have actually been found](#knowledge--testing-the-rules-against-the-evidence). It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
 
-- [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
+link runs on our stream network engine, fresh, which places surveys on streams, walks the network and applies the habitat rules. It works on BC's Freshwater Atlas through [fwapg](https://smnorris.github.io/fwapg/), which loads the Atlas into a spatial database.
+
+- link: [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
+- fresh: [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
+
+<img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="display: block; width: 60px; margin: 0 0 1rem 0;">
 
 ![Chinook habitat potential and access on the Bulkley River, Telkwa to Houston. Orange reaches sit above a road or rail crossing that is or may be a barrier, and purple reaches above a dam. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bulkley.jpg)
-
-<img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
-
-### fresh — the stream network engine
-
-Our stream network engine, fresh, does the work underneath. It breaks the network at barriers and rates each stretch of stream as spawning or rearing habitat, lakes and wetlands included, from its gradient and its size or flow. It runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/), which loads the Atlas into a spatial database.
-
-- [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
-
-![Modelled coho spawning and rearing habitat across a sub-basin, with falls and coho observations.](fresh_subbasin.png)
 
 <img src="/img/hex/wet.png" alt="wet" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
