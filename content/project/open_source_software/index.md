@@ -76,17 +76,15 @@ Our land-cover change tool, drift, measures how the land inside a floodplain cha
 
 ![Where the mapped land-cover class changed between 2017 and 2023 on a reach of the Neexdzii Kwah. Land cover: Esri / Impact Observatory. Imagery: Esri World Imagery.](drift_change.jpg)
 
-### Floodplain change catalogue
+<img src="/img/hex/cd.png" alt="cd" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-Brings link, flooded and drift together for whole watershed groups: the floodplain of each group's whole stream network, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
+### cd — climate departure
 
-**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
+Our climate analysis tool, cd, measures how far a watershed's climate has moved from a baseline since 1950: temperature, precipitation, drying, soil moisture and snowpack. It also gives the trend in any yearly series, such as flow from wet. This is the climate context for deciding which watersheds and life stages are under the most pressure.
 
-- [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
+- [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-![Watershed groups with floodplains published through stac_floodplains_bc.](floodplains_coverage.png)
-
-![Floodplain tree loss 2017–2023 in the Bulkley watershed group, by attributed cause.](floodplains_attribution.png)
+![Each year's average temperature in the Bulkley, Nechako and Parsnip watershed groups since 1950, against the 1951 to 1980 normal (grey band). The dashed line marks the warmest year of the normal: almost every recent year is warmer than normal, and many are warmer than any year in it. Figure: cd's northern BC article.](cd_temperature_years.png)
 
 <img src="/img/hex/fly.png" alt="fly" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -98,15 +96,17 @@ Our airphoto tool, fly, finds the fewest historic provincial airphotos that cove
 
 ![The upper Bulkley River (Neexdzii Kwah) near Houston, BC, in 1971 and 1981, placed on the map by fly. Each photo sits on its own estimated footprint, so features line up approximately.](fly_history.jpg)
 
-<img src="/img/hex/cd.png" alt="cd" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+### Floodplain change catalogue
 
-### cd — climate departure
+Brings link, flooded and drift together for whole watershed groups: the floodplain of each group's whole stream network, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
 
-Our climate analysis tool, cd, measures how far a watershed's climate has moved from a baseline since 1950: temperature, precipitation, drying, soil moisture and snowpack. It also gives the trend in any yearly series, such as flow from wet. This is the climate context for deciding which watersheds and life stages are under the most pressure.
+**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
 
-- [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
+- [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
 
-![Each year's average temperature in the Bulkley, Nechako and Parsnip watershed groups since 1950, against the 1951 to 1980 normal (grey band). The dashed line marks the warmest year of the normal: almost every recent year is warmer than normal, and many are warmer than any year in it. Figure: cd's northern BC article.](cd_temperature_years.png)
+![Watershed groups with floodplains published through stac_floodplains_bc.](floodplains_coverage.png)
+
+![Floodplain tree loss 2017–2023 in the Bulkley watershed group, by attributed cause.](floodplains_attribution.png)
 
 ---
 
