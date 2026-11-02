@@ -77,9 +77,9 @@ Done in its own worktree of the repo that holds it, because other sessions share
 - [x] Check each new image's caption for attribution
 - [x] Grep the diff, PR body and comments for home paths, hosts and private repo names
 - [x] `/code-check branch`
-- [ ] Refresh the private preview so the figures can be reviewed away from the computer
-- [ ] Update #50's table
-- [ ] `/planning-archive`, then `/gh-pr-push` with `Fixes #65` and `Fixes #61`
+- [x] Refresh the private preview so the figures can be reviewed away from the computer
+- [x] Update #50's table
+- [x] `/planning-archive`, then `/gh-pr-push` with `Fixes #65` and `Fixes #61`
 
 Also during the work: a Plan agent reviews this plan in the background once the baseline is committed, and its findings are folded in as they arrive.
 
@@ -93,8 +93,8 @@ Also during the work: a Plan agent reviews this plan in the background once the 
 
 - [x] Hugo build passes (this site has no test suite)
 - [x] `/code-check` clean, once over the branch
-- [ ] PWF checkboxes match landed work
-- [ ] `/planning-archive` on completion
+- [x] PWF checkboxes match landed work
+- [x] `/planning-archive` on completion
 
 **How each change is proved:** copy by the trace in `findings.md`, figures by viewing each at desktop and phone width, sizes by measurement, links by HTTP status, map reproducibility by re-running each script and comparing the output.
 
