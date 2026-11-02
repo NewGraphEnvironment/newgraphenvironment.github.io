@@ -1,0 +1,37 @@
+# Code check, round 2, #65
+
+Reviewed at `86232ae`. Sibling tools read from their origin/main after a fetch on 2026-11-01. No map script was run.
+
+## Checklist read
+
+- `code-check-python.md`: in full (under 40,000 bytes; no Python in the diff).
+- `code-check.md`: the prose of every H3 under `## Mechanisms`. Also "A link to a repo-hosted artifact must be *tracked*, not merely present", "Documentation Staleness" and "An assertion that matches an interpolated value cannot see the claim around it".
+- `code-check-r.md`: "`on.exit()` at a script's top level never fires", "Regenerated binaries churn git even when nothing changed", "`sprintf("%g", x)` writes `Inf` and `NA` into SQL as bare words, which Postgres reads as column names", "`ifelse()` with an all-NA test returns a logical vector, whatever `yes` and `no` are", "A scalar helper called from `glue()` or `mutate()` recycles instead of erroring", "`match()` treats NA as a matchable VALUE, so two unknowns join to each other", "Inside a dplyr verb, a column named like a local variable wins", "Rscript reads a script as it runs, so never edit a script while a run of it is in flight", "Postgres row order is never fixed unless the query fixes it, so a pick, a float sum and a presence check can each depend on it" (these last two in part). The others not read.
+- `code-check-spatial.md`: "A name is not a key: `GNIS_NAME` matches features all over BC", "FWA main flow is not edge type 1000 alone", "`terra::rast()` on a SpatRaster returns an empty template, not a copy", "A raster's drawn footprint is its valid data, not its extent", "bcdata: `filter()` translates the calls inside it, so build strings, value lists and transforms before the query", "The BC WFS caps an un-paged `GetFeature` at 10,000 features and still answers HTTP 200", "`terra::cells(r, lines, touches = FALSE)` gives each line's own cells, so a shared cell can belong to both", "A GDAL failure partway through `sf::st_read()` returns the rows read so far, with only a warning", "`terra::plot()` and `plotRGB()` draw at most 500,000 cells, so a large raster's thin features break up", "bcdata returns a column whose values are all missing as character, not numeric", "terra integer rasters: `rasterize(filename =)` writes the background as 0, and `project()` keeps NoData as data", "sf: `st_intersection()` / `st_difference()` return a GEOMETRYCOLLECTION that QGIS will not draw", "`geom_sf(data = NULL)` draws nothing, silently", "`sf::st_read()` promotes a mixed POLYGON/MULTIPOLYGON layer to all-MULTIPOLYGON", "`st_union()` fails after `st_transform()` of a source mixing XY and XYZ rings". The others not read.
+- `code-check-shell.md`: none; the diff has no shell.
+
+## Findings
+
+- **[severity: fragile]** content/project/open_source_software/index.md:52 — "Every result records how it was made, so anyone can check it, rerun it and build on it." goes further than knowledge's own account, on both "every" and "anyone".
+  - **What the trace rests on:** `findings.md` traces this to the post's opening, where the sentence appears word for word, plus `knw_build_record()` and `knw_run_ledger()`. The post is prose by the same author, so it restates the claim and does not support it.
+  - **"Every":** the two functions cover less. `knw_build_record()` states its scope as what "a grade or a comparison reads" from the database, checked by two numbered scripts. `knw_run_ledger()` names the ledger a set of tuning tables was scored on. Neither covers the page's other named results, the reports and the literature.
+  - **"Anyone can ... rerun it":** knowledge's README says the opposite for part of the chain. Many build scripts read a PostgreSQL Freshwater Atlas and link's province-wide run, and others "need other databases, tools and credentials, among them a bcfishpass database, a synced Zotero library and Web API key, Ollama, AWS credentials and Python". Its public-data paragraph covers the FDIS extract and the visit tables only.
+  - **Why it matters:** this is the section's closing claim, in present tense, on a page whose rule is "Each claim keeps the qualifier its source states" and where the reader may be a funder. The owner's rule cuts weaknesses, so the remedy is a narrower strength, not a caveat: name what is recorded and who can read it, such as the tuning results, the settings and the run they came from. That wording is a suggestion and has not been checked against the code. This is the owner's call, because the post carries the same sentence.
+  - **Rule:** code-check.md "A guard's scope, escape hatches, and remedies"
+
+## Checked, no finding
+
+- **Round 1 fixes:**
+  - **Link legend:** `lab_barrier` and the drawn legend agree ("Remediated, or none mapped"), and the three labels line up with the three colours. The script's comment on REMEDIATED matches the case order in `lnk_pipeline_mapping_code()`. `grepl("DAM", code)` cannot match REMEDIATED or MODELLED.
+  - **Bulkley header:** it names the PostgreSQL read and the catalogue read, and both are cached as it says.
+  - **Fresh `normalizePath`:** it runs after the `file.exists()` check and before `setwd()`. The vignette's chunks read only through `system.file()`, so knitr running them from the vignette's directory changes nothing. `fig.path = "figure/"` and the chunk label give the path in the header. The setup chunk does not set `dpi`, so 150 holds: 8.5 x 10 in gives the 1275 x 1500 image.
+- **Link caption:** `dam_dnstr_ind` is the next downstream anthropogenic barrier, which explains why orange reaches exist when the W.A.C. Bennett Dam sits below the whole group. link's README caption and run logs support the Williston sentence, and "is or may be a barrier" fits ASSESSED and MODELLED.
+- **Not raised:**
+  - `findings.md` counts 3 segments with no barrier token under "none mapped". If those are `SPAWN` or `REAR` alone, token 1 is not gated on access, so a natural barrier lies below them. Three segments cannot be seen at this scale.
+  - "Fish can reach" is link's README wording for reaches with crossings or dams below.
+- **Flooded map:** the recipe paints `all_ff06`, then `all_ff04`, then `all_ff02`, with `update = TRUE`, so navy is the narrowest scenario. It fills the Creston flats and orange and teal show only what the wider ones add, as the post's map does.
+- **Other images:** drift, fly, cd, fresh and knowledge each show what their captions say. cd's 2015 to 2025 against 1951 to 1980 matches `kootenay_lake_vignette_data.R`. All JPEGs are 4:4:4, and all new images are within the width and size limits.
+- **Knowledge script:** it matches the post's `segments_of()`, `cells_of()` and `map_cells()`. The palette matches `R/compare_map.R`, and `knw_floodplain_ha()` uses the same `fl_valley_join()` join. `rast(valleys)` is meant as an empty template.
+- **Other copy:** the rest of knowledge's section traces to its README and DESCRIPTION. flooded's join sentence traces to its README and `fl_valley_join()`. The captions for drift and fly match their READMEs, with the site's spelling.
+- **Links:** the knowledge site, its source, both articles and the post each answered 200. The heading hook keeps the anchor. Nothing in `content/`, `layouts/`, `static/` or `config.toml` references a deleted image.
+- **Public repo:** a grep of the diff and commit messages for home paths, hosts, tunnels and private names found nothing. A strings scan of the changed map images found no local paths. I read `planning/active/` and found no client or private repo names.

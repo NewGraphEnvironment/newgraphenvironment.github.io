@@ -7,7 +7,7 @@ weight: 3
 
 Our analytical tools, data, and methods are publicly available on GitHub. We work in the open wherever transparency improves science. The tools are built and extended through our partner programs, so each project strengthens the tools the next one uses.
 
-The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is.
+The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is. For how the pieces fit together, from fish evidence to the floodplain, see [Habitat rules, tested and carried onto the floodplain](https://www.newgraphenvironment.com/new_graphiti/posts/2026-11-01-habitat-rules-tested/).
 
 ## Where is the habitat, and what's keeping fish from it?
 
@@ -15,23 +15,18 @@ For restoration planning, the first questions are where each species' habitat is
 
 <img src="/img/hex/link.png" alt="link" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### link — habitat potential, species by species
+### link and fresh — habitat potential, species by species
 
-Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and tested against where fish have actually been found. It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
+Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and [tested against where fish have actually been found](#knowledge--testing-the-rules-against-the-evidence). It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
 
-- [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
+link runs on our stream network engine, fresh, which places surveys on streams, walks the network and applies the habitat rules. It works on BC's Freshwater Atlas through [fwapg](https://smnorris.github.io/fwapg/), which loads the Atlas into a spatial database.
 
-![Bull trout habitat potential and access across the Parsnip watershed group.](link_bull_trout.png)
+- link: [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
+- fresh: [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
 
-<img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+<img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="display: block; width: 60px; margin: 0 0 1rem 0;">
 
-### fresh — the stream network engine
-
-Our stream network engine, fresh, does the work underneath. It breaks the network at barriers and rates each stretch of stream as spawning or rearing habitat, lakes and wetlands included, from its gradient and its size or flow. It runs on BC's Freshwater Atlas, building on [fwapg](https://smnorris.github.io/fwapg/), which loads the Atlas into a spatial database.
-
-- [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
-
-![Modelled coho spawning and rearing habitat across a sub-basin, with falls and coho observations.](fresh_subbasin.png)
+![Chinook habitat potential and access on the Bulkley River, Telkwa to Houston. Orange reaches sit above a road or rail crossing that is or may be a barrier, and purple reaches above a documented dam. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bulkley.jpg)
 
 <img src="/img/hex/wet.png" alt="wet" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -45,6 +40,16 @@ The flow can feed the habitat rules. At gauging stations, our climate analysis t
 
 ![Which source each stream segment's published flow draws on.](wet_discharge_source.png)
 
+<img src="/img/hex/knowledge.png" alt="knowledge" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+
+### knowledge — testing the rules against the evidence
+
+Our evidence tool, knowledge, tests habitat rules against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's rules from the fish records where they allow, checking each on parts of the province it was not chosen from. Its results record how they were made, so they can be checked, rerun and built on.
+
+- [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
+
+![Chinook rearing on the Bulkley River, Telkwa to Houston, comparing link's existing rule with the rule tuned in knowledge. The habitat on each stream is carried onto the floodplain beside it by flooded (below). Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
+
 ---
 
 ## Where is the floodplain, what did it look like before, and what has changed?
@@ -55,11 +60,11 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
+Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. It can assign each part of a floodplain to the streams it belongs to, so habitat joins it by position and a new habitat rule does not redraw the ground. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
-![Floodplain scenarios from flooded, from the active channel margin to the valley bottom.](flooded_scenarios.png)
+![One floodplain in three modelled scenarios from narrow to wide on the Kootenay River at Creston: active channel margin, functional floodplain and valley bottom. Basemap: Esri World Topographic Map and World Shaded Relief.](flooded_scenarios.jpg)
 
 <img src="/img/hex/drift.png" alt="drift" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -69,29 +74,7 @@ Our land-cover change tool, drift, measures how the land inside a floodplain cha
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 
-![Land cover inside a floodplain classified for 2017, 2020 and 2023.](drift_classified.png)
-
-### Floodplain change catalogue
-
-Brings link, flooded and drift together for whole watershed groups: the floodplain of each group's whole stream network, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
-
-**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
-
-- [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
-
-![Watershed groups with published floodplains.](floodplains_coverage.png)
-
-![Floodplain tree loss 2017–2023 in the Bulkley watershed group, by attributed cause.](floodplains_attribution.png)
-
-<img src="/img/hex/fly.png" alt="fly" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
-
-### fly — historic airphotos
-
-Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads their thumbnails and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
-
-- [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
-
-![Historic airphoto footprints selected to cover a site with the fewest photos.](fly_priority.png)
+![Where the mapped land-cover class changed between 2017 and 2023 on a reach of the Neexdzii Kwah. Land cover: Esri / Impact Observatory. Imagery: Esri World Imagery.](drift_change.jpg)
 
 <img src="/img/hex/cd.png" alt="cd" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -101,7 +84,29 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-![Temperature departure, 2015 to 2025 against 1951 to 1980, around Castlegar, Nelson and Creston.](cd_temperature_departure.png)
+![Each year's average temperature in the Bulkley, Nechako and Parsnip watershed groups since 1950. Orange bars are years warmer than the 1951 to 1980 average (normal), and blue bars are years cooler. The dashed line is the warmest year of the normal, and many recent years are warmer still. Figure: cd's northern BC article.](cd_temperature_years.png)
+
+<img src="/img/hex/fly.png" alt="fly" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
+
+### fly — historic airphotos
+
+Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads their thumbnails and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+
+- [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
+
+![The upper Bulkley River (Neexdzii Kwah) near Houston, BC, in 1971 and 1981, placed on the map by fly. Each photo sits on its own estimated footprint, so features line up approximately.](fly_history.jpg)
+
+### Floodplain change catalogue
+
+Brings link, flooded and drift together for whole watershed groups: the floodplain of each group's whole stream network, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
+
+**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
+
+- [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
+
+![Watershed groups with floodplains published through stac_floodplains_bc.](floodplains_coverage.png)
+
+![Floodplain tree loss 2017–2023 in the Bulkley watershed group, by attributed cause.](floodplains_attribution.png)
 
 ---
 
@@ -117,13 +122,13 @@ LidarBC elevation tiles across the province, searchable by place and date: bare 
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
-![Canopy height from LidarBC point clouds, Maxan Creek.](lidar_canopy.png)
+![The valley floor of Maxan Creek and the Bulkley River at the west end of Bulkley Lake, from LidarBC's bare-earth elevation model, coloured by height above the nearest stream bed. Old channels and meander scars cross the floodplain. Figure: stac_pointcloud_bc.](lidar_maxan.jpg)
 
 <img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### Drone imagery
 
-Drone imagery from our programs, catalogued by region, watershed and year, with the time each flight was flown where the imagery records it. The photographs are stitched with OpenDroneMap into orthomosaics and, for nearly all flights, surface and terrain models, and each item records the stream and watershed group and, where the flight is at a crossing, the crossing; repeat flights of one site carry a label that tells them apart. Where provincial lidar covers a flight and the fit could be made, the item also records how far the drone's GPS placed it from the lidar ground and the correction that brings it onto the lidar; the imagery itself is published as captured. It can be found by place and date from R or QGIS, or opened in the viewer. Imagery flown before works are built is the baseline later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
+Drone imagery from our programs, stitched with OpenDroneMap into orthomosaics and, for nearly all flights, elevation models. Each flight is catalogued by place, stream and date, so it can be found from R, Python or QGIS, or opened in our purpose-built viewer. Imagery flown before works are built is the baseline later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
