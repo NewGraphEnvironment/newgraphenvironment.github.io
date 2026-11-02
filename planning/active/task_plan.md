@@ -56,8 +56,8 @@ Decided by me (mechanism; say at approval if any should change):
 
 ## Phase 2: site data
 
-- [ ] `data/showcase.json` rendered from the registry branch, live
-- [ ] `data/showcase_site.yaml`: `steps:` habitat / floodplain / now / field, each an ordered list of repos as linked today; `catalogues:` the table's order; `supporting:` cred and new_graphiti; `ruled_out:` the word list
+- [x] `data/showcase.json` rendered from the registry branch, live
+- [x] `data/showcase_site.yaml`: `steps:` habitat / floodplain / now / field, each an ordered list of repos as linked today; `catalogues:` the table's order; `supporting:` cred and new_graphiti; `ruled_out:` the word list
 
 ## Phase 3: How It Works from the data
 

@@ -1,0 +1,165 @@
+{
+  "note": "Generated; edit the source registry, not this file.",
+  "generated": "2026-11-02",
+  "rows": [
+    {
+      "repo": "link",
+      "name": "link",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Build, compare and test fish habitat and access models, every fish habitat definition editable",
+      "homepage": "http://www.newgraphenvironment.com/link",
+      "source": "https://github.com/NewGraphEnvironment/link"
+    },
+    {
+      "repo": "fresh",
+      "name": "fresh",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Splits streams at barriers, classifies habitat by species, traces what's upstream",
+      "homepage": "https://newgraphenvironment.com/fresh/",
+      "source": "https://github.com/NewGraphEnvironment/fresh"
+    },
+    {
+      "repo": "wet",
+      "name": "wet",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Typical flow in nearly every stream, tested against gauges; station flow and temperature",
+      "homepage": "https://www.newgraphenvironment.com/wet/",
+      "source": "https://github.com/NewGraphEnvironment/wet"
+    },
+    {
+      "repo": "flooded",
+      "name": "flooded",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Maps floodplains from terrain: the valley floor a river can spread across",
+      "homepage": "http://www.newgraphenvironment.com/flooded",
+      "source": "https://github.com/NewGraphEnvironment/flooded"
+    },
+    {
+      "repo": "drift",
+      "name": "drift",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Maps what changed in floodplain land cover, where and when, from free satellite data",
+      "homepage": "https://www.newgraphenvironment.com/drift/",
+      "source": "https://github.com/NewGraphEnvironment/drift"
+    },
+    {
+      "repo": "fly",
+      "name": "fly",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Finds the historic airphotos covering a site and puts them on the map",
+      "homepage": "http://www.newgraphenvironment.com/fly",
+      "source": "https://github.com/NewGraphEnvironment/fly"
+    },
+    {
+      "repo": "cd",
+      "name": "cd",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "How far any BC watershed's climate has shifted from your chosen baseline",
+      "homepage": "http://www.newgraphenvironment.com/cd",
+      "source": "https://github.com/NewGraphEnvironment/cd"
+    },
+    {
+      "repo": "knowledge",
+      "name": "knowledge",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Tests fish habitat definitions against what is known about where fish live, and tunes them from the fish records",
+      "homepage": "http://www.newgraphenvironment.com/knowledge",
+      "source": "https://github.com/NewGraphEnvironment/knowledge"
+    },
+    {
+      "repo": "floodplains",
+      "name": "floodplains",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Runs the floodplain and land-cover-change models, one watershed group at a time",
+      "homepage": "https://www.newgraphenvironment.com/floodplains/",
+      "source": "https://github.com/NewGraphEnvironment/floodplains"
+    },
+    {
+      "repo": "stacs",
+      "name": "stacs",
+      "kind": "tool",
+      "status": "active",
+      "tagline": "Registers STAC catalogues into pgstac and proves they arrived",
+      "homepage": "https://www.newgraphenvironment.com/stacs/",
+      "source": "https://github.com/NewGraphEnvironment/stacs"
+    },
+    {
+      "repo": "stac_elevation_bc",
+      "name": "Elevation",
+      "kind": "data",
+      "status": "active",
+      "tagline": "LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly",
+      "homepage": "https://www.newgraphenvironment.com/stac_elevation_bc/",
+      "source": "https://github.com/NewGraphEnvironment/stac_elevation_bc",
+      "collection": "stac-elevation-bc",
+      "start": "2011-09-14",
+      "end": "2025-06-05"
+    },
+    {
+      "repo": "stac_pointcloud_bc",
+      "name": "Point clouds",
+      "kind": "data",
+      "status": "active",
+      "tagline": "LidarBC point cloud files (an index, not a copy); province-wide",
+      "homepage": "https://www.newgraphenvironment.com/stac_pointcloud_bc/",
+      "source": "https://github.com/NewGraphEnvironment/stac_pointcloud_bc",
+      "collection": "stac-pointcloud-bc",
+      "start": "2012-01-01",
+      "end": "2026-05-06"
+    },
+    {
+      "repo": "stac_airphoto_bc",
+      "name": "Airphotos",
+      "kind": "data",
+      "status": "active",
+      "tagline": "Historic aerial photograph thumbnails, georeferenced; selected watersheds",
+      "homepage": "https://www.newgraphenvironment.com/stac_airphoto_bc",
+      "source": "https://github.com/NewGraphEnvironment/stac_airphoto_bc",
+      "collection": "stac-airphoto-bc",
+      "start": "1967-07-11",
+      "end": "2019-09-18"
+    },
+    {
+      "repo": "stac_uav_bc",
+      "name": "Drone",
+      "kind": "data",
+      "status": "active",
+      "tagline": "Drone imagery from our programs; by region, watershed group and year",
+      "homepage": "http://www.newgraphenvironment.com/stac_uav_bc",
+      "source": "https://github.com/NewGraphEnvironment/stac_uav_bc",
+      "collection": "stac-imagery-uav-bc",
+      "start": "2020-09-04",
+      "end": "2026-09-23"
+    },
+    {
+      "repo": "stac_floodplains_bc",
+      "name": "Floodplains",
+      "kind": "data",
+      "status": "active",
+      "tagline": "Floodplains and land-cover change, a screen for where to look; by watershed group",
+      "homepage": "https://www.newgraphenvironment.com/stac_floodplains_bc/",
+      "source": "https://github.com/NewGraphEnvironment/stac_floodplains_bc",
+      "collection": "stac-floodplains-bc",
+      "start": "2017-01-01",
+      "end": "2023-12-31"
+    },
+    {
+      "repo": "water-temp-bc",
+      "name": "Hydrometric stations",
+      "kind": "data",
+      "status": "dormant",
+      "tagline": "Water temperature, discharge and level from BC hydrometric stations",
+      "homepage": "https://newgraphenvironment.com/water-temp-bc/",
+      "source": "https://github.com/NewGraphEnvironment/water-temp-bc"
+    }
+  ]
+}
