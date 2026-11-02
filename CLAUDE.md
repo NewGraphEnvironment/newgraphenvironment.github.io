@@ -54,7 +54,7 @@ These override the hugo-apero theme defaults. Changes here affect the site witho
 
 ## Images
 
-Images live alongside `index.md` in page bundle directories (not in `static/`). Hugo-apero uses the `featured*` filename pattern for grid thumbnails and `og:image`, so a bundle holds exactly one `featured.*`. Logos are in `static/img/`; the hero and contact backdrop is `static/img/snowshoe-1600.jpg`, the share card `static/img/share-1200x630.jpg`, the landing drone node `static/img/uav_node-200.jpg`. Every markdown image carries alt text, which the render hook shows as the caption. Keep images near the size they are shown (the widest column is ~700 px; 1400–1600 px covers 2x) and under about 750 KB; maps with text go to JPEG with 4:4:4 chroma (`subsampling=0` in Pillow) or stay PNG. Field photos with burned-in GPS stamps are cropped before use.
+Images live alongside `index.md` in page bundle directories (not in `static/`). Hugo-apero uses the `featured*` filename pattern for grid thumbnails and `og:image`, so a bundle holds exactly one `featured.*`. The Open Source tile is wet's flow map cut square; the restoration tile is a 900 px copy of `knowledge_bulkley.jpg` with a "Basemap: Esri" credit drawn in, so redo it whenever that map is redrawn. Logos are in `static/img/`; the hero and contact backdrop is `static/img/snowshoe-1600.jpg`, the share card `static/img/share-1200x630.jpg`, the landing drone node `static/img/uav_node-200.jpg`. Every markdown image carries alt text, which the render hook shows as the caption. Keep images near the size they are shown (the widest column is ~700 px; 1400–1600 px covers 2x) and under about 750 KB; maps with text go to JPEG with 4:4:4 chroma (`subsampling=0` in Pillow) or stay PNG. Field photos with burned-in GPS stamps are cropped before use.
 
 ## Previewing changes
 
@@ -70,7 +70,7 @@ Images live alongside `index.md` in page bundle directories (not in `static/`). 
 
 ## Figure scripts
 
-`scripts/figure_*.R` draw the Open Source page's new maps with the habitat rules post's recipe (`figure_helpers.R`). Each script's header says what it reads. Full-size output goes outside `content/`, and a recompressed copy goes in the page bundle.
+`scripts/figure_*.R` draw the Open Source page's new maps with the habitat rules post's recipe (`figure_helpers.R`). Each script's header says what it reads. Full-size output goes outside `content/`, and a recompressed copy goes in the page bundle. A map whose window runs past its data's watershed groups fades the rest with `outside_groups()` and `fade()`, in every map that shares the window, with no caption sentence (owner, #65).
 
 ## Archive
 
