@@ -80,7 +80,7 @@ Decided by me (mechanism; say at approval if any should change):
 - [x] `CLAUDE.md`: Site Structure (generated links and table; the overlay; the registry as the catalogues' sentences), a "Showcase data" section (refresh command, when to run it, and that a wording change to a catalogue goes to the registry, not the page), Layout Overrides (partial, shortcode)
 - [x] Edit the #64 body to the design as built (two-way watch, overlay placement, one sentence from the registry, years only, checks in the Hugo build, dates as of refresh)
 - [x] `/code-check branch` (three rounds, ended on an enumeration; review-round1–3.md)
-- [ ] `/planning-archive`; `/gh-pr-push`, saying the registry PR merges first (described, not linked: that repo is private)
+- [x] `/planning-archive`; `/gh-pr-push` (the PR follows the archive commit), saying the registry PR merges first (described, not linked: that repo is private)
 
 ## Owed at the end (reported, done after merge)
 
