@@ -52,7 +52,7 @@ Decided by me (mechanism; say at approval if any should change):
 - [x] Rewrite the seven taglines above in `ecosystem.yml`
 - [x] `ecosystem_registry.py render --format json`: the same rows and filters as the markdown (`--public`, `--showcase`); one object per row (repo, name, kind, status, tagline, homepage, source; for catalogues collection, start, end, items, bbox) plus `generated`; the same no-cite check on the serialised text, the same exit 2 on an unreadable source
 - [x] Offline cases in `test_ecosystem_registry.sh`: fixtures render byte-identical JSON; `--showcase` keeps only marked public rows; a marked name in a field is refused; a mutated copy of each new guard goes red
-- [ ] `check` and the suite pass; `/code-check`; open the registry PR (merge on the owner's word)
+- [x] `check` and the suite pass; `/code-check`; open the registry PR (merge on the owner's word)
 
 ## Phase 2: site data
 
@@ -79,7 +79,8 @@ Decided by me (mechanism; say at approval if any should change):
 
 - [x] `CLAUDE.md`: Site Structure (generated links and table; the overlay; the registry as the catalogues' sentences), a "Showcase data" section (refresh command, when to run it, and that a wording change to a catalogue goes to the registry, not the page), Layout Overrides (partial, shortcode)
 - [x] Edit the #64 body to the design as built (two-way watch, overlay placement, one sentence from the registry, years only, checks in the Hugo build, dates as of refresh)
-- [ ] `/code-check branch`; `/planning-archive`; `/gh-pr-push`, saying the registry PR merges first (described, not linked: that repo is private)
+- [x] `/code-check branch` (three rounds, ended on an enumeration; review-round1–3.md)
+- [ ] `/planning-archive`; `/gh-pr-push`, saying the registry PR merges first (described, not linked: that repo is private)
 
 ## Owed at the end (reported, done after merge)
 
@@ -87,9 +88,9 @@ Decided by me (mechanism; say at approval if any should change):
 
 ## Validation
 
-- [ ] Tests pass (registry suite; Hugo builds clean)
-- [ ] `/code-check` clean (once over the branch with `/code-check branch`)
-- [ ] PWF checkboxes match landed work
+- [x] Tests pass (registry suite; Hugo builds clean)
+- [x] `/code-check` clean (once over the branch with `/code-check branch`)
+- [x] PWF checkboxes match landed work
 - [ ] `/planning-archive` on completion
 
 How each change is proved:
