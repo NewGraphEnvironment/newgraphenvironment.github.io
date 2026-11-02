@@ -49,7 +49,7 @@ The flow can feed the habitat rules. At gauging stations, our climate analysis t
 
 ### knowledge — testing the rules against the evidence
 
-Our fisheries evidence tool, knowledge, gathers what is known about where fish live in BC's streams: the Province's fish sampling records, past reports, and values from the published literature with their quotes. From the fish records it tunes, where they allow, the thresholds link's habitat rules use, such as the smallest stream and the steepest gradient for juvenile chinook rearing. It scores candidate rules on watershed groups held out of the choice and compares each with link's current rule, stream by stream.
+Our evidence tool, knowledge, tests habitat rules against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's rules from the fish records where they allow, checking each on parts of the province it was not chosen from. Every result records how it was made, so anyone can check it, rerun it and build on it.
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 
@@ -67,7 +67,7 @@ Our floodplain mapping tool, flooded, maps the floodplain from elevation data an
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
-![One floodplain under three flood factors on the Kootenay River at Creston: active channel margin, functional floodplain and valley bottom. Each is a modelled scenario, nested inside the next. Basemap: Esri World Topographic Map and World Shaded Relief.](flooded_scenarios.jpg)
+![One floodplain in three modelled scenarios from narrow to wide on the Kootenay River at Creston: active channel margin, functional floodplain and valley bottom. Basemap: Esri World Topographic Map and World Shaded Relief.](flooded_scenarios.jpg)
 
 <img src="/img/hex/drift.png" alt="drift" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 

@@ -72,6 +72,10 @@ Done in its own worktree of the repo that holds it, because other sessions share
 - [ ] Check every new link answers 200
 - [ ] Measure every new image against the limits
 - [ ] Grep the page for analyst titles, `ff=`, and words the copy rules bar
+- [ ] View every figure on the page, kept ones included, against the done-when list
+- [ ] Check the knowledge anchor in the built HTML
+- [ ] Check each new image's caption for attribution
+- [ ] Grep the diff, PR body and comments for home paths, hosts and private repo names
 - [ ] `/code-check branch`
 - [ ] Refresh the private preview so the figures can be reviewed away from the computer
 - [ ] Update #50's table
