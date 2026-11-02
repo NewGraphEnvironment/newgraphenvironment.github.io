@@ -49,7 +49,7 @@ The flow can feed the habitat rules. At gauging stations, our climate analysis t
 
 ### knowledge — testing the rules against the evidence
 
-Our evidence tool, knowledge, tests habitat rules against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's rules from the fish records where they allow, checking each on parts of the province it was not chosen from. Every result records how it was made, so anyone can check it, rerun it and build on it.
+Our evidence tool, knowledge, tests habitat rules against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's rules from the fish records where they allow, checking each on parts of the province it was not chosen from. Its results record how they were made, so they can be checked, rerun and built on.
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 

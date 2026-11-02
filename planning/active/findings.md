@@ -103,7 +103,7 @@ The owner set the rule for this copy: essence and strengths, big picture, no det
 | knowledge: fish sampling records, past reports, literature | DESCRIPTION; `knw_fdis_*`, `knw_pscis_reports()`, `knw_literature_read()` |
 | knowledge: tunes link's rules from the fish records where they allow | README; `knw_tune_run()` |
 | knowledge: checked on parts of the province it was not chosen from | `vignettes/habitat_thresholds.Rmd` opening; `knw_tune_score()` |
-| knowledge: every result records how it was made | The post's opening; `knw_build_record()`, `knw_run_ledger()` |
+| knowledge: results record how they were made ("every" and "anyone" dropped in code-check round 2) | The post's opening; `knw_build_record()`, `knw_run_ledger()` |
 | flooded: can assign each part of a floodplain to its streams; habitat joins by position | flooded README ("can be assigned to the streams it belongs to"); `fl_valley_join()`; the post |
 
 The issue's closing sentence on thin evidence and its "compares each with the current rule" were both cut. The first by the owner. The second was also wrong: only the recommended rule reaches the stream-by-stream comparison (`knowledge:R/compare_rules.R`, plan review B1).
