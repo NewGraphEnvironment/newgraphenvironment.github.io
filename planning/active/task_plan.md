@@ -67,9 +67,9 @@ Decided by me (mechanism; say at approval if any should change):
 
 ## Phase 4: the Open Source table from the data
 
-- [ ] `layouts/shortcodes/catalogue-table.html`: Catalogue (bold repo name linked to source) | What it catalogues (the tagline) | Years (`2017–2023`, one year when start and end agree); markup as goldmark gives today
-- [ ] Replace the markdown table in `content/project/open_source_software/index.md`
-- [ ] Build errors: a showcase catalogue missing from `catalogues:` or the reverse; a showcase tagline matching a ruled-out word; a repo the page's prose links (`newgraphenvironment.com/<repo>/`, `github.com/NewGraphEnvironment/<repo>`) that is neither a showcase row nor `supporting:`; a showcase row the prose never links
+- [x] `layouts/shortcodes/catalogue-table.html`: Catalogue (bold repo name linked to source) | What it catalogues (the tagline) | Years (`2017–2023`, one year when start and end agree); markup as goldmark gives today
+- [x] Replace the markdown table in `content/project/open_source_software/index.md`
+- [x] Build errors: a showcase catalogue missing from `catalogues:` or the reverse; a showcase tagline matching a ruled-out word; a repo the page's prose links (`newgraphenvironment.com/<repo>/`, `github.com/NewGraphEnvironment/<repo>`) that is neither a showcase row nor `supporting:`; a showcase row the prose never links
 
 ## Phase 5: prove each guard fires
 

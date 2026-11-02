@@ -152,13 +152,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 - [stacs documentation](https://www.newgraphenvironment.com/stacs/) | [Source](https://github.com/NewGraphEnvironment/stacs)
 
-| Catalogue | What it catalogues |
-|-----------|---------------|
-| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly |
-| [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
-| [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group |
-| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |
-| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Drone imagery from our programs; by region, watershed group and year |
+{{% catalogue-table %}}
 
 ---
 
