@@ -21,7 +21,7 @@ Our habitat connectivity model, link, maps the intrinsic habitat potential of st
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
-![Bull trout habitat potential and access across the Parsnip watershed group. Purple reaches drain to Williston Reservoir behind the W.A.C. Bennett Dam, and orange reaches sit above a road or rail crossing that is or may be a barrier. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bull_trout.jpg)
+![Chinook habitat potential and access on the Bulkley River, Telkwa to Houston. Orange reaches sit above a road or rail crossing that is or may be a barrier, and purple reaches above a dam. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bulkley.jpg)
 
 <img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -127,7 +127,7 @@ LidarBC elevation tiles across the province, searchable by place and date: bare 
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
-![Canopy height from LidarBC point clouds, Maxan Creek.](lidar_canopy.png)
+![The valley floor of Maxan Creek and the Bulkley River at the west end of Bulkley Lake, from LidarBC's bare-earth elevation model, coloured by height above the nearest stream bed. Old channels and meander scars cross the floodplain. Figure: stac_pointcloud_bc.](lidar_maxan.jpg)
 
 <img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
