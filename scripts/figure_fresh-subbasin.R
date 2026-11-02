@@ -9,6 +9,7 @@
 rmd <- Sys.getenv("FRESH_RMD")
 dir_out <- Sys.getenv("OUT_DIR", ".")
 if (!file.exists(rmd) || !dir.exists(dir_out)) stop("set FRESH_RMD and OUT_DIR", call. = FALSE)
+rmd <- normalizePath(rmd)
 setwd(dir_out)
 params <- list(update_gis = FALSE)
 knitr::opts_chunk$set(dpi = 150)

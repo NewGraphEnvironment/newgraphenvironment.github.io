@@ -4,7 +4,9 @@
 #
 # CAT_DIR holds the `floodplain` asset of stac-floodplains-bc items bulk_all_ff04 and morr_all_ff04, saved as
 # <group>_floodplain.gpkg. KNOWLEDGE_GPKG is data/compare/gpkg in a knowledge checkout, which knowledge
-# builds and does not commit. The join is the one knowledge::knw_floodplain_ha() uses. Run from the repo root:
+# builds and does not commit. The join is the one knowledge::knw_floodplain_ha() uses. A first run reads the
+# river name from a PostgreSQL fwapg through the standard PG* variables, and towns from the BC Data Catalogue;
+# both are cached in CACHE_DIR. Run from the repo root:
 #
 #   CACHE_DIR=<dir> OUT_DIR=<dir> CAT_DIR=<dir> KNOWLEDGE_GPKG=<dir> Rscript scripts/figure_knowledge-bulkley.R
 

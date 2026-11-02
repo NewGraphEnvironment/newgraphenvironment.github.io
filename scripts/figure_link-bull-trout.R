@@ -1,7 +1,7 @@
 # Bull trout habitat and access in the Parsnip River watershed group, from link's stored results:
 # content/project/open_source_software/link_bull_trout.jpg, after recompression.
 #
-# mapping_code_bt is {ACCESS|SPAWN|REAR};{DAM|MODELLED|ASSESSED|REMEDIATED}[;INTERMITTENT], from
+# mapping_code_bt is {ACCESS|SPAWN|REAR};{NONE|DAM|MODELLED|ASSESSED|REMEDIATED}[;INTERMITTENT], from
 # link::lnk_mapping_code(). The table schema is an argument because it is where link's run persisted.
 # Run from the repo root, with the standard PG* variables set:
 #
@@ -28,7 +28,8 @@ s$habitat <- ifelse(grepl("^SPAWN", s$code), "spawn", ifelse(grepl("^REAR", s$co
 s$barrier <- ifelse(grepl("DAM", s$code), "dam",
                     ifelse(grepl("MODELLED|ASSESSED", s$code), "crossing", "none"))
 col_barrier <- c(none = "#1b6ca8", crossing = "#d95f02", dam = "#7b3f98")
-lab_barrier <- c("No barrier", "Road or rail crossing", "Dam")
+# REMEDIATED outranks the other tokens in link, so these reaches can still have another barrier below
+lab_barrier <- c("Remediated, or none mapped", "Road or rail crossing", "Dam")
 lwd_habitat <- c(access = 0.25, rear = 0.8, spawn = 1.5)
 lab_habitat <- c("Fish can reach, not habitat", "Rearing", "Spawning")
 

@@ -112,6 +112,7 @@ The issue's closing sentence on thin evidence and its "compares each with the cu
 
 - **Link data:** the map reads `mapping_code_bt` from link's persisted schema, not knowledge's GeoPackages as planned, because it carries barrier type and exclusive habitat classes. The tokens are from `link::lnk_mapping_code()`.
 - **Wrong turn kept:** the first link draw took 7 min and showed streams outside the Parsnip. `id_segment` repeats between watershed groups, so a join on it alone returned 3,674,504 rows for 97,534 segments. Joining on the group code too gives 97,534 rows, and the draw takes about 30 s.
+- **Remediated reaches:** the first legend said "No barrier" for 19 segments (16 REMEDIATED, 3 with no barrier token). REMEDIATED outranks the other tokens in link, so another barrier can sit below them. Legend now reads "Remediated, or none mapped" (code-check round 1).
 - **Reproducing:** comparison is visual, because tiles can change. tmap 4.2.0.9000, gq 0.16.1, flooded 0.8.4.
 
 ## Errors Encountered
