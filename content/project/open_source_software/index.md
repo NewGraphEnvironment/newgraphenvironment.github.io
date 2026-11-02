@@ -15,7 +15,7 @@ For restoration planning, the first questions are where each species' habitat is
 
 <img src="/img/hex/link.png" alt="link" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### link — habitat potential, species by species
+### link and fresh — habitat potential, species by species
 
 Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The habitat rules can be tuned for each species and [tested against where fish have actually been found](#knowledge--testing-the-rules-against-the-evidence). It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
 
@@ -48,7 +48,7 @@ Our evidence tool, knowledge, tests habitat rules against what we know about whe
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
 
-![Chinook rearing on the Bulkley River, Telkwa to Houston, under link's existing rule and the rule tuned in knowledge, carried onto the modelled floodplain beside each stream. Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
+![Chinook rearing on the Bulkley River, Telkwa to Houston, comparing link's existing rule with the rule tuned in knowledge. The habitat on each stream is carried onto the floodplain beside it by flooded (below). Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
 
 ---
 
