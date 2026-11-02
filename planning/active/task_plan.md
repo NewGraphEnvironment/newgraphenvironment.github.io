@@ -77,8 +77,8 @@ Decided by me (mechanism; say at approval if any should change):
 
 ## Phase 6: docs and PR
 
-- [ ] `CLAUDE.md`: Site Structure (generated links and table; the overlay; the registry as the catalogues' sentences), a "Showcase data" section (refresh command, when to run it, and that a wording change to a catalogue goes to the registry, not the page), Layout Overrides (partial, shortcode)
-- [ ] Edit the #64 body to the design as built (two-way watch, overlay placement, one sentence from the registry, years only, checks in the Hugo build, dates as of refresh)
+- [x] `CLAUDE.md`: Site Structure (generated links and table; the overlay; the registry as the catalogues' sentences), a "Showcase data" section (refresh command, when to run it, and that a wording change to a catalogue goes to the registry, not the page), Layout Overrides (partial, shortcode)
+- [x] Edit the #64 body to the design as built (two-way watch, overlay placement, one sentence from the registry, years only, checks in the Hugo build, dates as of refresh)
 - [ ] `/code-check branch`; `/planning-archive`; `/gh-pr-push`, saying the registry PR merges first (described, not linked: that repo is private)
 
 ## Owed at the end (reported, done after merge)
