@@ -21,7 +21,7 @@ Our habitat connectivity model, link, maps the intrinsic habitat potential of st
 
 - [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 
-![Bull trout habitat potential and access across the Parsnip watershed group.](link_bull_trout.png)
+![Bull trout habitat potential and access across the Parsnip watershed group. Purple reaches drain to Williston Reservoir behind the W.A.C. Bennett Dam, and orange reaches sit above a road or rail crossing that is or may be a barrier. Basemap: Esri World Topographic Map and World Shaded Relief.](link_bull_trout.jpg)
 
 <img src="/img/hex/fresh.png" alt="fresh" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -52,6 +52,8 @@ The flow can feed the habitat rules. At gauging stations, our climate analysis t
 Our evidence tool, knowledge, tests habitat rules against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's rules from the fish records where they allow, checking each on parts of the province it was not chosen from. Every result records how it was made, so anyone can check it, rerun it and build on it.
 
 - [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a rule is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
+
+![Chinook rearing on the Bulkley River, Telkwa to Houston, under link's existing rule and the rule tuned in knowledge, joined to the floodplain. Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
 
 ---
 

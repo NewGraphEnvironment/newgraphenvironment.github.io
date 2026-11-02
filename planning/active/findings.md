@@ -108,6 +108,12 @@ The owner set the rule for this copy: essence and strengths, big picture, no det
 
 The issue's closing sentence on thin evidence and its "compares each with the current rule" were both cut. The first by the owner. The second was also wrong: only the recommended rule reaches the stream-by-stream comparison (`knowledge:R/compare_rules.R`, plan review B1).
 
+## Maps (2026-11-01)
+
+- **Link data:** the map reads `mapping_code_bt` from link's persisted schema, not knowledge's GeoPackages as planned, because it carries barrier type and exclusive habitat classes. The tokens are from `link::lnk_mapping_code()`.
+- **Wrong turn kept:** the first link draw took 7 min and showed streams outside the Parsnip. `id_segment` repeats between watershed groups, so a join on it alone returned 3,674,504 rows for 97,534 segments. Joining on the group code too gives 97,534 rows, and the draw takes about 30 s.
+- **Reproducing:** comparison is visual, because tiles can change. tmap 4.2.0.9000, gq 0.16.1, flooded 0.8.4.
+
 ## Errors Encountered
 
 | Error | Resolution |

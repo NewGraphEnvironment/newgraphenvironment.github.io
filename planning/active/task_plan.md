@@ -43,12 +43,12 @@ Image handling, for every new image: at most 1600 px, under 750 KB, JPEG with 4:
 
 Recipe: `posts/2026-11-01-habitat-rules-tested/scripts/habitat-rules_fig-build.R` in new_graphiti (tmap, BC Albers, `gq::gq_basemap_tiles()` and `gq_basemap_blend()`, towns, rivers, scale bar, white legend box, no in-plot title). Scripts go in a new `scripts/` directory, read their inputs from environment variables as the post's do, and carry no machine paths, because the repo is public. `R/` is not used, since blogdown runs what is there.
 
-- [ ] Check that `scripts/` is neither ignored nor published by the Hugo build
-- [ ] `scripts/figure_link-bull-trout.R`: draws the Parsnip map with a plain legend. Try the whole group first and move to a named window if streams do not read at column width
-- [ ] Confirm what `accessible`, `rearing_stored` and `spawning_stored` mean in knowledge's build before the legend names them
-- [ ] Replace `link_bull_trout.png`, keeping the caption true to what the map shows
-- [ ] `scripts/figure_knowledge-bulkley.R`: one comparison map of chinook rearing on the Bulkley, Telkwa to Houston, joined to the published floodplain with `flooded::fl_valley_join()`
-- [ ] Caption says which is existing and which is tuned, plus the basemap
+- [x] Check that `scripts/` is neither ignored nor published by the Hugo build
+- [x] `scripts/figure_link-bull-trout.R`: draws the Parsnip map with a plain legend. Try the whole group first and move to a named window if streams do not read at column width
+- [x] Confirm what `accessible`, `rearing_stored` and `spawning_stored` mean in knowledge's build before the legend names them
+- [x] Replace `link_bull_trout.png`, keeping the caption true to what the map shows
+- [x] `scripts/figure_knowledge-bulkley.R`: one comparison map of chinook rearing on the Bulkley, Telkwa to Houston, joined to the published floodplain with `flooded::fl_valley_join()`
+- [x] Caption says which is existing and which is tuned, plus the basemap
 
 ## Phase 4: re-exports
 
