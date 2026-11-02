@@ -52,9 +52,9 @@ Recipe: `posts/2026-11-01-habitat-rules-tested/scripts/habitat-rules_fig-build.R
 
 ## Phase 4: re-exports
 
-- [ ] cd: re-export the temperature departure map with no in-plot title and no grey blocks, starting from `data-raw/readme_figure.R` and the `kootenay-lake` vignette. If it does not reproduce, use `readme-kotl-tmean.png` and record why
-- [ ] fresh: re-export the subbasin map at 1400 px from `vignettes/subbasin-query.Rmd.orig` if it reproduces. If not, keep it and record why
-- [ ] Add the "not yet attributed" label and the config file subtitle to floodplains#136 as a comment
+- [x] cd: re-export the temperature departure map with no in-plot title and no grey blocks, starting from `data-raw/readme_figure.R` and the `kootenay-lake` vignette. If it does not reproduce, use `readme-kotl-tmean.png` and record why
+- [x] fresh: re-export the subbasin map at 1400 px from `vignettes/subbasin-query.Rmd.orig` if it reproduces. If not, keep it and record why
+- [x] Add the "not yet attributed" label and the config file subtitle to floodplains#136 as a comment
 
 ## Phase 5: asset registry
 

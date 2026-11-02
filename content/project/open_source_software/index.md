@@ -111,7 +111,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-![Temperature departure, 2015 to 2025 against 1951 to 1980, around Castlegar, Nelson and Creston.](cd_temperature_departure.png)
+![Temperature departure, 2015 to 2025 against 1951 to 1980, across the Kootenay Lake region.](cd_temperature_departure.png)
 
 ---
 
