@@ -1,5 +1,5 @@
-# Chinook rearing on the Bulkley River, Telkwa to Houston, under link's existing rule and the rule tuned
-# in knowledge, joined to the published floodplain:
+# Chinook rearing on the Bulkley River, Telkwa to Houston, under link's existing habitat definition and the
+# one tuned in knowledge, joined to the published floodplain:
 # content/project/open_source_software/knowledge_bulkley.jpg, after recompression.
 #
 # CAT_DIR holds the `floodplain` asset of stac-floodplains-bc items bulk_all_ff04 and morr_all_ff04, saved as
@@ -16,9 +16,10 @@ dir_cat <- Sys.getenv("CAT_DIR")
 dir_gpkg <- Sys.getenv("KNOWLEDGE_GPKG")
 if (!dir.exists(dir_cat) || !dir.exists(dir_gpkg)) stop("set CAT_DIR and KNOWLEDGE_GPKG", call. = FALSE)
 
-# knowledge's comparison palette (R/compare_map.R), with plum for the floodplain no rule claims
+# knowledge's comparison palette (R/compare_map.R), with plum for the floodplain no habitat definition claims
 col_rule <- c(both = "#1b6ca8", current = "#d95f02", tested = "#1b9e77", neither = "#7b3f98")
-lab_rule <- c("Habitat under both rules", "Existing rule only", "Tuned rule only", "Floodplain, neither rule")
+lab_rule <- c("Habitat under both definitions", "Existing habitat definition only", "Tuned habitat definition only",
+              "Floodplain, neither habitat definition")
 see <- function(cols) paste0(cols, ifelse(names(cols) == "neither", "73", "B3"))
 
 w <- win_of(945000, 1061000, 20000)
