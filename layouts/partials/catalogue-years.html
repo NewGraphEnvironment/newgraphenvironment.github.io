@@ -1,0 +1,9 @@
+{{- /* A catalogue row's years as the table shows them: "2017–2023", one year when start and end agree,
+       "2020 onward" for an open end. Shared by the table and the check that reads it back (#64). */ -}}
+{{- $from := substr .start 0 4 -}}
+{{- $years := printf "%s onward" $from -}}
+{{- with .end -}}
+  {{- $to := substr . 0 4 -}}
+  {{- $years = cond (eq $from $to) $from (printf "%s–%s" $from $to) -}}
+{{- end -}}
+{{- return $years -}}

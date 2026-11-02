@@ -8,12 +8,6 @@
 {{ range site.Data.showcase_site.catalogues -}}
 {{- with where site.Data.showcase.rows "repo" . -}}
 {{- $row := index . 0 -}}
-{{- $from := substr $row.start 0 4 -}}
-{{- $years := printf "%s onward" $from -}}
-{{- with $row.end -}}
-  {{- $to := substr . 0 4 -}}
-  {{- $years = cond (eq $from $to) $from (printf "%s–%s" $from $to) -}}
-{{- end -}}
-| [**{{ $row.repo }}**]({{ $row.source }}) | {{ replace $row.tagline "|" "\\|" }} ({{ $years }}) |
+| [**{{ $row.repo }}**]({{ $row.source }}) | {{ replace $row.tagline "|" "\\|" }} ({{ partial "catalogue-years.html" $row }}) |
 {{ end -}}
 {{- end -}}

@@ -45,9 +45,9 @@ The site names its tools and catalogues in hand-written copy. What the How It Wo
 | stac_elevation_bc | "The ground under the trees, and the canopy on it where a surface model was flown, found by place" | "LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly" | two sentences for one thing |
 | stac_floodplains_bc | "Mapped floodplains, and where trees were lost and grew back: a screen for where to look" | "Floodplains and land-cover change, 2017–2023; by watershed group" | two sentences for one thing |
 
-## Guards proved (Phase 5, re-run after code-check rounds 1 and 2, 2026-11-02)
+## Guards proved (Phase 5, re-run after code-check rounds 1–3, 2026-11-02)
 
-Each mutation applied to a copy of the site (`rsync` without .git/public), built with blogdown's Hugo 0.121.1. Exit 1 is a failed build. Rows from `rename_step` on are the gaps code-check rounds 1 and 2 found; each built with exit 0 before its fix. `comment_floodplain_div` stayed at exit 0 after the first round-2 fix: an action inside an HTML comment still runs (so the partial recorded its links) but draws nothing, so the check also reads the layout's source with comments stripped. It fails under `blogdown::build_site()` as well.
+Each mutation applied to a copy of the site (`rsync` without .git/public), built with blogdown's Hugo 0.121.1. Exit 1 is a failed build. Rows from `rename_step` on are the gaps code-check rounds 1–3 found; each built with exit 0 before its fix. The two `_ok` rows are legitimate edits that must still build. `comment_floodplain_div` stayed at exit 0 after the first round-2 fix: an action inside an HTML comment still runs (so the partial recorded its links) but draws nothing, so the check also reads the layout's source with comments stripped. It fails under `blogdown::build_site()` as well.
 
 | Mutation | Exit | Message |
 |---|---|---|
@@ -81,6 +81,12 @@ Each mutation applied to a copy of the site (`rsync` without .git/public), built
 | fence_table | 1 | showcase: the Open Source page's catalogue table shows []; data/showcase_site.yaml's catalogues are [stac_elevation_bc stac_pointcloud_bc st |
 | single_quote_html | 1 | showcase: the Open Source page links gq, which is neither a showcase row nor in supporting in data/showcase_site.yaml |
 | root_relative | 1 | showcase: the Open Source page links gq, which is neither a showcase row nor in supporting in data/showcase_site.yaml |
+| hand_table | 1 | showcase: the Open Source page's table says "assembled in minutes by our rules" for stac_elevation_bc; the registry's sentence renders as "L |
+| fm_links | 1 | showcase: the Open Source page links gq, which is neither a showcase row nor in supporting in data/showcase_site.yaml |
+| homepage_root | 1 | showcase: cd's homepage "https://www.newgraphenvironment.com/" is not its own site (the path should start /cd/); set it on GitHub, then refr |
+| homepage_other | 1 | showcase: fly's homepage "https://www.newgraphenvironment.com/flooded/" is not its own site (the path should start /fly/); set it on GitHub, |
+| static_link_ok | 0 | builds, as it should |
+| dict_reorder_ok | 0 | builds, as it should |
 
 ## Phone width (2026-11-02)
 

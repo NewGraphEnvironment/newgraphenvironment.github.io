@@ -49,7 +49,7 @@ These override the hugo-apero theme defaults. Changes here affect the site witho
 | `layouts/project/single.html` | Theme single page | No "Posted on" details block, no prev/next links |
 | `layouts/_default/_markup/render-heading.html` | Theme heading hook | Plain headings, no anchor icon |
 | `layouts/partials/showcase-check.html` | — (ours) | Called from the home page: fails the build when the registry's showcase rows and the site disagree (see Showcase data) |
-| `layouts/partials/showcase-links.html`, `showcase-href.html` | — (ours) | A How It Works step's tool links, href normalised to `https://www.newgraphenvironment.com/<path>/` |
+| `layouts/partials/showcase-links.html`, `showcase-href.html`, `catalogue-years.html` | — (ours) | A How It Works step's tool links (each recorded as drawn), href normalised to `https://www.newgraphenvironment.com/<repo>/`; a catalogue's years, shared by the table and the check |
 | `layouts/shortcodes/catalogue-table.html` | — (ours) | The Open Source page's catalogue table, emitted as markdown so goldmark gives the theme's table markup |
 | `layouts/_default/_markup/render-image.html` | Hugo default | Markdown images become lazy-loaded `<figure>`s with the alt text as caption; needs `wrapStandAloneImageWithinParagraph = false` (set in `config.toml`) |
 
@@ -77,7 +77,7 @@ The asset registry (`ecosystem.yml`, in a private repo) says which tools and cat
 
 - `data/showcase.json` is the registry's public showcase rows, rendered by the registry's own script; never edit it by hand. It carries each row's tagline, homepage and source, and a catalogue's start and end dates, with no counts or extent.
 - `data/showcase_site.yaml` is ours: each row's How It Works step and order, the catalogue table's order, the Open Source page's supporting links (cred, the blog), and the words the site rules out.
-- `layouts/partials/showcase-check.html` fails every build, local and deploy, when they disagree: a showcase row with no step, a placed repo that is not a showcase row, a catalogue missing from the table or the reverse, a showcase tagline using a ruled-out word, a homepage off our domain, or an Open Source page whose links and the showcase rows differ. The message says what to change.
+- `layouts/partials/showcase-check.html` fails every build, local and deploy, when they disagree, reading what the pages render where a template can: a showcase row How It Works does not draw (or draws twice), a step key other than the four or a tool under `field`, a table row whose catalogue or sentence differs from the registry's, a showcase tagline using a ruled-out word, a homepage that is not the tool's own page on our domain, or an Open Source page (content or `links:` buttons) whose links and the showcase rows plus `supporting` differ. The message says what to change. It cannot see CSS or script hiding something.
 - **A wording change to a catalogue goes to the registry's tagline, not the page.** So does a change of the site's words: when a word is retired here (as "rules" was), add it to `ruled_out` and the build names every tagline still using it.
 
 Refresh the data file whenever the registry's showcase rows or taglines change, and before a site PR that relies on them. From a checkout of the registry's repo on its default branch, with `gh` signed in as the org account (the render reads every repo's visibility and no-cite mark, so it takes about a minute):

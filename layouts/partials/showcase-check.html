@@ -50,7 +50,7 @@
        template cannot read its own output: so the layout's source, comments stripped, must hold each call */ -}}
 {{- $layout := replaceRE `(?s)<!--.*?-->` "" (os.ReadFile "layouts/index.html") -}}
 {{- range slice "habitat" "floodplain" "now" -}}
-  {{- if not (findRE (printf `showcase-links\.html"\s+\(dict\s+"page"\s+\.\s+"step"\s+"%s"\)` .) $layout 1) -}}
+  {{- if not (findRE (printf `showcase-links\.html"[^)]*"step"\s+"%s"` .) $layout 1) -}}
     {{- errorf "showcase: layouts/index.html does not draw How It Works step %q outside a comment" . -}}
   {{- end -}}
 {{- end -}}
@@ -93,16 +93,30 @@
 {{- range site.Pages -}}
   {{- with index (split (strings.TrimPrefix "/" .RelPermalink) "/") 0 -}}{{- $own = $own | append (lower .) -}}{{- end -}}
 {{- end -}}
-{{- $own = $own | append "img" "css" "js" "fonts" "webfonts" -}}
+{{- range os.ReadDir "static" -}}{{- $own = $own | append (lower .Name) -}}{{- end -}}
+{{- $own = $own | append "css" "js" "fonts" "webfonts" -}}
 {{- with site.GetPage "/project/open_source_software" -}}
   {{- $html := replaceRE `(?s)<!--.*?-->` "" (string .Content) -}}
+  {{- /* the table, row by row: its repo, and its sentence as the shortcode would render it, so a
+         hand-typed table with other words fails too */ -}}
   {{- $rows := slice -}}
-  {{- range findRESubmatch `(?i)<td>\s*<a href="https://github\.com/NewGraphEnvironment/([^"/]+)"[^>]*>\s*<strong>` $html -}}
-    {{- $rows = $rows | append (index . 1) -}}
+  {{- range findRESubmatch `(?is)<td>\s*<a href="https://github\.com/NewGraphEnvironment/([^"/]+)"[^>]*>\s*<strong>[^<]*</strong>\s*</a>\s*</td>\s*<td>(.*?)</td>` $html -}}
+    {{- $repo := index . 1 -}}
+    {{- $got := trim (index . 2) " \n" -}}
+    {{- $rows = $rows | append $repo -}}
+    {{- with where $show.rows "repo" $repo -}}
+      {{- $row := index . 0 -}}
+      {{- $want := trim (string (markdownify (printf "%s (%s)" $row.tagline (partial "catalogue-years.html" $row)))) " \n" -}}
+      {{- if ne $got $want -}}
+        {{- errorf "showcase: the Open Source page's table says %q for %s; the registry's sentence renders as %q (is the table still {{%% catalogue-table %%}}?)" $got $repo $want -}}
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
   {{- if ne (delimit $rows ",") (delimit $cats ",") -}}
     {{- errorf "showcase: the Open Source page's catalogue table shows %v; data/showcase_site.yaml's catalogues are %v (is {{%% catalogue-table %%}} still called, and not inside a comment or code?)" $rows $cats -}}
   {{- end -}}
+  {{- /* the page also renders front-matter `links:` as buttons, outside .Content */ -}}
+  {{- range .Params.links -}}{{- $html = printf "%s href=%q" $html (.url | default "") -}}{{- end -}}
   {{- $linked := slice -}}
   {{- range findRESubmatch `(?i)href\s*=\s*["']?(?:https?:)?//(?:www\.)?(?:newgraphenvironment\.com/|newgraphenvironment\.github\.io/|github\.com/NewGraphEnvironment/)([a-z0-9_.-]+)` $html -}}
     {{- $linked = $linked | append (lower (strings.TrimSuffix ".git" (index . 1))) -}}

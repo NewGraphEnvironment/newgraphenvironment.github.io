@@ -6,4 +6,8 @@
 {{- if not (in (slice "newgraphenvironment.com" "www.newgraphenvironment.com") $u.Host) -}}
   {{- errorf "showcase: %s's homepage %q is not on newgraphenvironment.com; set it on GitHub, then refresh data/showcase.json" .repo $h -}}
 {{- end -}}
-{{- return printf "https://www.newgraphenvironment.com%s/" (strings.TrimSuffix "/" $u.Path) -}}
+{{- $path := strings.TrimSuffix "/" $u.Path -}}
+{{- if ne (lower (index (split (strings.TrimPrefix "/" $path) "/") 0)) (lower .repo) -}}
+  {{- errorf "showcase: %s's homepage %q is not its own site (the path should start /%s/); set it on GitHub, then refresh data/showcase.json" .repo $h .repo -}}
+{{- end -}}
+{{- return printf "https://www.newgraphenvironment.com%s/" $path -}}
