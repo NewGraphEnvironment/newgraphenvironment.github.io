@@ -5,9 +5,7 @@ layout: single
 weight: 3
 ---
 
-Our analytical tools, data, and methods are publicly available on GitHub. We work in the open wherever transparency improves science. The tools are built and extended through our partner programs, so each project strengthens the tools the next one uses.
-
-The tools answer the same four questions as the home page, and this page takes them one tool at a time: what each does, what it builds on, and where the code is. For how the pieces fit together, from fish evidence to the floodplain, see [Habitat rules, tested and carried onto the floodplain](https://www.newgraphenvironment.com/new_graphiti/posts/2026-11-01-habitat-rules-tested/).
+Our analytical tools, data, and methods are publicly available on GitHub. We work in the open wherever transparency improves science. The tools are built and extended through our partner programs, so each project strengthens the tools the next one uses. For how the pieces fit together, from fish evidence to the floodplain, see [Habitat rules, tested and carried onto the floodplain](https://www.newgraphenvironment.com/new_graphiti/posts/2026-11-01-habitat-rules-tested/).
 
 ## Where is the habitat, and what's keeping fish from it?
 
@@ -60,7 +58,7 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from elevation data and the stream network, in scenarios from narrow to wide. It can assign each part of a floodplain to the streams it belongs to, so habitat joins it by position and a new fish habitat definition does not redraw the ground. We run it twice, on coarse elevation data and on lidar. Where the coarse run maps floodplain and the lidar run does not, the difference points to the roads, rail grades, dykes and fill that may cut a river off from its floodplain. That shows **where to look, and what to check before acting**: fill, dykes, crossings.
+Our floodplain mapping tool, flooded, maps the floodplain from an elevation model and the stream network. It runs on any elevation model, from the 30 m national model that covers all of Canada to 1 m provincial lidar, and its settings can be varied to map anything from the active channel out to the whole valley bottom, so each run is a scenario to compare with the others. The finer the elevation model, the more closely the mapped floodplain follows the ground as it is now. On lidar it shows where road and rail grades, dykes and fill disconnect parts of a floodplain from its river, and the marks other development has left on it: wetlands drained, streams ditched into straight channels, ground regraded for roads, farms and towns. Each part of a floodplain can be assigned to the streams it belongs to, so habitat joins it by position and a new fish habitat definition does not redraw the ground. That shows **where to look, and what to check before acting**: disconnection, drainage, channelisation and fill.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -90,7 +88,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads their thumbnails and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. The province's catalogue gives each photo only an approximate centre point, not the ground it covers. fly works out that ground from the photo's scale and the aircraft's height above the land, orients each photo by its flight line and film roll, masks the scanned border, and places the province's free thumbnails on their footprints as georeferenced images. The photos show a valley as it was decades ago, often before roads, farming and logging changed it: a reference for what to restore toward, and the history that conservation and restoration planning draws on to tell a place's story. Where full scans are worth ordering, fly picks the fewest photos that cover a site. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
@@ -152,13 +150,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 - [stacs documentation](https://www.newgraphenvironment.com/stacs/) | [Source](https://github.com/NewGraphEnvironment/stacs)
 
-| Catalogue | What it catalogues |
-|-----------|---------------|
-| [**stac_elevation_bc**](https://github.com/NewGraphEnvironment/stac_elevation_bc) | LiDAR elevation models, bare earth and, where published, surface; province-wide, new tiles added monthly |
-| [**stac_pointcloud_bc**](https://github.com/NewGraphEnvironment/stac_pointcloud_bc) | LidarBC point cloud files (an index, not a copy); province-wide |
-| [**stac_floodplains_bc**](https://github.com/NewGraphEnvironment/stac_floodplains_bc) | Floodplains and land-cover change, 2017–2023; by watershed group |
-| [**stac_airphoto_bc**](https://github.com/NewGraphEnvironment/stac_airphoto_bc) | Historic aerial photograph thumbnails (1967–2019), georeferenced; selected watersheds |
-| [**stac_uav_bc**](https://github.com/NewGraphEnvironment/stac_uav_bc) | Drone imagery from our programs; by region, watershed group and year |
+{{% catalogue-table %}}
 
 ---
 

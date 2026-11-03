@@ -1,0 +1,41 @@
+# Where the registry's showcase rows sit on the site, and the words the site rules out (#64).
+#
+# data/showcase.json says WHAT is shown: the registry's public showcase rows, rendered by the
+# registry's own script (see CLAUDE.md, "Showcase data"). This file says WHERE: each row's How
+# It Works step and its order there, and the order of the Open Source page's catalogue table.
+# The build fails (layouts/partials/showcase-check.html) when the two disagree, so a row marked
+# for showcase cannot go missing from the site, and the site cannot link a tool the registry
+# has not marked.
+
+# How It Works, one list per question, in link order. "field" names no tools by decision: the
+# field capability is described, never named.
+steps:
+  habitat: [link, fresh, wet, knowledge]
+  floodplain: [flooded, drift, fly, stac_airphoto_bc, cd, floodplains]
+  now: [stac_elevation_bc, stac_uav_bc, stac_pointcloud_bc, water-temp-bc, stac_floodplains_bc, stacs]
+  field: []
+
+# The Open Source page's catalogue table, in row order. Every showcase row of kind data with a
+# collection is here; its sentence is the registry's tagline, so a wording change goes to the
+# registry, not the page.
+catalogues: [stac_elevation_bc, stac_pointcloud_bc, stac_floodplains_bc, stac_airphoto_bc, stac_uav_bc]
+
+# Repos the Open Source page links that are not showcase rows: a supporting mention and the blog.
+supporting: [cred, new_graphiti]
+
+# Matched, case-insensitively and as whole words, against every showcase tagline. The registry
+# is held to the site's words (CLAUDE.md, Working Conventions): "fish habitat definitions",
+# never "rules"; reproducible, never fast or cheap; and the phrases kept out of public copy.
+ruled_out:
+  - rules?
+  - fast
+  - cheap
+  - minutes?
+  - modelling core
+  - network-joinable attributes
+  - config bundles
+  - bidirectional deduplication
+  - provenance tracking
+  - end-to-end pipelines
+  - DEM-agnostic
+  - AOI

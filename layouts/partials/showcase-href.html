@@ -1,0 +1,13 @@
+{{- /* A showcase row's published site, as the site links it: https://www.newgraphenvironment.com/<path>/.
+       GitHub's homepage fields vary in scheme, www. and trailing slash (#64); another host is an error,
+       not a link rewritten to ours. */ -}}
+{{- $h := .homepage | default "" -}}
+{{- $u := urls.Parse $h -}}
+{{- if not (in (slice "newgraphenvironment.com" "www.newgraphenvironment.com") $u.Host) -}}
+  {{- errorf "showcase: %s's homepage %q is not on newgraphenvironment.com; set it on GitHub, then refresh data/showcase.json" .repo $h -}}
+{{- end -}}
+{{- $path := strings.TrimSuffix "/" $u.Path -}}
+{{- if ne (lower (index (split (strings.TrimPrefix "/" $path) "/") 0)) (lower .repo) -}}
+  {{- errorf "showcase: %s's homepage %q is not its own site (the path should start /%s/); set it on GitHub, then refresh data/showcase.json" .repo $h .repo -}}
+{{- end -}}
+{{- return printf "https://www.newgraphenvironment.com%s/" $path -}}

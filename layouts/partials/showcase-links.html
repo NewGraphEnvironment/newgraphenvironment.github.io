@@ -1,0 +1,14 @@
+{{- /* One How It Works step's tool links, in data/showcase_site.yaml's order (#64). Each repo drawn
+       is recorded on the page, so showcase-check.html compares what the home page shows, not the YAML. */ -}}
+{{- $page := .page -}}
+{{- $step := .step -}}
+{{- if not (isset site.Data.showcase_site.steps $step) -}}
+  {{- errorf "showcase: the home page asks for How It Works step %q, which data/showcase_site.yaml does not have" $step -}}
+{{- end -}}
+{{- range index site.Data.showcase_site.steps $step -}}
+  {{- with where site.Data.showcase.rows "repo" . -}}
+    {{- $row := index . 0 -}}
+    {{- $page.Scratch.Add "showcaseDrawn" (slice $row.repo) -}}
+    <a href="{{ partial "showcase-href.html" $row }}" target="_blank" rel="noopener">{{ $row.repo }}</a>
+  {{- end -}}
+{{- end -}}

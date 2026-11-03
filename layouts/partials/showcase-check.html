@@ -1,0 +1,141 @@
+{{- /* The registry and the site, checked against each other on every build (#64). Each mismatch
+       fails the build with a line saying what to change. Called once, from the home page, after How
+       It Works, so it can compare what that section drew. Each claim is checked against what the
+       built pages show, not against the files that should produce it. */ -}}
+{{- $show := site.Data.showcase -}}
+{{- $site := site.Data.showcase_site -}}
+{{- if not (and $show $show.rows) -}}{{- errorf "showcase: data/showcase.json is missing or has no rows" -}}{{- end -}}
+{{- if not (and $site $site.steps) -}}{{- errorf "showcase: data/showcase_site.yaml is missing or has no steps" -}}{{- end -}}
+
+{{- /* every row carries what the site reads from it */ -}}
+{{- $repos := slice -}}
+{{- $catalogues := slice -}}
+{{- range $show.rows -}}
+  {{- $repos = $repos | append .repo -}}
+  {{- $row := . -}}
+  {{- range slice "repo" "kind" "tagline" "homepage" "source" -}}
+    {{- if not (index $row .) -}}{{- errorf "showcase: a row of data/showcase.json (%s) has no %s" ($row.repo | default "unnamed") . -}}{{- end -}}
+  {{- end -}}
+  {{- if and (eq .kind "data") .collection -}}
+    {{- $catalogues = $catalogues | append .repo -}}
+    {{- if not .start -}}{{- errorf "showcase: catalogue %s has no start date in data/showcase.json" .repo -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* registry -> site: every showcase row has a place; site -> registry: every placed repo is a showcase row.
+       `complement A B` is what B holds that A does not. */ -}}
+{{- /* the steps are exactly the four the home page draws, and only the three it gives links to
+       hold any: a renamed key or a tool under `field` would render nothing and pass */ -}}
+{{- $keys := slice -}}
+{{- range $k, $_ := $site.steps -}}{{- $keys = $keys | append $k -}}{{- end -}}
+{{- if not (eq (delimit (sort $keys) ",") "field,floodplain,habitat,now") -}}
+  {{- errorf "showcase: steps in data/showcase_site.yaml are %v; they must be exactly habitat, floodplain, now and field, the four the home page draws" (sort $keys) -}}
+{{- end -}}
+{{- with $site.steps.field -}}
+  {{- errorf "showcase: steps.field in data/showcase_site.yaml lists %v; the field step names no tools, so place them under another step" . -}}
+{{- end -}}
+{{- $placed := slice -}}
+{{- range slice "habitat" "floodplain" "now" -}}
+  {{- range index $site.steps . -}}{{- $placed = $placed | append . -}}{{- end -}}
+{{- end -}}
+{{- if ne (len $placed) (len (uniq $placed)) -}}
+  {{- errorf "showcase: a repo is placed twice in steps in data/showcase_site.yaml: %v" $placed -}}
+{{- end -}}
+{{- /* what How It Works drew (showcase-links.html records each link): every showcase row, once */ -}}
+{{- $drawn := .Scratch.Get "showcaseDrawn" | default slice -}}
+{{- range complement $drawn $repos -}}
+  {{- errorf "showcase: %s is marked for showcase but How It Works does not show it; check its step in data/showcase_site.yaml and the showcase-links calls in layouts/index.html" . -}}
+{{- end -}}
+{{- /* an action inside an HTML comment still runs (so it is recorded above) but draws nothing, and a
+       template cannot read its own output: so the layout's source, comments stripped, must hold each call */ -}}
+{{- $layout := replaceRE `(?s)<!--.*?-->` "" (os.ReadFile "layouts/index.html") -}}
+{{- range slice "habitat" "floodplain" "now" -}}
+  {{- if not (findRE (printf `showcase-links\.html"[^)]*"step"\s+"%s"` .) $layout 1) -}}
+    {{- errorf "showcase: layouts/index.html does not draw How It Works step %q outside a comment" . -}}
+  {{- end -}}
+{{- end -}}
+{{- if ne (len $drawn) (len (uniq $drawn)) -}}
+  {{- errorf "showcase: How It Works shows a repo twice: %v" $drawn -}}
+{{- end -}}
+{{- $cats := $site.catalogues | default slice -}}
+{{- if ne (len $cats) (len (uniq $cats)) -}}
+  {{- errorf "showcase: a catalogue is listed twice in catalogues in data/showcase_site.yaml: %v" $cats -}}
+{{- end -}}
+{{- range complement $placed $repos -}}
+  {{- errorf "showcase: %s is marked for showcase but placed in no How It Works step; add it to steps in data/showcase_site.yaml" . -}}
+{{- end -}}
+{{- range complement $repos $placed -}}
+  {{- errorf "showcase: %s is placed in data/showcase_site.yaml but is not a public showcase row in data/showcase.json; mark it in the registry and refresh, or take it out" . -}}
+{{- end -}}
+{{- range complement ($site.catalogues | default slice) $catalogues -}}
+  {{- errorf "showcase: catalogue %s is marked for showcase but missing from catalogues in data/showcase_site.yaml" . -}}
+{{- end -}}
+{{- range complement $catalogues ($site.catalogues | default slice) -}}
+  {{- errorf "showcase: %s is in catalogues in data/showcase_site.yaml but is not a showcase catalogue in data/showcase.json" . -}}
+{{- end -}}
+
+{{- /* the registry is held to the site's words */ -}}
+{{- range $show.rows -}}
+  {{- $row := . -}}
+  {{- range $site.ruled_out -}}
+    {{- if findRE (printf "(?i)\\b%s\\b" .) $row.tagline 1 -}}
+      {{- errorf "showcase: %s's registry tagline %q uses %q, a word the site rules out; reword it in the registry and refresh" $row.repo $row.tagline . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* the Open Source page, as rendered (comments stripped, so a link only in a comment is not
+       counted): its table shows exactly the catalogues, in order, and its links reach exactly the
+       showcase rows and the supporting mentions, by any spelling that resolves to a repo or its
+       site, root-relative included. A first path segment that is one of this site's own pages is
+       not a tool. */ -}}
+{{- $own := slice -}}
+{{- range site.Pages -}}
+  {{- with index (split (strings.TrimPrefix "/" .RelPermalink) "/") 0 -}}{{- $own = $own | append (lower .) -}}{{- end -}}
+{{- end -}}
+{{- range os.ReadDir "static" -}}{{- $own = $own | append (lower .Name) -}}{{- end -}}
+{{- $own = $own | append "css" "js" "fonts" "webfonts" -}}
+{{- with site.GetPage "/project/open_source_software" -}}
+  {{- $html := replaceRE `(?s)<!--.*?-->` "" (string .Content) -}}
+  {{- /* the table, row by row: its repo, and its sentence as the shortcode would render it, so a
+         hand-typed table with other words fails too */ -}}
+  {{- $rows := slice -}}
+  {{- range findRESubmatch `(?is)<td>\s*<a href="https://github\.com/NewGraphEnvironment/([^"/]+)"[^>]*>\s*<strong>[^<]*</strong>\s*</a>\s*</td>\s*<td>(.*?)</td>` $html -}}
+    {{- $repo := index . 1 -}}
+    {{- $got := trim (index . 2) " \n" -}}
+    {{- $rows = $rows | append $repo -}}
+    {{- with where $show.rows "repo" $repo -}}
+      {{- $row := index . 0 -}}
+      {{- $want := trim (string (markdownify (printf "%s (%s)" $row.tagline (partial "catalogue-years.html" $row)))) " \n" -}}
+      {{- if ne $got $want -}}
+        {{- errorf "showcase: the Open Source page's table says %q for %s; the registry's sentence renders as %q (is the table still {{%% catalogue-table %%}}?)" $got $repo $want -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if ne (delimit $rows ",") (delimit $cats ",") -}}
+    {{- errorf "showcase: the Open Source page's catalogue table shows %v; data/showcase_site.yaml's catalogues are %v (is {{%% catalogue-table %%}} still called, and not inside a comment or code?)" $rows $cats -}}
+  {{- end -}}
+  {{- /* the page also renders front-matter `links:` as buttons, outside .Content */ -}}
+  {{- range .Params.links -}}{{- $html = printf "%s href=%q" $html (.url | default "") -}}{{- end -}}
+  {{- $linked := slice -}}
+  {{- range findRESubmatch `(?i)href\s*=\s*["']?(?:https?:)?//(?:www\.)?(?:newgraphenvironment\.com/|newgraphenvironment\.github\.io/|github\.com/NewGraphEnvironment/)([a-z0-9_.-]+)` $html -}}
+    {{- $linked = $linked | append (lower (strings.TrimSuffix ".git" (index . 1))) -}}
+  {{- end -}}
+  {{- range findRESubmatch `(?i)href\s*=\s*["']?/([a-z0-9_.-]+)` $html -}}
+    {{- $seg := lower (index . 1) -}}
+    {{- if not (in $own $seg) -}}{{- $linked = $linked | append $seg -}}{{- end -}}
+  {{- end -}}
+  {{- $linked = uniq $linked -}}
+  {{- $allowed := $repos | append ($site.supporting | default slice) -}}
+  {{- range complement $allowed $linked -}}
+    {{- errorf "showcase: the Open Source page links %s, which is neither a showcase row nor in supporting in data/showcase_site.yaml" . -}}
+  {{- end -}}
+  {{- range complement $linked $repos -}}
+    {{- errorf "showcase: %s is marked for showcase but the Open Source page never links it" . -}}
+  {{- end -}}
+  {{- range complement $linked ($site.supporting | default slice) -}}
+    {{- errorf "showcase: %s is in supporting in data/showcase_site.yaml but the Open Source page no longer links it" . -}}
+  {{- end -}}
+{{- else -}}
+  {{- errorf "showcase: the Open Source page (/project/open_source_software) was not found" -}}
+{{- end -}}
