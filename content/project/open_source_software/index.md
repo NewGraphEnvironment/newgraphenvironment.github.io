@@ -28,13 +28,11 @@ Our habitat connectivity model, link, maps where each species' spawning and rear
 
 ### wet — flow and water temperature
 
-Our stream flow tool, wet, estimates mean annual and monthly flow for almost every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and, where the station logs it, water temperature.
-
-The flow can feed the fish habitat definitions, and it is the baseline against which water use can be weighed. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
+Our stream flow tool, wet, estimates the typical flow of almost every stream in British Columbia, month by month, checked against hydrometric gauges. At the gauges themselves it adds daily flow and, where the station logs it, water temperature. Habitat models use the flow to rate where fish can spawn and rear, it is the baseline against which water use can be weighed, and the station records show how a season compares with normal, which our climate analysis tool, cd (below), reads for any time period, including key fish life stages such as chinook migration and spawning.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
-![Which source each stream segment's published flow draws on.](wet_discharge_source.png)
+![Where each river's flow comes from: most from the Pacific Climate Impacts Consortium's routed model (blue), and wet's own water balance (orange) where that model does not reach. Dots are the hydrometric gauges it is calibrated against.](wet_discharge_source.png)
 
 <img src="/img/hex/knowledge.png" alt="knowledge" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 

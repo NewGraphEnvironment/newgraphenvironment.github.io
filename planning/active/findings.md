@@ -53,6 +53,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 |---|---|---|---|
 | flooded | 176 | 89 | the scenario list and the marks of development left to the README (flooded#101, edited to say so and to drop "quick to run") |
 | fly | 137 | 86 | the processing steps and minimal selection left to the README (fly#108); "roughly" added 2026-11-03 to keep the README's qualifier |
+| wet | 89 | 97 | three beats in one paragraph; why it matters from wet's README; cd named for any time period (owner's wording); caption now credits PCIC and names the gauges |
 | link and fresh | 112 | 101 | two paragraphs to one; what fresh does (placing surveys, walking the network) left to fresh's README (fresh#303); link's README says "rules" (link#456) |
 
 ## Tagline changes (to the registry PR, Phase 3)
@@ -62,6 +63,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | flooded | Maps floodplains from terrain: the valley floor a river can spread across | unchanged | kept by the owner on #64 |
 | fly | Finds the historic airphotos covering a site and puts them on the map | Puts BC's historic airphotos back on the map from free thumbnails | agreed by the owner 2026-11-03 |
 | link, fresh | fit as they are | unchanged | owner 2026-11-03 |
+| wet | Typical flow in nearly every stream, tested against gauges; station flow and temperature | unchanged | owner 2026-11-03 |
 
 ## Per-section record
 
@@ -69,6 +71,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 |---|---|---|---|
 | flooded | 3 | 1 / 2-3 / figure (scenarios) | flooded#101 filed; edited 2026-11-03 for the short site text and "quick to run" |
 | fly | 4 | 1-2 / 3 / 4 (stac_airphoto_bc) and figure | fly#108 filed |
+| wet | 3 | 1-2 / 3 / figure (sources, gauges) | README already meets the standard: no issue |
 | link and fresh | 3 | 1 / 2 / knowledge link, figure; credits to bcfishpass, Simon Norris, fwapg kept | link#456, fresh#303 filed |
 
 ## Broadening the framing (owner, 2026-11-03)

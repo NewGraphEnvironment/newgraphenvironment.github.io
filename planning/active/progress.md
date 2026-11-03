@@ -13,4 +13,11 @@
 - Merged registry PR #656 and site PR #69 with /gh-pr-merge; refreshed data/showcase.json; merged main into this branch
 - link and fresh: one paragraph (112 -> 101 words); README issues link#456, fresh#303; fly "roughly"
 - Filed #71: drift's map redrawn as forest loss and gain
-- Next: wet
+- wet: one paragraph, caption credits PCIC; no README issue, tagline kept
+- Next: knowledge
+
+### Resume
+
+Paste into a fresh session in this repo:
+
+> Resume #70 on branch `70-open-source-page-each-tool-s-essence-wit` (pull first). Read `planning/active/` (task_plan, findings, progress) and CLAUDE.md's "What it gives you, why it matters, where to see it". The pace is one item per turn: for the next unticked Phase 2 item, read its section on the Open Source page, its README and its registry tagline in `data/showcase.json`, then propose together (1) the page wording, (2) a README issue in the tool's repo if the README drifts, (3) a tagline change if it no longer fits. Wait for the owner's yes, then commit with the checkbox, file the issue, record the word counts in findings, and republish the private preview (CLAUDE.md, "Private preview link"; artifact https://claude.ai/artifact/KnmQHtUxTDoSeyfKAW4RUC, publish `scratchpad/preview/index.html` with `files` for the changed pages). Next item: knowledge. Owed: fly's tagline goes in the Phase 3 registry PR; drift's caption follows #71.

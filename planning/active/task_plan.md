@@ -53,7 +53,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - record in `findings.md`: words before and after, sentences, which sentence is each beat, the README verdict (filed with link, or not needed and why), and any tagline change
 
 - [x] link and fresh
-- [ ] wet
+- [x] wet
 - [ ] knowledge
 - [x] flooded (draft in the issue body; flooded#101 is already filed)
 - [ ] drift
