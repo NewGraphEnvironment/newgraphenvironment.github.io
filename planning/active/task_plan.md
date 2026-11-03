@@ -27,8 +27,7 @@ The other READMEs read cleanly at a glance. Each one gets a proper read when its
 ## Decided at the gate
 
 - **Branch point (decided 2026-11-03):** the merges need your go and had none, so the branch was cut from the #64 branch (the alternative below). `git merge origin/main` once PR #69 lands.
-- **Merge order** (recommended): merge registry PR #656, refresh `data/showcase.json` from the registry's main, merge site PR #69, then cut this branch from main. Each of these needs your go.
-  - *Alternative:* cut this branch from the #64 branch now and merge main in once #69 lands.
+- **Merges** (owner's go needed): registry PR #656, refresh `data/showcase.json`, site PR #69; then `git merge origin/main` here. PR #69's copy is frozen meanwhile: any change to it is made here instead.
 - **Pace** (owner, 2026-11-03): one item per turn. For each item I propose three things together:
   - the page wording;
   - the README's drift, as an issue in the tool's repo;
@@ -46,6 +45,13 @@ The other READMEs read cleanly at a glance. Each one gets a proper read when its
 
 For each item: propose the wording, the README issue and any tagline change. Then agree, commit the page edit (with its checkbox), file the issue, and note any tagline change in `findings.md`.
 
+Per-item checklist (from the plan review, `review-plan.md`):
+- keep the item's Documentation/Source line; dropping the blog or cred link means editing `supporting` in `data/showcase_site.yaml` in the same commit; report proof links go through /project/ pages or `supporting`
+- keep-list (CLAUDE.md copy rules): credit to bcfishpass and Simon Norris, and fwapg; screening caveats for drift and floodplains; "from our programs" and the provincial drone specialist; "new tiles added monthly"; "Four of the five carry a CC BY 4.0 licence"; the Poisson and Hillcrest credit; "publicly available"; each claim keeps its source's qualifier
+- grep the `ruled_out` list over the changed prose (page and home page); a linked title keeps its own words
+- a retitled heading: fix every `#anchor` and "(below)" that points at it, and check the rendered IDs
+- record in `findings.md`: words before and after, sentences, which sentence is each beat, the README verdict (filed with link, or not needed and why), and any tagline change
+
 - [ ] link and fresh
 - [ ] wet
 - [ ] knowledge
@@ -54,22 +60,25 @@ For each item: propose the wording, the README issue and any tagline change. The
 - [ ] cd
 - [x] fly (draft in the issue body; fly#108 is already filed)
 - [ ] Floodplain change catalogue (floodplains)
-- [ ] The section openers: page intro, the three question intros, the "ground and water now" opener
+- [ ] The section openers: the front-matter `excerpt`, page intro, the three question intros, the "ground and water now" opener
 - [ ] BC lidar (stac_elevation_bc, stac_pointcloud_bc)
 - [ ] Drone imagery (stac_uav_bc)
 - [ ] water-temp-bc
-- [ ] Open catalogues and stacs, and the catalogue table's sentences
+- [ ] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
+- [ ] Figure captions, page-wide (cd's runs to four sentences)
 - [ ] Into the field and back, and Dynamic reporting (cred)
-- [ ] Home page How It Works step sentences, checked against the agreed sections
+- [ ] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
 
 ## Phase 3: registry in step
 
-- [ ] One registry PR with the agreed tagline changes; `check` and its suite pass; merge on your word
-- [ ] Refresh `data/showcase.json`; build
+- [ ] One registry PR, cut after #656 merges, with the agreed tagline changes; `check` and its suite pass
+- [ ] Dry run before asking to merge: render the PR branch's JSON into the scratchpad, build the site against it (the site's word list is not the registry's)
+- [ ] Merge on your word; refresh `data/showcase.json` from main; place any new showcase row in `data/showcase_site.yaml`; build; tick the catalogue table's sentences
 
 ## Phase 4: close
 
-- [ ] Edit #70's body to what was agreed, with every README issue linked
+- [ ] Edit #70's body to what was agreed, with every README issue linked (from findings.md's per-item verdicts)
+- [ ] Update CLAUDE.md's Site Structure line for the Open Source page
 - [ ] `/code-check branch`; `/planning-archive`; `/gh-pr-push`
 
 ## Owed at the end (reported, done after merge)

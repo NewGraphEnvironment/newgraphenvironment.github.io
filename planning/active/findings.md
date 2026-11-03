@@ -53,3 +53,17 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 |---|---|---|---|
 | flooded | 176 | 89 | the scenario list and the marks of development left to the README (flooded#101, edited to say so and to drop "quick to run") |
 | fly | 137 | 86 | the processing steps and minimal selection left to the README (fly#108) |
+
+## Tagline changes (to the registry PR, Phase 3)
+
+| Repo | Now | Proposed | Status |
+|---|---|---|---|
+| flooded | Maps floodplains from terrain: the valley floor a river can spread across | unchanged | kept by the owner on #64 |
+| fly | Finds the historic airphotos covering a site and puts them on the map | Puts BC's historic airphotos back on the map from free thumbnails | proposed 2026-11-03, awaiting the owner |
+
+## Per-section record
+
+| Section | Sentences | Beats (give / matter / proof) | README |
+|---|---|---|---|
+| flooded | 3 | 1 / 2-3 / figure (scenarios) | flooded#101 filed; edited 2026-11-03 for the short site text and "quick to run" |
+| fly | 4 | 1-2 / 3 / 4 (stac_airphoto_bc) and figure | fly#108 filed |
