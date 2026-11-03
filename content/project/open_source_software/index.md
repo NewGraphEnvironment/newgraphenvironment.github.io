@@ -88,7 +88,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, finds the fewest historic provincial airphotos that cover a site, downloads their thumbnails and places each on the map by its estimated ground footprint. They show the valley as it was decades ago, an earlier condition to compare today's against. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. The province's catalogue gives each photo only an approximate centre point, not the ground it covers. fly works out that ground from the photo's scale and the aircraft's height above the land, orients each photo by its flight line and film roll, masks the scanned border, and places the province's free thumbnails on their footprints as georeferenced images. The photos show a valley as it was decades ago, often before roads, farming and logging changed it: a reference for what to restore toward, and the history that conservation and restoration planning draws on to tell a place's story. Where full scans are worth ordering, fly picks the fewest photos that cover a site. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
