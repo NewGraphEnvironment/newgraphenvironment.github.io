@@ -49,10 +49,10 @@ For each item: propose the wording, the README issue and any tagline change. The
 - [ ] link and fresh
 - [ ] wet
 - [ ] knowledge
-- [ ] flooded (draft in the issue body; flooded#101 is already filed)
+- [x] flooded (draft in the issue body; flooded#101 is already filed)
 - [ ] drift
 - [ ] cd
-- [ ] fly (draft in the issue body; fly#108 is already filed)
+- [x] fly (draft in the issue body; fly#108 is already filed)
 - [ ] Floodplain change catalogue (floodplains)
 - [ ] The section openers: page intro, the three question intros, the "ground and water now" opener
 - [ ] BC lidar (stac_elevation_bc, stac_pointcloud_bc)

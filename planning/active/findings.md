@@ -46,3 +46,10 @@ Sections: link and fresh, wet, knowledge, flooded, drift, cd, fly, the floodplai
 
 Builds on #64's copy, so it starts from main once PR #69 has merged.
 
+
+## Word counts per section (before -> after)
+
+| Section | Before | After | Note |
+|---|---|---|---|
+| flooded | 176 | 89 | the scenario list and the marks of development left to the README (flooded#101, edited to say so and to drop "quick to run") |
+| fly | 137 | 86 | the processing steps and minimal selection left to the README (fly#108) |

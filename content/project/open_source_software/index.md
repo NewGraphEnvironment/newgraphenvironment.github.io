@@ -58,7 +58,7 @@ The floodplain is where a river stores water, builds side channels and grows the
 
 ### flooded — where the floodplain is
 
-Our floodplain mapping tool, flooded, maps the floodplain from an elevation model and the stream network. It runs on any elevation model, from the 30 m national model that covers all of Canada to 1 m provincial lidar, and its settings can be varied to map anything from the active channel out to the whole valley bottom, so each run is a scenario to compare with the others. The finer the elevation model, the more closely the mapped floodplain follows the ground as it is now. On lidar it shows where road and rail grades, dykes and fill disconnect parts of a floodplain from its river, and the marks other development has left on it: wetlands drained, streams ditched into straight channels, ground regraded for roads, farms and towns. Each part of a floodplain can be assigned to the streams it belongs to, so habitat joins it by position and a new fish habitat definition does not redraw the ground. That shows **where to look, and what to check before acting**: disconnection, drainage, channelisation and fill.
+Our floodplain mapping tool, flooded, maps the floodplain from an elevation model and the stream network, from the active channel out to the whole valley bottom, and carries each stream's habitat onto the floodplain beside it. It runs on anything from the 30 m national model to 1 m lidar, and on lidar it shows where roads, dykes and fill cut parts of a floodplain off from its river, and where wetlands have been drained and streams ditched. That shows **where to look, and what to check before acting**.
 
 - [Documentation](https://www.newgraphenvironment.com/flooded/) | [Source](https://github.com/NewGraphEnvironment/flooded)
 
@@ -88,7 +88,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. The province's catalogue gives each photo only an approximate centre point, not the ground it covers. fly works out that ground from the photo's scale and the aircraft's height above the land, orients each photo by its flight line and film roll, masks the scanned border, and places the province's free thumbnails on their footprints as georeferenced images. The photos show a valley as it was decades ago, often before roads, farming and logging changed it: a reference for what to restore toward, and the history that conservation and restoration planning draws on to tell a place's story. Where full scans are worth ordering, fly picks the fewest photos that cover a site. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. From the province's rough record of where each photo was taken, it works out the ground each one covers and places the free online thumbnails there, showing a valley as it was decades ago, often before roads, farming and logging changed it. That history is a reference for what to restore toward, and part of the story conservation and restoration planning tells. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
