@@ -60,7 +60,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [ ] cd
 - [x] fly (draft in the issue body; fly#108 is already filed)
 - [ ] Floodplain change catalogue (floodplains)
-- [ ] The section openers: the front-matter `excerpt`, page intro, the three question intros, the "ground and water now" opener
+- [x] The section openers: the front-matter `excerpt`, page intro, the three question intros, the "ground and water now" opener
 - [ ] BC lidar (stac_elevation_bc, stac_pointcloud_bc)
 - [ ] Drone imagery (stac_uav_bc)
 - [ ] water-temp-bc
@@ -68,6 +68,8 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [ ] Figure captions, page-wide (cd's runs to four sentences)
 - [ ] Into the field and back, and Dynamic reporting (cred)
 - [ ] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
+
+- [x] Broaden from fish passage to watershed health (owner, 2026-11-03): the excerpt, the first two question headings and openers, the "ground and water now" opener, lidar and drone sentences, wet's water-use baseline, field forms led by restoration; home page step 1 and the Open Source card to match
 
 ## Phase 3: registry in step
 

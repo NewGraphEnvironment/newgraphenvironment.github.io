@@ -1,15 +1,15 @@
 ---
 title: "Open Source Software"
-excerpt: "Open tools and data for planning, carrying out and monitoring restoration in British Columbia: where the habitat is and what blocks it, where the floodplain is and how it has changed, and what the ground and water look like now."
+excerpt: "Open tools and data for watershed restoration and conservation in British Columbia: where habitat is and what limits it, where the floodplain is and what has changed it, and what the ground and water look like now."
 layout: single
 weight: 3
 ---
 
 Our analytical tools, data, and methods are publicly available on GitHub. We work in the open wherever transparency improves science. The tools are built and extended through our partner programs, so each project strengthens the tools the next one uses. For how the pieces fit together, from fish evidence to the floodplain, see [Habitat rules, tested and carried onto the floodplain](https://www.newgraphenvironment.com/new_graphiti/posts/2026-11-01-habitat-rules-tested/).
 
-## Where is the habitat, and what's keeping fish from it?
+## Where is the habitat, and what is limiting it?
 
-For restoration planning, the first questions are where each species' habitat is and which barriers cut fish off from it. Field results flow back into the answer.
+Habitat depends on more than whether fish can reach it: flow, water temperature, a changing climate and the condition of the floodplain all shape it. These tools map where each species' habitat can be and what limits it, tested against where fish have been found. Field results flow back into the answer.
 
 <img src="/img/hex/link.png" alt="link" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -32,7 +32,7 @@ link runs on our stream network engine, fresh, which places surveys on streams, 
 
 Our stream flow tool, wet, estimates mean annual and monthly flow for almost every stream in the Freshwater Atlas, checked against hydrometric gauges. At gauging stations it adds daily flow and, where the station logs it, water temperature.
 
-The flow can feed the fish habitat definitions. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
+The flow can feed the fish habitat definitions, and it is the baseline against which water use can be weighed. At gauging stations, our climate analysis tool, cd (below), compares flow during key life stages, such as chinook migration and spawning, with long-term normals, and water temperature with the recent record.
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
@@ -50,9 +50,9 @@ Our evidence tool, knowledge, tests fish habitat definitions against what we kno
 
 ---
 
-## Where is the floodplain, what did it look like before, and what has changed?
+## Where is the floodplain, what did it look like before, and what has changed it?
 
-The floodplain is where a river stores water, builds side channels and grows the wood that becomes its pools and cover. Restoring at the scale of the loss means seeing the whole floodplain: where it is, its condition before clearing and channelisation, and what is changing now.
+The floodplain is where a river stores water, builds side channels, grows the wood that becomes its pools and cover, and where beavers hold water on the land. Much of it has been cleared, drained, ditched into straight channels, armoured with riprap, diked and filled. Restoring watershed health at the scale of the loss means seeing the whole floodplain: where it is, what it was, and what is changing now.
 
 <img src="/img/hex/flooded.png" alt="flooded" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -110,13 +110,13 @@ Brings link, flooded and drift together for whole watershed groups: the floodpla
 
 ## What do the ground and water look like now?
 
-Understanding a floodplain means seeing it as it is now and as it was. We built open catalogues of provincial lidar and the drone imagery from our programs, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
+Understanding a watershed means seeing it as it is now: where banks are armoured, wetlands drained, beaver dams built or gone, and how much water the streams carry. We built open catalogues of provincial lidar and the drone imagery from our programs, and an open archive of hydrometric station data, so this data can be found and loaded directly. They take down the barriers to sharing it: anyone can find imagery and elevation data by place, by script or by hand in QGIS, query the station records by script, and pull either into a model, a report or a map. Partners and practitioners can see for themselves what is happening on their rivers.
 
 <img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
 ### BC lidar, ready to query
 
-LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, new tiles added monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
+LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, new tiles added monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the ditches, dikes and fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 
@@ -126,7 +126,7 @@ LidarBC elevation tiles across the province, searchable by place and date: bare 
 
 ### Drone imagery
 
-Drone imagery from our programs, stitched with OpenDroneMap into orthomosaics and, for nearly all flights, elevation models. Each flight is catalogued by place, stream and date, so it can be found from R, Python or QGIS, or opened in our purpose-built viewer. Imagery flown before works are built is the baseline later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
+Drone imagery from our programs, stitched with OpenDroneMap into orthomosaics and, for nearly all flights, elevation models. Each flight is catalogued by place, stream and date, so it can be found from R, Python or QGIS, or opened in our purpose-built viewer. Imagery flown before works is the baseline for the banks, wetlands, beaver dams and vegetation that later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
@@ -158,7 +158,7 @@ Our catalogue loader, stacs, puts catalogues into that search service and checks
 
 We take the planning into the field. For each program we build a custom field system: styled map projects of the watershed carrying our analysis and provincial data, and digital forms that work offline on phones and tablets. The whole crew works in one shared project, and changes sync between field and office.
 
-Forms cover fish passage assessment, habitat confirmation, effectiveness monitoring, restoration site investigation, eDNA sampling and benthic invertebrate collection. Where possible, data is structured for direct submission to the provincial and federal databases: FISS for fish, PSCIS for stream crossings and CABIN for benthic invertebrates. What crews collect flows back into the models it came from: assessments and habitat confirmations feed link's barrier decisions.
+Forms cover restoration site investigation, effectiveness monitoring, habitat confirmation, fish passage assessment, eDNA sampling and benthic invertebrate collection. Where possible, data is structured for direct submission to the provincial and federal databases: FISS for fish, PSCIS for stream crossings and CABIN for benthic invertebrates. What crews collect flows back into the models it came from: assessments and habitat confirmations feed link's barrier decisions and restoration designs.
 
 We also build the capacity of field teams to navigate to sites, collect data to standard, and interpret what they find.
 

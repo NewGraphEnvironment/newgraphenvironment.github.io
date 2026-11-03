@@ -67,3 +67,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 |---|---|---|---|
 | flooded | 3 | 1 / 2-3 / figure (scenarios) | flooded#101 filed; edited 2026-11-03 for the short site text and "quick to run" |
 | fly | 4 | 1-2 / 3 / 4 (stac_airphoto_bc) and figure | fly#108 filed |
+
+## Broadening the framing (owner, 2026-11-03)
+
+The page and home page framed the first question around fish passage ("what's keeping fish from it?", "which barriers cut fish off"). Agreed changes name the pressures on watershed and floodplain health (clearing, drainage, ditching, riprap, dikes, fill, beaver dams, water use) as what planning weighs and what imagery and lidar show, without claiming a tool detects each. Kept: section order (habitat is carried onto the floodplain), link's and knowledge's own sections, the Our Work tile URL. wet's line "the baseline against which water use can be weighed" is a use of the flow, not a function of wet: agreed by the owner.
