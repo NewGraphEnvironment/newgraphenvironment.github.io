@@ -40,7 +40,7 @@ The other READMEs read cleanly at a glance. Each one gets a proper read when its
 
 ## Phase 1: the standard
 
-- [ ] Add the standard to `CLAUDE.md` Working Conventions, next to "Essence and strengths": three beats, about three sentences, one clause for sophistication, the reader test, and detail sorted by reader (site, README, reports)
+- [x] Add the standard to `CLAUDE.md` Working Conventions, next to "Essence and strengths": three beats, about three sentences, one clause for sophistication, the reader test, and detail sorted by reader (site, README, reports)
 
 ## Phase 2: the pass, one item at a time, in page order
 
