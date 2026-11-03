@@ -15,9 +15,7 @@ Habitat depends on more than whether fish can reach it: flow, water temperature,
 
 ### link and fresh — habitat potential, species by species
 
-Our habitat connectivity model, link, maps the intrinsic habitat potential of streams for each species: where spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. The fish habitat definitions can be tuned for each species and [tested against where fish have actually been found](#knowledge--testing-fish-habitat-definitions-against-the-evidence). It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups.
-
-link runs on our stream network engine, fresh, which places surveys on streams, walks the network and applies the habitat definitions. It works on BC's Freshwater Atlas through [fwapg](https://smnorris.github.io/fwapg/), which loads the Atlas into a spatial database.
+Our habitat connectivity model, link, maps where each species' spawning and rearing habitat can be, whether fish can reach it, and which barrier is in the way. Its fish habitat definitions can be changed for each species and [tested against where fish have been found](#knowledge--testing-fish-habitat-definitions-against-the-evidence), so the case for fixing a crossing or restoring a reach rests on evidence that can be checked and rerun. It builds on the methods of bcfishpass, the fish passage model built by Simon Norris and maintained with contributions from many groups, and runs on our stream network engine, fresh, over BC's Freshwater Atlas through [fwapg](https://smnorris.github.io/fwapg/).
 
 - link: [Documentation](https://www.newgraphenvironment.com/link/) | [Source](https://github.com/NewGraphEnvironment/link)
 - fresh: [Documentation](https://www.newgraphenvironment.com/fresh/) | [Source](https://github.com/NewGraphEnvironment/fresh)
@@ -88,7 +86,7 @@ Our climate analysis tool, cd, measures how far a watershed's climate has moved 
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. From the province's rough record of where each photo was taken, it works out the ground each one covers and places the free online thumbnails there, showing a valley as it was decades ago, often before roads, farming and logging changed it. That history is a reference for what to restore toward, and part of the story conservation and restoration planning tells. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. From the province's rough record of where each photo was taken, it works out roughly the ground each one covers and places the free online thumbnails there, showing a valley as it was decades ago, often before roads, farming and logging changed it. That history is a reference for what to restore toward, and part of the story conservation and restoration planning tells. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 

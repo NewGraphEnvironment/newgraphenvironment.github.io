@@ -52,7 +52,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - a retitled heading: fix every `#anchor` and "(below)" that points at it, and check the rendered IDs
 - record in `findings.md`: words before and after, sentences, which sentence is each beat, the README verdict (filed with link, or not needed and why), and any tagline change
 
-- [ ] link and fresh
+- [x] link and fresh
 - [ ] wet
 - [ ] knowledge
 - [x] flooded (draft in the issue body; flooded#101 is already filed)
@@ -65,7 +65,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [ ] Drone imagery (stac_uav_bc)
 - [ ] water-temp-bc
 - [ ] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
-- [ ] Figure captions, page-wide (cd's runs to four sentences)
+- [ ] Figure captions, page-wide (cd's runs to four sentences); drift's map is redrawn under #71 (forest loss pink, gain orange), so its caption follows that
 - [ ] Into the field and back, and Dynamic reporting (cred)
 - [ ] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
 

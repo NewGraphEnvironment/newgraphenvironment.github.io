@@ -52,14 +52,16 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | Section | Before | After | Note |
 |---|---|---|---|
 | flooded | 176 | 89 | the scenario list and the marks of development left to the README (flooded#101, edited to say so and to drop "quick to run") |
-| fly | 137 | 86 | the processing steps and minimal selection left to the README (fly#108) |
+| fly | 137 | 86 | the processing steps and minimal selection left to the README (fly#108); "roughly" added 2026-11-03 to keep the README's qualifier |
+| link and fresh | 112 | 101 | two paragraphs to one; what fresh does (placing surveys, walking the network) left to fresh's README (fresh#303); link's README says "rules" (link#456) |
 
 ## Tagline changes (to the registry PR, Phase 3)
 
 | Repo | Now | Proposed | Status |
 |---|---|---|---|
 | flooded | Maps floodplains from terrain: the valley floor a river can spread across | unchanged | kept by the owner on #64 |
-| fly | Finds the historic airphotos covering a site and puts them on the map | Puts BC's historic airphotos back on the map from free thumbnails | proposed 2026-11-03, awaiting the owner |
+| fly | Finds the historic airphotos covering a site and puts them on the map | Puts BC's historic airphotos back on the map from free thumbnails | agreed by the owner 2026-11-03 |
+| link, fresh | fit as they are | unchanged | owner 2026-11-03 |
 
 ## Per-section record
 
@@ -67,7 +69,16 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 |---|---|---|---|
 | flooded | 3 | 1 / 2-3 / figure (scenarios) | flooded#101 filed; edited 2026-11-03 for the short site text and "quick to run" |
 | fly | 4 | 1-2 / 3 / 4 (stac_airphoto_bc) and figure | fly#108 filed |
+| link and fresh | 3 | 1 / 2 / knowledge link, figure; credits to bcfishpass, Simon Norris, fwapg kept | link#456, fresh#303 filed |
 
 ## Broadening the framing (owner, 2026-11-03)
 
 The page and home page framed the first question around fish passage ("what's keeping fish from it?", "which barriers cut fish off"). Agreed changes name the pressures on watershed and floodplain health (clearing, drainage, ditching, riprap, dikes, fill, beaver dams, water use) as what planning weighs and what imagery and lidar show, without claiming a tool detects each. Kept: section order (habitat is carried onto the floodplain), link's and knowledge's own sections, the Our Work tile URL. wet's line "the baseline against which water use can be weighed" is a use of the flow, not a function of wet: agreed by the owner.
+
+## Merges (2026-11-03)
+
+Registry PR #656 merged on the owner's word, the site's data file refreshed from the registry's main (only the generated date moved), site PR #69 merged (closes #64), deploy green and live. main merged into this branch.
+
+## Drift's map (owner, 2026-11-03)
+
+The land-cover change map is redrawn as forest loss (pink) and gain (orange) only, in the shared map recipe, at the same reach: filed as #71.
