@@ -55,6 +55,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | fly | 137 | 86 | the processing steps and minimal selection left to the README (fly#108); "roughly" added 2026-11-03 to keep the README's qualifier |
 | wet | 89 | 97 | three beats in one paragraph; why it matters from wet's README; cd named for any time period (owner's wording); caption now credits PCIC and names the gauges |
 | link and fresh | 112 | 101 | two paragraphs to one; what fresh does (placing surveys, walking the network) left to fresh's README (fresh#303); link's README says "rules" (link#456) |
+| knowledge | 70 | 107 | led by life history (the biology sets a definition's shape, the records tune its values, where they allow), tested on where sampling caught the species and where it did not; the provenance sentence dropped (link's section says checked and rerun); "points to where fish are most likely to be" overclaimed, so "rests on where fish have been found" (owner's edits, 2026-11-05) |
 
 ## Tagline changes (to the registry PR, Phase 3)
 
@@ -64,6 +65,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | fly | Finds the historic airphotos covering a site and puts them on the map | Puts BC's historic airphotos back on the map from free thumbnails | agreed by the owner 2026-11-03 |
 | link, fresh | fit as they are | unchanged | owner 2026-11-03 |
 | wet | Typical flow in nearly every stream, tested against gauges; station flow and temperature | unchanged | owner 2026-11-03 |
+| knowledge | Tests fish habitat definitions against what is known about where fish live, and tunes them from the fish records | Starts from each species' life history and tunes its fish habitat definitions from where sampling did and did not catch it | direction agreed by the owner 2026-11-05; this wording (122 characters, against 137 for "from where sampling caught the species and where it did not") is confirmed in the registry PR |
 
 ## Per-section record
 
@@ -73,6 +75,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | fly | 4 | 1-2 / 3 / 4 (stac_airphoto_bc) and figure | fly#108 filed |
 | wet | 3 | 1-2 / 3 / figure (sources, gauges) | README already meets the standard: no issue |
 | link and fresh | 3 | 1 / 2 / knowledge link, figure; credits to bcfishpass, Simon Norris, fwapg kept | link#456, fresh#303 filed |
+| knowledge | 3 | 1 / 3 (2 is the one clause on how) / links line and the Bulkley chinook map | knowledge#156 filed (the word, life history first, the ecosystem table's fly row) |
 
 ## Broadening the framing (owner, 2026-11-03)
 

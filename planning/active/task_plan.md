@@ -54,7 +54,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 
 - [x] link and fresh
 - [x] wet
-- [ ] knowledge
+- [x] knowledge
 - [x] flooded (draft in the issue body; flooded#101 is already filed)
 - [ ] drift
 - [ ] cd
