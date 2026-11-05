@@ -56,6 +56,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | wet | 89 | 97 | three beats in one paragraph; why it matters from wet's README; cd named for any time period (owner's wording); caption now credits PCIC and names the gauges |
 | link and fresh | 112 | 101 | two paragraphs to one; what fresh does (placing surveys, walking the network) left to fresh's README (fresh#303); link's README says "rules" (link#456) |
 | knowledge | 70 | 107 | led by life history (the biology sets a definition's shape, the records tune its values, where they allow), tested on where sampling caught the species and where it did not; the provenance sentence dropped (link's section says checked and rerun); "points to where fish are most likely to be" overclaimed, so "rests on where fish have been found" (owner's edits, 2026-11-05) |
+| drift | 60 | 94 | outcome first in the README's words (streamside forest, fields and channels); any area and your own classified maps (owner); dated and checked against imagery added; why it matters added; "not confirmed loss" dropped as loss-only, "a screening tool: each change it maps is a place to look" kept (owner, 2026-11-05) |
 
 ## Tagline changes (to the registry PR, Phase 3)
 
@@ -66,6 +67,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | link, fresh | fit as they are | unchanged | owner 2026-11-03 |
 | wet | Typical flow in nearly every stream, tested against gauges; station flow and temperature | unchanged | owner 2026-11-03 |
 | knowledge | Tests fish habitat definitions against what is known about where fish live, and tunes them from the fish records | Starts from each species' life history and tunes its fish habitat definitions from where sampling did and did not catch it | direction agreed by the owner 2026-11-05; this wording (122 characters, against 137 for "from where sampling caught the species and where it did not") is confirmed in the registry PR |
+| drift | Maps what changed in floodplain land cover, where and when, from free satellite data | Maps what changed in land cover, where and when, in a floodplain or any area, from free satellite maps or your own | proposed 2026-11-05 (the current line narrows drift to free data and floodplains); confirmed in the registry PR |
 
 ## Per-section record
 
@@ -76,6 +78,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | wet | 3 | 1-2 / 3 / figure (sources, gauges) | README already meets the standard: no issue |
 | link and fresh | 3 | 1 / 2 / knowledge link, figure; credits to bcfishpass, Simon Norris, fwapg kept | link#456, fresh#303 filed |
 | knowledge | 3 | 1 / 3 (2 is the one clause on how) / links line and the Bulkley chinook map | knowledge#156 filed (the word, life history first, the ecosystem table's fly row) |
+| drift | 4 | 1 / 3 (2 is the clause on checking) / the change map | drift#114 filed (outcome first; the uncertainty, neutrally) |
 
 ## Broadening the framing (owner, 2026-11-03)
 
@@ -88,3 +91,7 @@ Registry PR #656 merged on the owner's word, the site's data file refreshed from
 ## Drift's map (owner, 2026-11-03)
 
 The land-cover change map is redrawn as forest loss (pink) and gain (orange) only, in the shared map recipe, at the same reach: filed as #71.
+
+## The registry's description levels (soul#745, 2026-11-05)
+
+The owner's soul#745 has the registry carry each tool's description at several levels (tagline, an article paragraph, a capabilities list). Each section agreed in this pass is that tool's website-level paragraph: keep soul#745 in step as items land. Its knowledge paragraph was updated to the landed wording; the stale fly row in other READMEs' Ecosystem tables went there too (the tables are hand-copied, `readme.md` item 7).

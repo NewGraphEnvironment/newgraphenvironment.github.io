@@ -64,7 +64,7 @@ Our floodplain mapping tool, flooded, maps the floodplain from an elevation mode
 
 ### drift — what has changed
 
-Our land-cover change tool, drift, measures how the land inside a floodplain changed between any two years that free satellite land-cover maps cover. It tags each change with what it overlaps in any mapped layer of areas, such as fire perimeters or cutblocks. It is a screening tool: each change it finds is a place to check, not confirmed loss.
+Our land-cover change tool, drift, shows where streamside forest, fields and channels have changed inside a floodplain or any other area, from free satellite land-cover maps or a classified map of your own. Each change can be dated and checked against satellite and aerial imagery, and tagged with what it overlaps, such as a fire perimeter or a cutblock. That points conservation and restoration planning to where the land is changing and gives monitoring a record to come back to. It is a screening tool: each change it maps is a place to look.
 
 - [Documentation](https://www.newgraphenvironment.com/drift/) | [Source](https://github.com/NewGraphEnvironment/drift)
 

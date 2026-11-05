@@ -56,7 +56,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] wet
 - [x] knowledge
 - [x] flooded (draft in the issue body; flooded#101 is already filed)
-- [ ] drift
+- [x] drift (caption follows #71)
 - [ ] cd
 - [x] fly (draft in the issue body; fly#108 is already filed)
 - [ ] Floodplain change catalogue (floodplains)
