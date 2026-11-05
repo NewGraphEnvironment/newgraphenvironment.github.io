@@ -20,10 +20,11 @@
 ## Session 2026-11-05
 
 - knowledge: led by life history, tested on where sampling caught the species and where it did not (70 -> 107 words; owner's edits); README issue knowledge#156; tagline proposed for the Phase 3 registry PR
-- Next: drift waits on #71's map for its caption only; its section text is next
+- Preview: the earlier artifact was not reachable from this session's artifact tools, so a fresh private one was published from the whole build, titled "New Graph site preview (#70)"; refresh that one from here on. blogdown is not installed in the current R library, so the build ran blogdown's Hugo 0.121.1 binary directly
+- Next: drift (its caption waits on #71's map; its section text does not)
 
 ### Resume
 
 Paste into a fresh session in this repo:
 
-> Resume #70 on branch `70-open-source-page-each-tool-s-essence-wit` (pull first). Read `planning/active/` (task_plan, findings, progress) and CLAUDE.md's "What it gives you, why it matters, where to see it". The pace is one item per turn: for the next unticked Phase 2 item, read its section on the Open Source page, its README and its registry tagline in `data/showcase.json`, then propose together (1) the page wording, (2) a README issue in the tool's repo if the README drifts, (3) a tagline change if it no longer fits. Wait for the owner's yes, then commit with the checkbox, file the issue, record the word counts in findings, and republish the private preview (CLAUDE.md, "Private preview link"; the site preview artifact already in the owner's Artifact list, found with the Artifact tool's list action; publish `scratchpad/preview/index.html` with `files` for the changed pages). Next item: drift. Owed: fly's and knowledge's taglines go in the Phase 3 registry PR; drift's caption follows #71.
+> Resume #70 on branch `70-open-source-page-each-tool-s-essence-wit` (pull first). Read `planning/active/` (task_plan, findings, progress) and CLAUDE.md's "What it gives you, why it matters, where to see it". The pace is one item per turn: for the next unticked Phase 2 item, read its section on the Open Source page, its README and its registry tagline in `data/showcase.json`, then propose together (1) the page wording, (2) a README issue in the tool's repo if the README drifts, (3) a tagline change if it no longer fits. Wait for the owner's yes, then commit with the checkbox, file the issue, record the word counts in findings, and republish the private preview (CLAUDE.md, "Private preview link"; the artifact titled "New Graph site preview (#70)" in the owner's list; publish `scratchpad/preview/index.html` with `files` for the changed pages). Next item: drift. Owed: fly's and knowledge's taglines go in the Phase 3 registry PR; drift's caption follows #71.
