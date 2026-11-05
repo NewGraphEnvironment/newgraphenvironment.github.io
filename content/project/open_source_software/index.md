@@ -74,7 +74,7 @@ Our land-cover change tool, drift, shows where streamside forest, fields and cha
 
 ### cd — climate departure
 
-Our climate analysis tool, cd, measures how far a watershed's climate has moved from a baseline since 1950: temperature, precipitation, drying, soil moisture and snowpack. It also gives the trend in any yearly series, such as flow from wet. This is the climate context for deciding which watersheds and life stages are under the most pressure.
+Our climate analysis tool, cd, shows how far the climate of a watershed, or any area in British Columbia, has moved since 1950 from a reference period you choose: air temperature, precipitation, how dry the air is, soil moisture and snow, by season and year, with the trend. Beyond climate, its baseline and trend steps take any yearly series, so the same analysis runs on stream flow from our wet package or water temperature from our hydrometric archive, water-temp-bc (below). That grounds conservation and restoration planning and monitoring in the conditions a watershed has now rather than the ones it had, and helps us understand and communicate climate change, including which watersheds and species are under the most pressure.
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 

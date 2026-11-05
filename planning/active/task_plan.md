@@ -57,7 +57,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] knowledge
 - [x] flooded (draft in the issue body; flooded#101 is already filed)
 - [x] drift (caption follows #71)
-- [ ] cd
+- [x] cd
 - [x] fly (draft in the issue body; fly#108 is already filed)
 - [ ] Floodplain change catalogue (floodplains)
 - [x] The section openers: the front-matter `excerpt`, page intro, the three question intros, the "ground and water now" opener
