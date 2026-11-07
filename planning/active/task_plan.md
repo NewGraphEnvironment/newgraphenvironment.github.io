@@ -59,7 +59,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] drift (caption follows #71)
 - [x] cd
 - [x] fly (draft in the issue body; fly#108 is already filed)
-- [ ] Floodplain change catalogue (floodplains)
+- [x] Floodplain change catalogue (floodplains)
 - [x] The section openers: the front-matter `excerpt`, page intro, the three question intros, the "ground and water now" opener
 - [ ] BC lidar (stac_elevation_bc, stac_pointcloud_bc)
 - [ ] Drone imagery (stac_uav_bc)

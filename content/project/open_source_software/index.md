@@ -92,9 +92,7 @@ Our airphoto tool, fly, puts British Columbia's historic airphotos back on the m
 
 ### Floodplain change catalogue
 
-Brings link, flooded and drift together for whole watershed groups: the floodplain of each group's whole stream network, tree loss and gain inside it from 2017 to 2023, and how much of that loss coincides with fire or harvest. It loads straight into QGIS, R or Python, and the code that builds it is open.
-
-**A screening tool for finding where to look.** It has not been field-validated, and watershed groups can't be compared with each other.
+Floodplains are where a river stores water, sediment and wood, and the area it has to move over time. Our floodplain modelling driver, floodplains, runs the flooded and drift packages over the Freshwater Atlas streams of whole watershed groups and publishes the results in our floodplain change catalogue, stac_floodplains_bc. It floods the national 30 m elevation model to map each floodplain, maps how the land cover inside changed from 2017 to 2023, and attributes forest loss to fire and harvest where the Province's maps overlap it; any other mapped layer can be overlaid the same way.
 
 - [Floodplains](https://www.newgraphenvironment.com/floodplains/) | [Catalogue](https://www.newgraphenvironment.com/stac_floodplains_bc/) | [Source](https://github.com/NewGraphEnvironment/floodplains)
 

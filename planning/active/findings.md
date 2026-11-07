@@ -58,6 +58,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | knowledge | 70 | 107 | led by life history (the biology sets a definition's shape, the records tune its values, where they allow), tested on where sampling caught the species and where it did not; the provenance sentence dropped (link's section says checked and rerun); "points to where fish are most likely to be" overclaimed, so "rests on where fish have been found" (owner's edits, 2026-11-05) |
 | drift | 60 | 94 | outcome first in the README's words (streamside forest, fields and channels); any area and your own classified maps (owner); dated and checked against imagery added; why it matters added; "not confirmed loss" dropped as loss-only, "a screening tool: each change it maps is a place to look" kept (owner, 2026-11-05) |
 | cd | 56 | 119 | any area and a reference period you choose (README); "how dry the air is" for VPD and humidity; flow from our wet package and water temperature from water-temp-bc (owner); why it matters from the README's "climate a site has now", widened to conditions, and understanding and communicating climate change, watersheds and species (owner, 2026-11-05); daily point air temperature left to the README |
+| Floodplain change catalogue | 77 | 96 | the owner's wording, 2026-11-06: why floodplains matter first, then the two showcase rows (floodplains the driver, stac_floodplains_bc the catalogue), then the contents (the national 30 m elevation model, land cover 2017 to 2023, forest loss attributed where the Province's fire and cutblock maps overlap, any other layer the same way). Network named as the Freshwater Atlas, not link (the published items are the whole network, `network_source: fresh`). STAC mechanics left to the Open catalogues section, said once for all five. The bold caveat line and the screening sentence dropped by the owner; the READMEs carry both caveats |
 
 ## Tagline changes (to the registry PR, Phase 3)
 
@@ -70,6 +71,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | knowledge | Tests fish habitat definitions against what is known about where fish live, and tunes them from the fish records | Starts from each species' life history and tunes its fish habitat definitions from where sampling did and did not catch it | direction agreed by the owner 2026-11-05; this wording (122 characters, against 137 for "from where sampling caught the species and where it did not") is confirmed in the registry PR |
 | drift | Maps what changed in floodplain land cover, where and when, from free satellite data | Maps what changed in land cover, where and when, in a floodplain or any area, from free satellite maps or your own | proposed 2026-11-05 (the current line narrows drift to free data and floodplains); confirmed in the registry PR |
 | cd | How far any BC watershed's climate has shifted from your chosen baseline | unchanged | fits (2026-11-05) |
+| floodplains | Runs the floodplain and land-cover-change models, one watershed group at a time | Maps BC's floodplains and how the land in them changed, one watershed group at a time | proposed 2026-11-06 (mechanism to outcome); confirmed in the registry PR |
 
 ## Per-section record
 
@@ -82,6 +84,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | knowledge | 3 | 1 / 3 (2 is the one clause on how) / links line and the Bulkley chinook map | knowledge#156 filed (the word, life history first, the ecosystem table's fly row) |
 | drift | 4 | 1 / 3 (2 is the clause on checking) / the change map | drift#114 filed (outcome first; the uncertainty, neutrally) |
 | cd | 3 | 1 / 3 (2 is the clause reaching beyond climate) / the temperature figure | README meets the standard: no issue. Spawned cd#159 (explore cataloguing future climate scenarios; owner's question) |
+| Floodplain change catalogue | 3 | 2-3 / 1 / coverage map, attribution chart, links | no new issue: floodplains#128 already rewrites the README around the whole network; stac_floodplains_bc's README fits its audience |
 
 ## Broadening the framing (owner, 2026-11-03)
 
@@ -98,3 +101,8 @@ The land-cover change map is redrawn as forest loss (pink) and gain (orange) onl
 ## The registry's description levels (soul#745, 2026-11-05)
 
 The owner's soul#745 has the registry carry each tool's description at several levels (tagline, an article paragraph, a capabilities list). Each section agreed in this pass is that tool's website-level paragraph: keep soul#745 in step as items land. Its knowledge paragraph was updated to the landed wording; the stale fly row in other READMEs' Ecosystem tables went there too (the tables are hand-copied, `readme.md` item 7).
+
+## Open questions for Phase 4
+
+- **The screening line.** CLAUDE.md's copy rules say the page calls the floodplain and land-cover outputs screening tools. drift keeps "It is a screening tool: each change it maps is a place to look"; the floodplain change catalogue section now has no screening sentence (owner's wording, 2026-11-06, asked twice). Settle before the PR: add it back, or edit the CLAUDE.md rule to say the screening caveat lives in drift's section and the READMEs.
+- **STAC mechanics once.** The Open catalogues section carries the shared lines (served from images.a11s.one, searchable from R, Python and QGIS, public code); take the per-catalogue repeats out of the lidar and drone sections as they come up (owner, 2026-11-06).
