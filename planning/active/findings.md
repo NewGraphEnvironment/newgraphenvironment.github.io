@@ -59,6 +59,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | drift | 60 | 94 | outcome first in the README's words (streamside forest, fields and channels); any area and your own classified maps (owner); dated and checked against imagery added; why it matters added; "not confirmed loss" dropped as loss-only, "a screening tool: each change it maps is a place to look" kept (owner, 2026-11-05) |
 | cd | 56 | 119 | any area and a reference period you choose (README); "how dry the air is" for VPD and humidity; flow from our wet package and water temperature from water-temp-bc (owner); why it matters from the README's "climate a site has now", widened to conditions, and understanding and communicating climate change, watersheds and species (owner, 2026-11-05); daily point air temperature left to the README |
 | Floodplain change catalogue | 77 | 116 | the owner's wording, 2026-11-06 and 2026-11-10 (tool first, catalogue last as fly does; screening line back as the owner's general message): why floodplains matter first, then the two showcase rows (floodplains the driver, stac_floodplains_bc the catalogue), then the contents (the national 30 m elevation model, land cover 2017 to 2023, forest loss attributed where the Province's fire and cutblock maps overlap, any other layer the same way). Network named as the Freshwater Atlas, not link (the published items are the whole network, `network_source: fresh`). STAC mechanics left to the Open catalogues section, said once for all five. The bold caveat line and the screening sentence dropped by the owner; the READMEs carry both caveats |
+| BC lidar | 64 | 105 | retitled "BC lidar, flight by flight" (anchor `#bc-lidar-flight-by-flight`; nothing linked the old one). Opens on what the product is, in the owner's sentence (2026-11-10): "A catalogue of BC's lidar: pick a place and see which flights cover it, and when" (the owner: it is not a map). Both publishers named, measured on the live API over Maple Ridge: every record links LidarBC; NRCan CanElevation's cloud-optimised copies are linked on some point clouds (the README: a minority), and they are copies of the same flights, not more coverage. "Searchable by place and date" dropped (the Open catalogues section says it once). Change said once for all kinds, with the README's qualifier ("where the flights can be compared"): lidar *measures* change; drone imagery is only *seen and shown* (no ground control; the fit to LidarBC is unpublished, stac_uav_bc#46, #43) |
 
 ## Tagline changes (to the registry PR, Phase 3)
 
@@ -72,6 +73,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | drift | Maps what changed in floodplain land cover, where and when, from free satellite data | Maps what changed in land cover, where and when, in a floodplain or any area, from free satellite maps or your own | proposed 2026-11-05 (the current line narrows drift to free data and floodplains); confirmed in the registry PR |
 | cd | How far any BC watershed's climate has shifted from your chosen baseline | unchanged | fits (2026-11-05) |
 | floodplains | Runs the floodplain and land-cover-change models, one watershed group at a time | Maps BC's floodplains and how the land in them changed, one watershed group at a time | proposed 2026-11-06 (mechanism to outcome); confirmed in the registry PR |
+| stac_elevation_bc, stac_pointcloud_bc | LiDAR elevation models, …; LidarBC point cloud files (an index, not a copy) | unchanged | fit (2026-11-10); they are the catalogue table's sentences, looked at again with Open catalogues |
 
 ## Per-section record
 
@@ -85,6 +87,7 @@ Builds on #64's copy, so it starts from main once PR #69 has merged.
 | drift | 4 | 1 / 3 (2 is the clause on checking) / the change map | drift#114 filed (outcome first; the uncertainty, neutrally) |
 | cd | 3 | 1 / 3 (2 is the clause reaching beyond climate) / the temperature figure | README meets the standard: no issue. Spawned cd#159 (explore cataloguing future climate scenarios; owner's question) |
 | Floodplain change catalogue | 3 | 2-3 / 1 / coverage map, attribution chart, links | no new issue: floodplains#128 already rewrites the README around the whole network; stac_floodplains_bc's README fits its audience |
+| BC lidar | 5 | 1-2 / 3-5 / Maxan figure and the two catalogue links | stac_elevation_bc#71 filed (outcome first, counts lower, the setup item out of the public roadmap); stac_pointcloud_bc's README meets the standard (its `stac_dem_bc` link redirects) |
 
 ## Broadening the framing (owner, 2026-11-03)
 
@@ -106,3 +109,5 @@ The owner's soul#745 has the registry carry each tool's description at several l
 
 - **The screening line.** CLAUDE.md's copy rules say the page calls the floodplain and land-cover outputs screening tools. drift keeps "It is a screening tool: each change it maps is a place to look"; settled 2026-11-10: the floodplain section carries the owner's screening sentence. Open: retitle the heading to "floodplains — floodplains and how they change, by watershed group" (proposed, no anchors point at it; owner has not said).
 - **STAC mechanics once.** The Open catalogues section carries the shared lines (served from images.a11s.one, searchable from R, Python and QGIS, public code); take the per-catalogue repeats out of the lidar and drone sections as they come up (owner, 2026-11-06).
+- **A lidar coverage figure** (proposed 2026-11-10: BC coloured by year flown, drawn from the catalogue, to show at a glance which areas are covered in which years). The owner: not sure; explore after the descriptions and the registry updates are through.
+- **dike or dyke.** The page has "dike" (51), "dykes" (flooded, 57) and "dikes" (lidar). Proposed: "dikes" throughout (BC's usage); not yet answered.

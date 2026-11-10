@@ -108,9 +108,9 @@ Understanding a watershed means seeing it as it is now: where banks are armoured
 
 <img src="/img/hex/stac_elevation_bc.png" alt="stac_elevation_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### BC lidar, ready to query
+### BC lidar, flight by flight
 
-LidarBC elevation tiles across the province, searchable by place and date: bare earth and, where published, surface models, new tiles added monthly, with an index of the raw point clouds. Bare earth shows side channels, old channels and the ditches, dikes and fill built across a river's path. The point clouds give the height of the streamside forest, and where it has been cleared.
+A catalogue of BC's lidar: pick a place and see which flights cover it, and when. New tiles are added monthly, and the data comes from the province's LidarBC and, for some point clouds, Natural Resources Canada. Bare earth shows the ground beneath the trees: side channels, old channels, and the roads, dikes and fill built across a river's path. The point clouds give the height of the streamside forest. Where a place has been flown more than once and the flights can be compared, the difference measures what changed: a channel dug or moved, a dike raised, a floodplain filled, forest cleared or regrowing.
 
 - [Elevation catalogue](https://www.newgraphenvironment.com/stac_elevation_bc/) | [Point cloud catalogue](https://www.newgraphenvironment.com/stac_pointcloud_bc/)
 

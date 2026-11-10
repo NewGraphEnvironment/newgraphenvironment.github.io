@@ -61,7 +61,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] fly (draft in the issue body; fly#108 is already filed)
 - [x] Floodplain change catalogue (floodplains)
 - [x] The section openers: the front-matter `excerpt`, page intro, the three question intros, the "ground and water now" opener
-- [ ] BC lidar (stac_elevation_bc, stac_pointcloud_bc)
+- [x] BC lidar (stac_elevation_bc, stac_pointcloud_bc)
 - [ ] Drone imagery (stac_uav_bc)
 - [ ] water-temp-bc
 - [ ] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
