@@ -29,8 +29,14 @@
 - Floodplain change catalogue: owner's wording, both showcase rows named, the Freshwater Atlas as the network (77 -> 96 words); no new README issue (floodplains#128); screening line open for Phase 4
 - Next: BC lidar (stac_elevation_bc, stac_pointcloud_bc)
 
+## Session 2026-11-10
+
+- Floodplain section restructured: tool first, screening line (owner's), catalogue last (116 words). Heading retitle proposed, not decided
+- Artifact tools died mid-session: the preview is stale from cd onward; republish `project/open_source_software.html` after restart
+- Next: BC lidar
+
 ### Resume
 
 Paste into a fresh session in this repo:
 
-> Resume #70 on branch `70-open-source-page-each-tool-s-essence-wit` (pull first). Read `planning/active/` (task_plan, findings, progress) and CLAUDE.md's "What it gives you, why it matters, where to see it". The pace is one item per turn: for the next unticked Phase 2 item, read its section on the Open Source page, its README and its registry tagline in `data/showcase.json`, then propose together (1) the page wording, (2) a README issue in the tool's repo if the README drifts, (3) a tagline change if it no longer fits. Wait for the owner's yes, then commit with the checkbox, file the issue, record the word counts in findings, and republish the private preview (CLAUDE.md, "Private preview link"; the artifact titled "New Graph site preview (#70)" in the owner's list; publish `scratchpad/preview/index.html` with `files` for the changed pages). Next item: BC lidar. Keep soul#745 (the registry's description levels) in step with each agreed section. Owed: fly's, knowledge's and drift's taglines go in the Phase 3 registry PR; drift's caption follows #71.
+> Resume #70 on branch `70-open-source-page-each-tool-s-essence-wit` (pull first). Read `planning/active/` (task_plan, findings, progress) and CLAUDE.md's "What it gives you, why it matters, where to see it". The pace is one item per turn: for the next unticked Phase 2 item, read its section on the Open Source page, its README and its registry tagline in `data/showcase.json`, then propose together (1) the page wording, (2) a README issue in the tool's repo if the README drifts, (3) a tagline change if it no longer fits. Wait for the owner's yes, then commit with the checkbox, file the issue, record the word counts in findings, and republish the private preview (CLAUDE.md, "Private preview link"; the artifact titled "New Graph site preview (#70)" in the owner's list; publish `scratchpad/preview/index.html` with `files` for the changed pages). Next item: BC lidar (take its STAC mechanics line out: the Open catalogues section says it once). First, republish the preview page (stale since cd). Open: retitle the floodplain heading? Keep soul#745 (the registry's description levels) in step with each agreed section. Owed: fly's, knowledge's and drift's taglines go in the Phase 3 registry PR; drift's caption follows #71.
