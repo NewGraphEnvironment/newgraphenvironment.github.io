@@ -20,8 +20,8 @@ steps:
 # registry, not the page.
 catalogues: [stac_elevation_bc, stac_pointcloud_bc, stac_floodplains_bc, stac_airphoto_bc, stac_uav_bc]
 
-# Repos the Open Source page links that are not showcase rows: a supporting mention and the blog.
-supporting: [cred, new_graphiti]
+# Repos the Open Source page links that are not showcase rows: the blog.
+supporting: [new_graphiti]
 
 # Matched, case-insensitively and as whole words, against every showcase tagline. The registry
 # is held to the site's words (CLAUDE.md, Working Conventions): "fish habitat definitions",
