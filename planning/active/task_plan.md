@@ -65,7 +65,8 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] Drone imagery (stac_uav_bc)
 - [x] water-temp-bc
 - [x] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
-- [ ] Figure captions, page-wide (cd's runs to four sentences); drift's map is redrawn under #71 (forest loss pink, gain orange), so its caption follows that
+- [x] Figure captions, page-wide: cd shortened, drone given place and date, the rest kept (2026-11-11)
+- [ ] drift's caption, once its map is redrawn under #71 (forest loss pink, gain orange)
 - [ ] Into the field and back, and Dynamic reporting (cred)
 - [ ] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
 

@@ -78,7 +78,7 @@ Our climate analysis tool, cd, shows how far the climate of a watershed, or any 
 
 - [Documentation](https://www.newgraphenvironment.com/cd/) | [Source](https://github.com/NewGraphEnvironment/cd)
 
-![Each year's average temperature in the Bulkley, Nechako and Parsnip watershed groups since 1950. Orange bars are years warmer than the 1951 to 1980 average (normal), and blue bars are years cooler. The dashed line is the warmest year of the normal, and many recent years are warmer still. Figure: cd's northern BC article.](cd_temperature_years.png)
+![Each year's temperature against the 1951–1980 normal in the Bulkley, Nechako and Parsnip watershed groups: orange warmer, blue cooler. Many recent years are warmer than the warmest year of the normal (dashed line). Figure: cd's northern BC article.](cd_temperature_years.png)
 
 <img src="/img/hex/fly.png" alt="fly" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -124,7 +124,7 @@ A catalogue of the drone imagery from our programs: pick a place or a stream and
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
-![Drone imagery of a stream reach.](uav_cover.jpg)
+![Drone imagery of where Foxy Creek joins Maxan Creek, below Maxan Lake east of Houston, flown in June 2025. Figure: stac_uav_bc.](uav_cover.jpg)
 
 <img src="/img/hex/water-temp-bc.png" alt="water-temp-bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
