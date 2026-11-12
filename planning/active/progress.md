@@ -50,6 +50,7 @@
 ## Session 2026-11-12
 
 - Home page steps 1-4 landed; screening sentence and the growth-after-funding claim deleted (owner), also from Dynamic reporting; CLAUDE.md convention added. Open: the Open Source card's phrase; whether logic's shared core drops the growth claim too
+- Restoration tile: "living documents" sentence (rebuilds as data and review comments arrive) dropped as a promise of unfunded updates (owner); kept "Each report's title page carries its version and date." CLAUDE.md convention widened to "never promise a report more after its funded year"
 
 ### Resume
 
