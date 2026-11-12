@@ -27,7 +27,7 @@ The other READMEs read cleanly at a glance. Each one gets a proper read when its
 ## Decided at the gate
 
 - **Branch point (decided 2026-11-03):** the merges need your go and had none, so the branch was cut from the #64 branch (the alternative below). `git merge origin/main` once PR #69 lands.
-- **Merges** (owner's go needed): registry PR #656, refresh `data/showcase.json`, site PR #69; then `git merge origin/main` here. PR #69's copy is frozen meanwhile: any change to it is made here instead.
+- **Merges** (owner's go needed): the registry's showcase PR, refresh `data/showcase.json`, site PR #69; then `git merge origin/main` here. PR #69's copy is frozen meanwhile: any change to it is made here instead.
 - **Pace** (owner, 2026-11-03): one item per turn. For each item I propose three things together:
   - the page wording;
   - the README's drift, as an issue in the tool's repo;

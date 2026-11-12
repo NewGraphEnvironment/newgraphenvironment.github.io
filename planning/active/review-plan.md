@@ -11,7 +11,7 @@ Folded into task_plan.md as the per-item checklist (Phase 2) and the Phase 3/4 a
 - Gap: CLAUDE.md Site Structure line for the page needs updating at the end
 - Gap: tool taglines render nowhere; dry-run the registry PR's JSON in a site build before asking to merge
 - Ordering: line 30 contradicted the branch point; #69 copy should be frozen
-- Ordering: tagline PR waits for #656; a refresh can bring rows needing showcase_site.yaml; table sentences tick only after the refresh
+- Ordering: tagline PR waits for the registry's showcase PR; a refresh can bring rows needing showcase_site.yaml; table sentences tick only after the refresh
 - Assumption: "fine" taglines and "clean" READMEs were impressions; each read when its item comes up
 - Scope: fly tagline decision not recorded; fly qualifier ("for most photos", "approximate") only in the caption now
 - Acceptance: record each section's beats and sentence count; anchor check; per-item README verdict (filed / not needed, why)

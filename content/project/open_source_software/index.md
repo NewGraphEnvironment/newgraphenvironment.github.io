@@ -152,6 +152,6 @@ We take the planning into the field. For each program we build a field system: m
 
 ### Dynamic reporting
 
-Each fish passage and watershed restoration project is an open online report, rebuilt from its public code at every release. It carries maps, drone imagery of the sites where they are flown, and data tables that filter and export to Excel and CSV, with a citation record that names its version.
+Each fish passage and watershed restoration project since 2020 is an open online report, rebuilt from its public code at every release. It carries maps, drone imagery of the sites where they are flown, and data tables that filter and export to Excel and CSV, with a citation record that names its version.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.

@@ -109,7 +109,7 @@ The page and home page framed the first question around fish passage ("what's ke
 
 ## Merges (2026-11-03)
 
-Registry PR #656 merged on the owner's word, the site's data file refreshed from the registry's main (only the generated date moved), site PR #69 merged (closes #64), deploy green and live. main merged into this branch.
+The registry's showcase PR merged on the owner's word, the site's data file refreshed from the registry's main (only the generated date moved), site PR #69 merged (closes #64), deploy green and live. main merged into this branch.
 
 ## Drift's map (owner, 2026-11-03)
 
