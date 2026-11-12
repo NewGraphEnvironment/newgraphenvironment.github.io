@@ -82,7 +82,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 
 - [x] Edit #70's body to what was agreed, with every README issue linked (from findings.md's per-item verdicts)
 - [x] Update CLAUDE.md's Site Structure line for the Open Source page
-- [ ] `/code-check branch`; `/planning-archive`; `/gh-pr-push`
+- [x] `/code-check branch`; `/planning-archive`; `/gh-pr-push`
 
 ## Owed at the end (reported, done after merge)
 
@@ -93,7 +93,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] Hugo builds clean (the showcase check passes)
 - [x] `/code-check` clean (once over the branch with `/code-check branch`)
 - [x] PWF checkboxes match landed work
-- [ ] `/planning-archive` on completion
+- [x] `/planning-archive` on completion
 
 How each change is proved:
 

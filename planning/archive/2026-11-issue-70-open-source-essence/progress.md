@@ -55,6 +55,7 @@
 - Floodplain section: the contents sentence appeared twice since the 2026-11-10 restructure (163 words); de-duplicated, the overlay clause kept once (126 words). Found by the registry session
 - Owner: "dikes" throughout; floodplain heading kept. Taglines and paragraphs handed to the registry's tool-language batch, via its issue body; the showcase refresh filed as #74; drift's caption carried by #71. Phase 4 next
 - Public-repo scrub: private repo names and issue numbers taken out of CLAUDE.md and the planning files. The refresh issue was refiled as #74 because its first body (#73, deleted) named a private issue; commit f53e618's message still says #73
+- Phase 4: #70's body edited; CLAUDE.md Site Structure updated; `/code-check branch` ran four rounds (6, 4, 5, 4 findings; rounds 2 and 3 found defects inside the previous fix; ended on round 4's enumeration of all 89 added or changed sentences); archived
 
 ### Resume
 
