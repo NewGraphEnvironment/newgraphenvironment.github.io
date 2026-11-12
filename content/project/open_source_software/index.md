@@ -130,13 +130,13 @@ A catalogue of the drone imagery from our programs: pick a place or a stream and
 
 ### water-temp-bc — water temperature, flow and water level
 
-Water temperature, flow and water level from federal hydrometric stations across BC, kept in one open archive anyone can query from R. Each month it adds the latest readings from Environment and Climate Change Canada's real-time service, which shows only recent months, so the record keeps growing: water temperature back to 2002, daily flow back to 2016. Water temperature sets where and when fish can live, and this data feeds our collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/), advancing fish habitat modelling across the province: spatial stream network temperature models ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width models.
+Water temperature, flow and water level from federal hydrometric stations across BC, kept in one open archive anyone can query from R. It holds water temperature back to 2002 and daily flow back to 2016, and each month it adds the latest readings from Environment and Climate Change Canada's real-time service, which shows only recent months, so the record keeps growing. Water temperature sets where and when fish can live, and this data feeds our collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/), advancing fish habitat modelling across the province: spatial stream network temperature models ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width models.
 
 - [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
 
 ### Open catalogues, and the recipe for building them
 
-Each catalogue lists what exists for a place and when it was captured, with a link to each file. All five are served from [images.a11s.one](https://images.a11s.one) through [STAC](https://stacspec.org/), an open standard for cataloguing imagery and elevation data by place and time, so they can be searched from R, Python or QGIS. Each comes with the public code that builds it, a worked example anyone can follow to build their own.
+Each catalogue lists what it holds for a place and when it was captured, with a link to each file. All five are served from [images.a11s.one](https://images.a11s.one) through [STAC](https://stacspec.org/), an open standard for cataloguing imagery and elevation data by place and time, so they can be searched from R, Python or QGIS. Each comes with the public code that builds it, a worked example anyone can follow to build their own.
 
 Our catalogue loader, stacs, puts a catalogue into a search service and checks that every record arrived intact.
 
@@ -152,6 +152,6 @@ We take the planning into the field. For each program we build a field system: m
 
 ### Dynamic reporting
 
-Each fish passage and watershed restoration project since 2020 is an open online report, rebuilt from its public code at every release. It carries maps, drone imagery of the sites where they are flown, and data tables that filter and export to Excel and CSV, with a citation record.
+Each fish passage and watershed restoration project since 2020 is an open online report, rebuilt from its public code at every release, with maps, drone imagery of the sites where they are flown, and a citation record. Recent reports add data tables that filter and export to Excel and CSV.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.
