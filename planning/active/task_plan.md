@@ -68,7 +68,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] Figure captions, page-wide: cd shortened, drone given place and date, the rest kept (2026-11-11)
 - [ ] drift's caption, once its map is redrawn under #71 (forest loss pink, gain orange)
 - [x] Into the field and back, and Dynamic reporting (cred)
-- [ ] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
+- [x] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
 
 - [x] Broaden from fish passage to watershed health (owner, 2026-11-03): the excerpt, the first two question headings and openers, the "ground and water now" opener, lidar and drone sentences, wet's water-use baseline, field forms led by restoration; home page step 1 and the Open Source card to match
 
