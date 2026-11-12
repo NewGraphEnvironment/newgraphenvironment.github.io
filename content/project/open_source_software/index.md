@@ -44,7 +44,7 @@ The flow can feed the fish habitat definitions. At gauging stations, our climate
 
 Our evidence tool, knowledge, tests fish habitat definitions against what we know about where fish live. It brings together the Province's fish sampling records, past reports and the published literature, and tunes link's habitat definitions from the fish records where they allow, checking each on parts of the province it was not chosen from. Its results record how they were made, so they can be checked, rerun and built on.
 
-- [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a habitat definition is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
+- [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a habitat definition is tested](https://www.newgraphenvironment.com/knowledge/articles/tuning-method.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/tuning-chinook-rearing.html)
 
 ![Chinook rearing on the Bulkley River, Telkwa to Houston, comparing link's existing habitat definition with the one tuned in knowledge. The habitat on each stream is carried onto the floodplain beside it by flooded (below). Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
 
