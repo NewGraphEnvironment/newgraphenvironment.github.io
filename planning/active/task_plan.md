@@ -80,8 +80,8 @@ Per-item checklist (from the plan review, `review-plan.md`):
 
 ## Phase 4: close
 
-- [ ] Edit #70's body to what was agreed, with every README issue linked (from findings.md's per-item verdicts)
-- [ ] Update CLAUDE.md's Site Structure line for the Open Source page
+- [x] Edit #70's body to what was agreed, with every README issue linked (from findings.md's per-item verdicts)
+- [x] Update CLAUDE.md's Site Structure line for the Open Source page
 - [ ] `/code-check branch`; `/planning-archive`; `/gh-pr-push`
 
 ## Owed at the end (reported, done after merge)
