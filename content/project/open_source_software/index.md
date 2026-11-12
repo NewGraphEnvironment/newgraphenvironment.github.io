@@ -136,7 +136,7 @@ Water temperature, flow and water level from federal hydrometric stations across
 
 ### Open catalogues, and the recipe for building them
 
-Each catalogue lists what exists for a place and when it was captured, with a link to every file. All five are served from [images.a11s.one](https://images.a11s.one) through [STAC](https://stacspec.org/), an open standard for cataloguing imagery and elevation data by place and time, so they can be searched from R, Python or QGIS. Each comes with the public code that builds it, a worked example anyone can follow to build their own.
+Each catalogue lists what exists for a place and when it was captured, with a link to each file. All five are served from [images.a11s.one](https://images.a11s.one) through [STAC](https://stacspec.org/), an open standard for cataloguing imagery and elevation data by place and time, so they can be searched from R, Python or QGIS. Each comes with the public code that builds it, a worked example anyone can follow to build their own.
 
 Our catalogue loader, stacs, puts a catalogue into a search service and checks that every record arrived intact.
 
@@ -152,6 +152,6 @@ We take the planning into the field. For each program we build a field system: m
 
 ### Dynamic reporting
 
-Each fish passage and watershed restoration project since 2020 is an open online report, rebuilt from its public code at every release. It carries maps, drone imagery of the sites where they are flown, and data tables that filter and export to Excel and CSV, with a citation record that names its version.
+Each fish passage and watershed restoration project since 2020 is an open online report, rebuilt from its public code at every release. It carries maps, drone imagery of the sites where they are flown, and data tables that filter and export to Excel and CSV, with a citation record.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.
