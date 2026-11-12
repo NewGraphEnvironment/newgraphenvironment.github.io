@@ -118,9 +118,9 @@ A catalogue of BC's lidar: pick a place and see which flights cover it, and when
 
 <img src="/img/hex/stac_uav_bc.png" alt="stac_uav_bc" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
-### Drone imagery
+### Drone imagery, before and after the work
 
-Drone imagery from our programs, stitched with OpenDroneMap into orthomosaics and, for nearly all flights, elevation models. Each flight is catalogued by place, stream and date, so it can be found from R, Python or QGIS, or opened in our purpose-built viewer. Imagery flown before works is the baseline for the banks, wetlands, beaver dams and vegetation that later flights are compared against. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
+A catalogue of the drone imagery from our programs: pick a place or a stream and see which flights cover it, and when, then open them in R, Python, QGIS or our viewer. A flight before works is the baseline that later flights are compared against, so what changed at a site, in its banks, wetlands, beaver dams and vegetation, can be seen and shown to others. Flights are by our team and, in the Neexdzii Kwah, with the Ministry of Water, Land and Resource Stewardship's provincial drone specialist.
 
 - [Catalogue](https://www.newgraphenvironment.com/stac_uav_bc/) | [Viewer](https://viewer.a11s.one) | [Source](https://github.com/NewGraphEnvironment/stac_uav_bc)
 
