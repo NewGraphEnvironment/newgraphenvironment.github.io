@@ -148,14 +148,10 @@ Our catalogue loader, stacs, puts a catalogue into a search service and checks t
 
 ## Into the field and back
 
-We take the planning into the field. For each program we build a custom field system: styled map projects of the watershed carrying our analysis and provincial data, and digital forms that work offline on phones and tablets. The whole crew works in one shared project, and changes sync between field and office.
-
-Forms cover restoration site investigation, effectiveness monitoring, habitat confirmation, fish passage assessment, eDNA sampling and benthic invertebrate collection. Where possible, data is structured for direct submission to the provincial and federal databases: FISS for fish, PSCIS for stream crossings and CABIN for benthic invertebrates. What crews collect flows back into the models it came from: assessments and habitat confirmations feed link's barrier decisions and restoration designs.
-
-We also build the capacity of field teams to navigate to sites, collect data to standard, and interpret what they find.
+We take the planning into the field. For each program we build a field system: map projects of the watershed carrying our analysis and provincial data, and forms that work offline on phones and tablets, shared by the whole crew and synced between field and office. Forms cover restoration site investigation, effectiveness monitoring, habitat confirmation, fish passage assessment, eDNA and benthic invertebrate sampling, and where possible the data is structured for direct submission to the provincial and federal databases.
 
 ### Dynamic reporting
 
-One set of source files produces both an interactive online report and a print-ready PDF, with maps, figures, tables, cross-references and citations. When new data arrives or methods are refined, the report rebuilds. Every change is tracked, and most reports are publicly accessible. Our citation checker, [cred](https://www.newgraphenvironment.com/cred/), finds the best-matching passage for each citation, or the abstract where no source file is attached, so it can be reviewed.
+Each fish passage and watershed restoration project is an open online report, rebuilt from its public code at every release. It carries maps, drone imagery of the sites where they are flown, and data tables that filter and export to Excel and CSV, with a citation record that names its version. A report is delivered for its funded year and keeps gaining sections, map layers and releases after it.
 
 See live reports in our [Watershed Restoration & Conservation](/project/watershed_restoration_fish_passage/) and [Aquatic Monitoring & Assessment](/project/aquatic_monitoring_assessment/) work.
