@@ -121,7 +121,7 @@ The owner's soul#745 has the registry carry each tool's description at several l
 
 ## Open questions for Phase 4
 
-- **The screening line.** CLAUDE.md's copy rules say the page calls the floodplain and land-cover outputs screening tools. drift keeps "It is a screening tool: each change it maps is a place to look"; settled 2026-11-10: the floodplain section carries the owner's screening sentence. Open: retitle the heading to "floodplains — floodplains and how they change, by watershed group" (proposed, no anchors point at it; owner has not said).
+- **The screening line.** CLAUDE.md's copy rules say the page calls the floodplain and land-cover outputs screening tools. drift keeps "It is a screening tool: each change it maps is a place to look"; settled 2026-11-10: the floodplain section carries the owner's screening sentence. Heading kept as "Floodplain change catalogue" (owner, 2026-11-12).
 - **STAC mechanics once.** The Open catalogues section carries the shared lines (served from images.a11s.one, searchable from R, Python and QGIS, public code); take the per-catalogue repeats out of the lidar and drone sections as they come up (owner, 2026-11-06).
 - **A lidar coverage figure** (proposed 2026-11-10: BC coloured by year flown, drawn from the catalogue, to show at a glance which areas are covered in which years). The owner: not sure; explore after the descriptions and the registry updates are through.
-- **dike or dyke.** The page has "dike" (51), "dykes" (flooded, 57) and "dikes" (lidar). Proposed: "dikes" throughout (BC's usage); not yet answered.
+- **dike or dyke.** Settled 2026-11-12 (owner): "dikes" throughout; flooded's "dykes" changed. The registry's flooded paragraph follows (soul#810).

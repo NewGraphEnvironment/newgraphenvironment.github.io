@@ -53,7 +53,7 @@
 - Restoration tile: "living documents" sentence (rebuilds as data and review comments arrive) dropped as a promise of unfunded updates (owner); kept "Each report's title page carries its version and date." CLAUDE.md convention widened to "never promise a report more after its funded year"
 - Open Source card kept as is (owner: "each partnership extends is good"; "land use" kept). Growth framing reversed in proposals too: logic#88 (shared core, CLAUDE.md, research) and soul#832 (proposals convention). Home page item ticked
 - Floodplain section: the contents sentence appeared twice since the 2026-11-10 restructure (163 words); de-duplicated, the overlay clause kept once (126 words). Found by the soul session working soul#810
-- Next: Phase 3 registry PR (drift's caption waits on #71)
+- Owner: "dikes" throughout; floodplain heading kept. Taglines and paragraphs handed to soul#817 via soul#810's body; the showcase refresh filed as #73; drift's caption carried by #71. Phase 4 next
 
 ### Resume
 

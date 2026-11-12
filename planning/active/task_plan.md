@@ -66,7 +66,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] water-temp-bc
 - [x] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
 - [x] Figure captions, page-wide: cd shortened, drone given place and date, the rest kept (2026-11-11)
-- [ ] drift's caption, once its map is redrawn under #71 (forest loss pink, gain orange)
+- [x] drift's caption, once its map is redrawn under #71 (forest loss pink, gain orange): carried by #71's body, which owns the map (owner, 2026-11-12)
 - [x] Into the field and back, and Dynamic reporting (cred)
 - [x] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
 
@@ -74,9 +74,9 @@ Per-item checklist (from the plan review, `review-plan.md`):
 
 ## Phase 3: registry in step
 
-- [ ] One registry PR, cut after #656 merges, with the agreed tagline changes; `check` and its suite pass
-- [ ] Dry run before asking to merge: render the PR branch's JSON into the scratchpad, build the site against it (the site's word list is not the registry's)
-- [ ] Merge on your word; refresh `data/showcase.json` from main; place any new showcase row in `data/showcase_site.yaml`; build; tick the catalogue table's sentences
+- [x] One registry PR with the agreed tagline changes: carried by soul#817's PR (batch 51, with soul#810), so one session edits `ecosystem.yml`; the taglines and paragraphs are in soul#810's body (owner, 2026-11-12)
+- [x] Dry run before asking to merge: asked of soul#817's session (build the site against the PR's rendered JSON)
+- [x] Merge on your word; refresh `data/showcase.json` from main; place any new showcase row in `data/showcase_site.yaml`; build; tick the catalogue table's sentences: filed as #73, done after soul#817 merges; this PR does not wait on it
 
 ## Phase 4: close
 
