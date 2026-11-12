@@ -74,9 +74,9 @@ Per-item checklist (from the plan review, `review-plan.md`):
 
 ## Phase 3: registry in step
 
-- [x] One registry PR with the agreed tagline changes: carried by soul#817's PR (batch 51, with soul#810), so one session edits `ecosystem.yml`; the taglines and paragraphs are in soul#810's body (owner, 2026-11-12)
-- [x] Dry run before asking to merge: asked of soul#817's session (build the site against the PR's rendered JSON)
-- [x] Merge on your word; refresh `data/showcase.json` from main; place any new showcase row in `data/showcase_site.yaml`; build; tick the catalogue table's sentences: filed as #73, done after soul#817 merges; this PR does not wait on it
+- [x] One registry PR with the agreed tagline changes: carried by the registry's tool-language batch, so one session edits `ecosystem.yml`; the taglines and paragraphs are in that batch's issue body (owner, 2026-11-12)
+- [x] Dry run before asking to merge: asked of the registry batch's session (build the site against the PR's rendered JSON)
+- [x] Merge on your word; refresh `data/showcase.json` from main; place any new showcase row in `data/showcase_site.yaml`; build; tick the catalogue table's sentences: filed as #74, done after the registry batch merges; this PR does not wait on it
 
 ## Phase 4: close
 
