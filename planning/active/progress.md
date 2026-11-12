@@ -47,6 +47,10 @@
 - Field and reporting: owner's cuts; reporting from logic's shared core, no PDF claim; cred off the page and out of `supporting` (216 -> 148 words)
 - Next: home page (How It Works lead and steps, the Open Source card; step 4's capacity and flows-back lines)
 
+## Session 2026-11-12
+
+- Home page steps 1-4 landed; screening sentence and the growth-after-funding claim deleted (owner), also from Dynamic reporting; CLAUDE.md convention added. Open: the Open Source card's phrase; whether logic's shared core drops the growth claim too
+
 ### Resume
 
 Paste into a fresh session in this repo:
