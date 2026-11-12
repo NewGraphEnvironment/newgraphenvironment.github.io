@@ -130,9 +130,7 @@ A catalogue of the drone imagery from our programs: pick a place or a stream and
 
 ### water-temp-bc — water temperature, flow and water level
 
-Our hydrometric archive, water-temp-bc, holds water temperature, flow and water level from federal hydrometric stations across BC. It is refreshed monthly from Environment and Climate Change Canada's real-time service and kept month over month, with water temperature back to 2002 and daily flow back to 2016, ready to query from R.
-
-This data feeds our collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/), which is advancing fish habitat modelling across the province. That collaboration has produced spatial stream network temperature modelling ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width regression models.
+Water temperature, flow and water level from federal hydrometric stations across BC, kept in one open archive anyone can query from R. Each month it adds the latest readings from Environment and Climate Change Canada's real-time service, which shows only recent months, so the record keeps growing: water temperature back to 2002, daily flow back to 2016. Water temperature sets where and when fish can live, and this data feeds our collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/), advancing fish habitat modelling across the province: spatial stream network temperature models ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width models.
 
 - [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
 

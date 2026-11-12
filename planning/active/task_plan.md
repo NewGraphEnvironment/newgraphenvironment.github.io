@@ -63,7 +63,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] The section openers: the front-matter `excerpt`, page intro, the three question intros, the "ground and water now" opener
 - [x] BC lidar (stac_elevation_bc, stac_pointcloud_bc)
 - [x] Drone imagery (stac_uav_bc)
-- [ ] water-temp-bc
+- [x] water-temp-bc
 - [ ] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
 - [ ] Figure captions, page-wide (cd's runs to four sentences); drift's map is redrawn under #71 (forest loss pink, gain orange), so its caption follows that
 - [ ] Into the field and back, and Dynamic reporting (cred)
