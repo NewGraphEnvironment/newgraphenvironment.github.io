@@ -32,7 +32,7 @@ Our stream flow tool, wet, estimates the typical flow of almost every stream in 
 
 - [Documentation](https://www.newgraphenvironment.com/wet/) | [Source](https://github.com/NewGraphEnvironment/wet)
 
-![Where each river's flow comes from: most from the Pacific Climate Impacts Consortium's routed model (blue), and wet's own water balance (orange) where that model does not reach. Dots are the hydrometric gauges it is calibrated against.](wet_discharge_source.png)
+![Where each larger river's flow comes from: most from the Pacific Climate Impacts Consortium's routed model (blue), and wet's own water balance (orange) where that model does not reach or reads far too low. Dots are the hydrometric gauges it is calibrated against.](wet_discharge_source.png)
 
 <img src="/img/hex/knowledge.png" alt="knowledge" loading="lazy" style="float: right; width: 100px; margin: 0 0 1rem 1.5rem;">
 
@@ -84,7 +84,7 @@ Our climate analysis tool, cd, shows how far the climate of a watershed, or any 
 
 ### fly — historic airphotos
 
-Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. From the province's rough record of where each photo was taken, it works out roughly the ground each one covers and places the free online thumbnails there, showing a valley as it was decades ago, often before roads, farming and logging changed it. That history is a reference for what to restore toward, and part of the story conservation and restoration planning tells. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
+Our airphoto tool, fly, puts British Columbia's historic airphotos back on the map, for free. From the province's rough record of where each photo was taken, it works out roughly the ground most of them cover and places the free online thumbnails there, showing a valley as it was decades ago, often before roads, farming and logging changed it. That history is a reference for what to restore toward, and part of the story conservation and restoration planning tells. Georeferenced thumbnails are served in our airphoto catalogue, [stac_airphoto_bc](https://www.newgraphenvironment.com/stac_airphoto_bc/).
 
 - [Documentation](https://www.newgraphenvironment.com/fly/) | [Source](https://github.com/NewGraphEnvironment/fly)
 
@@ -130,7 +130,7 @@ A catalogue of the drone imagery from our programs: pick a place or a stream and
 
 ### water-temp-bc — water temperature, flow and water level
 
-Water temperature, flow and water level from federal hydrometric stations across BC, kept in one open archive anyone can query from R. It holds water temperature back to 2002 and daily flow back to 2016, and each month it adds the latest readings from Environment and Climate Change Canada's real-time service, which shows only recent months, so the record keeps growing. Water temperature sets where and when fish can live, and this data feeds our collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/), advancing fish habitat modelling across the province: spatial stream network temperature models ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width models.
+Water temperature, flow and water level from federal hydrometric stations across BC, kept in one open archive anyone can query from R. It holds water temperature back to 2002 and daily flow back to 2016, and each month it adds the latest readings from Environment and Climate Change Canada's real-time service, which shows only recent months, so the record keeps growing. Water temperature sets where and when fish can live. This data feeds our collaborative science with [Poisson Consulting](https://www.poissonconsulting.ca/) and [Hillcrest Geographics](https://hillcrestgeo.ca/), advancing fish habitat modelling across the province, and that collaboration has produced spatial stream network temperature models ([Skeena 2025](https://www.poissonconsulting.ca/f/1130667589), [Nechako 2022](https://www.poissonconsulting.ca/f/1295467017)) and channel width models.
 
 - [Data](https://www.newgraphenvironment.com/water-temp-bc/) | [Source](https://github.com/NewGraphEnvironment/water-temp-bc)
 

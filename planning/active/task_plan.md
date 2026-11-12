@@ -90,9 +90,9 @@ Per-item checklist (from the plan review, `review-plan.md`):
 
 ## Validation
 
-- [ ] Hugo builds clean (the showcase check passes)
-- [ ] `/code-check` clean (once over the branch with `/code-check branch`)
-- [ ] PWF checkboxes match landed work
+- [x] Hugo builds clean (the showcase check passes)
+- [x] `/code-check` clean (once over the branch with `/code-check branch`)
+- [x] PWF checkboxes match landed work
 - [ ] `/planning-archive` on completion
 
 How each change is proved:
