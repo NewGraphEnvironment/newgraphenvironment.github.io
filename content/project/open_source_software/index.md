@@ -136,9 +136,9 @@ Water temperature, flow and water level from federal hydrometric stations across
 
 ### Open catalogues, and the recipe for building them
 
-Each catalogue is two things: the catalogue itself, and the public code that builds it, a worked example others can follow to build their own. We don't need to be the only source of any of it. Ours are served from our catalogue server, [images.a11s.one](https://images.a11s.one), and can be searched from R, Python or QGIS 3.42+ through the open STAC standard. Four of the five carry a CC BY 4.0 licence.
+Each catalogue lists what exists for a place and when it was captured, with a link to every file. All five are served from [images.a11s.one](https://images.a11s.one) through [STAC](https://stacspec.org/), an open standard for cataloguing imagery and elevation data by place and time, so they can be searched from R, Python or QGIS. Each comes with the public code that builds it, a worked example anyone can follow to build their own.
 
-Our catalogue loader, stacs, puts catalogues into that search service and checks that every record arrived intact.
+Our catalogue loader, stacs, puts a catalogue into a search service and checks that every record arrived intact.
 
 - [stacs documentation](https://www.newgraphenvironment.com/stacs/) | [Source](https://github.com/NewGraphEnvironment/stacs)
 

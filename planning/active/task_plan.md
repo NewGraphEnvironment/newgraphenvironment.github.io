@@ -47,7 +47,7 @@ For each item: propose the wording, the README issue and any tagline change. The
 
 Per-item checklist (from the plan review, `review-plan.md`):
 - keep the item's Documentation/Source line; dropping the blog or cred link means editing `supporting` in `data/showcase_site.yaml` in the same commit; report proof links go through /project/ pages or `supporting`
-- keep-list (CLAUDE.md copy rules): credit to bcfishpass and Simon Norris, and fwapg; screening caveats for drift and floodplains; "from our programs" and the provincial drone specialist; "new tiles added monthly"; "Four of the five carry a CC BY 4.0 licence"; the Poisson and Hillcrest credit; "publicly available"; each claim keeps its source's qualifier
+- keep-list (CLAUDE.md copy rules): credit to bcfishpass and Simon Norris, and fwapg; screening caveats for drift and floodplains; "from our programs" and the provincial drone specialist; "new tiles added monthly"; ~~"Four of the five carry a CC BY 4.0 licence"~~ (dropped by the owner 2026-11-11: not helpful to the reader); the Poisson and Hillcrest credit; "publicly available"; each claim keeps its source's qualifier
 - grep the `ruled_out` list over the changed prose (page and home page); a linked title keeps its own words
 - a retitled heading: fix every `#anchor` and "(below)" that points at it, and check the rendered IDs
 - record in `findings.md`: words before and after, sentences, which sentence is each beat, the README verdict (filed with link, or not needed and why), and any tagline change
@@ -64,7 +64,7 @@ Per-item checklist (from the plan review, `review-plan.md`):
 - [x] BC lidar (stac_elevation_bc, stac_pointcloud_bc)
 - [x] Drone imagery (stac_uav_bc)
 - [x] water-temp-bc
-- [ ] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
+- [x] Open catalogues and stacs; the catalogue table's sentences agreed here, ticked in Phase 3
 - [ ] Figure captions, page-wide (cd's runs to four sentences); drift's map is redrawn under #71 (forest loss pink, gain orange), so its caption follows that
 - [ ] Into the field and back, and Dynamic reporting (cred)
 - [ ] Home page: the How It Works lead and step sentences, and the Open Source card, checked against the agreed sections
