@@ -40,7 +40,7 @@ Our stream flow tool, wet, estimates the typical flow of almost every stream in 
 
 Our evidence tool, knowledge, starts from what is known about each species' life history, from the published literature and past reports, and tests it against the Province's fish sampling records: where sampling caught the species and where it did not. The biology sets the shape of a fish habitat definition, such as young chinook rearing in small streams close to a large river; where the records allow, they tune its values, and each is checked on parts of the province it was not chosen from. A habitat map steers where restoration and conservation effort goes, and one built this way rests on where fish have been found.
 
-- [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a habitat definition is tested](https://www.newgraphenvironment.com/knowledge/articles/habitat_thresholds.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/chinook_rearing.html)
+- [Documentation](https://www.newgraphenvironment.com/knowledge/) | [Source](https://github.com/NewGraphEnvironment/knowledge) | [How a habitat definition is tested](https://www.newgraphenvironment.com/knowledge/articles/tuning-method.html) | [Chinook rearing, worked through](https://www.newgraphenvironment.com/knowledge/articles/tuning-chinook-rearing.html)
 
 ![Chinook rearing on the Bulkley River, Telkwa to Houston, comparing link's existing habitat definition with the one tuned in knowledge. The habitat on each stream is carried onto the floodplain beside it by flooded (below). Floodplain: stac_floodplains_bc. Basemap: Esri World Topographic Map and World Shaded Relief.](knowledge_bulkley.jpg)
 
